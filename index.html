@@ -5,7 +5,10 @@
   <meta charset="utf-8" />
   <title>株式会社創電工業</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="icon" type="image/x-icon" href="favicon.ico" />
+  <link rel="icon" type="image/png" href="public/logo.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Yuji+Syuku&display=swap" rel="stylesheet">
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
     /* Custom CSS for continuous scroll animation */
@@ -50,7 +53,46 @@
     }
 
     .animate-fade-in {
-      animation: fade-in 0.5s ease-out forwards;
+      animation: fade-in 0.8s ease-out forwards;
+    }
+
+    /* Modern Fade Up */
+    @keyframes fade-up {
+      0% {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .animate-fade-up {
+      animation: fade-up 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+
+    /* Scale In */
+    @keyframes scale-in {
+      0% {
+        opacity: 0;
+        transform: scale(0.95);
+      }
+
+      100% {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    .animate-scale-in {
+      animation: scale-in 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+
+    /* Utility for initial state */
+    .opacity-0 {
+      opacity: 0;
     }
   </style>
   <script type="importmap">
@@ -69,7 +111,7 @@
   }
 }
 </script>
-  <link rel="stylesheet" href="/index.css">
+
 </head>
 
 <body class="bg-white">

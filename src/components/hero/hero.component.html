@@ -1,13 +1,13 @@
-<section class="relative h-[80vh] min-h-[600px] w-full overflow-hidden bg-cover bg-center" style="background-image: url('https://picsum.photos/1920/1080?random=1');">
+<section class="relative h-[80vh] min-h-[600px] w-full overflow-hidden bg-cover bg-center"
+  style="background-image: url('https://picsum.photos/1920/1080?random=1');">
   <div class="absolute inset-0 bg-[#0c1c2d] bg-opacity-70"></div>
-  
+
   <div class="absolute inset-0 flex flex-col items-center justify-center text-center text-white p-4 z-10">
     <h2 class="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-wider leading-tight uppercase">
-      未来を灯す、
-      <br>
-      確かな技術力
+      <span appTextReveal [delay]="0.1" class="block">未来を灯す、</span>
+      <span appTextReveal [delay]="0.1" class="block mt-2">確かな技術力</span>
     </h2>
-    <p class="mt-4 max-w-2xl text-lg md:text-xl font-light">
+    <p appScrollAnimate animationClass="animate-fade-in" class="mt-4 max-w-2xl text-lg md:text-xl font-light">
       創電工業は、安全と信頼を第一に、電気設備工事を通じて社会基盤を支えます。
     </p>
   </div>
@@ -15,19 +15,16 @@
   <!-- Image Sliders -->
   <div class="absolute inset-0 z-0">
     @for(slider of sliders; track $index; let i = $index) {
-        <div class="absolute w-full" 
-             [style.top]="(i * 15) + '%'"
-             [style.opacity]="0.2 - (i * 0.02)">
-          <div class="flex" 
-               [class.animate-scroll-left]="slider.type === 'left'"
-               [class.animate-scroll-right]="slider.type === 'right'">
-            @for(image of slider.images; track $index) {
-                <div class="flex-shrink-0 w-1/4 sm:w-1/5 md:w-1/6 lg:w-1/7 px-2">
-                    <img [src]="image" alt="施工事例" class="w-full h-auto object-cover rounded-lg shadow-lg">
-                </div>
-            }
-          </div>
+    <div class="absolute w-full" [style.top]="(i * 15) + '%'" [style.opacity]="0.2 - (i * 0.02)">
+      <div class="flex" [class.animate-scroll-left]="slider.type === 'left'"
+        [class.animate-scroll-right]="slider.type === 'right'">
+        @for(image of slider.images; track $index) {
+        <div class="flex-shrink-0 w-1/4 sm:w-1/5 md:w-1/6 lg:w-1/7 px-2">
+          <img [src]="image" alt="施工事例" class="w-full h-auto object-cover rounded-lg shadow-lg">
         </div>
+        }
+      </div>
+    </div>
     }
   </div>
 </section>
