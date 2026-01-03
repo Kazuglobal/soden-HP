@@ -1,0 +1,36 @@
+<section class="py-16 sm:py-24 bg-white">
+  <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-12">
+      <h2 class="text-4xl sm:text-5xl font-extrabold text-[#0c1c2d] tracking-wider">
+        創電工業の強み
+      </h2>
+      <p class="mt-2 text-lg text-gray-600">お客様の信頼に応える、3つの強み</p>
+      <p class="mt-4 max-w-2xl mx-auto text-base text-gray-500">
+        創電工業は、高品質な施工と徹底した安全管理で、社会の発展に貢献します。
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      @for (feature of features; track feature.title) {
+        <div class="bg-gray-50 rounded-lg shadow-lg overflow-hidden group hover:shadow-2xl transition-shadow duration-300">
+          <div class="relative">
+            <img [src]="feature.image" [alt]="feature.alt" class="w-full h-56 object-cover">
+            <div class="absolute top-4 left-4 bg-[#d4a876] text-white px-3 py-1 rounded-full text-sm font-bold">
+              Feature.{{ feature.number }}
+            </div>
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-bold text-[#0c1c2d] h-16">{{ feature.title }}</h3>
+            <p class="mt-4 text-gray-600 leading-relaxed h-32">{{ feature.description }}</p>
+          </div>
+        </div>
+      }
+    </div>
+
+    <div class="text-center mt-12">
+      <a href="#" class="inline-block bg-[#0c1c2d] text-white px-10 py-3 rounded-full text-base font-bold uppercase tracking-wider hover:bg-[#1a3a52] transition duration-300">
+        詳しく見る
+      </a>
+    </div>
+  </div>
+</section>

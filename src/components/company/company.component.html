@@ -1,0 +1,86 @@
+<section class="py-16 sm:py-24 bg-cover bg-center"
+  style="background-image: url('https://picsum.photos/1200/400?random=50');">
+  <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="bg-white/90 backdrop-blur-sm p-8 md:p-12 rounded-lg text-center max-w-2xl mx-auto">
+      <h2 class="text-4xl sm:text-5xl font-extrabold text-[#0c1c2d] leading-tight">
+        <span class="block text-xl text-gray-500">会社概要</span>
+        <span class="block">COMPANY</span>
+      </h2>
+      <div class="mt-8">
+        <button (click)="toggleDetails()"
+          class="inline-block bg-[#0c1c2d] text-white px-10 py-3 rounded-full text-base font-bold uppercase tracking-wider hover:bg-[#1a3a52] transition duration-300 cursor-pointer">
+          {{ showDetails ? 'CLOSE' : 'READ MORE' }}
+        </button>
+      </div>
+
+      <div *ngIf="showDetails" class="mt-8 text-left border-t border-gray-300 pt-8 animate-fade-in">
+        <dl class="space-y-6 text-gray-800">
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-2">
+            <dt class="font-bold text-[#0c1c2d]">会社名</dt>
+            <dd class="sm:col-span-2">株式会社創電工業</dd>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-2">
+            <dt class="font-bold text-[#0c1c2d]">創業</dt>
+            <dd class="sm:col-span-2">昭和62年（1987年）</dd>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-2">
+            <dt class="font-bold text-[#0c1c2d]">資本金</dt>
+            <dd class="sm:col-span-2">5,000万円</dd>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-2">
+            <dt class="font-bold text-[#0c1c2d]">代表者</dt>
+            <dd class="sm:col-span-2">
+              <div class="flex flex-col sm:flex-row sm:items-start gap-1 sm:gap-4">
+                <span class="font-semibold min-w-[140px]">代表取締役会長</span>
+                <span>上野 誠</span>
+              </div>
+              <div class="flex flex-col sm:flex-row sm:items-start gap-1 sm:gap-4 mt-1">
+                <span class="font-semibold min-w-[140px]">代表取締役社長</span>
+                <span>上野 衆</span>
+              </div>
+            </dd>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-2">
+            <dt class="font-bold text-[#0c1c2d]">事業内容</dt>
+            <dd class="sm:col-span-2 whitespace-pre-line leading-relaxed">電気設備設計・施工・管理
+              各種機械自動制御装置設計・施工
+              ビル保守・防災管理業務・空調設備
+              物流システム全般・機械器具設置工事業</dd>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-2">
+            <dt class="font-bold text-[#0c1c2d]">従業員資格</dt>
+            <dd class="sm:col-span-2 whitespace-pre-line leading-relaxed">一級、二級電気施工管理士
+              第一種、第二種電気工事士
+              消防設備士</dd>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-2">
+            <dt class="font-bold text-[#0c1c2d]">特定建設業許可</dt>
+            <dd class="sm:col-span-2">電気工事業 青森県知事許可（62）第11684号</dd>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-2">
+            <dt class="font-bold text-[#0c1c2d]">一般建設業許可</dt>
+            <dd class="sm:col-span-2">
+              <p>電気通信工事業 青森県知事許可（62）第11684号</p>
+              <p class="mt-1">消防施設工事業 青森県知事許可（62）第11684号</p>
+            </dd>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-2">
+            <dt class="font-bold text-[#0c1c2d]">連絡先</dt>
+            <dd class="sm:col-span-2">
+              <p class="text-xl font-bold">0178-25-2172</p>
+              <p class="text-sm text-gray-500 mt-1">（受付時間 8:00-18:00 [ 日・祝日除く ]）</p>
+            </dd>
+          </div>
+        </dl>
+      </div>
+    </div>
+  </div>
+</section>

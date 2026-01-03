@@ -1,0 +1,32 @@
+import { Component, ChangeDetectionStrategy } from '@angular/core';
+
+@Component({
+  selector: 'app-feature',
+  templateUrl: './feature.component.html',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+})
+export class FeatureComponent {
+  features = [
+    {
+      image: 'https://picsum.photos/400/300?random=20',
+      alt: '高い技術力',
+      number: '01',
+      title: '信頼される高い技術力',
+      description: '経験豊富な技術者が、設計から施工、メンテナンスまで一貫して対応。最新の技術とノウハウを駆使し、高品質な電気設備を提供します。難易度の高い工事にも対応可能です。'
+    },
+    {
+      image: 'https://picsum.photos/400/300?random=21',
+      alt: '安全管理体制',
+      number: '02',
+      title: '徹底した安全管理体制',
+      description: '安全を最優先に考え、全ての現場で徹底した安全管理を実施しています。作業員の安全教育はもちろん、危険予知活動を通じて、無事故・無災害の現場を実現します。'
+    },
+    {
+      image: 'https://picsum.photos/400/300?random=22',
+      alt: '豊富な実績',
+      number: '03',
+      title: '公共施設から民間まで豊富な実績',
+      description: 'オフィスビル、商業施設、工場、公共施設など、多岐にわたる建物の電気設備工事を手掛けてきました。その豊富な実績と経験が、お客様からの信頼の証です。'
+    }
+  ];
+}

@@ -1,0 +1,151 @@
+<section class="py-20 sm:py-32 bg-gray-50 overflow-hidden">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative">
+
+        <!-- Section Header -->
+        <div #anim class="text-center mb-16 animate-hidden">
+            <h2 class="text-4xl sm:text-6xl font-extrabold text-[#0c1c2d] tracking-tight mb-4">
+                <span class="block text-xl text-blue-600 font-medium tracking-widest mb-2">採用情報</span>
+                RECRUIT
+            </h2>
+            <p class="mt-4 text-gray-600 max-w-2xl mx-auto">
+                私たちと共に未来を創る仲間を募集しています。
+            </p>
+        </div>
+
+        <div class="max-w-4xl mx-auto">
+
+            <!-- Recruitment Card -->
+            <div #anim
+                class="bg-white rounded-3xl shadow-xl overflow-hidden animate-hidden hover:shadow-2xl transition-shadow duration-300">
+
+                <!-- Header Banner -->
+                <div class="bg-[#0c1c2d] py-8 px-6 sm:px-12 text-center">
+                    <h3 class="text-2xl sm:text-3xl font-bold text-white tracking-wider">作業員募集</h3>
+                    <p class="text-blue-200 mt-2">未経験者歓迎・丁寧に指導します</p>
+
+                    <div class="mt-8">
+                        <button (click)="toggleDetails()"
+                            class="inline-block bg-white text-[#0c1c2d] px-10 py-3 rounded-full text-base font-bold uppercase tracking-wider hover:bg-blue-50 transition duration-300 cursor-pointer">
+                            {{ showDetails ? 'CLOSE' : 'SEE MORE' }}
+                        </button>
+                    </div>
+                </div>
+
+                <div *ngIf="showDetails" class="p-8 sm:p-12 animate-fade-in">
+
+                    <!-- Job Details Grid -->
+                    <dl class="grid grid-cols-1 gap-y-8 sm:gap-y-10">
+
+                        <!-- Job Type -->
+                        <div class="sm:grid sm:grid-cols-3 sm:gap-4">
+                            <dt class="text-lg font-bold text-[#0c1c2d] flex items-center">
+                                <span class="w-2 h-8 bg-blue-600 mr-3 rounded-full"></span>
+                                職種
+                            </dt>
+                            <dd class="mt-2 sm:mt-0 sm:col-span-2 text-gray-700 text-lg">電気工事士</dd>
+                        </div>
+
+                        <!-- Job Description -->
+                        <div class="sm:grid sm:grid-cols-3 sm:gap-4 bg-gray-50 p-4 rounded-xl -mx-4 sm:mx-0">
+                            <dt class="text-lg font-bold text-[#0c1c2d] flex items-center mb-2 sm:mb-0">
+                                <span class="w-2 h-8 bg-blue-600 mr-3 rounded-full"></span>
+                                仕事内容
+                            </dt>
+                            <dd class="mt-1 sm:mt-0 sm:col-span-2 text-gray-700 leading-relaxed">
+                                <ul class="list-disc list-inside space-y-2">
+                                    <li>住宅、ビル等の電気工事、計装工事及びメンテナンス</li>
+                                    <li>室内、室外においての配線工事</li>
+                                    <li>スイッチ、コンセント及び照明器具取付工事など</li>
+                                    <li>社有車(トラック等)の運転有り</li>
+                                </ul>
+                                <p class="mt-4 text-blue-800 font-medium bg-blue-50 px-4 py-2 rounded-lg inline-block">
+                                    ※資格のない方、初心者の方でも応募可。親切丁寧に指導いたします。
+                                </p>
+                            </dd>
+                        </div>
+
+                        <!-- Wages -->
+                        <div class="sm:grid sm:grid-cols-3 sm:gap-4">
+                            <dt class="text-lg font-bold text-[#0c1c2d] flex items-center">
+                                <span class="w-2 h-8 bg-blue-600 mr-3 rounded-full"></span>
+                                賃金
+                            </dt>
+                            <dd class="mt-2 sm:mt-0 sm:col-span-2 text-gray-700">
+                                <p class="text-2xl font-bold text-[#0c1c2d]">基本給：161,000円～</p>
+                                <p class="text-sm text-gray-500 mt-1">※試用期間あり</p>
+                            </dd>
+                        </div>
+
+                        <!-- Allowances -->
+                        <div class="sm:grid sm:grid-cols-3 sm:gap-4">
+                            <dt class="text-lg font-bold text-[#0c1c2d] flex items-center">
+                                <span class="w-2 h-8 bg-blue-600 mr-3 rounded-full"></span>
+                                諸手当
+                            </dt>
+                            <dd class="mt-2 sm:mt-0 sm:col-span-2 text-gray-700">
+                                通勤手当(上限10,000円)
+                            </dd>
+                        </div>
+
+                        <!-- Raise / Bonus -->
+                        <div class="sm:grid sm:grid-cols-3 sm:gap-4 bg-gray-50 p-4 rounded-xl -mx-4 sm:mx-0">
+                            <dt class="text-lg font-bold text-[#0c1c2d] flex items-center mb-2 sm:mb-0">
+                                <span class="w-2 h-8 bg-blue-600 mr-3 rounded-full"></span>
+                                昇給・賞与
+                            </dt>
+                            <dd class="mt-1 sm:mt-0 sm:col-span-2 text-gray-700">
+                                <div class="flex flex-col sm:flex-row gap-4">
+                                    <div class="flex items-center">
+                                        <span
+                                            class="bg-white border border-blue-200 px-3 py-1 rounded-md text-sm font-semibold text-blue-800 mr-2">昇給</span>
+                                        <span>年1回</span>
+                                    </div>
+                                    <div class="flex items-center">
+                                        <span
+                                            class="bg-white border border-blue-200 px-3 py-1 rounded-md text-sm font-semibold text-blue-800 mr-2">賞与</span>
+                                        <span>年2回</span>
+                                    </div>
+                                </div>
+                            </dd>
+                        </div>
+
+                        <!-- Holidays -->
+                        <div class="sm:grid sm:grid-cols-3 sm:gap-4">
+                            <dt class="text-lg font-bold text-[#0c1c2d] flex items-center">
+                                <span class="w-2 h-8 bg-blue-600 mr-3 rounded-full"></span>
+                                休日
+                            </dt>
+                            <dd class="mt-2 sm:mt-0 sm:col-span-2 text-gray-700">
+                                <p class="font-bold">定休日：毎週日曜日、祝祭日</p>
+                                <p class="mt-1">有給休暇、特別休暇、夏季及び年末年始休暇、GW</p>
+                            </dd>
+                        </div>
+
+                    </dl>
+
+                    <!-- Contact Section in Card -->
+                    <div class="mt-12 pt-10 border-t border-gray-200">
+                        <h4 class="text-center text-xl font-bold text-[#0c1c2d] mb-6">お問い合わせ・応募先</h4>
+                        <div class="flex flex-col sm:flex-row justify-center items-center gap-6">
+                            <a href="tel:0178252172"
+                                class="group flex items-center bg-[#0c1c2d] text-white px-8 py-4 rounded-full hover:bg-blue-900 transition-all duration-300 shadow-lg hover:shadow-blue-900/30">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-3 group-hover:animate-bounce"
+                                    fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                                </svg>
+                                <span class="text-2xl font-bold font-mono">0178-25-2172</span>
+                            </a>
+                            <div class="text-center sm:text-left text-gray-600 bg-gray-100 px-6 py-3 rounded-lg">
+                                <p class="font-semibold text-sm">受付時間</p>
+                                <p class="font-bold">8:00 - 18:00</p>
+                                <p class="text-xs text-gray-500">（日・祝日除く）</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,33 @@
+<section class="py-16 sm:py-24 bg-white relative overflow-hidden">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8 z-10 relative">
+        <div class="max-w-3xl">
+            <h2 class="text-4xl sm:text-5xl font-extrabold text-[#0c1c2d] leading-tight">
+                <span class="block text-xl text-gray-500">様々なニーズにお応えします</span>
+                <span class="block text-[#d4a876]">施工実績</span>
+            </h2>
+            <p class="mt-6 text-xl font-semibold text-[#0c1c2d]">
+                豊富な経験と実績。
+            </p>
+            <p class="mt-4 text-gray-700 leading-relaxed">
+                創電工業は、オフィスビル、商業施設、工場、データセンター、病院、学校など、多種多様な建物の電気設備工事を手掛けてまいりました。お客様のあらゆるニーズにお応えできる技術力と対応力があります。
+            </p>
+            <div class="mt-8">
+                <a href="#" class="inline-block bg-[#0c1c2d] text-white px-10 py-3 rounded-full text-base font-bold uppercase tracking-wider hover:bg-[#1a3a52] transition duration-300">
+                    実績一覧へ
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Background Images -->
+    <div class="absolute top-0 right-0 h-full w-1/2 lg:w-2/5 grid grid-cols-2 gap-4 p-4 opacity-30 md:opacity-100">
+        @for(image of proposalImages; track $index) {
+            <div class="relative aspect-square rounded-lg overflow-hidden group">
+                <img [src]="image" alt="施工実績写真" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500">
+                <div class="absolute inset-0 bg-[#0c1c2d] bg-opacity-40 flex items-center justify-center p-2">
+                    <span class="text-white text-center text-xs font-bold opacity-0 group-hover:opacity-100 transition-opacity duration-300">Our Works</span>
+                </div>
+            </div>
+        }
+    </div>
+</section>
