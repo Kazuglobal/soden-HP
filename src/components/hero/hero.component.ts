@@ -1,6 +1,6 @@
 import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { TextRevealDirective } from '../../directives/text-reveal.directive';
+import { GsapSplitTextDirective } from '../../directives/gsap-split-text.directive';
 import { ScrollAnimateDirective } from '../../directives/scroll-animate.directive';
 
 @Component({
@@ -8,7 +8,7 @@ import { ScrollAnimateDirective } from '../../directives/scroll-animate.directiv
   templateUrl: './hero.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
   standalone: true,
-  imports: [CommonModule, TextRevealDirective, ScrollAnimateDirective]
+  imports: [CommonModule, GsapSplitTextDirective, ScrollAnimateDirective]
 })
 export class HeroComponent {
   sliders = [
