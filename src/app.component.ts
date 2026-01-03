@@ -11,8 +11,6 @@ import { CompanyComponent } from './components/company/company.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { RecruitComponent } from './components/recruit/recruit.component';
-import { ScrollAnimateDirective } from './directives/scroll-animate.directive';
-import { TextRevealDirective } from './directives/text-reveal.directive';
 
 @Component({
   selector: 'app-root',
@@ -30,9 +28,7 @@ import { TextRevealDirective } from './directives/text-reveal.directive';
     CompanyComponent,
     RecruitComponent,
     ContactComponent,
-    FooterComponent,
-    ScrollAnimateDirective,
-    TextRevealDirective
+    FooterComponent
   ]
 })
 export class AppComponent { }
