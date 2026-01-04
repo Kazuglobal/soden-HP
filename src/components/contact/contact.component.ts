@@ -2,6 +2,8 @@ import { Component, ChangeDetectionStrategy, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { GsapSplitTextDirective } from '../../directives/gsap-split-text.directive';
+import { GsapScrollAnimateDirective } from '../../directives/gsap-scroll-animate.directive';
 
 // GAS WebアプリURL（デプロイ後に設定してください）
 const GAS_URL = 'YOUR_GAS_WEB_APP_URL';
@@ -10,7 +12,8 @@ const GAS_URL = 'YOUR_GAS_WEB_APP_URL';
   selector: 'app-contact',
   templateUrl: './contact.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [CommonModule, ReactiveFormsModule, HttpClientModule]
+  standalone: true,
+  imports: [CommonModule, ReactiveFormsModule, HttpClientModule, GsapSplitTextDirective, GsapScrollAnimateDirective]
 })
 export class ContactComponent {
   private http = inject(HttpClient);

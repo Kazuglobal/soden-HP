@@ -1,45 +1,19 @@
-import { Component, ChangeDetectionStrategy, ElementRef, ViewChildren, QueryList, AfterViewInit } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { GsapSplitTextDirective } from '../../directives/gsap-split-text.directive';
+import { GsapScrollAnimateDirective } from '../../directives/gsap-scroll-animate.directive';
 
 @Component({
   selector: 'app-recruit',
   templateUrl: './recruit.component.html',
-  styles: [`
-    :host {
-      display: block;
-    }
-    .animate-hidden {
-      opacity: 0;
-      transform: translateY(20px);
-      transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-    }
-    .animate-visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  `],
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [CommonModule]
+  standalone: true,
+  imports: [CommonModule, GsapSplitTextDirective, GsapScrollAnimateDirective]
 })
-export class RecruitComponent implements AfterViewInit {
-  @ViewChildren('anim') animElements!: QueryList<ElementRef>;
+export class RecruitComponent {
   showDetails = false;
-
-  constructor() { }
 
   toggleDetails() {
     this.showDetails = !this.showDetails;
-  }
-
-  ngAfterViewInit() {
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('animate-visible');
-        }
-      });
-    }, { threshold: 0.1 });
-
-    this.animElements.forEach(el => observer.observe(el.nativeElement));
   }
 }

@@ -2,12 +2,30 @@
     <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative">
 
         <!-- Section Header -->
-        <div #anim class="text-center mb-16 animate-hidden">
+        <div class="text-center mb-16">
             <h2 class="text-4xl sm:text-6xl font-extrabold text-[#0c1c2d] tracking-tight mb-4">
-                <span class="block text-xl text-blue-600 font-medium tracking-widest mb-2">採用情報</span>
-                RECRUIT
+                <span appGsapAnimate
+                    [animation]="'fadeUp'"
+                    [duration]="0.5"
+                    [distance]="20"
+                    [threshold]="0.2"
+                    class="block text-xl text-blue-600 font-medium tracking-widest mb-2">採用情報</span>
+                <span appGsapSplitText
+                    [splitType]="'chars'"
+                    [delay]="70"
+                    [duration]="0.5"
+                    [ease]="'power3.out'"
+                    [from]="{ opacity: 0, y: 40, rotateY: 30 }"
+                    [to]="{ opacity: 1, y: 0, rotateY: 0 }"
+                    [threshold]="0.2">RECRUIT</span>
             </h2>
-            <p class="mt-4 text-gray-600 max-w-2xl mx-auto">
+            <p appGsapAnimate
+                [animation]="'fadeUp'"
+                [duration]="0.6"
+                [delay]="0.3"
+                [distance]="25"
+                [threshold]="0.2"
+                class="mt-4 text-gray-600 max-w-2xl mx-auto">
                 私たちと共に未来を創る仲間を募集しています。
             </p>
         </div>
@@ -15,8 +33,12 @@
         <div class="max-w-4xl mx-auto">
 
             <!-- Recruitment Card -->
-            <div #anim
-                class="bg-white rounded-3xl shadow-xl overflow-hidden animate-hidden hover:shadow-2xl transition-shadow duration-300">
+            <div appGsapAnimate
+                [animation]="'fadeUp'"
+                [duration]="0.8"
+                [distance]="60"
+                [threshold]="0.15"
+                class="bg-white rounded-3xl shadow-xl overflow-hidden hover:shadow-2xl transition-shadow duration-300">
 
                 <!-- Header Banner -->
                 <div class="bg-[#0c1c2d] py-8 px-6 sm:px-12 text-center">

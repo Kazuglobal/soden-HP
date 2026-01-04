@@ -1,13 +1,33 @@
 <section class="py-16 sm:py-24 bg-white">
   <div class="container mx-auto px-4 sm:px-6 lg:px-8">
     <div class="text-center mb-12">
-      <h2 class="text-4xl sm:text-5xl font-extrabold text-[#0c1c2d] tracking-wider">
+      <h2 appGsapSplitText
+        [splitType]="'chars'"
+        [delay]="50"
+        [duration]="0.5"
+        [ease]="'power3.out'"
+        [from]="{ opacity: 0, y: 30 }"
+        [to]="{ opacity: 1, y: 0 }"
+        [threshold]="0.2"
+        class="text-4xl sm:text-5xl font-extrabold text-[#0c1c2d] tracking-wider">
         事業内容
       </h2>
-      <p class="text-sm text-gray-500 mt-2">株式会社創電工業が提供するサービス</p>
+      <p appGsapAnimate
+        [animation]="'fadeUp'"
+        [duration]="0.6"
+        [delay]="0.3"
+        [distance]="20"
+        [threshold]="0.2"
+        class="text-sm text-gray-500 mt-2">株式会社創電工業が提供するサービス</p>
     </div>
-    
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+    <div appGsapAnimate
+      [animation]="'fadeUp'"
+      [stagger]="0.15"
+      [duration]="0.7"
+      [distance]="50"
+      [threshold]="0.1"
+      class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
       @for (service of services; track service.title) {
         <div class="group relative overflow-hidden rounded-lg shadow-lg">
           <a href="{{ service.href }}">
@@ -23,7 +43,12 @@
       }
     </div>
     
-    <div class="text-center mt-12">
+    <div appGsapAnimate
+      [animation]="'scaleIn'"
+      [duration]="0.5"
+      [scale]="0.9"
+      [threshold]="0.3"
+      class="text-center mt-12">
       <a href="#" class="inline-block bg-[#0c1c2d] text-white px-10 py-3 rounded-full text-base font-bold uppercase tracking-wider hover:bg-[#1a3a52] transition duration-300">
         詳しく見る
       </a>

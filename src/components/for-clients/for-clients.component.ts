@@ -1,9 +1,13 @@
 import { Component, ChangeDetectionStrategy } from '@angular/core';
+import { GsapSplitTextDirective } from '../../directives/gsap-split-text.directive';
+import { GsapScrollAnimateDirective } from '../../directives/gsap-scroll-animate.directive';
 
 @Component({
   selector: 'app-for-clients',
   templateUrl: './for-clients.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
+  standalone: true,
+  imports: [GsapSplitTextDirective, GsapScrollAnimateDirective]
 })
 export class ForClientsComponent {
     proposalImages = [

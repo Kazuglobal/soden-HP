@@ -2,16 +2,49 @@
     <div class="container mx-auto px-4 sm:px-6 lg:px-8 z-10 relative">
         <div class="max-w-3xl">
             <h2 class="text-4xl sm:text-5xl font-extrabold text-[#0c1c2d] leading-tight">
-                <span class="block text-xl text-gray-500">様々なニーズにお応えします</span>
-                <span class="block text-[#d4a876]">施工実績</span>
+                <span appGsapAnimate
+                    [animation]="'fadeUp'"
+                    [duration]="0.5"
+                    [distance]="20"
+                    [threshold]="0.2"
+                    class="block text-xl text-gray-500">様々なニーズにお応えします</span>
+                <span appGsapSplitText
+                    [splitType]="'chars'"
+                    [delay]="60"
+                    [duration]="0.5"
+                    [ease]="'power3.out'"
+                    [from]="{ opacity: 0, y: 30 }"
+                    [to]="{ opacity: 1, y: 0 }"
+                    [threshold]="0.2"
+                    class="block text-[#d4a876]">施工実績</span>
             </h2>
-            <p class="mt-6 text-xl font-semibold text-[#0c1c2d]">
+            <p appGsapSplitText
+                [splitType]="'words'"
+                [delay]="50"
+                [duration]="0.4"
+                [ease]="'power2.out'"
+                [from]="{ opacity: 0, y: 15 }"
+                [to]="{ opacity: 1, y: 0 }"
+                [threshold]="0.2"
+                class="mt-6 text-xl font-semibold text-[#0c1c2d]">
                 豊富な経験と実績。
             </p>
-            <p class="mt-4 text-gray-700 leading-relaxed">
+            <p appGsapAnimate
+                [animation]="'fadeUp'"
+                [duration]="0.6"
+                [delay]="0.2"
+                [distance]="30"
+                [threshold]="0.2"
+                class="mt-4 text-gray-700 leading-relaxed">
                 創電工業は、オフィスビル、商業施設、工場、データセンター、病院、学校など、多種多様な建物の電気設備工事を手掛けてまいりました。お客様のあらゆるニーズにお応えできる技術力と対応力があります。
             </p>
-            <div class="mt-8">
+            <div appGsapAnimate
+                [animation]="'scaleIn'"
+                [duration]="0.5"
+                [delay]="0.3"
+                [scale]="0.9"
+                [threshold]="0.2"
+                class="mt-8">
                 <a href="#" class="inline-block bg-[#0c1c2d] text-white px-10 py-3 rounded-full text-base font-bold uppercase tracking-wider hover:bg-[#1a3a52] transition duration-300">
                     実績一覧へ
                 </a>

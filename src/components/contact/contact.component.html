@@ -1,18 +1,42 @@
 <section class="py-16 sm:py-24 bg-gray-50 text-gray-800">
   <div class="container mx-auto px-4 sm:px-6 lg:px-8">
     <div class="text-center mb-16">
-      <h2 class="text-4xl sm:text-5xl font-extrabold text-[#0c1c2d] tracking-wider mb-4">
+      <h2 appGsapSplitText
+        [splitType]="'chars'"
+        [delay]="60"
+        [duration]="0.5"
+        [ease]="'power3.out'"
+        [from]="{ opacity: 0, y: 30 }"
+        [to]="{ opacity: 1, y: 0 }"
+        [threshold]="0.2"
+        class="text-4xl sm:text-5xl font-extrabold text-[#0c1c2d] tracking-wider mb-4">
         お問い合わせ
       </h2>
-      <p class="text-xl font-semibold text-[#0c1c2d]">
+      <p appGsapAnimate
+        [animation]="'fadeUp'"
+        [duration]="0.5"
+        [delay]="0.2"
+        [distance]="20"
+        [threshold]="0.2"
+        class="text-xl font-semibold text-[#0c1c2d]">
         Contact Us
       </p>
-      <p class="mt-6 max-w-2xl mx-auto text-gray-600 leading-relaxed">
+      <p appGsapAnimate
+        [animation]="'fadeIn'"
+        [duration]="0.6"
+        [delay]="0.4"
+        [threshold]="0.2"
+        class="mt-6 max-w-2xl mx-auto text-gray-600 leading-relaxed">
         電気設備工事に関するご相談、お見積りのご依頼、採用に関するご質問など、<br class="hidden sm:inline">どのようなことでもお気軽にお問い合わせください。
       </p>
     </div>
 
-    <div class="max-w-2xl mx-auto bg-white rounded-3xl shadow-xl p-8 sm:p-12">
+    <div appGsapAnimate
+      [animation]="'fadeUp'"
+      [duration]="0.7"
+      [distance]="50"
+      [threshold]="0.15"
+      class="max-w-2xl mx-auto bg-white rounded-3xl shadow-xl p-8 sm:p-12">
 
       <!-- 成功メッセージ -->
       <div *ngIf="submitStatus === 'success'" class="mb-8 p-6 bg-green-50 border border-green-200 rounded-xl text-center">
