@@ -1,11 +1,20 @@
-<header class="bg-[#0c1c2d] text-white sticky top-0 z-50 shadow-lg">
+<header #headerEl
+  class="text-white sticky top-0 z-50 transition-all duration-300 border-b border-white/10"
+  [class.header-scrolled]="isScrolled()"
+  [style.background]="'rgba(12, 28, 45, 0.7)'"
+  [style.backdrop-filter]="'blur(12px)'">
   <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="flex items-center justify-between h-20">
+    <div class="header-inner flex items-center justify-between h-20 transition-all duration-300">
       <!-- Logo -->
-      <div class="flex-shrink-0">
-        <a href="/" class="flex items-center space-x-3">
-          <img src="/logo.png" alt="創電工業ロゴ" class="h-12 w-auto" />
-          <span class="text-xl font-bold tracking-wider" style="font-family: 'Yuji Syuku', serif;">創電工業</span>
+      <div class="flex-shrink-0 header-logo">
+        <a href="/" class="logo-container flex items-center space-x-3 group">
+          <div class="relative h-12 w-12 flex items-center justify-center bg-white/90 rounded-lg p-1 shadow-lg group-hover:shadow-[#d4a876]/30 transition-shadow duration-300">
+            <img src="/logo.png" alt="創電工業ロゴ" class="logo-img h-10 w-auto" />
+          </div>
+          <div class="flex flex-col">
+            <span class="text-xl font-bold tracking-wider bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent" style="font-family: 'Yuji Syuku', serif;">創電工業</span>
+            <span class="text-[10px] text-[#d4a876] tracking-widest uppercase">Soden Industry</span>
+          </div>
         </a>
       </div>
 
@@ -13,13 +22,13 @@
       <nav class="hidden lg:flex items-center space-x-8">
         <ul class="flex items-center space-x-6">
           @for (link of navLinks; track link.label) {
-            <li class="relative group">
-              <a href="{{ link.href }}" class="text-sm font-semibold tracking-wider uppercase transition duration-300 hover:text-[#d4a876]">{{ link.label }}</a>
+            <li class="nav-item relative group">
+              <a href="{{ link.href }}" class="nav-link text-sm font-semibold tracking-wider uppercase transition duration-300 hover:text-[#d4a876]">{{ link.label }}</a>
               @if (link.dropdown) {
-                <ul class="absolute left-0 mt-2 w-48 bg-white text-black shadow-lg rounded-md py-1 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none group-hover:pointer-events-auto">
+                <ul class="glass-dropdown absolute left-0 mt-4 w-52 text-gray-800 shadow-2xl rounded-xl py-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible group-hover:mt-2 transition-all duration-300 pointer-events-none group-hover:pointer-events-auto">
                   @for (item of link.dropdown; track item.label) {
                     <li>
-                      <a href="{{ item.href }}" class="block px-4 py-2 text-sm hover:bg-gray-100">{{ item.label }}</a>
+                      <a href="{{ item.href }}" class="block px-5 py-3 text-sm hover:bg-gradient-to-r hover:from-[#d4a876]/10 hover:to-transparent hover:text-[#d4a876] transition-all duration-200">{{ item.label }}</a>
                     </li>
                   }
                 </ul>
@@ -27,17 +36,17 @@
             </li>
           }
         </ul>
-        <a href="#" class="bg-[#d4a876] text-[#0c1c2d] px-6 py-2 rounded-full text-sm font-bold uppercase tracking-wider hover:bg-[#ff8c42] transition duration-300">
+        <a href="#contact" class="header-cta contact-btn bg-gradient-to-r from-[#d4a876] to-[#e8c4a0] text-[#0c1c2d] px-6 py-2.5 rounded-full text-sm font-bold uppercase tracking-wider hover:from-[#ff8c42] hover:to-[#ffaa66] hover:shadow-lg hover:shadow-[#d4a876]/30 transition-all duration-300 transform hover:scale-105">
           お問い合わせ
         </a>
-        <div class="relative">
-          <button (click)="toggleContactMenu()" class="border border-white px-6 py-2 rounded-full text-sm font-bold uppercase tracking-wider hover:bg-white hover:text-[#0c1c2d] transition duration-300">
+        <div class="relative header-cta">
+          <button (click)="toggleContactMenu()" class="contact-btn border-2 border-white/50 px-6 py-2 rounded-full text-sm font-bold uppercase tracking-wider hover:bg-white hover:text-[#0c1c2d] hover:border-white transition-all duration-300 hover:shadow-lg">
             Contact
           </button>
            @if (isContactMenuOpen()) {
-            <ul class="absolute right-0 mt-2 w-48 bg-white text-black shadow-lg rounded-md py-1">
-              <li><a href="#" class="block px-4 py-2 text-sm hover:bg-gray-100">工事のご依頼</a></li>
-              <li><a href="#" class="block px-4 py-2 text-sm hover:bg-gray-100">採用について</a></li>
+            <ul class="glass-dropdown absolute right-0 mt-4 w-52 text-gray-800 shadow-2xl rounded-xl py-2">
+              <li><a href="#" class="block px-5 py-3 text-sm hover:bg-gradient-to-r hover:from-[#d4a876]/10 hover:to-transparent hover:text-[#d4a876] transition-all duration-200">工事のご依頼</a></li>
+              <li><a href="#" class="block px-5 py-3 text-sm hover:bg-gradient-to-r hover:from-[#d4a876]/10 hover:to-transparent hover:text-[#d4a876] transition-all duration-200">採用について</a></li>
             </ul>
           }
         </div>
