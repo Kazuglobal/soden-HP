@@ -1,39 +1,82 @@
-<footer class="bg-[#0c1c2d] text-white pt-16 pb-8">
+<footer class="bg-[#0c1c2d] text-white pt-16 pb-8 relative">
+  <!-- Top Gradient Border -->
+  <div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-[#d4a876] to-transparent"></div>
+
   <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-8">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+
       <!-- Company Info -->
-      <div class="md:col-span-3 lg:col-span-1">
-        <a href="/" class="flex items-center space-x-2 mb-4">
-          <svg class="h-8 w-auto text-[#d4a876]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-              d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2h10a2 2 0 002-2v-1a2 2 0 012-2h1.945M7.737 16.525l1.414-1.414M14.828 15.11l1.414 1.414M12 21.5V17.5M12 6.5V2.5m0 4a3 3 0 100-6 3 3 0 000 6zM3.75 9.5a3 3 0 100-6 3 3 0 000 6zM20.25 9.5a3 3 0 100-6 3 3 0 000 6z" />
-          </svg>
-          <span class="text-xl font-bold tracking-wider">創電工業</span>
+      <div appGsapAnimate
+        [animation]="'fadeUp'"
+        [duration]="0.6"
+        [distance]="30"
+        [threshold]="0.2"
+        class="lg:col-span-2">
+        <a href="/" class="logo-container flex items-center space-x-4 group mb-6">
+          <div class="relative h-14 w-14 flex items-center justify-center bg-white/90 rounded-lg p-1.5 shadow-lg group-hover:shadow-[#d4a876]/30 transition-shadow duration-300">
+            <img src="/logo.png" alt="創電工業ロゴ" class="logo-img h-11 w-auto" />
+          </div>
+          <div class="flex flex-col">
+            <span class="text-2xl font-bold tracking-wider bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent" style="font-family: 'Yuji Syuku', serif;">創電工業</span>
+            <span class="text-xs text-[#d4a876] tracking-widest uppercase">Soden Industry</span>
+          </div>
         </a>
-        <p class="text-sm text-gray-300">株式会社創電工業</p>
-        <p class="text-sm text-gray-300 mt-1">〒031-0833 青森県八戸市大字大久保字小久保平19-7</p>
+
+        <div class="space-y-2 text-gray-300">
+          <p class="font-semibold text-white">株式会社創電工業</p>
+          <p class="text-sm flex items-start">
+            <svg class="w-4 h-4 mr-2 mt-0.5 text-[#d4a876] flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+            </svg>
+            〒031-0833 青森県八戸市大字大久保字小久保平19-7
+          </p>
+          <p class="text-sm flex items-center">
+            <svg class="w-4 h-4 mr-2 text-[#d4a876] flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+            </svg>
+            <a href="tel:0178252172" class="hover:text-[#d4a876] transition-colors">0178-25-2172</a>
+          </p>
+        </div>
       </div>
 
       <!-- Navigation Links -->
-      <div class="md:col-span-1">
-        <h4 class="font-bold text-gray-200 mb-3">Navigation</h4>
-        <ul>
+      <div appGsapAnimate
+        [animation]="'fadeUp'"
+        [duration]="0.6"
+        [delay]="0.15"
+        [distance]="30"
+        [threshold]="0.2">
+        <h4 class="font-bold text-white mb-4 flex items-center">
+          <span class="w-1 h-5 bg-gradient-to-b from-[#d4a876] to-[#ff8c42] mr-2 rounded-full"></span>
+          Navigation
+        </h4>
+        <ul class="space-y-3">
           @for (link of navLinks1; track link.label) {
-          <li class="mb-2">
+          <li>
             <a href="{{ link.href }}"
-              class="text-gray-300 hover:text-[#d4a876] transition-colors duration-300 text-sm">{{ link.label }}</a>
+              class="footer-link text-gray-300 hover:text-[#d4a876] transition-colors duration-300 text-sm">{{ link.label }}</a>
           </li>
           }
         </ul>
       </div>
 
-      <div class="md:col-span-1">
-        <h4 class="font-bold text-gray-200 mb-3">Resources</h4>
-        <ul>
+      <!-- Resources Links -->
+      <div appGsapAnimate
+        [animation]="'fadeUp'"
+        [duration]="0.6"
+        [delay]="0.3"
+        [distance]="30"
+        [threshold]="0.2">
+        <h4 class="font-bold text-white mb-4 flex items-center">
+          <span class="w-1 h-5 bg-gradient-to-b from-[#d4a876] to-[#ff8c42] mr-2 rounded-full"></span>
+          Resources
+        </h4>
+        <ul class="space-y-3">
           @for (link of navLinks2; track link.label) {
-          <li class="mb-2">
+          <li>
             <a href="{{ link.href }}"
-              class="text-gray-300 hover:text-[#d4a876] transition-colors duration-300 text-sm">{{ link.label }}</a>
+              class="footer-link text-gray-300 hover:text-[#d4a876] transition-colors duration-300 text-sm">{{ link.label }}</a>
           </li>
           }
         </ul>
@@ -41,8 +84,15 @@
 
     </div>
 
-    <div class="mt-12 border-t border-gray-700 pt-6 text-center text-xs text-gray-400">
-      <p>&copy;2026 株式会社創電工業.</p>
+    <!-- Bottom Section -->
+    <div class="mt-12 pt-8 border-t border-gray-700/50">
+      <div class="flex flex-col md:flex-row justify-between items-center gap-4">
+        <p class="text-sm text-gray-400">&copy; 2026 株式会社創電工業. All Rights Reserved.</p>
+        <div class="flex items-center space-x-4">
+          <span class="text-xs text-gray-500 uppercase tracking-wider">Powering the Future</span>
+          <div class="w-8 h-px bg-gradient-to-r from-[#d4a876] to-transparent"></div>
+        </div>
+      </div>
     </div>
   </div>
 </footer>
