@@ -11,6 +11,9 @@ import { ScrollAnimateDirective } from '../../directives/scroll-animate.directiv
   imports: [CommonModule, GsapSplitTextDirective, ScrollAnimateDirective]
 })
 export class HeroComponent {
+  // Particles for floating effect
+  particles = Array.from({ length: 20 }, (_, i) => i);
+
   sliders = [
     { type: 'left', images: this.generateImageUrls(7, 400, 300) },
     { type: 'right', images: this.generateImageUrls(7, 300, 400) },
