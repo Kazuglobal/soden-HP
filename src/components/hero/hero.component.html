@@ -1,42 +1,97 @@
-<section class="relative h-[80vh] min-h-[600px] w-full overflow-hidden bg-cover bg-center"
+<section class="relative h-screen min-h-[700px] w-full overflow-hidden bg-cover bg-center"
   style="background-image: url('https://picsum.photos/1920/1080?random=1');">
-  <div class="absolute inset-0 bg-[#0c1c2d] bg-opacity-70"></div>
 
-  <div class="absolute inset-0 flex flex-col items-center justify-center text-center text-white p-4 z-10">
-    <h2 class="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-wider leading-tight uppercase" style="font-family: 'Yuji Syuku', serif;">
-      <span appGsapSplitText
-        [splitType]="'chars'"
-        [delay]="80"
-        [duration]="0.6"
-        [ease]="'power3.out'"
-        [from]="{ opacity: 0, y: 40 }"
-        [to]="{ opacity: 1, y: 0 }"
-        [threshold]="0.1"
-        class="block">未来を灯す、</span>
-      <span appGsapSplitText
-        [splitType]="'chars'"
-        [delay]="80"
-        [duration]="0.6"
-        [ease]="'power3.out'"
-        [from]="{ opacity: 0, y: 40 }"
-        [to]="{ opacity: 1, y: 0 }"
-        [threshold]="0.1"
-        class="block mt-2">確かな技術力</span>
-    </h2>
-    <p appScrollAnimate animationClass="animate-fade-in" class="mt-4 max-w-2xl text-lg md:text-xl font-light">
-      創電工業は、安全と信頼を第一に、電気設備工事を通じて社会基盤を支えます。
-    </p>
+  <!-- Enhanced Gradient Overlay -->
+  <div class="absolute inset-0 hero-overlay"></div>
+
+  <!-- Animated Particles -->
+  <div class="absolute inset-0 z-5 overflow-hidden pointer-events-none">
+    @for(i of particles; track i) {
+      <div class="particle"
+           [style.left.%]="i * 5"
+           [style.animationDelay.s]="i * 0.8"
+           [style.animationDuration.s]="12 + (i % 5) * 2">
+      </div>
+    }
   </div>
 
-  <!-- Image Sliders -->
+  <!-- Decorative Elements -->
+  <div class="absolute top-20 left-10 w-32 h-32 border border-[#d4a876]/20 rounded-full animate-float hidden lg:block"></div>
+  <div class="absolute bottom-40 right-20 w-24 h-24 border border-[#ff8c42]/20 rounded-full animate-float hidden lg:block" style="animation-delay: 2s;"></div>
+  <div class="absolute top-1/3 right-1/4 w-2 h-2 bg-[#d4a876] rounded-full animate-glow hidden md:block"></div>
+
+  <!-- Main Content -->
+  <div class="absolute inset-0 flex flex-col items-center justify-center text-center text-white p-4 z-10">
+    <!-- Badge -->
+    <div appScrollAnimate animationClass="animate-fade-in" class="mb-6 opacity-0">
+      <span class="inline-block px-6 py-2 border border-[#d4a876]/50 rounded-full text-sm tracking-widest text-[#d4a876] uppercase backdrop-blur-sm">
+        Since 1985
+      </span>
+    </div>
+
+    <!-- Main Heading with Animated Gradient -->
+    <h1 class="text-4xl md:text-6xl lg:text-7xl font-extrabold tracking-wider leading-tight" style="font-family: 'Yuji Syuku', serif;">
+      <span appGsapSplitText
+        [splitType]="'chars'"
+        [delay]="80"
+        [duration]="0.6"
+        [ease]="'power3.out'"
+        [from]="{ opacity: 0, y: 60, rotateX: 90 }"
+        [to]="{ opacity: 1, y: 0, rotateX: 0 }"
+        [threshold]="0.1"
+        class="block gradient-text-animated">未来を灯す、</span>
+      <span appGsapSplitText
+        [splitType]="'chars'"
+        [delay]="80"
+        [duration]="0.6"
+        [ease]="'power3.out'"
+        [from]="{ opacity: 0, y: 60, rotateX: 90 }"
+        [to]="{ opacity: 1, y: 0, rotateX: 0 }"
+        [threshold]="0.1"
+        class="block mt-2 text-white">確かな技術力</span>
+    </h1>
+
+    <!-- Decorative Line -->
+    <div appScrollAnimate animationClass="animate-fade-in" class="my-8 opacity-0">
+      <div class="w-24 h-1 bg-gradient-to-r from-transparent via-[#d4a876] to-transparent mx-auto"></div>
+    </div>
+
+    <!-- Subtitle -->
+    <p appScrollAnimate animationClass="animate-fade-in" class="max-w-2xl text-lg md:text-xl lg:text-2xl font-light text-gray-200 leading-relaxed opacity-0">
+      創電工業は、安全と信頼を第一に、<br class="hidden sm:inline">
+      電気設備工事を通じて社会基盤を支えます。
+    </p>
+
+    <!-- CTA Buttons -->
+    <div appScrollAnimate animationClass="animate-fade-up" class="flex flex-col sm:flex-row gap-4 mt-10 opacity-0">
+      <a href="#contact" class="btn-shine inline-block bg-gradient-to-r from-[#d4a876] to-[#e8c4a0] text-[#0c1c2d] px-10 py-4 rounded-full text-base font-bold uppercase tracking-wider hover:shadow-lg hover:shadow-[#d4a876]/30 hover:scale-105 transition-all duration-300">
+        お問い合わせ
+      </a>
+      <a href="#services" class="inline-block border-2 border-white/70 backdrop-blur-sm text-white px-10 py-4 rounded-full text-base font-bold uppercase tracking-wider hover:bg-white hover:text-[#0c1c2d] transition-all duration-300">
+        サービス一覧
+      </a>
+    </div>
+  </div>
+
+  <!-- Scroll Indicator -->
+  <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-20 animate-scroll-bounce">
+    <a href="#news" class="flex flex-col items-center text-white/70 hover:text-white transition-colors duration-300">
+      <span class="text-xs tracking-widest uppercase mb-2">Scroll</span>
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+      </svg>
+    </a>
+  </div>
+
+  <!-- Image Sliders (Background) -->
   <div class="absolute inset-0 z-0">
     @for(slider of sliders; track $index; let i = $index) {
-    <div class="absolute w-full" [style.top]="(i * 15) + '%'" [style.opacity]="0.2 - (i * 0.02)">
+    <div class="absolute w-full" [style.top]="(i * 15) + '%'" [style.opacity]="0.15 - (i * 0.02)">
       <div class="flex" [class.animate-scroll-left]="slider.type === 'left'"
         [class.animate-scroll-right]="slider.type === 'right'">
         @for(image of slider.images; track $index) {
         <div class="flex-shrink-0 w-1/4 sm:w-1/5 md:w-1/6 lg:w-1/7 px-2">
-          <img [src]="image" alt="施工事例" class="w-full h-auto object-cover rounded-lg shadow-lg">
+          <img [src]="image" alt="施工事例" class="w-full h-auto object-cover rounded-lg shadow-lg opacity-60">
         </div>
         }
       </div>

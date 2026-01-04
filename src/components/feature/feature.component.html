@@ -1,6 +1,14 @@
-<section class="py-16 sm:py-24 bg-white">
-  <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="text-center mb-12">
+<section class="py-16 sm:py-24 bg-white relative overflow-hidden">
+  <!-- Background Decoration -->
+  <div class="absolute top-0 right-0 w-96 h-96 bg-gradient-to-bl from-[#d4a876]/5 to-transparent rounded-full blur-3xl"></div>
+  <div class="absolute bottom-0 left-0 w-80 h-80 bg-gradient-to-tr from-[#0c1c2d]/5 to-transparent rounded-full blur-3xl"></div>
+
+  <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+    <!-- Header with enhanced styling -->
+    <div class="text-center mb-16">
+      <span class="inline-block px-4 py-1 bg-[#d4a876]/10 text-[#d4a876] rounded-full text-sm font-semibold tracking-wider uppercase mb-4">
+        Our Strengths
+      </span>
       <h2 appGsapSplitText
         [splitType]="'chars'"
         [delay]="50"
@@ -12,6 +20,7 @@
         class="text-4xl sm:text-5xl font-extrabold text-[#0c1c2d] tracking-wider" style="font-family: 'Yuji Syuku', serif;">
         創電工業の強み
       </h2>
+      <div class="w-24 h-1 bg-gradient-to-r from-transparent via-[#d4a876] to-transparent mx-auto mt-6 mb-4"></div>
       <p appGsapAnimate
         [animation]="'fadeUp'"
         [duration]="0.6"
@@ -29,6 +38,7 @@
       </p>
     </div>
 
+    <!-- Enhanced Card Grid -->
     <div appGsapAnimate
       [animation]="'scaleIn'"
       [stagger]="0.12"
@@ -36,30 +46,57 @@
       [scale]="0.85"
       [threshold]="0.1"
       class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-      @for (feature of features; track feature.title) {
-        <div class="bg-gray-50 rounded-lg shadow-lg overflow-hidden group hover:shadow-2xl transition-shadow duration-300">
-          <div class="relative">
-            <img [src]="feature.image" [alt]="feature.alt" class="w-full h-56 object-cover">
-            <div class="absolute top-4 left-4 bg-[#d4a876] text-white px-3 py-1 rounded-full text-sm font-bold">
-              Feature.{{ feature.number }}
+      @for (feature of features; track feature.title; let i = $index) {
+        <div class="card-3d bg-white rounded-2xl shadow-lg overflow-hidden group border border-gray-100 hover:border-[#d4a876]/30">
+          <!-- Image Section with Overlay -->
+          <div class="relative overflow-hidden">
+            <img [src]="feature.image" [alt]="feature.alt" class="w-full h-56 object-cover transform group-hover:scale-110 transition-transform duration-700 ease-out">
+            <!-- Gradient Overlay -->
+            <div class="absolute inset-0 bg-gradient-to-t from-[#0c1c2d]/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+            <!-- Feature Number Badge -->
+            <div class="absolute top-4 left-4 bg-gradient-to-r from-[#d4a876] to-[#e8c4a0] text-[#0c1c2d] px-4 py-2 rounded-full text-sm font-bold shadow-lg transform group-hover:scale-110 transition-transform duration-300">
+              <span class="flex items-center gap-2">
+                <span class="w-2 h-2 bg-[#0c1c2d] rounded-full"></span>
+                Feature.{{ feature.number }}
+              </span>
+            </div>
+            <!-- Icon on Hover -->
+            <div class="absolute bottom-4 right-4 w-12 h-12 bg-white/90 rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-500 shadow-lg">
+              <svg class="w-6 h-6 text-[#d4a876]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+              </svg>
             </div>
           </div>
-          <div class="p-6">
-            <h3 class="text-xl font-bold text-[#0c1c2d] h-16">{{ feature.title }}</h3>
-            <p class="mt-4 text-gray-600 leading-relaxed h-32">{{ feature.description }}</p>
+          <!-- Content Section -->
+          <div class="p-6 relative">
+            <!-- Decorative Line -->
+            <div class="absolute top-0 left-6 right-6 h-0.5 bg-gradient-to-r from-[#d4a876]/50 via-[#ff8c42]/50 to-transparent transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"></div>
+            <h3 class="text-xl font-bold text-[#0c1c2d] mt-2 mb-4 group-hover:text-[#d4a876] transition-colors duration-300">{{ feature.title }}</h3>
+            <p class="text-gray-600 leading-relaxed text-sm">{{ feature.description }}</p>
+            <!-- Read More Link -->
+            <div class="mt-6 flex items-center text-[#d4a876] font-semibold text-sm opacity-0 group-hover:opacity-100 transform translate-y-2 group-hover:translate-y-0 transition-all duration-300">
+              <span>詳しく見る</span>
+              <svg class="w-4 h-4 ml-2 transform group-hover:translate-x-2 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+              </svg>
+            </div>
           </div>
         </div>
       }
     </div>
 
+    <!-- Enhanced CTA Button -->
     <div appGsapAnimate
       [animation]="'fadeUp'"
       [duration]="0.5"
       [distance]="30"
       [threshold]="0.3"
-      class="text-center mt-12">
-      <a href="#" class="inline-block bg-[#0c1c2d] text-white px-10 py-3 rounded-full text-base font-bold uppercase tracking-wider hover:bg-[#1a3a52] transition duration-300">
-        詳しく見る
+      class="text-center mt-16">
+      <a href="#" class="btn-shine inline-flex items-center gap-3 bg-gradient-to-r from-[#0c1c2d] to-[#1a3a52] text-white px-10 py-4 rounded-full text-base font-bold uppercase tracking-wider hover:shadow-xl hover:shadow-[#0c1c2d]/30 hover:scale-105 transition-all duration-300">
+        <span>詳しく見る</span>
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+        </svg>
       </a>
     </div>
   </div>
