@@ -11,8 +11,8 @@
  * 7. そのURLをAngularのcontact.component.tsに設定
  */
 
-// 送信先メールアドレス（変更してください）
-const RECIPIENT_EMAIL = 'your-email@example.com';
+// 送信先メールアドレス
+const RECIPIENT_EMAIL = 'soudennkougyou@mpd.biglobe.ne.jp';
 
 // メール件名のプレフィックス
 const SUBJECT_PREFIX = '【お問い合わせ】';
