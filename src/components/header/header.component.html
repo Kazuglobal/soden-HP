@@ -36,11 +36,20 @@
             </li>
           }
         </ul>
-        <a href="#contact" class="header-cta contact-btn bg-gradient-to-r from-[#d4a876] to-[#e8c4a0] text-[#0c1c2d] px-6 py-2.5 rounded-full text-sm font-bold uppercase tracking-wider hover:from-[#ff8c42] hover:to-[#ffaa66] hover:shadow-lg hover:shadow-[#d4a876]/30 transition-all duration-300 transform hover:scale-105">
+        <a appMagnetic
+          [magneticStrength]="0.15"
+          [magneticScale]="1.05"
+          [magneticGlow]="true"
+          href="#contact"
+          class="header-cta contact-btn bg-gradient-to-r from-[#d4a876] to-[#e8c4a0] text-[#0c1c2d] px-6 py-2.5 rounded-full text-sm font-bold uppercase tracking-wider hover:from-[#ff8c42] hover:to-[#ffaa66] hover:shadow-lg hover:shadow-[#d4a876]/30 transition-all duration-300">
           お問い合わせ
         </a>
         <div class="relative header-cta">
-          <button (click)="toggleContactMenu()" class="contact-btn border-2 border-white/50 px-6 py-2 rounded-full text-sm font-bold uppercase tracking-wider hover:bg-white hover:text-[#0c1c2d] hover:border-white transition-all duration-300 hover:shadow-lg">
+          <button appMagnetic
+            [magneticStrength]="0.12"
+            [magneticScale]="1.03"
+            (click)="toggleContactMenu()"
+            class="contact-btn border-2 border-white/50 px-6 py-2 rounded-full text-sm font-bold uppercase tracking-wider hover:bg-white hover:text-[#0c1c2d] hover:border-white transition-all duration-300 hover:shadow-lg">
             Contact
           </button>
            @if (isContactMenuOpen()) {

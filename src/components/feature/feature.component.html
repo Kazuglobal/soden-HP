@@ -36,17 +36,38 @@
       [scale]="0.85"
       [threshold]="0.1"
       class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-      @for (feature of features; track feature.title) {
-        <div class="bg-gray-50 rounded-lg shadow-lg overflow-hidden group hover:shadow-2xl transition-shadow duration-300">
-          <div class="relative">
-            <img [src]="feature.image" [alt]="feature.alt" class="w-full h-56 object-cover">
-            <div class="absolute top-4 left-4 bg-[#d4a876] text-white px-3 py-1 rounded-full text-sm font-bold">
-              Feature.{{ feature.number }}
+      @for (feature of features; track feature.title; let i = $index) {
+        <div appTilt3D
+          [tiltMaxX]="10"
+          [tiltMaxY]="10"
+          [tiltGlare]="true"
+          [tiltGlareOpacity]="0.1"
+          appHoverLift
+          [liftDistance]="-12"
+          class="bg-white rounded-2xl shadow-xl overflow-hidden group cursor-pointer border border-gray-100"
+          data-cursor="Explore">
+          <div class="relative" appHoverZoom [zoomScale]="1.08" [zoomDuration]="0.6">
+            <div appMaskReveal
+              [revealDirection]="i % 2 === 0 ? 'left' : 'right'"
+              [revealDuration]="1"
+              [revealColor]="'#d4a876'">
+              <img [src]="feature.image" [alt]="feature.alt" class="w-full h-56 object-cover">
+            </div>
+            <div class="absolute top-4 left-4 bg-gradient-to-r from-[#d4a876] to-[#e8c4a0] text-white px-4 py-1.5 rounded-full text-sm font-bold shadow-lg backdrop-blur-sm">
+              <span class="mr-1">Feature.</span>
+              <span appCountUp [countTo]="parseInt(feature.number)" [countDuration]="1.5" [countDecimals]="0">{{ feature.number }}</span>
             </div>
           </div>
-          <div class="p-6">
-            <h3 class="text-xl font-bold text-[#0c1c2d] h-16">{{ feature.title }}</h3>
-            <p class="mt-4 text-gray-600 leading-relaxed h-32">{{ feature.description }}</p>
+          <div class="p-8 relative">
+            <div class="absolute top-0 left-8 w-12 h-1 bg-gradient-to-r from-[#d4a876] to-transparent transform -translate-y-1/2"></div>
+            <h3 class="text-xl font-bold text-[#0c1c2d] min-h-[4rem] group-hover:text-[#d4a876] transition-colors duration-300">{{ feature.title }}</h3>
+            <p class="mt-4 text-gray-600 leading-relaxed min-h-[8rem] text-sm">{{ feature.description }}</p>
+            <div class="mt-4 flex items-center text-[#d4a876] font-semibold opacity-0 group-hover:opacity-100 transform translate-x-[-10px] group-hover:translate-x-0 transition-all duration-300">
+              <span>Learn more</span>
+              <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+              </svg>
+            </div>
           </div>
         </div>
       }
@@ -57,9 +78,17 @@
       [duration]="0.5"
       [distance]="30"
       [threshold]="0.3"
-      class="text-center mt-12">
-      <a href="#" class="inline-block bg-[#0c1c2d] text-white px-10 py-3 rounded-full text-base font-bold uppercase tracking-wider hover:bg-[#1a3a52] transition duration-300">
-        詳しく見る
+      class="text-center mt-16">
+      <a appMagnetic
+        [magneticStrength]="0.25"
+        [magneticScale]="1.08"
+        href="#"
+        class="group inline-flex items-center gap-3 bg-gradient-to-r from-[#0c1c2d] to-[#1a3a52] text-white px-12 py-4 rounded-full text-base font-bold uppercase tracking-wider transition-all duration-300 hover:shadow-2xl hover:shadow-[#0c1c2d]/30"
+        data-cursor="Click">
+        <span>詳しく見る</span>
+        <svg class="w-5 h-5 transform group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+        </svg>
       </a>
     </div>
   </div>

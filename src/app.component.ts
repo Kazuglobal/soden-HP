@@ -11,6 +11,7 @@ import { CompanyComponent } from './components/company/company.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { RecruitComponent } from './components/recruit/recruit.component';
+import { CustomCursorComponent } from './components/custom-cursor/custom-cursor.component';
 
 @Component({
   selector: 'app-root',
@@ -28,7 +29,8 @@ import { RecruitComponent } from './components/recruit/recruit.component';
     CompanyComponent,
     RecruitComponent,
     ContactComponent,
-    FooterComponent
+    FooterComponent,
+    CustomCursorComponent
   ]
 })
 export class AppComponent { }

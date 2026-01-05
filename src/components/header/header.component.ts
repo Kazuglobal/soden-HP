@@ -1,6 +1,7 @@
 import { Component, ChangeDetectionStrategy, signal, HostListener, AfterViewInit, Inject, PLATFORM_ID, ElementRef, ViewChild } from '@angular/core';
 import { CommonModule, isPlatformBrowser } from '@angular/common';
 import { gsap } from 'gsap';
+import { MagneticDirective } from '../../directives/magnetic.directive';
 
 interface NavLink {
   label: string;
@@ -13,7 +14,7 @@ interface NavLink {
   templateUrl: './header.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, MagneticDirective],
   styles: [`
     :host {
       display: block;

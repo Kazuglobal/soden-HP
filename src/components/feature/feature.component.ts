@@ -1,15 +1,33 @@
 import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { GsapSplitTextDirective } from '../../directives/gsap-split-text.directive';
 import { GsapScrollAnimateDirective } from '../../directives/gsap-scroll-animate.directive';
+import { Tilt3DDirective } from '../../directives/tilt-3d.directive';
+import { MagneticDirective } from '../../directives/magnetic.directive';
+import { HoverZoomDirective, HoverLiftDirective } from '../../directives/hover-effects.directive';
+import { MaskRevealDirective } from '../../directives/mask-reveal.directive';
+import { CountUpDirective } from '../../directives/count-up.directive';
+import { ParallaxDirective } from '../../directives/parallax.directive';
 
 @Component({
   selector: 'app-feature',
   templateUrl: './feature.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
   standalone: true,
-  imports: [GsapSplitTextDirective, GsapScrollAnimateDirective]
+  imports: [
+    GsapSplitTextDirective,
+    GsapScrollAnimateDirective,
+    Tilt3DDirective,
+    MagneticDirective,
+    HoverZoomDirective,
+    HoverLiftDirective,
+    MaskRevealDirective,
+    CountUpDirective,
+    ParallaxDirective
+  ]
 })
 export class FeatureComponent {
+  parseInt = parseInt;
+
   features = [
     {
       image: 'https://picsum.photos/400/300?random=20',
