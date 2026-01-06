@@ -1,0 +1,169 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 500" fill="none">
+  <defs>
+    <linearGradient id="bgSafety" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#fffbeb"/>
+      <stop offset="100%" style="stop-color:#fef3c7"/>
+    </linearGradient>
+
+    <linearGradient id="blueUniform" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#3b82f6"/>
+      <stop offset="100%" style="stop-color:#2563eb"/>
+    </linearGradient>
+
+    <linearGradient id="blueLight" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#93c5fd"/>
+      <stop offset="100%" style="stop-color:#60a5fa"/>
+    </linearGradient>
+
+    <linearGradient id="helmetYellow" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#fcd34d"/>
+      <stop offset="100%" style="stop-color:#f59e0b"/>
+    </linearGradient>
+
+    <linearGradient id="shieldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#60a5fa"/>
+      <stop offset="100%" style="stop-color:#2563eb"/>
+    </linearGradient>
+
+    <filter id="glowSafety" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <filter id="shadowSafety" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="3" dy="5" stdDeviation="4" flood-color="#92400e" flood-opacity="0.1"/>
+    </filter>
+  </defs>
+
+  <!-- 背景 -->
+  <rect width="400" height="500" rx="20" fill="url(#bgSafety)"/>
+
+  <!-- 安全シールドマーク（背景装飾） -->
+  <g transform="translate(280, 50)" opacity="0.15">
+    <path d="M30,0 L60,15 L60,45 Q60,70 30,85 Q0,70 0,45 L0,15 Z" fill="#f59e0b"/>
+    <path d="M30,10 L25,35 L35,35 L30,60 L45,30 L35,30 L40,10 Z" fill="#fbbf24"/>
+  </g>
+
+  <!-- 安全チェックリスト（アイソメトリック） -->
+  <g transform="translate(40, 80)" filter="url(#shadowSafety)">
+    <!-- クリップボード -->
+    <rect x="0" y="20" width="100" height="130" rx="5" fill="#f3f4f6"/>
+    <rect x="35" y="5" width="30" height="25" rx="3" fill="#9ca3af"/>
+    <rect x="10" y="40" width="80" height="100" rx="3" fill="white"/>
+
+    <!-- チェック項目 -->
+    <g transform="translate(20, 50)">
+      <!-- チェック済み項目 -->
+      <rect x="0" y="0" width="12" height="12" rx="2" fill="#22c55e"/>
+      <polyline points="2,6 5,10 10,2" stroke="white" stroke-width="2" fill="none"/>
+      <line x1="18" y1="6" x2="55" y2="6" stroke="#6b7280" stroke-width="2"/>
+
+      <rect x="0" y="22" width="12" height="12" rx="2" fill="#22c55e"/>
+      <polyline points="2,6 5,10 10,2" stroke="white" stroke-width="2" fill="none" transform="translate(0,22)"/>
+      <line x1="18" y1="28" x2="55" y2="28" stroke="#6b7280" stroke-width="2"/>
+
+      <rect x="0" y="44" width="12" height="12" rx="2" fill="#22c55e"/>
+      <polyline points="2,6 5,10 10,2" stroke="white" stroke-width="2" fill="none" transform="translate(0,44)"/>
+      <line x1="18" y1="50" x2="55" y2="50" stroke="#6b7280" stroke-width="2"/>
+
+      <rect x="0" y="66" width="12" height="12" rx="2" fill="#3b82f6"/>
+      <line x1="18" y1="72" x2="55" y2="72" stroke="#6b7280" stroke-width="2"/>
+    </g>
+  </g>
+
+  <!-- メイン：安全装備を着用した作業員 -->
+  <g transform="translate(150, 140)" filter="url(#shadowSafety)">
+    <!-- ヘルメット（大きく強調） -->
+    <ellipse cx="55" cy="30" rx="45" ry="35" fill="url(#helmetYellow)"/>
+    <ellipse cx="55" cy="42" rx="40" ry="18" fill="#f59e0b"/>
+    <path d="M15,42 Q55,65 95,42" stroke="#d97706" stroke-width="4" fill="none"/>
+    <!-- ヘルメットのライン -->
+    <path d="M55,0 L55,25" stroke="#fcd34d" stroke-width="6"/>
+    <!-- 安全マーク -->
+    <circle cx="55" cy="15" r="8" fill="white"/>
+    <polygon points="55,8 52,18 58,18" fill="#22c55e"/>
+
+    <!-- 顔（安全意識の高い表情） -->
+    <ellipse cx="55" cy="58" rx="22" ry="18" fill="#fcd9bd"/>
+    <!-- 目（集中した表情） -->
+    <ellipse cx="48" cy="55" rx="4" ry="4" fill="#1e3a5f"/>
+    <ellipse cx="62" cy="55" rx="4" ry="4" fill="#1e3a5f"/>
+    <circle cx="49" cy="54" r="1.5" fill="white"/>
+    <circle cx="63" cy="54" r="1.5" fill="white"/>
+    <!-- 眉 -->
+    <path d="M44,48 Q48,46 52,48" stroke="#6b7280" stroke-width="2" fill="none"/>
+    <path d="M58,48 Q62,46 66,48" stroke="#6b7280" stroke-width="2" fill="none"/>
+    <!-- 口（真剣） -->
+    <path d="M50,68 Q55,70 60,68" stroke="#c9826b" stroke-width="2" fill="none"/>
+
+    <!-- 体（作業着） -->
+    <rect x="25" y="80" width="60" height="85" rx="8" fill="url(#blueUniform)"/>
+
+    <!-- 反射ベスト（目立つように） -->
+    <rect x="25" y="90" width="60" height="8" fill="#fbbf24"/>
+    <rect x="25" y="120" width="60" height="8" fill="#fbbf24"/>
+    <!-- Xパターン -->
+    <line x1="30" y1="100" x2="80" y2="155" stroke="#fbbf24" stroke-width="6"/>
+    <line x1="80" y1="100" x2="30" y2="155" stroke="#fbbf24" stroke-width="6"/>
+
+    <!-- 腕 -->
+    <rect x="10" y="82" width="18" height="55" rx="6" fill="url(#blueLight)"/>
+    <rect x="82" y="82" width="18" height="55" rx="6" fill="url(#blueLight)"/>
+    <!-- 手袋 -->
+    <ellipse cx="19" cy="142" rx="10" ry="8" fill="#fbbf24"/>
+    <ellipse cx="91" cy="142" rx="10" ry="8" fill="#fbbf24"/>
+
+    <!-- 足 -->
+    <rect x="32" y="165" width="16" height="50" rx="5" fill="#374151"/>
+    <rect x="62" y="165" width="16" height="50" rx="5" fill="#374151"/>
+    <!-- 安全靴 -->
+    <ellipse cx="40" cy="220" rx="14" ry="8" fill="#1f2937"/>
+    <ellipse cx="70" cy="220" rx="14" ry="8" fill="#1f2937"/>
+    <!-- つま先の鋼板（安全靴の特徴） -->
+    <ellipse cx="40" cy="218" rx="8" ry="4" fill="#4b5563"/>
+    <ellipse cx="70" cy="218" rx="8" ry="4" fill="#4b5563"/>
+
+    <!-- 安全帯（ハーネス） -->
+    <path d="M25,105 L45,165 L65,165 L85,105" stroke="#374151" stroke-width="4" fill="none"/>
+    <rect x="50" y="100" width="10" height="12" rx="2" fill="#6b7280"/>
+  </g>
+
+  <!-- 安全アイコン群 -->
+  <!-- 保護メガネ -->
+  <g transform="translate(300, 180)" filter="url(#shadowSafety)">
+    <rect x="0" y="8" width="45" height="20" rx="10" fill="#bfdbfe"/>
+    <rect x="5" y="12" width="14" height="12" rx="4" fill="#dbeafe"/>
+    <rect x="26" y="12" width="14" height="12" rx="4" fill="#dbeafe"/>
+    <line x1="19" y1="18" x2="26" y2="18" stroke="#93c5fd" stroke-width="3"/>
+    <line x1="0" y1="18" x2="-8" y2="15" stroke="#93c5fd" stroke-width="2"/>
+    <line x1="45" y1="18" x2="53" y2="15" stroke="#93c5fd" stroke-width="2"/>
+  </g>
+
+  <!-- 安全シールド -->
+  <g transform="translate(290, 320)" filter="url(#glowSafety)">
+    <path d="M40,0 L80,20 L80,60 Q80,95 40,115 Q0,95 0,60 L0,20 Z" fill="url(#shieldGrad)"/>
+    <path d="M40,15 L65,30 L65,55 Q65,80 40,95 Q15,80 15,55 L15,30 Z" fill="#93c5fd"/>
+    <!-- チェックマーク -->
+    <polyline points="25,55 35,70 55,40" stroke="white" stroke-width="6" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+
+  <!-- 安全第一のテキストエリア風 -->
+  <g transform="translate(50, 400)">
+    <rect x="0" y="0" width="120" height="40" rx="20" fill="#fbbf24" opacity="0.3"/>
+    <rect x="5" y="5" width="110" height="30" rx="15" fill="#fbbf24" opacity="0.5"/>
+  </g>
+
+  <!-- 光のエフェクト -->
+  <g filter="url(#glowSafety)">
+    <circle cx="320" cy="280" r="4" fill="#fbbf24" opacity="0.8">
+      <animate attributeName="r" values="4;6;4" dur="2s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.8;0.4;0.8" dur="2s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="350" cy="300" r="3" fill="#60a5fa" opacity="0.7">
+      <animate attributeName="r" values="3;5;3" dur="1.5s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+</svg>

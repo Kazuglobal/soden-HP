@@ -1,6 +1,9 @@
-<section class="py-16 sm:py-24 bg-white">
+<section class="py-16 sm:py-24 bg-gradient-to-b from-white to-blue-50/30">
   <div class="container mx-auto px-4 sm:px-6 lg:px-8">
     <div class="text-center mb-12">
+      <span class="inline-block px-4 py-2 bg-blue-50 text-blue-600 rounded-full text-sm font-semibold tracking-wider border border-blue-100 mb-4">
+        OUR STRENGTHS
+      </span>
       <h2 appGsapSplitText
         [splitType]="'chars'"
         [delay]="50"
@@ -18,7 +21,7 @@
         [delay]="0.2"
         [distance]="20"
         [threshold]="0.2"
-        class="mt-2 text-lg text-gray-600">お客様の信頼に応える、3つの強み</p>
+        class="mt-2 text-lg text-gray-600">お客様の信頼に応える、<span class="text-blue-600 font-semibold">3つの強み</span></p>
       <p appGsapAnimate
         [animation]="'fadeIn'"
         [duration]="0.8"
@@ -38,32 +41,32 @@
       class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
       @for (feature of features; track feature.title; let i = $index) {
         <div appTilt3D
-          [tiltMaxX]="10"
-          [tiltMaxY]="10"
+          [tiltMaxX]="8"
+          [tiltMaxY]="8"
           [tiltGlare]="true"
-          [tiltGlareOpacity]="0.1"
+          [tiltGlareOpacity]="0.08"
           appHoverLift
           [liftDistance]="-12"
-          class="bg-white rounded-2xl shadow-xl overflow-hidden group cursor-pointer border border-gray-100"
+          class="bg-white rounded-2xl shadow-xl overflow-hidden group cursor-pointer border border-gray-100 hover:border-blue-200 transition-colors duration-300"
           data-cursor="Explore">
-          <div class="relative" appHoverZoom [zoomScale]="1.08" [zoomDuration]="0.6">
+          <div class="relative bg-gradient-to-br from-blue-50 to-amber-50/30" appHoverZoom [zoomScale]="1.05" [zoomDuration]="0.6">
             <div appMaskReveal
               [revealDirection]="i % 2 === 0 ? 'left' : 'right'"
               [revealDuration]="1"
-              [revealColor]="'#d4a876'">
-              <img [src]="feature.image" [alt]="feature.alt" class="w-full h-56 object-cover">
+              [revealColor]="'#3b82f6'">
+              <img [src]="feature.image" [alt]="feature.alt" class="w-full h-64 object-contain p-4">
             </div>
-            <div class="absolute top-4 left-4 bg-gradient-to-r from-[#d4a876] to-[#e8c4a0] text-white px-4 py-1.5 rounded-full text-sm font-bold shadow-lg backdrop-blur-sm">
+            <div class="absolute top-4 left-4 bg-gradient-to-r from-blue-600 to-blue-700 text-white px-4 py-1.5 rounded-full text-sm font-bold shadow-lg shadow-blue-500/20">
               <span class="mr-1">Feature.</span>
               <span appCountUp [countTo]="parseInt(feature.number)" [countDuration]="1.5" [countDecimals]="0">{{ feature.number }}</span>
             </div>
           </div>
           <div class="p-8 relative">
-            <div class="absolute top-0 left-8 w-12 h-1 bg-gradient-to-r from-[#d4a876] to-transparent transform -translate-y-1/2"></div>
-            <h3 class="text-xl font-bold text-[#0c1c2d] min-h-[4rem] group-hover:text-[#d4a876] transition-colors duration-300">{{ feature.title }}</h3>
+            <div class="absolute top-0 left-8 w-12 h-1 bg-gradient-to-r from-blue-500 to-transparent transform -translate-y-1/2"></div>
+            <h3 class="text-xl font-bold text-[#0c1c2d] min-h-[4rem] group-hover:text-blue-600 transition-colors duration-300">{{ feature.title }}</h3>
             <p class="mt-4 text-gray-600 leading-relaxed min-h-[8rem] text-sm">{{ feature.description }}</p>
-            <div class="mt-4 flex items-center text-[#d4a876] font-semibold opacity-0 group-hover:opacity-100 transform translate-x-[-10px] group-hover:translate-x-0 transition-all duration-300">
-              <span>Learn more</span>
+            <div class="mt-4 flex items-center text-blue-600 font-semibold opacity-0 group-hover:opacity-100 transform translate-x-[-10px] group-hover:translate-x-0 transition-all duration-300">
+              <span>詳しく見る</span>
               <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
               </svg>
@@ -83,7 +86,7 @@
         [magneticStrength]="0.25"
         [magneticScale]="1.08"
         href="#"
-        class="group inline-flex items-center gap-3 bg-gradient-to-r from-[#0c1c2d] to-[#1a3a52] text-white px-12 py-4 rounded-full text-base font-bold uppercase tracking-wider transition-all duration-300 hover:shadow-2xl hover:shadow-[#0c1c2d]/30"
+        class="group inline-flex items-center gap-3 bg-gradient-to-r from-blue-600 to-blue-700 text-white px-12 py-4 rounded-full text-base font-bold uppercase tracking-wider transition-all duration-300 hover:shadow-2xl hover:shadow-blue-500/30"
         data-cursor="Click">
         <span>詳しく見る</span>
         <svg class="w-5 h-5 transform group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">

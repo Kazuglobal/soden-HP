@@ -1,69 +1,138 @@
-<section class="py-16 sm:py-24 bg-gray-50">
-  <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center max-w-3xl">
-    <h2 appGsapSplitText
-      [splitType]="'chars'"
-      [delay]="60"
-      [duration]="0.5"
-      [ease]="'power3.out'"
-      [from]="{ opacity: 0, y: 30 }"
-      [to]="{ opacity: 1, y: 0 }"
-      [threshold]="0.2"
-      class="text-4xl sm:text-5xl font-extrabold text-[#0c1c2d]" style="font-family: 'Yuji Syuku', serif;">創電工業について</h2>
-    <p appGsapSplitText
-      [splitType]="'chars'"
-      [delay]="50"
-      [duration]="0.5"
-      [ease]="'power2.out'"
-      [from]="{ opacity: 0, y: 20 }"
-      [to]="{ opacity: 1, y: 0 }"
-      [threshold]="0.2"
-      class="mt-4 text-2xl text-[#d4a876] font-semibold">技術で未来を創造する</p>
-    <div class="mt-8 space-y-4 text-base sm:text-lg text-gray-700 leading-relaxed">
-      <p appGsapSplitText
-        [splitType]="'words'"
-        [delay]="40"
-        [duration]="0.4"
-        [ease]="'power2.out'"
-        [from]="{ opacity: 0, y: 15 }"
-        [to]="{ opacity: 1, y: 0 }"
-        [threshold]="0.1">私たち創電工業は、創業以来、電気設備工事のプロフェッショナルとして、社会の発展に貢献してまいりました。</p>
-      <p appGsapSplitText
-        [splitType]="'words'"
-        [delay]="40"
-        [duration]="0.4"
-        [ease]="'power2.out'"
-        [from]="{ opacity: 0, y: 15 }"
-        [to]="{ opacity: 1, y: 0 }"
-        [threshold]="0.1">人々の生活や産業活動に不可欠な電気を、安全かつ安定的に供給すること。それが私たちの使命です。</p>
-      <p appGsapSplitText
-        [splitType]="'words'"
-        [delay]="40"
-        [duration]="0.4"
-        [ease]="'power2.out'"
-        [from]="{ opacity: 0, y: 15 }"
-        [to]="{ opacity: 1, y: 0 }"
-        [threshold]="0.1">確かな技術力と豊富な経験を基に、お客様一人ひとりのニーズに合わせた最適なソリューションを提供します。</p>
-      <p appGsapSplitText
-        [splitType]="'words'"
-        [delay]="40"
-        [duration]="0.4"
-        [ease]="'power2.out'"
-        [from]="{ opacity: 0, y: 15 }"
-        [to]="{ opacity: 1, y: 0 }"
-        [threshold]="0.1">これからも、技術革新に挑戦し続け、より良い社会の実現を目指してまいります。</p>
-      <p appGsapSplitText
-        [splitType]="'words'"
-        [delay]="40"
-        [duration]="0.4"
-        [ease]="'power2.out'"
-        [from]="{ opacity: 0, y: 15 }"
-        [to]="{ opacity: 1, y: 0 }"
-        [threshold]="0.1">電気のことなら、私たち創電工業にお任せください。</p>
-    </div>
-    <div class="text-center mt-12">
-      <a href="#" class="inline-block border-2 border-[#d4a876] text-[#d4a876] px-10 py-3 rounded-full text-base font-bold uppercase tracking-wider hover:bg-[#d4a876] hover:text-white transition duration-300">
-        会社案内へ
-      </a>
+<section class="py-16 sm:py-24 bg-gradient-to-br from-gray-50 to-blue-50/30 relative overflow-hidden">
+  <!-- 背景装飾 -->
+  <div class="absolute top-0 right-0 w-1/3 h-full opacity-5">
+    <svg viewBox="0 0 200 200" class="w-full h-full">
+      <defs>
+        <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+          <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#3b82f6" stroke-width="1"/>
+        </pattern>
+      </defs>
+      <rect width="100%" height="100%" fill="url(#grid)" />
+    </svg>
+  </div>
+
+  <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+    <div class="flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
+
+      <!-- 左側：アイソメトリックイラスト -->
+      <div class="flex-1 relative">
+        <div appScrollAnimate animationClass="animate-scale-in" class="relative">
+          <img
+            src="illustrations/hero-isometric.svg"
+            alt="電気設備工事 - インフラと暮らしを繋ぐ"
+            class="w-full max-w-lg mx-auto drop-shadow-xl"
+          >
+          <!-- 浮遊する装飾 -->
+          <div class="absolute top-0 right-0 w-12 h-12 bg-gradient-to-br from-amber-400 to-amber-500 rounded-xl shadow-lg animate-float flex items-center justify-center">
+            <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z"/>
+            </svg>
+          </div>
+        </div>
+      </div>
+
+      <!-- 右側：テキストコンテンツ -->
+      <div class="flex-1 max-w-xl">
+        <span class="inline-block px-4 py-2 bg-blue-50 text-blue-600 rounded-full text-sm font-semibold tracking-wider border border-blue-100 mb-4">
+          ABOUT US
+        </span>
+
+        <h2 appGsapSplitText
+          [splitType]="'chars'"
+          [delay]="60"
+          [duration]="0.5"
+          [ease]="'power3.out'"
+          [from]="{ opacity: 0, y: 30 }"
+          [to]="{ opacity: 1, y: 0 }"
+          [threshold]="0.2"
+          class="text-4xl sm:text-5xl font-extrabold text-[#0c1c2d]" style="font-family: 'Yuji Syuku', serif;">
+          創電工業について
+        </h2>
+
+        <p appGsapSplitText
+          [splitType]="'chars'"
+          [delay]="50"
+          [duration]="0.5"
+          [ease]="'power2.out'"
+          [from]="{ opacity: 0, y: 20 }"
+          [to]="{ opacity: 1, y: 0 }"
+          [threshold]="0.2"
+          class="mt-4 text-2xl text-blue-600 font-semibold">
+          技術で未来を創造する
+        </p>
+
+        <div class="mt-8 space-y-4 text-base sm:text-lg text-gray-700 leading-relaxed">
+          <p appGsapSplitText
+            [splitType]="'words'"
+            [delay]="40"
+            [duration]="0.4"
+            [ease]="'power2.out'"
+            [from]="{ opacity: 0, y: 15 }"
+            [to]="{ opacity: 1, y: 0 }"
+            [threshold]="0.1">
+            私たち創電工業は、創業以来、電気設備工事のプロフェッショナルとして、<span class="text-blue-600 font-semibold">社会の発展に貢献</span>してまいりました。
+          </p>
+          <p appGsapSplitText
+            [splitType]="'words'"
+            [delay]="40"
+            [duration]="0.4"
+            [ease]="'power2.out'"
+            [from]="{ opacity: 0, y: 15 }"
+            [to]="{ opacity: 1, y: 0 }"
+            [threshold]="0.1">
+            人々の生活や産業活動に不可欠な電気を、安全かつ安定的に供給すること。それが私たちの使命です。
+          </p>
+          <p appGsapSplitText
+            [splitType]="'words'"
+            [delay]="40"
+            [duration]="0.4"
+            [ease]="'power2.out'"
+            [from]="{ opacity: 0, y: 15 }"
+            [to]="{ opacity: 1, y: 0 }"
+            [threshold]="0.1">
+            確かな技術力と豊富な経験を基に、お客様一人ひとりのニーズに合わせた最適なソリューションを提供します。
+          </p>
+        </div>
+
+        <!-- キーメッセージカード -->
+        <div class="mt-8 grid grid-cols-2 gap-4">
+          <div class="bg-white p-4 rounded-xl shadow-md border border-gray-100">
+            <div class="flex items-center gap-3">
+              <div class="w-10 h-10 bg-blue-50 rounded-lg flex items-center justify-center">
+                <svg class="w-5 h-5 text-blue-600" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z" clip-rule="evenodd"/>
+                </svg>
+              </div>
+              <div>
+                <p class="text-sm text-gray-500">電気設備</p>
+                <p class="font-bold text-[#0c1c2d]">送電から配電まで</p>
+              </div>
+            </div>
+          </div>
+          <div class="bg-white p-4 rounded-xl shadow-md border border-gray-100">
+            <div class="flex items-center gap-3">
+              <div class="w-10 h-10 bg-amber-50 rounded-lg flex items-center justify-center">
+                <svg class="w-5 h-5 text-amber-500" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                </svg>
+              </div>
+              <div>
+                <p class="text-sm text-gray-500">安全第一</p>
+                <p class="font-bold text-[#0c1c2d]">徹底した安全管理</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-10">
+          <a href="#company" class="group inline-flex items-center px-8 py-4 bg-gradient-to-r from-blue-600 to-blue-700 text-white rounded-full font-bold shadow-lg shadow-blue-500/20 hover:shadow-xl hover:shadow-blue-500/30 transition-all duration-300 hover:-translate-y-1">
+            会社案内へ
+            <svg class="w-5 h-5 ml-2 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+            </svg>
+          </a>
+        </div>
+      </div>
     </div>
   </div>
 </section>
