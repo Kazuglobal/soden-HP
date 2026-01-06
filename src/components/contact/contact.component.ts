@@ -1,29 +1,26 @@
-import { Component, ChangeDetectionStrategy, inject } from '@angular/core';
+import { Component, ChangeDetectionStrategy, ChangeDetectorRef } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule, FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { GsapSplitTextDirective } from '../../directives/gsap-split-text.directive';
 import { GsapScrollAnimateDirective } from '../../directives/gsap-scroll-animate.directive';
 
-// GAS WebアプリURL（デプロイ後に設定してください）
-const GAS_URL = 'YOUR_GAS_WEB_APP_URL';
+// GAS WebアプリURL
+const GAS_URL = 'https://script.google.com/macros/s/AKfycbw0w3YPyax4YpYvUs8uiDPLEoUb6hru7AunTOWaK4RfgEIhdfUFuWaJ7uH0lq6mdBtaPQ/exec';
 
 @Component({
   selector: 'app-contact',
   templateUrl: './contact.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
   standalone: true,
-  imports: [CommonModule, ReactiveFormsModule, HttpClientModule, GsapSplitTextDirective, GsapScrollAnimateDirective]
+  imports: [CommonModule, ReactiveFormsModule, GsapSplitTextDirective, GsapScrollAnimateDirective]
 })
 export class ContactComponent {
-  private http = inject(HttpClient);
-
   contactForm: FormGroup;
   submitted = false;
   submitStatus: 'idle' | 'sending' | 'success' | 'error' = 'idle';
   errorMessage = '';
 
-  constructor(private fb: FormBuilder) {
+  constructor(private fb: FormBuilder, private cdr: ChangeDetectorRef) {
     this.contactForm = this.fb.group({
       name: ['', [Validators.required]],
       email: ['', [Validators.required, Validators.email]],
@@ -32,7 +29,7 @@ export class ContactComponent {
     });
   }
 
-  onSubmit() {
+  async onSubmit() {
     if (this.contactForm.invalid) {
       return;
     }
@@ -40,38 +37,30 @@ export class ContactComponent {
     this.submitted = true;
     this.submitStatus = 'sending';
     this.errorMessage = '';
+    this.cdr.markForCheck();
 
-    // GAS URLが設定されているか確認
-    if (GAS_URL === 'YOUR_GAS_WEB_APP_URL') {
-      // デモモード：GAS未設定の場合はアラートを表示
-      setTimeout(() => {
-        this.submitStatus = 'success';
-        this.contactForm.reset();
-        this.submitted = false;
-      }, 1000);
-      return;
-    }
-
-    // GASにPOSTリクエストを送信
-    this.http.post<{ success: boolean; message: string }>(GAS_URL, this.contactForm.value)
-      .subscribe({
-        next: (response) => {
-          if (response.success) {
-            this.submitStatus = 'success';
-            this.contactForm.reset();
-          } else {
-            this.submitStatus = 'error';
-            this.errorMessage = response.message || '送信に失敗しました。';
-          }
-          this.submitted = false;
+    try {
+      // GASにPOSTリクエストを送信（no-corsモードでCORSプリフライトを回避）
+      await fetch(GAS_URL, {
+        method: 'POST',
+        mode: 'no-cors',
+        headers: {
+          'Content-Type': 'text/plain',
         },
-        error: (error) => {
-          this.submitStatus = 'error';
-          this.errorMessage = 'ネットワークエラーが発生しました。しばらく経ってから再度お試しください。';
-          this.submitted = false;
-          console.error('Form submission error:', error);
-        }
+        body: JSON.stringify(this.contactForm.value)
       });
+
+      // no-corsモードではレスポンスを読めないため、送信成功とみなす
+      this.submitStatus = 'success';
+      this.contactForm.reset();
+    } catch (error) {
+      this.submitStatus = 'error';
+      this.errorMessage = 'ネットワークエラーが発生しました。しばらく経ってから再度お試しください。';
+      console.error('Form submission error:', error);
+    } finally {
+      this.submitted = false;
+      this.cdr.markForCheck();
+    }
   }
 
   resetStatus() {
