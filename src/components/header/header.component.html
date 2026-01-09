@@ -1,34 +1,42 @@
 <header #headerEl
-  class="text-white sticky top-0 z-50 transition-all duration-300 border-b border-white/10"
+  class="sticky top-0 z-50 transition-all duration-500"
   [class.header-scrolled]="isScrolled()"
-  [style.background]="'rgba(12, 28, 45, 0.7)'"
-  [style.backdrop-filter]="'blur(12px)'">
+  [style.background]="isScrolled() ? 'rgba(255, 255, 255, 0.95)' : 'rgba(255, 255, 255, 0.9)'"
+  [style.backdrop-filter]="'blur(16px) saturate(180%)'">
   <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="header-inner flex items-center justify-between h-20 transition-all duration-300">
+    <div class="header-inner flex items-center justify-between transition-all duration-500">
       <!-- Logo -->
       <div class="flex-shrink-0 header-logo">
-        <a href="/" class="logo-container flex items-center space-x-3 group">
-          <div class="relative h-12 w-12 flex items-center justify-center bg-white/90 rounded-lg p-1 shadow-lg group-hover:shadow-[#d4a876]/30 transition-shadow duration-300">
-            <img src="/logo.png" alt="創電工業ロゴ" class="logo-img h-10 w-auto" />
+        <a href="/" class="logo-container flex items-center space-x-4 group">
+          <div class="relative h-14 w-14 flex items-center justify-center bg-gradient-to-br from-green-50 to-white rounded-2xl p-1.5 shadow-lg shadow-green-500/10 group-hover:shadow-green-500/25 transition-all duration-400 group-hover:scale-105">
+            <img src="/logo.png" alt="創電工業ロゴ" class="logo-img h-11 w-auto" />
           </div>
           <div class="flex flex-col">
-            <span class="text-xl font-bold tracking-wider bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent" style="font-family: 'Noto Serif JP', serif;">創電工業</span>
-            <span class="text-[10px] text-[#d4a876] tracking-widest uppercase">Soden Industry</span>
+            <span class="logo-text text-2xl font-bold tracking-wide text-gray-800" style="font-family: 'Noto Serif JP', serif;">
+              創電<span class="brand-accent">工業</span>
+            </span>
+            <span class="text-[11px] text-green-600 tracking-[0.2em] uppercase font-medium">Create & Technology</span>
           </div>
         </a>
       </div>
 
       <!-- Desktop Navigation -->
-      <nav class="hidden lg:flex items-center space-x-8">
-        <ul class="flex items-center space-x-6">
+      <nav class="hidden lg:flex items-center space-x-10">
+        <ul class="flex items-center space-x-8">
           @for (link of navLinks; track link.label) {
             <li class="nav-item relative group">
-              <a href="{{ link.href }}" class="nav-link text-sm font-semibold tracking-wider uppercase transition duration-300 hover:text-[#d4a876]">{{ link.label }}</a>
+              <a href="{{ link.href }}"
+                 class="nav-link text-sm font-semibold tracking-wider text-gray-700 transition-all duration-300 hover:text-green-600">
+                {{ link.label }}
+              </a>
               @if (link.dropdown) {
-                <ul class="glass-dropdown absolute left-0 mt-4 w-52 text-gray-800 shadow-2xl rounded-xl py-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible group-hover:mt-2 transition-all duration-300 pointer-events-none group-hover:pointer-events-auto">
+                <ul class="glass-dropdown absolute left-1/2 -translate-x-1/2 mt-6 w-56 text-gray-700 rounded-2xl py-3 opacity-0 invisible group-hover:opacity-100 group-hover:visible group-hover:mt-4 transition-all duration-400 pointer-events-none group-hover:pointer-events-auto">
                   @for (item of link.dropdown; track item.label) {
                     <li>
-                      <a href="{{ item.href }}" class="block px-5 py-3 text-sm hover:bg-gradient-to-r hover:from-[#d4a876]/10 hover:to-transparent hover:text-[#d4a876] transition-all duration-200">{{ item.label }}</a>
+                      <a href="{{ item.href }}"
+                         class="block px-6 py-3 text-sm hover:bg-gradient-to-r hover:from-green-50 hover:to-transparent hover:text-green-600 transition-all duration-300 rounded-lg mx-2">
+                        {{ item.label }}
+                      </a>
                     </li>
                   }
                 </ul>
@@ -36,41 +44,37 @@
             </li>
           }
         </ul>
-        <a appMagnetic
-          [magneticStrength]="0.15"
-          [magneticScale]="1.05"
-          [magneticGlow]="true"
-          href="#contact"
-          class="header-cta contact-btn bg-gradient-to-r from-[#d4a876] to-[#e8c4a0] text-[#0c1c2d] px-6 py-2.5 rounded-full text-sm font-bold uppercase tracking-wider hover:from-[#ff8c42] hover:to-[#ffaa66] hover:shadow-lg hover:shadow-[#d4a876]/30 transition-all duration-300">
-          お問い合わせ
-        </a>
-        <div class="relative header-cta">
-          <button appMagnetic
+
+        <div class="flex items-center space-x-4">
+          <a appMagnetic
             [magneticStrength]="0.12"
+            [magneticScale]="1.04"
+            href="#contact"
+            class="header-cta contact-btn bg-gradient-to-r from-green-500 to-emerald-600 text-white px-7 py-3 rounded-full text-sm font-bold tracking-wider hover:from-green-600 hover:to-emerald-700 hover:shadow-xl hover:shadow-green-500/30 hover:-translate-y-0.5 transition-all duration-400">
+            お問い合わせ
+          </a>
+          <a appMagnetic
+            [magneticStrength]="0.1"
             [magneticScale]="1.03"
-            (click)="toggleContactMenu()"
-            class="contact-btn border-2 border-white/50 px-6 py-2 rounded-full text-sm font-bold uppercase tracking-wider hover:bg-white hover:text-[#0c1c2d] hover:border-white transition-all duration-300 hover:shadow-lg">
-            Contact
-          </button>
-           @if (isContactMenuOpen()) {
-            <ul class="glass-dropdown absolute right-0 mt-4 w-52 text-gray-800 shadow-2xl rounded-xl py-2">
-              <li><a href="#contact" class="block px-5 py-3 text-sm hover:bg-gradient-to-r hover:from-[#d4a876]/10 hover:to-transparent hover:text-[#d4a876] transition-all duration-200">工事のご依頼</a></li>
-              <li><a href="#recruit" class="block px-5 py-3 text-sm hover:bg-gradient-to-r hover:from-[#d4a876]/10 hover:to-transparent hover:text-[#d4a876] transition-all duration-200">採用について</a></li>
-            </ul>
-          }
+            href="tel:0120-xxx-xxx"
+            class="header-cta flex items-center space-x-2 text-gray-600 hover:text-green-600 transition-colors duration-300">
+            <div class="w-10 h-10 rounded-full bg-green-50 flex items-center justify-center group-hover:bg-green-100 transition-colors">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+              </svg>
+            </div>
+          </a>
         </div>
       </nav>
 
       <!-- Mobile Menu Button -->
       <div class="lg:hidden">
-        <button (click)="toggleMenu()" class="text-white focus:outline-none">
-          <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            @if (!isMenuOpen()) {
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-            } @else {
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-            }
-          </svg>
+        <button (click)="toggleMenu()"
+                class="w-12 h-12 flex flex-col items-center justify-center space-y-1.5 rounded-xl hover:bg-green-50 transition-colors"
+                [class.menu-open]="isMenuOpen()">
+          <span class="menu-line w-6 h-0.5 bg-gray-700 rounded-full"></span>
+          <span class="menu-line w-6 h-0.5 bg-gray-700 rounded-full"></span>
+          <span class="menu-line w-6 h-0.5 bg-gray-700 rounded-full"></span>
         </button>
       </div>
     </div>
@@ -78,30 +82,40 @@
 
   <!-- Mobile Menu -->
   @if (isMenuOpen()) {
-    <div class="lg:hidden bg-[#1a3a52]">
-      <ul class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-        @for (link of navLinks; track link.label) {
-          <li>
-            <a href="{{ link.href }}" class="block px-3 py-2 rounded-md text-base font-medium hover:bg-[#0c1c2d]">{{ link.label }}</a>
-             @if (link.dropdown) {
+    <div class="lg:hidden bg-white/98 backdrop-blur-xl border-t border-green-100">
+      <div class="container mx-auto px-4">
+        <ul class="py-4 space-y-1">
+          @for (link of navLinks; track link.label) {
+            <li>
+              <a href="{{ link.href }}"
+                 class="block px-4 py-3 rounded-xl text-base font-medium text-gray-700 hover:bg-green-50 hover:text-green-600 transition-all duration-300">
+                {{ link.label }}
+              </a>
+              @if (link.dropdown) {
                 <ul class="pl-4 mt-1 space-y-1">
                   @for (item of link.dropdown; track item.label) {
                     <li>
-                      <a href="{{ item.href }}" class="block px-3 py-2 rounded-md text-sm font-medium hover:bg-[#0c1c2d]">{{ item.label }}</a>
+                      <a href="{{ item.href }}"
+                         class="block px-4 py-2.5 rounded-lg text-sm text-gray-600 hover:bg-green-50 hover:text-green-600 transition-all duration-300">
+                        {{ item.label }}
+                      </a>
                     </li>
                   }
                 </ul>
               }
-          </li>
-        }
-      </ul>
-      <div class="px-5 py-4 border-t border-gray-700 space-y-3">
-        <a href="#contact" class="block w-full text-center bg-[#d4a876] text-[#0c1c2d] px-6 py-2 rounded-full text-sm font-bold uppercase tracking-wider hover:bg-[#ff8c42] transition duration-300">
-          お問い合わせ
-        </a>
-        <a href="#recruit" class="block w-full text-center border border-white px-6 py-2 rounded-full text-sm font-bold uppercase tracking-wider hover:bg-white hover:text-[#0c1c2d] transition duration-300">
-          採用について
-        </a>
+            </li>
+          }
+        </ul>
+        <div class="py-4 border-t border-green-100 space-y-3">
+          <a href="#contact"
+             class="block w-full text-center bg-gradient-to-r from-green-500 to-emerald-600 text-white px-6 py-3.5 rounded-xl text-sm font-bold tracking-wider hover:from-green-600 hover:to-emerald-700 transition-all duration-300 shadow-lg shadow-green-500/20">
+            お問い合わせ
+          </a>
+          <a href="#recruit"
+             class="block w-full text-center border-2 border-green-500 text-green-600 px-6 py-3 rounded-xl text-sm font-bold tracking-wider hover:bg-green-500 hover:text-white transition-all duration-300">
+            採用エントリー
+          </a>
+        </div>
       </div>
     </div>
   }
