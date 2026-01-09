@@ -29,7 +29,7 @@ interface NavLink {
       left: 0;
       width: 0;
       height: 2px;
-      background: linear-gradient(90deg, #d4a876, #ff8c42);
+      background: linear-gradient(90deg, #22c55e, #10b981);
       transition: width 0.3s ease;
     }
     .nav-link:hover::after {
@@ -37,7 +37,7 @@ interface NavLink {
     }
     .logo-container:hover .logo-img {
       transform: scale(1.08);
-      filter: brightness(1.15) drop-shadow(0 0 8px rgba(212, 168, 118, 0.5));
+      filter: brightness(1.15) drop-shadow(0 0 8px rgba(34, 197, 94, 0.5));
     }
     .logo-img {
       transition: transform 0.3s ease, filter 0.3s ease;
@@ -45,17 +45,17 @@ interface NavLink {
       filter: brightness(1.1);
     }
     .header-scrolled {
-      background: rgba(12, 28, 45, 0.95) !important;
+      background: rgba(255, 255, 255, 0.98) !important;
       backdrop-filter: blur(16px) !important;
-      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3) !important;
+      box-shadow: 0 4px 30px rgba(34, 197, 94, 0.15) !important;
     }
     .header-scrolled .header-inner {
       height: 64px !important;
     }
     .glass-dropdown {
-      background: rgba(255, 255, 255, 0.95);
+      background: rgba(255, 255, 255, 0.98);
       backdrop-filter: blur(10px);
-      border: 1px solid rgba(255, 255, 255, 0.2);
+      border: 1px solid rgba(34, 197, 94, 0.1);
     }
     .contact-btn {
       position: relative;
@@ -68,7 +68,7 @@ interface NavLink {
       left: -100%;
       width: 100%;
       height: 100%;
-      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
       transition: left 0.5s ease;
     }
     .contact-btn:hover::before {
