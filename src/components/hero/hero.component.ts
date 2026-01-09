@@ -1,68 +1,68 @@
 import { Component, ChangeDetectionStrategy, signal, OnInit, OnDestroy, Inject, PLATFORM_ID } from '@angular/core';
 import { CommonModule, isPlatformBrowser } from '@angular/common';
-import { GsapSplitTextDirective } from '../../directives/gsap-split-text.directive';
-import { ScrollAnimateDirective } from '../../directives/scroll-animate.directive';
 
 @Component({
   selector: 'app-hero',
   templateUrl: './hero.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
   standalone: true,
-  imports: [CommonModule, GsapSplitTextDirective, ScrollAnimateDirective],
+  imports: [CommonModule],
   styles: [`
-    .hero-slide {
-      position: absolute;
-      inset: 0;
+    :host {
+      display: block;
+    }
+    .hero-image {
+      transition: transform 8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+    .hero-image.active {
+      transform: scale(1.05);
+    }
+    .vertical-text {
+      writing-mode: vertical-rl;
+      text-orientation: mixed;
+    }
+    .line-reveal {
+      overflow: hidden;
+    }
+    .line-reveal span {
+      display: block;
+      transform: translateY(100%);
+      animation: lineReveal 1s cubic-bezier(0.65, 0, 0.35, 1) forwards;
+    }
+    @keyframes lineReveal {
+      to {
+        transform: translateY(0);
+      }
+    }
+    .fade-in-up {
       opacity: 0;
-      transition: opacity 1.5s ease-in-out;
+      transform: translateY(30px);
+      animation: fadeInUp 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
     }
-    .hero-slide.active {
-      opacity: 1;
-    }
-    .hero-slide img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transform: scale(1);
-      transition: transform 8s ease-out;
-    }
-    .hero-slide.active img {
-      transform: scale(1.08);
-    }
-    .hero-gradient {
-      background: linear-gradient(
-        135deg,
-        rgba(34, 197, 94, 0.15) 0%,
-        rgba(16, 185, 129, 0.1) 50%,
-        rgba(20, 184, 166, 0.15) 100%
-      );
-    }
-    .hero-overlay {
-      background: linear-gradient(
-        to bottom,
-        rgba(255, 255, 255, 0.3) 0%,
-        rgba(255, 255, 255, 0.5) 40%,
-        rgba(240, 253, 244, 0.7) 100%
-      );
+    @keyframes fadeInUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
   `]
 })
 export class HeroComponent implements OnInit, OnDestroy {
   currentSlide = signal(0);
+  isImageLoaded = signal(false);
   private slideInterval: any;
 
-  // 会社の雰囲気に合う明るい業務風景画像
   heroImages = [
-    'https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=1920&h=1080&fit=crop', // 電気工事
-    'https://images.unsplash.com/photo-1581092921461-eab62e97a780?w=1920&h=1080&fit=crop', // チームワーク
-    'https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=1920&h=1080&fit=crop', // 技術者
-    'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1920&h=1080&fit=crop', // モダンな建物
+    'https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=1400&h=1000&fit=crop&q=90',
+    'https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=1400&h=1000&fit=crop&q=90',
+    'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1400&h=1000&fit=crop&q=90',
   ];
 
   constructor(@Inject(PLATFORM_ID) private platformId: object) {}
 
   ngOnInit() {
     if (isPlatformBrowser(this.platformId)) {
+      setTimeout(() => this.isImageLoaded.set(true), 100);
       this.startSlideshow();
     }
   }
@@ -75,9 +75,13 @@ export class HeroComponent implements OnInit, OnDestroy {
 
   private startSlideshow() {
     this.slideInterval = setInterval(() => {
-      this.currentSlide.update(current =>
-        (current + 1) % this.heroImages.length
-      );
-    }, 5000);
+      this.isImageLoaded.set(false);
+      setTimeout(() => {
+        this.currentSlide.update(current =>
+          (current + 1) % this.heroImages.length
+        );
+        this.isImageLoaded.set(true);
+      }, 100);
+    }, 6000);
   }
 }
