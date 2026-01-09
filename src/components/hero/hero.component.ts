@@ -1,4 +1,4 @@
-import { Component, ChangeDetectionStrategy } from '@angular/core';
+import { Component, ChangeDetectionStrategy, OnInit, OnDestroy, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { GsapSplitTextDirective } from '../../directives/gsap-split-text.directive';
 import { GsapScrollAnimateDirective } from '../../directives/gsap-scroll-animate.directive';
@@ -11,14 +11,30 @@ import { MagneticDirective } from '../../directives/magnetic.directive';
   standalone: true,
   imports: [CommonModule, GsapSplitTextDirective, GsapScrollAnimateDirective, MagneticDirective]
 })
-export class HeroComponent {
-  sliders = [
-    { type: 'left', images: this.generateImageUrls(7, 'architecture') },
-    { type: 'right', images: this.generateImageUrls(7, 'tech') },
-    { type: 'left', images: this.generateImageUrls(7, 'industrial') },
+export class HeroComponent implements OnInit, OnDestroy {
+  // Industrial/Construction themed high-quality images
+  heroImages = [
+    'https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&q=80&w=2000', // Worker
+    'https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&q=80&w=2000', // Helmet/Safety
+    'https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&q=80&w=2000'  // Electrical/Tech
   ];
 
-  generateImageUrls(count: number, category: string): string[] {
-    return Array.from({ length: count * 2 }, (_, i) => `https://loremflickr.com/400/300/${category}?lock=${i}`);
+  currentIndex = signal(0);
+  private intervalId: any;
+
+  ngOnInit() {
+    this.startSlideshow();
+  }
+
+  ngOnDestroy() {
+    if (this.intervalId) {
+      clearInterval(this.intervalId);
+    }
+  }
+
+  private startSlideshow() {
+    this.intervalId = setInterval(() => {
+      this.currentIndex.update(index => (index + 1) % this.heroImages.length);
+    }, 5000); // Switch every 5 seconds
   }
 }

@@ -1,121 +1,100 @@
-<header #headerEl class="text-gray-800 sticky top-0 z-50 transition-all duration-300 border-b border-gray-100/50"
-  [class.header-scrolled]="isScrolled()" [style.background]="'rgba(255, 255, 255, 0.8)'"
-  [style.backdrop-filter]="'blur(20px)'">
-  <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="header-inner flex items-center justify-between h-20 transition-all duration-300">
-      <!-- Logo -->
-      <div class="flex-shrink-0 header-logo">
-        <a href="/" class="logo-container flex items-center space-x-4 group">
-          <div
-            class="relative h-14 w-14 flex items-center justify-center bg-white rounded-xl p-1.5 shadow-md border border-gray-50 group-hover:shadow-[#0ea5e9]/20 transition-shadow duration-300">
-            <img src="/logo.png" alt="創電工業ロゴ" class="logo-img h-11 w-auto" />
-          </div>
-          <div class="flex flex-col">
-            <span class="text-2xl font-black tracking-tight text-[#1e293b]"
-              style="font-family: 'Noto Serif JP', serif;">創電工業</span>
-            <span class="text-[9px] text-[#0ea5e9] font-bold tracking-[0.2em] uppercase leading-none mt-1">Soden
-              Industry</span>
-            <span
-              class="text-[10px] text-gray-400 font-medium tracking-tight mt-0.5 hidden md:block">創造力と高度な技術を提供する総合プランナー</span>
-          </div>
-        </a>
-      </div>
+<header #headerEl class="sticky top-0 z-50" [class.header-scrolled]="isScrolled()">
+  <!-- Green Accent Bar at Top -->
+  <div class="h-[3px] bg-gradient-to-r from-emerald-500 via-emerald-600 to-teal-500"></div>
 
-      <!-- Desktop Navigation -->
-      <nav class="hidden lg:flex items-center space-x-10">
-        <ul class="flex items-center space-x-8">
-          @for (link of navLinks; track link.label) {
-          <li class="nav-item relative group">
-            <a href="{{ link.href }}"
-              class="nav-link text-[13px] font-bold tracking-widest text-gray-600 uppercase transition duration-300 hover:text-[#0ea5e9]">{{
-              link.label }}</a>
-            @if (link.dropdown) {
-            <ul
-              class="glass-dropdown absolute left-0 mt-4 w-52 bg-white/95 backdrop-blur-xl shadow-2xl rounded-2xl py-3 border border-gray-100 opacity-0 invisible group-hover:opacity-100 group-hover:visible group-hover:mt-2 transition-all duration-300 pointer-events-none group-hover:pointer-events-auto">
-              @for (item of link.dropdown; track item.label) {
-              <li>
-                <a href="{{ item.href }}"
-                  class="block px-6 py-3 text-sm font-medium text-gray-600 hover:bg-sky-50 hover:text-[#0ea5e9] transition-all duration-200">{{
-                  item.label }}</a>
-              </li>
-              }
-            </ul>
-            }
-            <span
-              class="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#0ea5e9] transition-all duration-300 group-hover:w-full"></span>
-          </li>
-          }
-        </ul>
-        <div class="flex items-center space-x-4">
-          <a appMagnetic [magneticStrength]="0.15" [magneticScale]="1.05" [magneticGlow]="true" href="#contact"
-            class="header-cta contact-btn bg-gradient-to-r from-[#0ea5e9] to-[#06b6d4] text-white px-7 py-3 rounded-full text-xs font-black uppercase tracking-widest hover:shadow-xl hover:shadow-[#0ea5e9]/30 transition-all duration-300">
-            お問い合わせ
+  <!-- Main Header -->
+  <div class="bg-white transition-shadow duration-300" [class.shadow-md]="isScrolled()">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <!-- Mobile: h-14 (56px), Desktop: h-[100px] -->
+      <div class="flex items-center justify-between h-14 lg:h-[100px]">
+        <!-- Logo -->
+        <div class="flex-shrink-0 header-logo">
+          <a href="/" class="logo-container flex items-center space-x-2 lg:space-x-3 group">
+            <div class="relative h-7 w-7 lg:h-9 lg:w-9 flex items-center justify-center">
+              <img src="/logo.png" alt="創電工業ロゴ"
+                class="logo-img h-6 lg:h-8 w-auto transition-transform duration-300 group-hover:scale-105" />
+            </div>
+            <!-- Company name visible on all screens -->
+            <span class="text-sm sm:text-base lg:text-[24px] font-black tracking-tight text-slate-800 whitespace-nowrap"
+              style="font-family: 'Noto Serif JP', serif;">株式会社創電工業</span>
           </a>
         </div>
-      </nav>
-      <div class="relative header-cta">
-        <button appMagnetic [magneticStrength]="0.12" [magneticScale]="1.03" (click)="toggleContactMenu()"
-          class="contact-btn border-2 border-white/50 px-6 py-2 rounded-full text-sm font-bold uppercase tracking-wider hover:bg-white hover:text-[#0c1c2d] hover:border-white transition-all duration-300 hover:shadow-lg">
-          Contact
-        </button>
-        @if (isContactMenuOpen()) {
-        <ul class="glass-dropdown absolute right-0 mt-4 w-52 text-gray-800 shadow-2xl rounded-xl py-2">
-          <li><a href="#contact"
-              class="block px-5 py-3 text-sm hover:bg-gradient-to-r hover:from-[#d4a876]/10 hover:to-transparent hover:text-[#d4a876] transition-all duration-200">工事のご依頼</a>
-          </li>
-          <li><a href="#recruit"
-              class="block px-5 py-3 text-sm hover:bg-gradient-to-r hover:from-[#d4a876]/10 hover:to-transparent hover:text-[#d4a876] transition-all duration-200">採用について</a>
-          </li>
-        </ul>
-        }
-      </div>
 
-      <!-- Mobile Menu Button -->
-      <div class="lg:hidden">
-        <button (click)="toggleMenu()" class="text-white focus:outline-none">
-          <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            @if (!isMenuOpen()) {
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-            } @else {
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+        <!-- Desktop Navigation -->
+        <nav class="hidden lg:flex items-center">
+          <ul class="flex items-center">
+            @for (link of navLinks; track link.label; let i = $index; let last = $last) {
+            <li class="nav-item relative group">
+              <a [href]="link.href"
+                class="nav-link flex flex-col items-center justify-center px-4 xl:px-5 py-3 transition-all duration-200 hover:bg-gradient-to-b hover:from-emerald-50 hover:to-transparent">
+                <span
+                  class="text-[16px] xl:text-[17px] font-bold text-slate-700 group-hover:text-emerald-600 leading-tight transition-colors duration-200">{{
+                  link.label }}</span>
+                <span
+                  class="text-[10px] xl:text-[11px] font-semibold text-slate-400 uppercase tracking-[0.12em] mt-0.5 group-hover:text-emerald-400 transition-colors duration-200">{{
+                  link.labelEn }}</span>
+                <!-- Bottom indicator on hover -->
+                <span
+                  class="absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-0.5 bg-gradient-to-r from-emerald-500 to-teal-500 transition-all duration-300 group-hover:w-4/5"></span>
+              </a>
+              <!-- Vertical Divider -->
+              @if (!last) {
+              <div class="absolute right-0 top-1/2 -translate-y-1/2 h-5 w-px bg-slate-200"></div>
+              }
+            </li>
             }
-          </svg>
-        </button>
+          </ul>
+
+          <!-- Contact Button -->
+          <a href="#contact"
+            class="ml-4 xl:ml-6 header-cta bg-gradient-to-r from-emerald-500 to-teal-500 text-white px-8 xl:px-9 py-3 rounded text-[14px] xl:text-[15px] font-black uppercase tracking-widest hover:shadow-lg hover:shadow-emerald-500/25 hover:scale-[1.02] active:scale-[0.98] transition-all duration-300 whitespace-nowrap">
+            お問い合わせ
+          </a>
+        </nav>
+
+        <!-- Mobile Menu Button with MENU label -->
+        <div class="lg:hidden">
+          <button (click)="toggleMenu()"
+            class="flex items-center space-x-2 text-slate-700 focus:outline-none px-3 py-2 rounded-lg hover:bg-emerald-50 transition-colors">
+            <span class="text-[10px] font-black tracking-widest uppercase text-slate-500">MENU</span>
+            <svg class="h-5 w-5 transition-transform duration-300" [class.rotate-90]="isMenuOpen()" fill="none"
+              viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              @if (!isMenuOpen()) {
+              <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+              } @else {
+              <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+              }
+            </svg>
+          </button>
+        </div>
       </div>
     </div>
   </div>
 
   <!-- Mobile Menu -->
   @if (isMenuOpen()) {
-  <div class="lg:hidden bg-white/95 backdrop-blur-xl border-t border-gray-100">
-    <ul class="px-4 pt-4 pb-6 space-y-2">
-      @for (link of navLinks; track link.label) {
-      <li>
-        <a href="{{ link.href }}"
-          class="block px-4 py-3 rounded-xl text-base font-black text-gray-700 hover:bg-sky-50 hover:text-[#0ea5e9] transition-all duration-200">{{
-          link.label }}</a>
-        @if (link.dropdown) {
-        <ul class="pl-6 mt-1 space-y-1 border-l-2 border-sky-100 ml-4">
-          @for (item of link.dropdown; track item.label) {
-          <li>
-            <a href="{{ item.href }}"
-              class="block px-4 py-2 rounded-lg text-sm font-bold text-gray-500 hover:text-[#0ea5e9] transition-all duration-200">{{
-              item.label }}</a>
-          </li>
-          }
-        </ul>
-        }
+  <div class="lg:hidden bg-white border-t border-gray-100 shadow-xl animate-slide-down">
+    <ul class="divide-y divide-gray-100">
+      @for (link of navLinks; track link.label; let i = $index) {
+      <li class="animate-fade-in" [style.animation-delay]="i * 50 + 'ms'">
+        <a [href]="link.href"
+          class="flex items-center justify-between px-6 py-4 hover:bg-emerald-50 transition-all duration-200 active:bg-emerald-100">
+          <div class="flex flex-col">
+            <span class="text-sm font-bold text-slate-700">{{ link.label }}</span>
+            <span class="text-[10px] text-slate-400 uppercase tracking-widest">{{ link.labelEn }}</span>
+          </div>
+          <svg class="w-4 h-4 text-slate-300 transition-transform duration-200 group-hover:translate-x-1" fill="none"
+            stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+          </svg>
+        </a>
       </li>
       }
     </ul>
-    <div class="px-6 py-6 border-t border-gray-100 space-y-4 bg-gray-50/50">
+    <div class="px-6 py-5 border-t border-gray-100 bg-gradient-to-b from-slate-50 to-white">
       <a href="#contact"
-        class="block w-full text-center bg-gradient-to-r from-[#0ea5e9] to-[#06b6d4] text-white px-8 py-4 rounded-full text-sm font-black uppercase tracking-widest hover:shadow-lg hover:shadow-[#0ea5e9]/30 transition-all duration-300">
+        class="block w-full text-center bg-gradient-to-r from-emerald-500 to-teal-500 text-white py-3.5 rounded text-sm font-black uppercase tracking-widest hover:shadow-lg active:scale-[0.98] transition-all duration-300">
         お問い合わせ
-      </a>
-      <a href="#recruit"
-        class="block w-full text-center border-2 border-gray-200 text-gray-700 px-8 py-4 rounded-full text-sm font-black uppercase tracking-widest hover:border-[#0ea5e9] hover:text-[#0ea5e9] transition-all duration-300">
-        採用について
       </a>
     </div>
   </div>
