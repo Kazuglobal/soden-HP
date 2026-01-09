@@ -1,107 +1,74 @@
 <header #headerEl
-  class="text-white sticky top-0 z-50 transition-all duration-300 border-b border-white/10"
-  [class.header-scrolled]="isScrolled()"
-  [style.background]="'rgba(12, 28, 45, 0.7)'"
-  [style.backdrop-filter]="'blur(12px)'">
-  <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="header-inner flex items-center justify-between h-20 transition-all duration-300">
+  class="fixed top-0 left-0 right-0 z-50 transition-all duration-500"
+  [class.header-scrolled]="isScrolled()">
+  <div class="mx-auto px-6 lg:px-12">
+    <div class="header-inner flex items-center justify-between h-24 transition-all duration-500">
       <!-- Logo -->
-      <div class="flex-shrink-0 header-logo">
-        <a href="/" class="logo-container flex items-center space-x-3 group">
-          <div class="relative h-12 w-12 flex items-center justify-center bg-white/90 rounded-lg p-1 shadow-lg group-hover:shadow-[#d4a876]/30 transition-shadow duration-300">
-            <img src="/logo.png" alt="創電工業ロゴ" class="logo-img h-10 w-auto" />
-          </div>
-          <div class="flex flex-col">
-            <span class="text-xl font-bold tracking-wider bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent" style="font-family: 'Noto Serif JP', serif;">創電工業</span>
-            <span class="text-[10px] text-[#d4a876] tracking-widest uppercase">Soden Industry</span>
-          </div>
-        </a>
-      </div>
+      <a href="/" class="header-logo flex items-center space-x-4 group">
+        <div class="relative h-10 w-10 flex items-center justify-center">
+          <img src="/logo.png" alt="創電工業" class="logo-img h-9 w-auto" />
+        </div>
+        <div class="hidden sm:flex flex-col">
+          <span class="text-lg font-medium tracking-[0.2em] text-gray-900" style="font-family: 'Noto Serif JP', serif;">創電工業</span>
+        </div>
+      </a>
 
       <!-- Desktop Navigation -->
-      <nav class="hidden lg:flex items-center space-x-8">
-        <ul class="flex items-center space-x-6">
+      <nav class="hidden lg:flex items-center">
+        <ul class="flex items-center space-x-12">
           @for (link of navLinks; track link.label) {
             <li class="nav-item relative group">
-              <a href="{{ link.href }}" class="nav-link text-sm font-semibold tracking-wider uppercase transition duration-300 hover:text-[#d4a876]">{{ link.label }}</a>
+              <a href="{{ link.href }}" class="nav-link text-[13px] font-medium tracking-[0.15em] uppercase text-gray-600 hover:text-gray-900 transition-colors duration-300">{{ link.label }}</a>
               @if (link.dropdown) {
-                <ul class="glass-dropdown absolute left-0 mt-4 w-52 text-gray-800 shadow-2xl rounded-xl py-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible group-hover:mt-2 transition-all duration-300 pointer-events-none group-hover:pointer-events-auto">
-                  @for (item of link.dropdown; track item.label) {
-                    <li>
-                      <a href="{{ item.href }}" class="block px-5 py-3 text-sm hover:bg-gradient-to-r hover:from-[#d4a876]/10 hover:to-transparent hover:text-[#d4a876] transition-all duration-200">{{ item.label }}</a>
-                    </li>
-                  }
+                <ul class="dropdown-menu absolute left-0 top-full pt-6 w-48 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300">
+                  <div class="bg-white shadow-xl rounded-sm py-3">
+                    @for (item of link.dropdown; track item.label) {
+                      <li>
+                        <a href="{{ item.href }}" class="block px-6 py-2 text-[13px] text-gray-600 hover:text-gray-900 hover:bg-gray-50 transition-colors duration-200">{{ item.label }}</a>
+                      </li>
+                    }
+                  </div>
                 </ul>
               }
             </li>
           }
         </ul>
-        <a appMagnetic
-          [magneticStrength]="0.15"
-          [magneticScale]="1.05"
-          [magneticGlow]="true"
-          href="#contact"
-          class="header-cta contact-btn bg-gradient-to-r from-[#d4a876] to-[#e8c4a0] text-[#0c1c2d] px-6 py-2.5 rounded-full text-sm font-bold uppercase tracking-wider hover:from-[#ff8c42] hover:to-[#ffaa66] hover:shadow-lg hover:shadow-[#d4a876]/30 transition-all duration-300">
-          お問い合わせ
-        </a>
-        <div class="relative header-cta">
-          <button appMagnetic
-            [magneticStrength]="0.12"
-            [magneticScale]="1.03"
-            (click)="toggleContactMenu()"
-            class="contact-btn border-2 border-white/50 px-6 py-2 rounded-full text-sm font-bold uppercase tracking-wider hover:bg-white hover:text-[#0c1c2d] hover:border-white transition-all duration-300 hover:shadow-lg">
+        <div class="ml-16 flex items-center space-x-6">
+          <a href="#contact" class="text-[13px] font-medium tracking-[0.15em] uppercase text-gray-900 border-b border-gray-900 pb-1 hover:border-green-600 hover:text-green-600 transition-colors duration-300">
             Contact
-          </button>
-           @if (isContactMenuOpen()) {
-            <ul class="glass-dropdown absolute right-0 mt-4 w-52 text-gray-800 shadow-2xl rounded-xl py-2">
-              <li><a href="#contact" class="block px-5 py-3 text-sm hover:bg-gradient-to-r hover:from-[#d4a876]/10 hover:to-transparent hover:text-[#d4a876] transition-all duration-200">工事のご依頼</a></li>
-              <li><a href="#recruit" class="block px-5 py-3 text-sm hover:bg-gradient-to-r hover:from-[#d4a876]/10 hover:to-transparent hover:text-[#d4a876] transition-all duration-200">採用について</a></li>
-            </ul>
-          }
+          </a>
         </div>
       </nav>
 
       <!-- Mobile Menu Button -->
-      <div class="lg:hidden">
-        <button (click)="toggleMenu()" class="text-white focus:outline-none">
-          <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            @if (!isMenuOpen()) {
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-            } @else {
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-            }
-          </svg>
-        </button>
-      </div>
+      <button (click)="toggleMenu()" class="lg:hidden w-10 h-10 flex flex-col items-center justify-center space-y-1.5">
+        <span class="w-6 h-[1.5px] bg-gray-900 transition-all duration-300" [class.rotate-45]="isMenuOpen()" [class.translate-y-[5px]]="isMenuOpen()"></span>
+        <span class="w-6 h-[1.5px] bg-gray-900 transition-all duration-300" [class.opacity-0]="isMenuOpen()"></span>
+        <span class="w-6 h-[1.5px] bg-gray-900 transition-all duration-300" [class.-rotate-45]="isMenuOpen()" [class.-translate-y-[5px]]="isMenuOpen()"></span>
+      </button>
     </div>
   </div>
 
   <!-- Mobile Menu -->
   @if (isMenuOpen()) {
-    <div class="lg:hidden bg-[#1a3a52]">
-      <ul class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-        @for (link of navLinks; track link.label) {
-          <li>
-            <a href="{{ link.href }}" class="block px-3 py-2 rounded-md text-base font-medium hover:bg-[#0c1c2d]">{{ link.label }}</a>
-             @if (link.dropdown) {
-                <ul class="pl-4 mt-1 space-y-1">
-                  @for (item of link.dropdown; track item.label) {
-                    <li>
-                      <a href="{{ item.href }}" class="block px-3 py-2 rounded-md text-sm font-medium hover:bg-[#0c1c2d]">{{ item.label }}</a>
-                    </li>
-                  }
-                </ul>
-              }
-          </li>
-        }
-      </ul>
-      <div class="px-5 py-4 border-t border-gray-700 space-y-3">
-        <a href="#contact" class="block w-full text-center bg-[#d4a876] text-[#0c1c2d] px-6 py-2 rounded-full text-sm font-bold uppercase tracking-wider hover:bg-[#ff8c42] transition duration-300">
-          お問い合わせ
-        </a>
-        <a href="#recruit" class="block w-full text-center border border-white px-6 py-2 rounded-full text-sm font-bold uppercase tracking-wider hover:bg-white hover:text-[#0c1c2d] transition duration-300">
-          採用について
-        </a>
+    <div class="lg:hidden fixed inset-0 top-24 bg-white">
+      <div class="px-6 py-12">
+        <ul class="space-y-8">
+          @for (link of navLinks; track link.label; let i = $index) {
+            <li class="overflow-hidden">
+              <a href="{{ link.href }}"
+                class="block text-2xl font-light text-gray-900 tracking-wider"
+                [style.animation-delay]="(i * 0.1) + 's'">
+                {{ link.label }}
+              </a>
+            </li>
+          }
+        </ul>
+        <div class="mt-16 pt-8 border-t border-gray-100">
+          <a href="#contact" class="inline-block text-sm font-medium tracking-[0.2em] uppercase text-gray-900 border-b border-gray-900 pb-1">
+            Contact Us
+          </a>
+        </div>
       </div>
     </div>
   }

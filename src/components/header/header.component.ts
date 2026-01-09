@@ -19,60 +19,18 @@ interface NavLink {
     :host {
       display: block;
     }
-    .nav-link {
-      position: relative;
-    }
-    .nav-link::after {
-      content: '';
-      position: absolute;
-      bottom: -4px;
-      left: 0;
-      width: 0;
-      height: 2px;
-      background: linear-gradient(90deg, #d4a876, #ff8c42);
-      transition: width 0.3s ease;
-    }
-    .nav-link:hover::after {
-      width: 100%;
-    }
-    .logo-container:hover .logo-img {
-      transform: scale(1.08);
-      filter: brightness(1.15) drop-shadow(0 0 8px rgba(212, 168, 118, 0.5));
-    }
     .logo-img {
-      transition: transform 0.3s ease, filter 0.3s ease;
-      mix-blend-mode: multiply;
-      filter: brightness(1.1);
+      transition: opacity 0.3s ease;
+    }
+    .header-logo:hover .logo-img {
+      opacity: 0.7;
     }
     .header-scrolled {
-      background: rgba(12, 28, 45, 0.95) !important;
-      backdrop-filter: blur(16px) !important;
-      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3) !important;
+      background: rgba(255, 255, 255, 0.98) !important;
+      backdrop-filter: blur(20px) !important;
     }
     .header-scrolled .header-inner {
-      height: 64px !important;
-    }
-    .glass-dropdown {
-      background: rgba(255, 255, 255, 0.95);
-      backdrop-filter: blur(10px);
-      border: 1px solid rgba(255, 255, 255, 0.2);
-    }
-    .contact-btn {
-      position: relative;
-      overflow: hidden;
-    }
-    .contact-btn::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: -100%;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
-      transition: left 0.5s ease;
-    }
-    .contact-btn:hover::before {
-      left: 100%;
+      height: 72px !important;
     }
   `]
 })

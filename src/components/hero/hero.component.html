@@ -1,46 +1,103 @@
-<section class="relative h-[80vh] min-h-[600px] w-full overflow-hidden bg-cover bg-center"
-  style="background-image: url('https://picsum.photos/1920/1080?random=1');">
-  <div class="absolute inset-0 bg-[#0c1c2d] bg-opacity-70"></div>
+<section class="relative min-h-screen bg-white overflow-hidden">
+  <!-- Grid Layout -->
+  <div class="relative h-screen grid grid-cols-12">
 
-  <div class="absolute inset-0 flex flex-col items-center justify-center text-center text-white p-4 z-10">
-    <h2 class="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-wider leading-tight uppercase" style="font-family: 'Noto Serif JP', serif;">
-      <span appGsapSplitText
-        [splitType]="'chars'"
-        [delay]="80"
-        [duration]="0.6"
-        [ease]="'power3.out'"
-        [from]="{ opacity: 0, y: 40 }"
-        [to]="{ opacity: 1, y: 0 }"
-        [threshold]="0.1"
-        class="block">未来を灯す、</span>
-      <span appGsapSplitText
-        [splitType]="'chars'"
-        [delay]="80"
-        [duration]="0.6"
-        [ease]="'power3.out'"
-        [from]="{ opacity: 0, y: 40 }"
-        [to]="{ opacity: 1, y: 0 }"
-        [threshold]="0.1"
-        class="block mt-2">確かな技術力</span>
-    </h2>
-    <p appScrollAnimate animationClass="animate-fade-in" class="mt-4 max-w-2xl text-lg md:text-xl font-light">
-      創電工業は、安全と信頼を第一に、電気設備工事を通じて社会基盤を支えます。
-    </p>
-  </div>
+    <!-- Left Content Area -->
+    <div class="col-span-12 lg:col-span-5 flex flex-col justify-center px-6 lg:px-12 xl:px-20 pt-32 lg:pt-0 relative z-10">
 
-  <!-- Image Sliders -->
-  <div class="absolute inset-0 z-0">
-    @for(slider of sliders; track $index; let i = $index) {
-    <div class="absolute w-full" [style.top]="(i * 15) + '%'" [style.opacity]="0.2 - (i * 0.02)">
-      <div class="flex" [class.animate-scroll-left]="slider.type === 'left'"
-        [class.animate-scroll-right]="slider.type === 'right'">
-        @for(image of slider.images; track $index) {
-        <div class="flex-shrink-0 w-1/4 sm:w-1/5 md:w-1/6 lg:w-1/7 px-2">
-          <img [src]="image" alt="施工事例" class="w-full h-auto object-cover rounded-lg shadow-lg">
+      <!-- Small Label -->
+      <div class="fade-in-up mb-8" style="animation-delay: 0.2s">
+        <span class="text-[11px] tracking-[0.3em] uppercase text-gray-400 font-medium">
+          Electrical Construction
+        </span>
+      </div>
+
+      <!-- Main Heading -->
+      <h1 class="mb-8" style="font-family: 'Noto Serif JP', serif;">
+        <div class="line-reveal">
+          <span class="block text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-medium text-gray-900 leading-[1.1] tracking-tight" style="animation-delay: 0.3s">
+            挑戦する
+          </span>
         </div>
-        }
+        <div class="line-reveal mt-2">
+          <span class="block text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-medium text-gray-900 leading-[1.1] tracking-tight" style="animation-delay: 0.5s">
+            技術者たち
+          </span>
+        </div>
+      </h1>
+
+      <!-- Description -->
+      <div class="fade-in-up max-w-md" style="animation-delay: 0.7s">
+        <p class="text-[15px] leading-[2] text-gray-500 font-light">
+          私たちは、創造をもって技術を売る。<br>
+          失敗を恐れず、常に新しい可能性に挑戦し続ける。<br>
+          それが創電工業のスピリットです。
+        </p>
+      </div>
+
+      <!-- CTA -->
+      <div class="fade-in-up mt-12 flex items-center space-x-8" style="animation-delay: 0.9s">
+        <a href="#about" class="group inline-flex items-center text-[13px] font-medium tracking-[0.15em] uppercase text-gray-900">
+          <span class="border-b border-gray-900 pb-1 group-hover:border-gray-400 transition-colors duration-300">詳しく見る</span>
+          <svg class="w-4 h-4 ml-3 transform group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+          </svg>
+        </a>
+      </div>
+
+      <!-- Scroll Indicator -->
+      <div class="hidden lg:block absolute bottom-12 left-12 xl:left-20">
+        <div class="fade-in-up flex items-center space-x-4" style="animation-delay: 1.1s">
+          <div class="w-[1px] h-16 bg-gray-200 relative overflow-hidden">
+            <div class="absolute top-0 left-0 w-full h-1/2 bg-gray-900 animate-pulse"></div>
+          </div>
+          <span class="text-[11px] tracking-[0.2em] uppercase text-gray-400 vertical-text">Scroll</span>
+        </div>
       </div>
     </div>
-    }
+
+    <!-- Right Image Area -->
+    <div class="col-span-12 lg:col-span-7 relative h-[50vh] lg:h-screen order-first lg:order-last">
+      <!-- Image Container -->
+      <div class="absolute inset-0 overflow-hidden">
+        @for (image of heroImages; track $index; let i = $index) {
+          <div
+            class="absolute inset-0 transition-opacity duration-1000"
+            [class.opacity-100]="currentSlide() === i"
+            [class.opacity-0]="currentSlide() !== i">
+            <img
+              [src]="image"
+              alt="創電工業の仕事"
+              class="hero-image w-full h-full object-cover"
+              [class.active]="currentSlide() === i && isImageLoaded()"
+            />
+          </div>
+        }
+        <!-- Subtle Overlay -->
+        <div class="absolute inset-0 bg-gradient-to-r from-white via-transparent to-transparent lg:w-1/4"></div>
+      </div>
+
+      <!-- Image Counter -->
+      <div class="absolute bottom-8 right-8 lg:bottom-12 lg:right-12 flex items-center space-x-4">
+        <span class="text-[13px] font-light text-white/80 tracking-wider">
+          0{{ currentSlide() + 1 }}
+        </span>
+        <div class="w-8 h-[1px] bg-white/40"></div>
+        <span class="text-[13px] font-light text-white/40 tracking-wider">
+          0{{ heroImages.length }}
+        </span>
+      </div>
+
+      <!-- Vertical Text -->
+      <div class="hidden lg:block absolute top-1/2 right-8 transform -translate-y-1/2">
+        <span class="vertical-text text-[11px] tracking-[0.4em] uppercase text-white/60 font-light">
+          Soden Industry Co., Ltd.
+        </span>
+      </div>
+    </div>
+
   </div>
+
+  <!-- Decorative Line -->
+  <div class="absolute bottom-0 left-0 right-0 h-[1px] bg-gray-100"></div>
 </section>
