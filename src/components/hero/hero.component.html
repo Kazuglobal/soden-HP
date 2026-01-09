@@ -1,46 +1,65 @@
-<section class="relative h-[80vh] min-h-[600px] w-full overflow-hidden bg-cover bg-center"
-  style="background-image: url('https://picsum.photos/1920/1080?random=1');">
-  <div class="absolute inset-0 bg-[#0c1c2d] bg-opacity-70"></div>
-
-  <div class="absolute inset-0 flex flex-col items-center justify-center text-center text-white p-4 z-10">
-    <h2 class="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-wider leading-tight uppercase" style="font-family: 'Noto Serif JP', serif;">
-      <span appGsapSplitText
-        [splitType]="'chars'"
-        [delay]="80"
-        [duration]="0.6"
-        [ease]="'power3.out'"
-        [from]="{ opacity: 0, y: 40 }"
-        [to]="{ opacity: 1, y: 0 }"
-        [threshold]="0.1"
-        class="block">未来を灯す、</span>
-      <span appGsapSplitText
-        [splitType]="'chars'"
-        [delay]="80"
-        [duration]="0.6"
-        [ease]="'power3.out'"
-        [from]="{ opacity: 0, y: 40 }"
-        [to]="{ opacity: 1, y: 0 }"
-        [threshold]="0.1"
-        class="block mt-2">確かな技術力</span>
-    </h2>
-    <p appScrollAnimate animationClass="animate-fade-in" class="mt-4 max-w-2xl text-lg md:text-xl font-light">
-      創電工業は、安全と信頼を第一に、電気設備工事を通じて社会基盤を支えます。
-    </p>
+<section class="hero-section">
+  <!-- Background Slides -->
+  <div class="slide-container">
+    @for (slide of slides; track $index; let i = $index) {
+      <div class="slide slide-{{i}}" [class.active]="currentSlide() === i">
+        <img [src]="slide.image" [alt]="slide.title" class="slide-image" loading="eager" />
+        <div class="slide-overlay"></div>
+      </div>
+    }
   </div>
 
-  <!-- Image Sliders -->
-  <div class="absolute inset-0 z-0">
-    @for(slider of sliders; track $index; let i = $index) {
-    <div class="absolute w-full" [style.top]="(i * 15) + '%'" [style.opacity]="0.2 - (i * 0.02)">
-      <div class="flex" [class.animate-scroll-left]="slider.type === 'left'"
-        [class.animate-scroll-right]="slider.type === 'right'">
-        @for(image of slider.images; track $index) {
-        <div class="flex-shrink-0 w-1/4 sm:w-1/5 md:w-1/6 lg:w-1/7 px-2">
-          <img [src]="image" alt="施工事例" class="w-full h-auto object-cover rounded-lg shadow-lg">
-        </div>
-        }
-      </div>
+  <!-- Decorative Elements -->
+  <div class="decorative-circle"></div>
+  <div class="decorative-circle decorative-circle-2"></div>
+
+  <!-- Main Content -->
+  <div class="content-wrapper">
+    <p class="tagline">Soden Industry</p>
+    <h1 class="main-title">
+      {{ slides[currentSlide()].title }}
+    </h1>
+    <p class="description">
+      {{ slides[currentSlide()].subtitle }}<br />
+      創電工業は、創造をもって技術を伝え、<br class="hidden sm:inline" />
+      アットホームな環境で共に成長する会社です。
+    </p>
+    <div class="cta-group">
+      <a href="#contact" class="btn-primary">
+        お問い合わせ
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M5 12h14M12 5l7 7-7 7"/>
+        </svg>
+      </a>
+      <a href="#recruit" class="btn-secondary">
+        採用情報を見る
+      </a>
     </div>
+  </div>
+
+  <!-- Photo Frames (Desktop) -->
+  <div class="photo-frame">
+    <img [src]="frameImages[0]" alt="作業風景" loading="eager" />
+  </div>
+  <div class="photo-frame-accent">
+    <img [src]="frameImages[1]" alt="チーム" loading="eager" />
+  </div>
+
+  <!-- Slide Indicators -->
+  <div class="slide-indicators">
+    @for (slide of slides; track $index; let i = $index) {
+      <button
+        class="indicator"
+        [class.active]="currentSlide() === i"
+        (click)="goToSlide(i)"
+        [attr.aria-label]="'スライド ' + (i + 1)">
+      </button>
     }
+  </div>
+
+  <!-- Scroll Hint -->
+  <div class="scroll-hint">
+    <span>SCROLL</span>
+    <div class="scroll-line"></div>
   </div>
 </section>
