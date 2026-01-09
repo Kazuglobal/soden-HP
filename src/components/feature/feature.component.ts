@@ -30,25 +30,25 @@ export class FeatureComponent {
 
   features = [
     {
-      image: 'https://picsum.photos/400/300?random=20',
-      alt: '高い技術力',
+      image: 'https://loremflickr.com/400/300/team,office?lock=1',
+      alt: '任せて認める組織',
       number: '01',
-      title: '信頼される高い技術力',
-      description: '経験豊富な技術者が、設計から施工、メンテナンスまで一貫して対応。最新の技術とノウハウを駆使し、高品質な電気設備を提供します。難易度の高い工事にも対応可能です。'
+      title: '主体性を育む「任せて認める」組織',
+      description: '一人一人がやるべきことを把握し、自ら考えて動ける主体性を大切にしています。アットホームな雰囲気の中、未経験からでも働きながら資格を取得し、一流の技術者へと成長できる環境があります。'
     },
     {
-      image: 'https://picsum.photos/400/300?random=21',
-      alt: '安全管理体制',
+      image: 'https://loremflickr.com/400/300/solar,energy?lock=1',
+      alt: 'SDGsへの取り組み',
       number: '02',
-      title: '徹底した安全管理体制',
-      description: '安全を最優先に考え、全ての現場で徹底した安全管理を実施しています。作業員の安全教育はもちろん、危険予知活動を通じて、無事故・無災害の現場を実現します。'
+      title: '太陽光発電によるSDGsへの貢献',
+      description: '自社電力をすべて太陽光発電で賄うなど、再生可能エネルギーの普及に積極的に取り組んでいます。脱炭素化社会の実現に向け、環境保護と持続可能な発展に貢献し続けています。'
     },
     {
-      image: 'https://picsum.photos/400/300?random=22',
-      alt: '豊富な実績',
+      image: 'https://loremflickr.com/400/300/soccer,kids?lock=1',
+      alt: '地域貢献',
       number: '03',
-      title: '公共施設から民間まで豊富な実績',
-      description: 'オフィスビル、商業施設、工場、公共施設など、多岐にわたる建物の電気設備工事を手掛けてきました。その豊富な実績と経験が、お客様からの信頼の証です。'
+      title: '未来を担う子供たちへの地域貢献',
+      description: '保育園サッカー大会の協賛や野球教室の指導など、地元八戸の未来を担う子供たちの活動を全力で支援しています。技術だけでなく、心豊かな地域社会の創造を目指しています。'
     }
   ];
 }

@@ -20,4 +20,4 @@ import { Tilt3DDirective } from '../../directives/tilt-3d.directive';
     Tilt3DDirective
   ]
 })
-export class MembersComponent {}
+export class MembersComponent { }
