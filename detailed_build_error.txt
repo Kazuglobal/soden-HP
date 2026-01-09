@@ -1,0 +1,136 @@
+[33m笶ｯ[39m Building...
+笆ｲ [WARNING] NG8113: ParallaxDirective is not used within the template of FeatureComponent [plugin angular-compiler]
+
+    src/components/feature/feature.component.ts:25:4:
+      25 笏・    ParallaxDirective
+         笊ｵ     ~~~~~~~~~~~~~~~~~
+
+X [ERROR] NG5002: Unexpected closing tag "nav". It may happen when the tag has already been closed by another tag. For more info see https://www.w3.org/TR/html5/syntax.html#closing-elements-that-have-implied-end-tags [plugin angular-compiler]
+
+    src/components/header/header.component.html:72:6:
+      72 笏・      </nav>
+         笊ｵ       ~~~~~~
+
+  Error occurs in the template of component HeaderComponent.
+
+    src/components/header/header.component.ts:14:15:
+      14 笏・  templateUrl: './header.component.html',
+         笊ｵ                ~~~~~~~~~~~~~~~~~~~~~~~~~
+
+笆ｲ [WARNING] NG8113: MagneticDirective is not used within the template of HeaderComponent [plugin angular-compiler]
+
+    src/components/header/header.component.ts:17:26:
+      17 笏・  imports: [CommonModule, MagneticDirective],
+         笊ｵ                           ~~~~~~~~~~~~~~~~~
+
+笆ｲ [WARNING] NG8113: MagneticDirective is not used within the template of MembersComponent [plugin angular-compiler]
+
+    src/components/members/members.component.ts:18:4:
+      18 笏・    MagneticDirective,
+         笊ｵ     ~~~~~~~~~~~~~~~~~
+
+笆ｲ [WARNING] NG8113: HoverLiftDirective is not used within the template of StaffComponent [plugin angular-compiler]
+
+    src/components/staff/staff.component.ts:70:73:
+      70 笏・..., GsapScrollAnimateDirective, Tilt3DDirective, HoverLiftDirective]
+         笊ｵ                                                   ~~~~~~~~~~~~~~~~~~
+
+笳・[DEBUG] The conditions "types" and "default" here will never be used as they come after both "import" and "require" [package.json]
+
+    node_modules/gsap/package.json:14:12:
+      14 笏・            "types": "./types/index.d.ts",
+         笊ｵ             ~~~~~~~
+
+  The "import" condition comes earlier and will be used for all "import" statements:
+
+    node_modules/gsap/package.json:12:12:
+      12 笏・            "import": "./index.js",
+         笊ｵ             ~~~~~~~~
+
+  The "require" condition comes earlier and will be used for all "require" calls:
+
+    node_modules/gsap/package.json:13:12:
+      13 笏・            "require": "./dist/gsap.js",
+         笊ｵ             ~~~~~~~~~
+
+笳・[DEBUG] The conditions "types" and "default" here will never be used as they come after both "import" and "require" [package.json]
+
+    node_modules/gsap/package.json:22:12:
+      22 笏・            "types": "./types/*.d.ts",
+         笊ｵ             ~~~~~~~
+
+  The "import" condition comes earlier and will be used for all "import" statements:
+
+    node_modules/gsap/package.json:20:12:
+      20 笏・            "import": "./*.js",
+         笊ｵ             ~~~~~~~~
+
+  The "require" condition comes earlier and will be used for all "require" calls:
+
+    node_modules/gsap/package.json:21:12:
+      21 笏・            "require": "./dist/*.js",
+         笊ｵ             ~~~~~~~~~
+
+笳・[DEBUG] The conditions "types" and "default" here will never be used as they come after both "import" and "require" [package.json]
+
+    node_modules/gsap/package.json:28:12:
+      28 笏・            "types": "./types/*.d.ts",
+         笊ｵ             ~~~~~~~
+
+  The "import" condition comes earlier and will be used for all "import" statements:
+
+    node_modules/gsap/package.json:26:12:
+      26 笏・            "import": "./*.js",
+         笊ｵ             ~~~~~~~~
+
+  The "require" condition comes earlier and will be used for all "require" calls:
+
+    node_modules/gsap/package.json:27:12:
+      27 笏・            "require": "./dist/*.js",
+         笊ｵ             ~~~~~~~~~
+
+4 warnings and 1 error
+[32m笨・[39m Building...
+Application bundle generation failed. [3.565 seconds] - 2026-01-09T13:47:35.444Z
+
+笆ｲ [WARNING] NG8113: ParallaxDirective is not used within the template of FeatureComponent [plugin angular-compiler]
+
+    src/components/feature/feature.component.ts:25:4:
+      25 笏・    ParallaxDirective
+         笊ｵ     ~~~~~~~~~~~~~~~~~
+
+
+笆ｲ [WARNING] NG8113: MagneticDirective is not used within the template of HeaderComponent [plugin angular-compiler]
+
+    src/components/header/header.component.ts:17:26:
+      17 笏・  imports: [CommonModule, MagneticDirective],
+         笊ｵ                           ~~~~~~~~~~~~~~~~~
+
+
+笆ｲ [WARNING] NG8113: MagneticDirective is not used within the template of MembersComponent [plugin angular-compiler]
+
+    src/components/members/members.component.ts:18:4:
+      18 笏・    MagneticDirective,
+         笊ｵ     ~~~~~~~~~~~~~~~~~
+
+
+笆ｲ [WARNING] NG8113: HoverLiftDirective is not used within the template of StaffComponent [plugin angular-compiler]
+
+    src/components/staff/staff.component.ts:70:73:
+      70 笏・..., GsapScrollAnimateDirective, Tilt3DDirective, HoverLiftDirective]
+         笊ｵ                                                   ~~~~~~~~~~~~~~~~~~
+
+
+X [ERROR] NG5002: Unexpected closing tag "nav". It may happen when the tag has already been closed by another tag. For more info see https://www.w3.org/TR/html5/syntax.html#closing-elements-that-have-implied-end-tags [plugin angular-compiler]
+
+    src/components/header/header.component.html:72:6:
+      72 笏・      </nav>
+         笊ｵ       ~~~~~~
+
+  Error occurs in the template of component HeaderComponent.
+
+    src/components/header/header.component.ts:14:15:
+      14 笏・  templateUrl: './header.component.html',
+         笊ｵ                ~~~~~~~~~~~~~~~~~~~~~~~~~
+
+

@@ -45,17 +45,20 @@ interface NavLink {
       filter: brightness(1.1);
     }
     .header-scrolled {
-      background: rgba(12, 28, 45, 0.95) !important;
-      backdrop-filter: blur(16px) !important;
-      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3) !important;
+      background: rgba(255, 255, 255, 0.9) !important;
+      backdrop-filter: blur(20px) !important;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05) !important;
     }
     .header-scrolled .header-inner {
       height: 64px !important;
     }
+    .header-scrolled .nav-link {
+      color: #334155 !important;
+    }
     .glass-dropdown {
-      background: rgba(255, 255, 255, 0.95);
-      backdrop-filter: blur(10px);
-      border: 1px solid rgba(255, 255, 255, 0.2);
+      background: rgba(255, 255, 255, 0.98);
+      backdrop-filter: blur(15px);
+      border: 1px solid rgba(0, 0, 0, 0.05);
     }
     .contact-btn {
       position: relative;
@@ -68,7 +71,7 @@ interface NavLink {
       left: -100%;
       width: 100%;
       height: 100%;
-      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
       transition: left 0.5s ease;
     }
     .contact-btn:hover::before {
@@ -106,7 +109,7 @@ export class HeaderComponent implements AfterViewInit {
     { label: '施工実績', href: '#' },
   ];
 
-  constructor(@Inject(PLATFORM_ID) private platformId: object) {}
+  constructor(@Inject(PLATFORM_ID) private platformId: object) { }
 
   @HostListener('window:scroll')
   onScroll() {

@@ -1,94 +1,66 @@
 <section class="py-16 sm:py-24 bg-gray-50">
   <div class="container mx-auto px-4 sm:px-6 lg:px-8">
     <div class="text-center mb-12">
-      <h2 appGsapSplitText
-        [splitType]="'chars'"
-        [delay]="60"
-        [duration]="0.5"
-        [ease]="'power3.out'"
-        [from]="{ opacity: 0, y: 30 }"
-        [to]="{ opacity: 1, y: 0 }"
-        [threshold]="0.2"
-        class="text-4xl sm:text-5xl font-extrabold text-[#0c1c2d] tracking-wider" style="font-family: 'Noto Serif JP', serif;">
+      <h2 appGsapSplitText [splitType]="'chars'" [delay]="60" [duration]="0.5" [ease]="'power3.out'"
+        [from]="{ opacity: 0, y: 30 }" [to]="{ opacity: 1, y: 0 }" [threshold]="0.2"
+        class="text-4xl sm:text-5xl font-extrabold text-[#0c1c2d] tracking-wider"
+        style="font-family: 'Noto Serif JP', serif;">
         代表挨拶
       </h2>
-      <p appGsapAnimate
-        [animation]="'fadeUp'"
-        [duration]="0.5"
-        [delay]="0.2"
-        [distance]="20"
-        [threshold]="0.2"
+      <p appGsapAnimate [animation]="'fadeUp'" [duration]="0.5" [delay]="0.2" [distance]="20" [threshold]="0.2"
         class="mt-2 text-lg text-gray-600">Message from the CEO</p>
     </div>
 
-    <div class="max-w-5xl mx-auto flex flex-col md:flex-row items-center gap-12 md:gap-16">
-      <div appGsapAnimate
-        [animation]="'slideRight'"
-        [duration]="0.8"
-        [distance]="80"
-        [threshold]="0.2"
+    <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-12 md:gap-20">
+      <div appGsapAnimate [animation]="'slideRight'" [duration]="1" [distance]="100" [threshold]="0.1"
         class="flex-shrink-0">
         <a href="#" class="block group" data-cursor="Profile">
-          <div appTilt3D
-            [tiltMaxX]="12"
-            [tiltMaxY]="12"
-            [tiltGlare]="true"
-            [tiltGlareOpacity]="0.15"
-            class="relative w-72 h-96 rounded-2xl overflow-hidden shadow-2xl">
-            <div appParallax [parallaxSpeed]="0.1">
-              <img appImageReveal
-                [imageRevealDirection]="'vertical'"
-                [imageRevealDuration]="1.4"
-                src="https://picsum.photos/280/380?random=30"
-                alt="代表取締役 創電 太郎"
-                class="w-full h-full object-cover scale-110">
+          <div appTilt3D [tiltMaxX]="8" [tiltMaxY]="8" [tiltGlare]="true" [tiltGlareOpacity]="0.1"
+            class="relative w-80 h-[500px] rounded-[2rem] overflow-hidden shadow-2xl border border-white">
+            <div appParallax [parallaxSpeed]="0.05">
+              <img appImageReveal [imageRevealDirection]="'vertical'" [imageRevealDuration]="1.8"
+                src="https://loremflickr.com/400/600/businessman,portrait?lock=1" alt="代表取締役社長 上野 衆"
+                class="w-full h-full object-cover scale-105 transition-transform duration-700 group-hover:scale-110">
             </div>
-            <div class="absolute inset-0 bg-gradient-to-t from-[#0c1c2d] via-[#0c1c2d]/40 to-transparent"></div>
-            <div class="absolute bottom-0 left-0 p-6 text-white">
-              <div class="w-8 h-0.5 bg-[#d4a876] mb-4 group-hover:w-16 transition-all duration-500"></div>
-              <span class="block text-xl font-bold tracking-wide">Taro Soden</span>
-              <span class="block text-sm mt-1 text-gray-300">創電 太郎</span>
-              <span class="inline-block text-xs text-[#d4a876] mt-2 px-3 py-1 border border-[#d4a876]/50 rounded-full">代表取締役</span>
-            </div>
-            <div class="absolute top-4 right-4 w-12 h-12 border border-white/30 rounded-full flex items-center justify-center group-hover:border-[#d4a876] group-hover:bg-[#d4a876]/10 transition-all duration-300">
-              <svg class="w-4 h-4 text-white group-hover:text-[#d4a876] transition-colors duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
-              </svg>
+            <div class="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-transparent to-transparent"></div>
+            <div class="absolute bottom-0 left-0 p-8 text-white">
+              <span class="block text-xs font-black tracking-widest text-[#0ea5e9] mb-2">REPRESENTATIVE</span>
+              <span class="block text-3xl font-black tracking-tight" style="font-family: 'Noto Serif JP', serif;">上野
+                衆</span>
+              <span class="block text-sm font-medium text-slate-300 mt-1">Shu Ueno</span>
+              <div class="flex items-center gap-3 mt-6">
+                <span
+                  class="inline-block text-[10px] font-black tracking-widest uppercase px-3 py-1 bg-[#0ea5e9]/20 border border-[#0ea5e9]/30 rounded-full">President</span>
+              </div>
             </div>
           </div>
         </a>
       </div>
-      <div appGsapAnimate
-        [animation]="'fadeUp'"
-        [duration]="0.7"
-        [delay]="0.3"
-        [distance]="40"
-        [threshold]="0.2"
-        class="text-center md:text-left flex-1">
+      <div appGsapAnimate [animation]="'fadeUp'" [duration]="1" [delay]="0.2" [distance]="50" [threshold]="0.1"
+        class="text-left flex-1">
         <div class="relative">
-          <div class="absolute -left-4 top-0 text-8xl text-[#d4a876]/10 font-serif leading-none">"</div>
-          <p class="text-lg text-gray-700 leading-relaxed pl-8 md:pl-0 relative z-10">
-            平素は格別のご高配を賜り、厚く御礼申し上げます。私たちが大切にしているのは、お客様との信頼関係です。一つひとつの仕事に誠実に向き合い、安全で高品質な施工をお届けすることをお約束いたします。これからも変わらぬご支援とご鞭撻を賜りますよう、お願い申し上げます。
-          </p>
+          <div class="absolute -left-12 -top-10 text-[160px] text-sky-100 font-serif leading-none opacity-50 z-0">"
+          </div>
+          <div class="relative z-10 space-y-6">
+            <h3 class="text-2xl font-black text-slate-900 leading-tight" style="font-family: 'Noto Serif JP', serif;">
+              一、公正であれ　一、永続であれ<br>
+              一、寛容であれ　一、遊び心であれ
+            </h3>
+            <p class="text-lg text-slate-600 leading-relaxed font-medium">
+              当社の社名は「創造をもって、技術を売る」という意味から名づけられました。1987年の創業以来、コンセント1つから公共工事まで、私たちは「人の為が自分の為」という精神で取り組んできました。
+            </p>
+            <p class="text-lg text-slate-600 leading-relaxed font-medium">
+              任せて認めるという組織の在り方を大切にし、一人一人が自ら考えて動ける主体性を育んでいます。未経験からでも立派な技術者になれる環境、そして家族のように仲が良いアットホームな職場で、私たちは未来を創り続けます。
+            </p>
+          </div>
         </div>
-        <div appGsapAnimate
-          [animation]="'scaleIn'"
-          [duration]="0.5"
-          [delay]="0.5"
-          [scale]="0.9"
-          [threshold]="0.2"
-          class="text-center md:text-left mt-10">
-          <a appMagnetic
-            [magneticStrength]="0.2"
-            [magneticScale]="1.05"
-            href="#"
-            class="group inline-flex items-center gap-3 bg-gradient-to-r from-[#0c1c2d] to-[#1a3a52] text-white px-10 py-4 rounded-full text-base font-bold uppercase tracking-wider transition-all duration-300 hover:shadow-2xl hover:shadow-[#0c1c2d]/30"
-            data-cursor="Click">
-            <span>READ MORE</span>
-            <svg class="w-5 h-5 transform group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
-            </svg>
-          </a>
+        <div class="mt-12 flex items-center gap-8">
+          <div class="h-px flex-1 bg-slate-100"></div>
+          <div class="flex flex-col items-end">
+            <span class="text-xs font-black tracking-tighter text-slate-400 uppercase">Best Regards</span>
+            <span class="text-xl font-black text-slate-900 mt-1"
+              style="font-family: 'Noto Serif JP', serif;">株式会社創電工業　上野 衆</span>
+          </div>
         </div>
       </div>
     </div>

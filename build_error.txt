@@ -1,0 +1,182 @@
+[33m笶ｯ[39m Building...
+[32m笨・[39m Building...
+Application bundle generation failed. [3.162 seconds] - 2026-01-09T13:45:13.122Z
+
+笆ｲ [WARNING] NG8113: ParallaxDirective is not used within the template of FeatureComponent [plugin angular-compiler]
+
+    src/components/feature/feature.component.ts:25:4:
+      25 笏・    ParallaxDirective
+         笊ｵ     ~~~~~~~~~~~~~~~~~
+
+
+笆ｲ [WARNING] NG8113: MagneticDirective is not used within the template of HeaderComponent [plugin angular-compiler]
+
+    src/components/header/header.component.ts:17:26:
+      17 笏・  imports: [CommonModule, MagneticDirective],
+         笊ｵ                           ~~~~~~~~~~~~~~~~~
+
+
+笆ｲ [WARNING] NG8113: ScrollAnimateDirective is not used within the template of HeroComponent [plugin angular-compiler]
+
+    src/components/hero/hero.component.ts:11:50:
+      11 笏・...ts: [CommonModule, GsapSplitTextDirective, ScrollAnimateDirective]
+         笊ｵ                                               ~~~~~~~~~~~~~~~~~~~~~~
+
+
+笆ｲ [WARNING] NG8113: MagneticDirective is not used within the template of MembersComponent [plugin angular-compiler]
+
+    src/components/members/members.component.ts:18:4:
+      18 笏・    MagneticDirective,
+         笊ｵ     ~~~~~~~~~~~~~~~~~
+
+
+笆ｲ [WARNING] NG8113: HoverLiftDirective is not used within the template of StaffComponent [plugin angular-compiler]
+
+    src/components/staff/staff.component.ts:70:73:
+      70 笏・..., GsapScrollAnimateDirective, Tilt3DDirective, HoverLiftDirective]
+         笊ｵ                                                   ~~~~~~~~~~~~~~~~~~
+
+
+X [ERROR] NG5002: Unexpected closing tag "nav". It may happen when the tag has already been closed by another tag. For more info see https://www.w3.org/TR/html5/syntax.html#closing-elements-that-have-implied-end-tags [plugin angular-compiler]
+
+    src/components/header/header.component.html:72:6:
+      72 笏・      </nav>
+         笊ｵ       ~~~~~~
+
+  Error occurs in the template of component HeaderComponent.
+
+    src/components/header/header.component.ts:14:15:
+      14 笏・  templateUrl: './header.component.html',
+         笊ｵ                ~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+X [ERROR] NG8002: Can't bind to 'animation' since it isn't a known property of 'div'. [plugin angular-compiler]
+
+    src/components/hero/hero.component.html:12:21:
+      12 笏・      appGsapAnimate [animation]="'fadeUp'" [duration]="0.8">
+         笊ｵ                      ~~~~~~~~~~~~~~~~~~~~~~
+
+  Error occurs in the template of component HeroComponent.
+
+    src/components/hero/hero.component.ts:8:15:
+      8 笏・  templateUrl: './hero.component.html',
+        笊ｵ                ~~~~~~~~~~~~~~~~~~~~~~~
+
+
+X [ERROR] NG8002: Can't bind to 'duration' since it isn't a known property of 'div'. [plugin angular-compiler]
+
+    src/components/hero/hero.component.html:12:44:
+      12 笏・      appGsapAnimate [animation]="'fadeUp'" [duration]="0.8">
+         笊ｵ                                             ~~~~~~~~~~~~~~~~
+
+  Error occurs in the template of component HeroComponent.
+
+    src/components/hero/hero.component.ts:8:15:
+      8 笏・  templateUrl: './hero.component.html',
+        笊ｵ                ~~~~~~~~~~~~~~~~~~~~~~~
+
+
+X [ERROR] NG8002: Can't bind to 'animation' since it isn't a known property of 'p'. [plugin angular-compiler]
+
+    src/components/hero/hero.component.html:28:22:
+      28 笏・    <p appGsapAnimate [animation]="'fadeUp'" [duration]="1" [delay...
+         笊ｵ                       ~~~~~~~~~~~~~~~~~~~~~~
+
+  Error occurs in the template of component HeroComponent.
+
+    src/components/hero/hero.component.ts:8:15:
+      8 笏・  templateUrl: './hero.component.html',
+        笊ｵ                ~~~~~~~~~~~~~~~~~~~~~~~
+
+
+X [ERROR] NG8002: Can't bind to 'duration' since it isn't a known property of 'p'. [plugin angular-compiler]
+
+    src/components/hero/hero.component.html:28:45:
+      28 笏・...appGsapAnimate [animation]="'fadeUp'" [duration]="1" [delay]="0.6"
+         笊ｵ                                          ~~~~~~~~~~~~~~
+
+  Error occurs in the template of component HeroComponent.
+
+    src/components/hero/hero.component.ts:8:15:
+      8 笏・  templateUrl: './hero.component.html',
+        笊ｵ                ~~~~~~~~~~~~~~~~~~~~~~~
+
+
+X [ERROR] NG8002: Can't bind to 'delay' since it isn't a known property of 'p'. [plugin angular-compiler]
+
+    src/components/hero/hero.component.html:28:60:
+      28 笏・...appGsapAnimate [animation]="'fadeUp'" [duration]="1" [delay]="0.6"
+         笊ｵ                                                         ~~~~~~~~~~~~~
+
+  Error occurs in the template of component HeroComponent.
+
+    src/components/hero/hero.component.ts:8:15:
+      8 笏・  templateUrl: './hero.component.html',
+        笊ｵ                ~~~~~~~~~~~~~~~~~~~~~~~
+
+
+X [ERROR] NG8002: Can't bind to 'animation' since it isn't a known property of 'div'. [plugin angular-compiler]
+
+    src/components/hero/hero.component.html:33:70:
+      33 笏・...-row gap-6" appGsapAnimate [animation]="'fadeUp'" [duration]="0.8"
+         笊ｵ                               ~~~~~~~~~~~~~~~~~~~~~~
+
+  Error occurs in the template of component HeroComponent.
+
+    src/components/hero/hero.component.ts:8:15:
+      8 笏・  templateUrl: './hero.component.html',
+        笊ｵ                ~~~~~~~~~~~~~~~~~~~~~~~
+
+
+X [ERROR] NG8002: Can't bind to 'duration' since it isn't a known property of 'div'. [plugin angular-compiler]
+
+    src/components/hero/hero.component.html:33:93:
+      33 笏・...-row gap-6" appGsapAnimate [animation]="'fadeUp'" [duration]="0.8"
+         笊ｵ                                                      ~~~~~~~~~~~~~~~~
+
+  Error occurs in the template of component HeroComponent.
+
+    src/components/hero/hero.component.ts:8:15:
+      8 笏・  templateUrl: './hero.component.html',
+        笊ｵ                ~~~~~~~~~~~~~~~~~~~~~~~
+
+
+X [ERROR] NG8002: Can't bind to 'delay' since it isn't a known property of 'div'. [plugin angular-compiler]
+
+    src/components/hero/hero.component.html:34:6:
+      34 笏・      [delay]="0.8">
+         笊ｵ       ~~~~~~~~~~~~~
+
+  Error occurs in the template of component HeroComponent.
+
+    src/components/hero/hero.component.ts:8:15:
+      8 笏・  templateUrl: './hero.component.html',
+        笊ｵ                ~~~~~~~~~~~~~~~~~~~~~~~
+
+
+X [ERROR] NG8002: Can't bind to 'magneticStrength' since it isn't a known property of 'a'. [plugin angular-compiler]
+
+    src/components/hero/hero.component.html:35:21:
+      35 笏・      <a appMagnetic [magneticStrength]="0.2" href="#what-we-do"
+         笊ｵ                      ~~~~~~~~~~~~~~~~~~~~~~~~
+
+  Error occurs in the template of component HeroComponent.
+
+    src/components/hero/hero.component.ts:8:15:
+      8 笏・  templateUrl: './hero.component.html',
+        笊ｵ                ~~~~~~~~~~~~~~~~~~~~~~~
+
+
+X [ERROR] NG8002: Can't bind to 'magneticStrength' since it isn't a known property of 'a'. [plugin angular-compiler]
+
+    src/components/hero/hero.component.html:48:21:
+      48 笏・      <a appMagnetic [magneticStrength]="0.15" href="#company"
+         笊ｵ                      ~~~~~~~~~~~~~~~~~~~~~~~~~
+
+  Error occurs in the template of component HeroComponent.
+
+    src/components/hero/hero.component.ts:8:15:
+      8 笏・  templateUrl: './hero.component.html',
+        笊ｵ                ~~~~~~~~~~~~~~~~~~~~~~~
+
+
