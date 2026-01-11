@@ -1,15 +1,13 @@
 import { Component, ChangeDetectionStrategy, OnInit, OnDestroy, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { GsapSplitTextDirective } from '../../directives/gsap-split-text.directive';
 import { GsapScrollAnimateDirective } from '../../directives/gsap-scroll-animate.directive';
-import { MagneticDirective } from '../../directives/magnetic.directive';
 
 @Component({
   selector: 'app-hero',
   templateUrl: './hero.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
   standalone: true,
-  imports: [CommonModule, GsapSplitTextDirective, GsapScrollAnimateDirective, MagneticDirective]
+  imports: [CommonModule, GsapScrollAnimateDirective]
 })
 export class HeroComponent implements OnInit, OnDestroy {
   // Industrial/Construction themed high-quality images
@@ -20,7 +18,7 @@ export class HeroComponent implements OnInit, OnDestroy {
   ];
 
   currentIndex = signal(0);
-  private intervalId: any;
+  private intervalId: ReturnType<typeof setInterval> | null = null;
 
   ngOnInit() {
     this.startSlideshow();

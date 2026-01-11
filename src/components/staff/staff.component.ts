@@ -5,10 +5,24 @@ import { Tilt3DDirective } from '../../directives/tilt-3d.directive';
 import { HoverLiftDirective } from '../../directives/hover-effects.directive';
 
 @Component({
-    selector: 'app-staff',
-    template: `
-    <section id="staff" class="py-24 bg-white overflow-hidden">
-      <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+  selector: 'app-staff',
+  standalone: true,
+  imports: [CommonModule, GsapScrollAnimateDirective, Tilt3DDirective, HoverLiftDirective],
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  template: `
+    <section id="staff" class="py-24 bg-white relative overflow-hidden">
+      <!-- Technical "Road" Cable Trace for Staff Section -->
+      <div class="absolute inset-0 z-0 pointer-events-none overflow-hidden">
+        <div class="absolute inset-0 flex items-center justify-center opacity-30 mix-blend-multiply">
+          <img src="/images/soden_roadmap.png" 
+               alt="Soden Technical Roadmap" 
+               class="w-full h-auto min-h-full object-cover lg:object-contain rotate-12 scale-150 translate-x-1/2 translate-y-1/3">
+        </div>
+        <!-- Protective Overlay -->
+        <div class="absolute inset-0 bg-white/30"></div>
+      </div>
+
+      <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div class="text-center mb-20">
           <h2 appGsapAnimate [animation]="'fadeUp'" class="text-4xl sm:text-5xl font-black text-slate-900 tracking-tight" style="font-family: 'Noto Serif JP', serif;">
             社員紹介
@@ -64,45 +78,42 @@ import { HoverLiftDirective } from '../../directives/hover-effects.directive';
         </div>
       </div>
     </section>
-  `,
-    changeDetection: ChangeDetectionStrategy.OnPush,
-    standalone: true,
-    imports: [CommonModule, GsapScrollAnimateDirective, Tilt3DDirective, HoverLiftDirective]
+  `
 })
 export class StaffComponent {
-    staffMembers = [
-        {
-            name: '佐野 英司',
-            role: 'Eiji Sano / 施工管理士',
-            image: 'https://loremflickr.com/500/800/engineer,man?lock=10',
-            joinYear: '2004年',
-            bloodType: 'O',
-            hobby: 'マウンテンバイク',
-            tags: ['1級施工管理技士', '第1種電気工事士', '消防設備士'],
-            jobDesc: '住宅10棟の同時進行や大規模現場の指示出しを担当。電気科で学んだ基礎をさらに高め、現在は国家資格を活かして複雑な警報設備の整備点検まで手がけます。',
-            passion: '竣工時、電気が点き、モーターが回る瞬間を確認できることが最高の喜び。パワフルでフットワークの軽い仲間と共に日々邁進しています。'
-        },
-        {
-            name: '林 隆博',
-            role: 'Takahiro Hayashi / 電気工事士',
-            image: 'https://loremflickr.com/500/800/technician,man?lock=20',
-            joinYear: '2014年',
-            bloodType: 'AB',
-            hobby: '三社大祭、八戸えんぶり',
-            tags: ['変電設備', '強電工事', '若手育成'],
-            jobDesc: '建物の心臓部となる変電設備の設置から、照明・空調などの末端まで電気を送る全工程を担当。若手が学びやすい現場環境づくりも大切にしています。',
-            passion: 'もしもの災害時、自分の経験と知識を復旧の手助けに活かしたい。培った技術は誰かの助けになる、その誇りを持って仕事をしています。'
-        },
-        {
-            name: '榊田 了',
-            role: 'Ryoichi Sakakida / 電気工事士',
-            image: 'https://loremflickr.com/500/800/worker,man?lock=30',
-            joinYear: '2013年',
-            bloodType: 'A',
-            hobby: 'ゲーム、スポーツ、カラオケ',
-            tags: ['第2種電気工事士', 'アットホーム', '自己研鑽'],
-            jobDesc: '異業種から転職し、働きながら国家資格を取得。現在はビルやマンションなど、幅広い現場を任されています。進化し続ける技術に飽くことなく挑戦中です。',
-            passion: '電気工事は一生学びが続く仕事。だからこそ飽きることがなく、やりがいがあります。家族のため、そして自分の成長のために高みを目指します。'
-        }
-    ];
+  staffMembers = [
+    {
+      name: '佐野 英司',
+      role: 'Eiji Sano / 施工管理士',
+      image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=1000&auto=format&fit=crop',
+      joinYear: '2004年',
+      bloodType: 'O',
+      hobby: 'マウンテンバイク',
+      tags: ['1級施工管理技士', '第1種電気工事士', '消防設備士'],
+      jobDesc: '住宅10棟の同時進行や大規模現場の指示出しを担当。電気科で学んだ基礎をさらに高め、現在は国家資格を活かして複雑な警報設備の整備点検まで手がけます。',
+      passion: '竣工時、電気が点き、モーターが回る瞬間を確認できることが最高の喜び。パワフルでフットワークの軽い仲間と共に日々邁進しています。'
+    },
+    {
+      name: '林 隆博',
+      role: 'Takahiro Hayashi / 電気工事士',
+      image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=1000&auto=format&fit=crop',
+      joinYear: '2014年',
+      bloodType: 'AB',
+      hobby: '三社大祭、八戸えんぶり',
+      tags: ['変電設備', '強電工事', '若手育成'],
+      jobDesc: '建物の心臓部となる変電設備の設置から、照明・空調などの末端まで電気を送る全工程を担当。若手が学びやすい現場環境づくりも大切にしています。',
+      passion: 'もしもの災害時、自分の経験と知識を復旧の手助けに活かしたい。培った技術は誰かの助けになる、その誇りを持って仕事をしています。'
+    },
+    {
+      name: '榊田 了',
+      role: 'Ryoichi Sakakida / 電気工事士',
+      image: 'https://images.unsplash.com/photo-1590650153855-d9e808231d41?q=80&w=1000&auto=format&fit=crop',
+      joinYear: '2013年',
+      bloodType: 'A',
+      hobby: 'ゲーム、スポーツ、カラオケ',
+      tags: ['第2種電気工事士', 'アットホーム', '自己研鑽'],
+      jobDesc: '異業種から転職し、働きながら国家資格を取得。現在はビルやマンションなど、幅広い現場を任されています。進化し続ける技術に飽くことなく挑戦中です。',
+      passion: '電気工事は一生学びが続く仕事。だからこそ飽きることがなく、やりがいがあります。家族のため、電力インフラを支えていく誇りを持っています。'
+    }
+  ];
 }

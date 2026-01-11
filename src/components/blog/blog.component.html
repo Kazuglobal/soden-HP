@@ -1,74 +1,55 @@
-<section class="py-16 sm:py-24 bg-white">
-  <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+<section class="py-16 sm:py-24 bg-white relative overflow-hidden">
+  <!-- Technical "Road" Cable Trace for Blog Section -->
+  <div class="absolute inset-0 z-0 pointer-events-none overflow-hidden">
+    <div class="absolute inset-0 flex items-center justify-center opacity-30 mix-blend-multiply">
+      <img src="/images/soden_roadmap.png" alt="Soden Technical Roadmap"
+        class="w-full h-auto min-h-full object-cover lg:object-contain rotate-6 scale-125 -translate-x-1/2 translate-y-1/4">
+    </div>
+  </div>
+
+  <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
     <div class="text-center mb-12">
-      <h2 appGsapSplitText
-        [splitType]="'chars'"
-        [delay]="50"
-        [duration]="0.5"
-        [ease]="'power3.out'"
-        [from]="{ opacity: 0, y: 30 }"
-        [to]="{ opacity: 1, y: 0 }"
-        [threshold]="0.2"
-        class="text-4xl sm:text-5xl font-extrabold text-[#0c1c2d] tracking-wider" style="font-family: 'Noto Serif JP', serif;">
+      <h2 appGsapSplitText [splitType]="'chars'" [delay]="50" [duration]="0.5" [ease]="'power3.out'"
+        [from]="{ opacity: 0, y: 30 }" [to]="{ opacity: 1, y: 0 }" [threshold]="0.2"
+        class="text-4xl sm:text-5xl font-extrabold text-[#0c1c2d] tracking-wider"
+        style="font-family: 'Noto Serif JP', serif;">
         事業内容
       </h2>
-      <p appGsapAnimate
-        [animation]="'fadeUp'"
-        [duration]="0.6"
-        [delay]="0.3"
-        [distance]="20"
-        [threshold]="0.2"
+      <p appGsapAnimate [animation]="'fadeUp'" [duration]="0.6" [delay]="0.3" [distance]="20" [threshold]="0.2"
         class="text-sm text-gray-500 mt-2">株式会社創電工業が提供するサービス</p>
     </div>
 
-    <div appGsapAnimate
-      [animation]="'fadeUp'"
-      [stagger]="0.15"
-      [duration]="0.7"
-      [distance]="50"
-      [threshold]="0.1"
+    <div appGsapAnimate [animation]="'fadeUp'" [stagger]="0.15" [duration]="0.7" [distance]="50" [threshold]="0.1"
       class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
       @for (service of services; track service.title) {
-        <div appTilt3D
-          [tiltMaxX]="8"
-          [tiltMaxY]="8"
-          [tiltGlare]="true"
-          [tiltGlareOpacity]="0.15"
-          appHoverLift
-          [liftDistance]="-8"
-          class="group relative overflow-hidden rounded-xl shadow-lg cursor-pointer"
-          data-cursor="View">
-          <a href="{{ service.href }}">
-            <div appHoverZoom [zoomScale]="1.15" [zoomDuration]="0.8">
-              <img appImageReveal
-                [imageRevealDirection]="'horizontal'"
-                [imageRevealDuration]="1.2"
-                [src]="service.image"
-                [alt]="service.alt"
-                class="w-full h-56 object-cover">
-            </div>
-            <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent group-hover:from-black/80 transition-all duration-500"></div>
-            <div class="absolute inset-0 p-6 flex flex-col justify-end text-white">
-              <span class="text-sm font-semibold text-[#d4a876] tracking-wider uppercase">{{ service.category }}</span>
-              <span class="absolute top-4 right-4 text-7xl font-black text-white/10 group-hover:text-white/20 transition-colors duration-300">{{ service.number }}</span>
-              <h4 class="mt-2 text-xl font-bold group-hover:translate-x-2 transition-transform duration-300">{{ service.title }}</h4>
-              <div class="w-0 h-0.5 bg-[#d4a876] group-hover:w-16 transition-all duration-500 mt-2"></div>
-            </div>
-          </a>
-        </div>
+      <div appTilt3D [tiltMaxX]="8" [tiltMaxY]="8" [tiltGlare]="true" [tiltGlareOpacity]="0.15" appHoverLift
+        [liftDistance]="-8" class="group relative overflow-hidden rounded-xl shadow-lg cursor-pointer"
+        data-cursor="View">
+        <a href="{{ service.href }}">
+          <div appHoverZoom [zoomScale]="1.15" [zoomDuration]="0.8">
+            <img appImageReveal [imageRevealDirection]="'horizontal'" [imageRevealDuration]="1.2" [src]="service.image"
+              [alt]="service.alt" class="w-full h-56 object-cover">
+          </div>
+          <div
+            class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent group-hover:from-black/80 transition-all duration-500">
+          </div>
+          <div class="absolute inset-0 p-6 flex flex-col justify-end text-white">
+            <span class="text-sm font-semibold text-[#d4a876] tracking-wider uppercase">{{ service.category }}</span>
+            <span
+              class="absolute top-4 right-4 text-7xl font-black text-white/10 group-hover:text-white/20 transition-colors duration-300">{{
+              service.number }}</span>
+            <h4 class="mt-2 text-xl font-bold group-hover:translate-x-2 transition-transform duration-300">{{
+              service.title }}</h4>
+            <div class="w-0 h-0.5 bg-[#d4a876] group-hover:w-16 transition-all duration-500 mt-2"></div>
+          </div>
+        </a>
+      </div>
       }
     </div>
 
-    <div appGsapAnimate
-      [animation]="'scaleIn'"
-      [duration]="0.5"
-      [scale]="0.9"
-      [threshold]="0.3"
+    <div appGsapAnimate [animation]="'scaleIn'" [duration]="0.5" [scale]="0.9" [threshold]="0.3"
       class="text-center mt-12">
-      <a appMagnetic
-        [magneticStrength]="0.2"
-        [magneticScale]="1.05"
-        href="#"
+      <a appMagnetic [magneticStrength]="0.2" [magneticScale]="1.05" href="#"
         class="inline-block bg-[#0c1c2d] text-white px-10 py-4 rounded-full text-base font-bold uppercase tracking-wider hover:bg-[#1a3a52] transition-all duration-300 hover:shadow-xl hover:shadow-[#0c1c2d]/20"
         data-cursor="Click">
         詳しく見る

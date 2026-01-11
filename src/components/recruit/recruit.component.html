@@ -1,30 +1,25 @@
-<section class="py-20 sm:py-32 bg-gray-50 overflow-hidden">
-    <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative">
+<section class="py-24 sm:py-32 bg-white relative overflow-hidden">
+    <!-- Technical "Road" Cable Trace for Recruit Section -->
+    <div class="absolute inset-0 z-0 pointer-events-none overflow-hidden">
+        <div class="absolute inset-0 flex items-center justify-center opacity-60 mix-blend-multiply">
+            <img src="/images/soden_roadmap.png" alt="Soden Technical Roadmap"
+                class="w-full h-auto min-h-full object-cover lg:object-contain -scale-x-100 -rotate-6 scale-125 translate-x-1/2 translate-y-1/4">
+        </div>
+    </div>
 
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <!-- Section Header -->
-        <div class="text-center mb-16">
-            <h2 class="text-4xl sm:text-6xl font-extrabold text-[#0c1c2d] tracking-tight mb-4">
-                <span appGsapAnimate
-                    [animation]="'fadeUp'"
-                    [duration]="0.5"
-                    [distance]="20"
-                    [threshold]="0.2"
-                    class="block text-xl text-blue-600 font-medium tracking-widest mb-2" style="font-family: 'Noto Serif JP', serif;">採用情報</span>
-                <span appGsapSplitText
-                    [splitType]="'chars'"
-                    [delay]="70"
-                    [duration]="0.5"
-                    [ease]="'power3.out'"
-                    [from]="{ opacity: 0, y: 40, rotateY: 30 }"
-                    [to]="{ opacity: 1, y: 0, rotateY: 0 }"
-                    [threshold]="0.2">RECRUIT</span>
+        <div class="text-center mb-16 lg:mb-24">
+            <div class="inline-flex items-center gap-3 mb-6" appGsapAnimate [animation]="'fadeUp'">
+                <div class="w-8 h-[1px] bg-emerald-500"></div>
+                <span class="text-xs font-bold text-emerald-600 tracking-[0.5em] uppercase">Join Our Team</span>
+                <div class="w-8 h-[1px] bg-emerald-500"></div>
+            </div>
+            <h2 class="text-5xl md:text-6xl lg:text-7xl font-black text-slate-900 tracking-tight leading-none"
+                style="font-family: 'Noto Serif JP', serif;" appGsapAnimate [animation]="'fadeUp'" [duration]="1.2">
+                採用情報
             </h2>
-            <p appGsapAnimate
-                [animation]="'fadeUp'"
-                [duration]="0.6"
-                [delay]="0.3"
-                [distance]="25"
-                [threshold]="0.2"
+            <p appGsapAnimate [animation]="'fadeUp'" [duration]="0.6" [delay]="0.3" [distance]="25" [threshold]="0.2"
                 class="mt-4 text-gray-600 max-w-2xl mx-auto">
                 私たちと共に未来を創る仲間を募集しています。
             </p>
@@ -33,16 +28,13 @@
         <div class="max-w-4xl mx-auto">
 
             <!-- Recruitment Card -->
-            <div appGsapAnimate
-                [animation]="'fadeUp'"
-                [duration]="0.8"
-                [distance]="60"
-                [threshold]="0.15"
+            <div appGsapAnimate [animation]="'fadeUp'" [duration]="0.8" [distance]="60" [threshold]="0.15"
                 class="bg-white rounded-3xl shadow-xl overflow-hidden hover:shadow-2xl transition-shadow duration-300">
 
                 <!-- Header Banner -->
                 <div class="bg-[#0c1c2d] py-8 px-6 sm:px-12 text-center">
-                    <h3 class="text-2xl sm:text-3xl font-bold text-white tracking-wider" style="font-family: 'Noto Serif JP', serif;">作業員募集</h3>
+                    <h3 class="text-2xl sm:text-3xl font-bold text-white tracking-wider"
+                        style="font-family: 'Noto Serif JP', serif;">作業員募集</h3>
                     <p class="text-blue-200 mt-2">未経験者歓迎・丁寧に指導します</p>
 
                     <div class="mt-8">

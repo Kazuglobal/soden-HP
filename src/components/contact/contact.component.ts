@@ -4,15 +4,14 @@ import { ReactiveFormsModule, FormBuilder, FormGroup, Validators } from '@angula
 import { GsapSplitTextDirective } from '../../directives/gsap-split-text.directive';
 import { GsapScrollAnimateDirective } from '../../directives/gsap-scroll-animate.directive';
 
-// GAS WebアプリURL
 const GAS_URL = 'https://script.google.com/macros/s/AKfycbw0w3YPyax4YpYvUs8uiDPLEoUb6hru7AunTOWaK4RfgEIhdfUFuWaJ7uH0lq6mdBtaPQ/exec';
 
 @Component({
   selector: 'app-contact',
-  templateUrl: './contact.component.html',
-  changeDetection: ChangeDetectionStrategy.OnPush,
   standalone: true,
-  imports: [CommonModule, ReactiveFormsModule, GsapSplitTextDirective, GsapScrollAnimateDirective]
+  imports: [CommonModule, ReactiveFormsModule, GsapSplitTextDirective, GsapScrollAnimateDirective],
+  templateUrl: './contact.component.html',
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ContactComponent {
   contactForm: FormGroup;
@@ -40,7 +39,6 @@ export class ContactComponent {
     this.cdr.markForCheck();
 
     try {
-      // GASにPOSTリクエストを送信（no-corsモードでCORSプリフライトを回避）
       await fetch(GAS_URL, {
         method: 'POST',
         mode: 'no-cors',
@@ -49,8 +47,6 @@ export class ContactComponent {
         },
         body: JSON.stringify(this.contactForm.value)
       });
-
-      // no-corsモードではレスポンスを読めないため、送信成功とみなす
       this.submitStatus = 'success';
       this.contactForm.reset();
     } catch (error) {

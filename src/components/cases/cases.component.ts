@@ -4,8 +4,8 @@ import { GsapScrollAnimateDirective } from '../../directives/gsap-scroll-animate
 import { HoverZoomDirective } from '../../directives/hover-effects.directive';
 
 @Component({
-    selector: 'app-cases',
-    template: `
+  selector: 'app-cases',
+  template: `
     <section id="cases" class="py-24 bg-slate-50 overflow-hidden">
       <div class="container mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-8">
@@ -73,25 +73,25 @@ import { HoverZoomDirective } from '../../directives/hover-effects.directive';
       </div>
     </section>
   `,
-    changeDetection: ChangeDetectionStrategy.OnPush,
-    standalone: true,
-    imports: [CommonModule, GsapScrollAnimateDirective, HoverZoomDirective]
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  standalone: true,
+  imports: [CommonModule, GsapScrollAnimateDirective, HoverZoomDirective]
 })
 export class CasesComponent {
-    cases = [
-        {
-            title: 'エコな保育園の新築電気設備工事',
-            category: 'Public Works',
-            image: 'https://loremflickr.com/800/600/kindergarten,building?lock=100',
-            description: '全面太陽光パネルによる発電設備と、薪焼ストーブを導入した環境配慮型保育園。シンボルのキリンオブジェの設置まで手がけました。',
-            tags: ['太陽光発電', '蓄電池システム', 'キリンオブジェ', '新築工事']
-        },
-        {
-            title: '小中学校・公共施設の改修プロジェクト',
-            category: 'Community Support',
-            image: 'https://loremflickr.com/800/600/school,hall?lock=200',
-            description: '地域の未来を担う子供たちの学び舎を支える、確かな電気工事。照明LED化から変電設備の更新まで、幅広く対応しています。',
-            tags: ['LED化', '変電設備', '公共工事', '安心安全']
-        }
-    ];
+  cases = [
+    {
+      title: 'エコな保育園の新築電気設備工事',
+      category: 'Public Works',
+      image: 'https://images.unsplash.com/photo-1576495199011-eb94736d05d6?q=80&w=1000&auto=format&fit=crop',
+      description: '全面太陽光パネルによる発電設備と、薪焼ストーブを導入した環境配慮型保育園。シンボルのキリンオブジェの設置まで手がけました。',
+      tags: ['太陽光発電', '蓄電池システム', 'キリンオブジェ', '新築工事']
+    },
+    {
+      title: '小中学校・公共施設の改修プロジェクト',
+      category: 'Community Support',
+      image: 'https://images.unsplash.com/photo-1580582932707-520aed937b7b?q=80&w=1000&auto=format&fit=crop',
+      description: '地域の未来を担う子供たちの学び舎を支える、確かな電気工事。照明LED化から変電設備の更新まで、幅広く対応しています。',
+      tags: ['LED化', '変電設備', '公共工事', '安心安全']
+    }
+  ];
 }

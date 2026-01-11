@@ -1,7 +1,6 @@
-import { Component, ChangeDetectionStrategy, signal, HostListener, AfterViewInit, Inject, PLATFORM_ID, ElementRef, ViewChild } from '@angular/core';
+import { Component, ChangeDetectionStrategy, signal, HostListener, AfterViewInit, Inject, PLATFORM_ID } from '@angular/core';
 import { CommonModule, isPlatformBrowser } from '@angular/common';
 import { gsap } from 'gsap';
-import { MagneticDirective } from '../../directives/magnetic.directive';
 
 interface NavLink {
   label: string;
@@ -14,7 +13,7 @@ interface NavLink {
   templateUrl: './header.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
   standalone: true,
-  imports: [CommonModule, MagneticDirective],
+  imports: [CommonModule],
   styles: [`
     :host {
       display: contents;
@@ -48,8 +47,6 @@ interface NavLink {
   `]
 })
 export class HeaderComponent implements AfterViewInit {
-  @ViewChild('headerEl') headerEl!: ElementRef<HTMLElement>;
-
   isMenuOpen = signal(false);
   isScrolled = signal(false);
 
