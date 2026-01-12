@@ -1,5 +1,6 @@
 import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
 import { GsapScrollAnimateDirective } from '../../directives/gsap-scroll-animate.directive';
 
 @Component({
@@ -7,50 +8,56 @@ import { GsapScrollAnimateDirective } from '../../directives/gsap-scroll-animate
   templateUrl: './footer.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
   standalone: true,
-  imports: [CommonModule, GsapScrollAnimateDirective],
+  imports: [CommonModule, RouterModule, GsapScrollAnimateDirective],
   styles: [`
     :host {
       display: block;
     }
     .footer-link {
       position: relative;
+      display: inline-flex;
+      align-items: center;
     }
-    .footer-link::after {
+    .footer-link::before {
       content: '';
       position: absolute;
-      bottom: -2px;
-      left: 0;
-      width: 0;
-      height: 1px;
-      background: linear-gradient(90deg, #d4a876, #ff8c42);
-      transition: width 0.3s ease;
+      left: -12px;
+      width: 4px;
+      height: 4px;
+      background: linear-gradient(135deg, #0ea5e9, #10b981);
+      border-radius: 50%;
+      opacity: 0;
+      transform: scale(0);
+      transition: all 0.3s ease;
     }
-    .footer-link:hover::after {
-      width: 100%;
+    .footer-link:hover::before {
+      opacity: 1;
+      transform: scale(1);
+    }
+    .footer-link:hover span {
+      transform: translateX(4px);
     }
     .logo-container:hover .logo-img {
-      transform: scale(1.08);
-      filter: brightness(1.15) drop-shadow(0 0 8px rgba(212, 168, 118, 0.5));
+      transform: scale(1.05) translateY(-2px);
+      filter: brightness(1.1) drop-shadow(0 5px 10px rgba(56, 189, 248, 0.2));
     }
     .logo-img {
-      transition: transform 0.3s ease, filter 0.3s ease;
-      mix-blend-mode: multiply;
-      filter: brightness(1.1);
+      transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
     }
   `]
 })
 export class FooterComponent {
   navLinks1 = [
-    { label: 'ホーム', href: '#' },
-    { label: '会社案内', href: '#' },
-    { label: '事業内容', href: '#' },
-    { label: '採用情報', href: '#' },
+    { label: 'ホーム', routerLink: '/' },
+    { label: '会社案内', routerLink: '/company' },
+    { label: '事業内容', routerLink: '/', fragment: 'what-we-do' },
+    { label: '採用情報', routerLink: '/recruit' },
   ];
 
   navLinks2 = [
-    { label: '施工実績', href: '#' },
-    { label: 'お知らせ', href: '#' },
-    { label: 'サイトマップ', href: '#' },
-    { label: 'プライバシーポリシー', href: '#' },
+    { label: '施工実績', routerLink: '/', fragment: 'cases' },
+    { label: 'お知らせ', routerLink: '/', fragment: 'news' },
+    { label: 'サイトマップ', routerLink: '/' },
+    { label: 'プライバシーポリシー', routerLink: '/' },
   ];
 }

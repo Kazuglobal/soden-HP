@@ -1,7 +1,6 @@
 import { Component, ChangeDetectionStrategy, ChangeDetectorRef } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule, FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { GsapSplitTextDirective } from '../../directives/gsap-split-text.directive';
 import { GsapScrollAnimateDirective } from '../../directives/gsap-scroll-animate.directive';
 
 const GAS_URL = 'https://script.google.com/macros/s/AKfycbw0w3YPyax4YpYvUs8uiDPLEoUb6hru7AunTOWaK4RfgEIhdfUFuWaJ7uH0lq6mdBtaPQ/exec';
@@ -9,7 +8,7 @@ const GAS_URL = 'https://script.google.com/macros/s/AKfycbw0w3YPyax4YpYvUs8uiDPL
 @Component({
   selector: 'app-contact',
   standalone: true,
-  imports: [CommonModule, ReactiveFormsModule, GsapSplitTextDirective, GsapScrollAnimateDirective],
+  imports: [CommonModule, ReactiveFormsModule, GsapScrollAnimateDirective],
   templateUrl: './contact.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush
 })
@@ -18,6 +17,7 @@ export class ContactComponent {
   submitted = false;
   submitStatus: 'idle' | 'sending' | 'success' | 'error' = 'idle';
   errorMessage = '';
+  showForm = false;
 
   constructor(private fb: FormBuilder, private cdr: ChangeDetectorRef) {
     this.contactForm = this.fb.group({

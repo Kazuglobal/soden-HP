@@ -20,7 +20,7 @@
     </div>
 
     <div appGsapAnimate [animation]="'fadeUp'" [stagger]="0.15" [duration]="0.7" [distance]="50" [threshold]="0.1"
-      class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8 max-w-5xl mx-auto">
       @for (service of services; track service.title) {
       <div appTilt3D [tiltMaxX]="8" [tiltMaxY]="8" [tiltGlare]="true" [tiltGlareOpacity]="0.15" appHoverLift
         [liftDistance]="-8" class="group relative overflow-hidden rounded-xl shadow-lg cursor-pointer"

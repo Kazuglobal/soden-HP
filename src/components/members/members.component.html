@@ -10,15 +10,17 @@
   </div>
 
   <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-    <div class="text-center mb-12">
-      <h2 appGsapSplitText [splitType]="'chars'" [delay]="60" [duration]="0.5" [ease]="'power3.out'"
-        [from]="{ opacity: 0, y: 30 }" [to]="{ opacity: 1, y: 0 }" [threshold]="0.2"
-        class="text-4xl sm:text-5xl font-extrabold text-[#0c1c2d] tracking-wider"
-        style="font-family: 'Noto Serif JP', serif;">
-        代表挨拶
-      </h2>
-      <p appGsapAnimate [animation]="'fadeUp'" [duration]="0.5" [delay]="0.2" [distance]="20" [threshold]="0.2"
-        class="mt-2 text-lg text-gray-600">Message from the CEO</p>
+    <div class="text-center mb-12 relative z-20">
+      <div class="inline-block bg-white/90 backdrop-blur-sm px-10 py-6 rounded-3xl shadow-sm border border-slate-100">
+        <h2 appGsapSplitText [splitType]="'chars'" [delay]="60" [duration]="0.5" [ease]="'power3.out'"
+          [from]="{ opacity: 0, y: 30 }" [to]="{ opacity: 1, y: 0 }" [threshold]="0.2"
+          class="text-4xl sm:text-5xl font-extrabold text-[#0c1c2d] tracking-wider"
+          style="font-family: 'Noto Serif JP', serif;">
+          代表挨拶
+        </h2>
+        <p appGsapAnimate [animation]="'fadeUp'" [duration]="0.5" [delay]="0.2" [distance]="20" [threshold]="0.2"
+          class="mt-2 text-lg text-gray-600">Message from the CEO</p>
+      </div>
     </div>
 
     <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-12 md:gap-20">

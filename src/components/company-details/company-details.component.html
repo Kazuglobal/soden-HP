@@ -1,0 +1,163 @@
+<section id="company-details" class="bg-slate-50 overflow-hidden">
+    <!-- Company Motto Header -->
+    <div class="bg-white py-16 md:py-20 text-center border-b border-slate-100">
+        <div class="container mx-auto px-4">
+            <p appGsapAnimate [animation]="'fadeUp'"
+                class="text-emerald-600 text-sm font-bold tracking-[0.3em] uppercase mb-4">
+                Our Philosophy
+            </p>
+            <h2 appGsapAnimate [animation]="'fadeUp'" [delay]="0.1"
+                class="text-3xl md:text-4xl lg:text-5xl font-black text-[#1e3a5f] tracking-wide"
+                style="font-family: 'Noto Serif JP', serif;">
+                失敗をおそれず、挑戦し続ける
+            </h2>
+        </div>
+    </div>
+
+    <!-- Philosophy Section (経営理念) -->
+    <div class="relative py-24 md:py-32 overflow-hidden">
+        <!-- Background Elements -->
+        <div class="absolute inset-0 bg-gradient-to-br from-white via-slate-50 to-emerald-50/30"></div>
+        <div class="absolute top-0 right-0 w-1/2 h-full bg-[#1e3a5f]/[0.02] -skew-x-12 translate-x-1/4"></div>
+
+        <div class="container mx-auto px-4 relative">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center max-w-7xl mx-auto">
+                <!-- Philosophy Text -->
+                <div appGsapAnimate [animation]="'fadeUp'" [duration]="1" class="order-2 lg:order-1">
+                    <!-- Section Title with Accent -->
+                    <div class="flex items-center gap-4 mb-10">
+                        <div class="w-12 h-1 bg-emerald-500 rounded-full"></div>
+                        <h3 class="text-4xl md:text-5xl font-black text-[#1e3a5f] tracking-tight"
+                            style="font-family: 'Noto Serif JP', serif;">
+                            経営理念
+                        </h3>
+                    </div>
+
+                    <!-- Main Philosophy Box -->
+                    <div
+                        class="relative mb-12 p-8 md:p-12 bg-white rounded-2xl shadow-2xl shadow-slate-200/60 border border-slate-100">
+                        <!-- Decorative Quote Mark -->
+                        <div class="absolute -top-6 -left-4 text-emerald-100/80 pointer-events-none">
+                            <svg width="80" height="80" viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M14.017 21L14.017 18C14.017 16.8954 14.9124 16 16.017 16H19.017C19.5693 16 20.017 15.5523 20.017 15V9C20.017 8.44772 19.5693 8 19.017 8H16.017C15.4647 8 15.017 8.44772 15.017 9V12C15.017 12.5523 14.5693 13 14.017 13H13.017C12.4647 13 12.017 12.5523 12.017 12V9C12.017 7.34315 13.3602 6 15.017 6H19.017C20.6739 6 22.017 7.34315 22.017 9V15C22.017 18.3137 19.3307 21 16.017 21H14.017ZM5.017 21L5.017 18C5.017 16.8954 5.91243 16 7.017 16H10.017C10.5693 16 11.017 15.5523 11.017 15V9C11.017 8.44772 10.5693 8 10.017 8H7.017C6.46472 8 6.017 8.44772 6.017 9V12C6.017 12.5523 5.5693 13 5.017 13H4.017C3.46472 13 3.017 12.5523 3.017 12V9C3.017 7.34315 4.36015 6 6.017 6H10.017C11.6739 6 13.017 7.34315 13.017 9V15C13.017 18.3137 10.3307 21 7.017 21H5.017Z" />
+                            </svg>
+                        </div>
+
+                        <p class="text-slate-500 text-lg md:text-xl leading-relaxed mb-6 font-medium italic">
+                            私たちは、自らの経験と、誠実な心を持って
+                        </p>
+                        <p class="text-[#1e3a5f] text-2xl md:text-4xl font-black mb-6 leading-tight"
+                            style="font-family: 'Noto Serif JP', serif;">
+                            「皆が安心して住めるまちの創造」
+                        </p>
+                        <p class="text-slate-500 text-lg md:text-xl leading-relaxed font-medium italic">
+                            に努め、人と地域が共に成長する社会に貢献します。
+                        </p>
+                    </div>
+
+                    <!-- Subtitle / Role -->
+                    <div
+                        class="inline-block px-6 py-2 bg-emerald-50 text-emerald-700 text-sm font-bold tracking-[0.2em] rounded-full mb-10 border border-emerald-100">
+                        ～ 会社の果たす役割とは ～
+                    </div>
+
+                    <!-- Philosophy Description -->
+                    <div class="space-y-6 text-slate-600 text-base md:text-lg leading-loose font-medium">
+                        <p class="border-l-4 border-slate-200 pl-6">
+                            当社の社名は「創造をもって、技術を売る」という意味から名づけられました。1987年に創業以来、コンセント1つから大がかりな公共工事まで、幅広い分野の電気工事を手がけています。
+                        </p>
+                        <p class="border-l-4 border-slate-200 pl-6">
+                            19年から現社長を中心に、若手からベテランまで社員が家族のように仲が良く、アットホームな雰囲気の職場です。昨今は環境面や防災面からも電力の仕組みが大きく変化してきていますが、創電工業は先代からの社訓、「一、公正であれ
+                            一、永続であれ 一、寛容であれ 一、遊び心であれ」をモットーに社員一同意欲的に仕事に取り組んでいます。
+                        </p>
+                    </div>
+                </div>
+
+                <!-- CEO Photo -->
+                <div appGsapAnimate [animation]="'fadeUp'" [delay]="0.3" [duration]="1"
+                    class="order-1 lg:order-2 flex flex-col items-center lg:items-end">
+                    <div class="relative group">
+                        <!-- Decorative Shapes -->
+                        <div
+                            class="absolute -top-6 -right-6 w-full h-full bg-emerald-500/10 rounded-2xl transform rotate-3 transition-transform group-hover:rotate-0 duration-500">
+                        </div>
+                        <div
+                            class="absolute -bottom-6 -left-6 w-full h-full border-2 border-[#1e3a5f]/10 rounded-2xl transform -rotate-3 transition-transform group-hover:rotate-0 duration-500">
+                        </div>
+
+                        <div class="relative w-72 h-96 md:w-96 md:h-[520px] rounded-2xl overflow-hidden shadow-2xl">
+                            <img [src]="ceoImage" alt="代表取締役社長 上野 衆"
+                                class="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105">
+                            <div
+                                class="absolute inset-0 bg-gradient-to-t from-[#1e3a5f]/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- CEO Caption -->
+                    <div class="mt-12 text-right">
+                        <p class="text-[#1e3a5f] text-sm md:text-base font-bold tracking-[0.2em] mb-1">
+                            REPRESENTATIVE DIRECTOR
+                        </p>
+                        <h4 class="text-xl md:text-2xl font-black text-[#1e3a5f] flex items-center gap-3 justify-end"
+                            style="font-family: 'Noto Serif JP', serif;">
+                            <span class="text-sm font-medium text-slate-500">代表取締役社長</span>
+                            <span>上野　衆</span>
+                        </h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Additional Philosophy Content -->
+    <div class="bg-white py-16 md:py-20">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto space-y-6 text-slate-600 text-sm md:text-base leading-relaxed">
+                <p appGsapAnimate [animation]="'fadeUp'" [delay]="0.1">
+                    そのためにも、任せて認めるという組織の在り方を特に大切にし、一人一人がやるべきことを把握して、自ら考えて動けるよう社員の主体性を育んでいます。未経験で入社しても働きながら資格を取って立派な技術者になり力を発揮している先輩方がたくさんいます。
+                </p>
+                <p appGsapAnimate [animation]="'fadeUp'" [delay]="0.2">
+                    現場は掛け持ちになることが多く、常に学びが必要になり、ハードな一面もありますが、スキルが磨かれるのはもちろん、トラブル対処など応用力がつき、資格以上に優れた技術で評価されています。
+                </p>
+                <p appGsapAnimate [animation]="'fadeUp'" [delay]="0.3">
+                    SDGsへの取り組みも積極的に行い、自社電力はすべて太陽光発電で賄い貢献しています。また総務を担当している女性陣は組織全体に関わり、当社の要となるため、女性の意見は男性以上に尊重されています。明るくニコニコ勢いのある会社を目指し、社員一人一人が「人の為が自分の為」というユーザーファーストの精神で取り組み、邁進してまいります。
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Company Info Section -->
+    <div class="bg-slate-100 py-20 md:py-28">
+        <div class="container mx-auto px-4">
+            <!-- Section Title -->
+            <div appGsapAnimate [animation]="'fadeUp'" class="flex items-center justify-center gap-6 mb-16">
+                <div class="w-16 md:w-24 h-px bg-[#1e3a5f]/20"></div>
+                <h3 class="text-4xl md:text-5xl lg:text-6xl font-black text-[#1e3a5f] tracking-widest italic"
+                    style="font-family: 'Roboto', sans-serif;">
+                    COMPANY INFO
+                </h3>
+                <div class="w-16 md:w-24 h-px bg-[#1e3a5f]/20"></div>
+            </div>
+
+            <!-- Info Table -->
+            <div class="max-w-4xl mx-auto bg-white rounded-2xl shadow-xl shadow-slate-200/50 overflow-hidden">
+                <div class="p-6 md:p-12">
+                    @for (item of companyInfo; track item.label; let i = $index; let last = $last) {
+                    <div appGsapAnimate [animation]="'fadeUp'" [delay]="i * 0.05"
+                        class="grid grid-cols-1 md:grid-cols-[200px_1fr] py-6 md:py-8" [class.border-b]="!last"
+                        [class.border-slate-100]="!last">
+                        <dt class="text-[#1e3a5f]/60 font-bold text-sm md:text-base mb-2 md:mb-0 tracking-wider">
+                            {{ item.label }}
+                        </dt>
+                        <dd class="text-slate-700 text-base md:text-lg whitespace-pre-line leading-relaxed">
+                            {{ item.value }}
+                        </dd>
+                    </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

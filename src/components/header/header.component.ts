@@ -1,11 +1,13 @@
 import { Component, ChangeDetectionStrategy, signal, HostListener, AfterViewInit, Inject, PLATFORM_ID } from '@angular/core';
 import { CommonModule, isPlatformBrowser } from '@angular/common';
+import { RouterModule } from '@angular/router';
 import { gsap } from 'gsap';
 
 interface NavLink {
   label: string;
   labelEn: string;
-  href: string;
+  routerLink: string;
+  fragment?: string;
 }
 
 @Component({
@@ -13,7 +15,7 @@ interface NavLink {
   templateUrl: './header.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, RouterModule],
   styles: [`
     :host {
       display: contents;
@@ -51,12 +53,12 @@ export class HeaderComponent implements AfterViewInit {
   isScrolled = signal(false);
 
   navLinks: NavLink[] = [
-    { label: 'ホーム', labelEn: 'HOME', href: '#' },
-    { label: '創電の強み', labelEn: 'FEATURE', href: '#feature' },
-    { label: '事業案内', labelEn: 'SERVICE', href: '#what-we-do' },
-    { label: '施工事例', labelEn: 'WORKS', href: '#cases' },
-    { label: '会社案内', labelEn: 'COMPANY', href: '#company' },
-    { label: '採用情報', labelEn: 'RECRUIT', href: '#recruit' },
+    { label: 'ホーム', labelEn: 'HOME', routerLink: '/' },
+    { label: '創電の強み', labelEn: 'FEATURE', routerLink: '/', fragment: 'feature' },
+    { label: '事業案内', labelEn: 'SERVICE', routerLink: '/', fragment: 'what-we-do' },
+    { label: '施工事例', labelEn: 'WORKS', routerLink: '/', fragment: 'cases' },
+    { label: '会社案内', labelEn: 'COMPANY', routerLink: '/company' },
+    { label: '採用情報', labelEn: 'RECRUIT', routerLink: '/recruit' },
   ];
 
   constructor(@Inject(PLATFORM_ID) private platformId: object) { }

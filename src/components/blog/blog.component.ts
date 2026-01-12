@@ -41,13 +41,5 @@ export class BlogComponent {
       title: '空調・換気設備工事',
       href: '#',
     },
-    {
-      image: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?q=80&w=1000&auto=format&fit=crop',
-      alt: '防災設備工事',
-      category: 'Disaster Prevention',
-      number: '03.',
-      title: '防災設備工事',
-      href: '#',
-    },
   ];
 }

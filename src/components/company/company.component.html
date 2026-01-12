@@ -1,116 +1,66 @@
-<section id="company" class="py-24 bg-white relative overflow-hidden">
-  <!-- Technical "Road" Cable Trace for Company Section -->
-  <div class="absolute inset-0 z-0 pointer-events-none overflow-hidden">
-    <div class="absolute inset-0 flex items-center justify-center opacity-40 mix-blend-multiply">
-      <img src="/images/soden_roadmap.png" alt="Soden Technical Roadmap"
-        class="w-full h-auto min-h-full object-cover lg:object-contain rotate-12 scale-150 lg:scale-125 translate-x-1/2">
+<section id="company" class="relative overflow-hidden">
+  <!-- Turquoise Frame Border (Enhanced) -->
+  <div class="absolute inset-0 z-30 pointer-events-none">
+    <!-- Top Border -->
+    <div
+      class="absolute top-0 left-0 right-0 h-5 md:h-6 bg-gradient-to-r from-teal-200 via-cyan-300 to-teal-200 shadow-inner">
     </div>
+    <!-- Bottom Border -->
+    <div
+      class="absolute bottom-0 left-0 right-0 h-5 md:h-6 bg-gradient-to-r from-teal-200 via-cyan-300 to-teal-200 shadow-inner">
+    </div>
+    <!-- Left Border -->
+    <div
+      class="absolute top-5 md:top-6 bottom-5 md:bottom-6 left-0 w-5 md:w-6 bg-gradient-to-b from-teal-200 via-cyan-300 to-teal-200 shadow-inner">
+    </div>
+    <!-- Right Border -->
+    <div
+      class="absolute top-5 md:top-6 bottom-5 md:bottom-6 right-0 w-5 md:w-6 bg-gradient-to-b from-teal-200 via-cyan-300 to-teal-200 shadow-inner">
+    </div>
+    <!-- Corner Blocks for cleaner joints -->
+    <div class="absolute top-0 left-0 w-5 md:w-6 h-5 md:h-6 bg-teal-200"></div>
+    <div class="absolute top-0 right-0 w-5 md:w-6 h-5 md:h-6 bg-teal-200"></div>
+    <div class="absolute bottom-0 left-0 w-5 md:w-6 h-5 md:h-6 bg-teal-200"></div>
+    <div class="absolute bottom-0 right-0 w-5 md:w-6 h-5 md:h-6 bg-teal-200"></div>
   </div>
 
-  <div class="container mx-auto px-4 relative z-10">
-    <div
-      class="bg-white/95 backdrop-blur-md p-8 md:p-16 rounded-2xl shadow-2xl border border-white/20 max-w-5xl mx-auto">
-      <div class="flex flex-col md:flex-row items-baseline gap-4 mb-12 border-b-2 border-slate-200 pb-6">
-        <h2 class="text-3xl md:text-4xl font-black text-slate-800" style="font-family: 'Noto Serif JP', serif;">会社概要
-        </h2>
-        <span class="text-emerald-600 font-bold tracking-[0.3em] text-sm uppercase">Company Profile</span>
-      </div>
+  <!-- Hero Photo Section -->
+  <div class="relative min-h-[60vh] md:min-h-[70vh] flex items-end">
+    <!-- Full-width Team Photo -->
+    <div class="absolute inset-0 z-0">
+      <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?q=80&w=2000&auto=format&fit=crop"
+        alt="創電工業チーム" class="w-full h-full object-cover">
+      <!-- Refined Gradient Overlay -->
+      <div class="absolute inset-0 bg-gradient-to-t from-slate-800/80 via-slate-700/40 to-slate-500/10"></div>
+    </div>
 
-      <!-- Initial View (Always Visible) -->
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start mb-12">
-        <dl class="space-y-8 text-slate-700">
-          <div class="space-y-2 group">
-            <dt
-              class="text-xs font-black text-emerald-600 uppercase tracking-widest transition-colors group-hover:text-emerald-500">
-              会社名</dt>
-            <dd
-              class="text-lg font-bold border-l-4 border-slate-100 pl-4 group-hover:border-emerald-500 transition-all">
-              株式会社創電工業</dd>
-          </div>
+    <!-- Hero Text Content -->
+    <div class="relative z-20 container mx-auto px-10 pb-16 md:pb-20">
+      <!-- Decorative Dotted Line -->
+      <div class="w-32 border-t-2 border-dotted border-white/60 mb-6"></div>
 
-          <div class="space-y-2 group">
-            <dt
-              class="text-xs font-black text-emerald-600 uppercase tracking-widest transition-colors group-hover:text-emerald-500">
-              代表者</dt>
-            <dd
-              class="text-lg font-bold border-l-4 border-slate-100 pl-4 group-hover:border-emerald-500 transition-all whitespace-pre-line">
-              代表取締役会長 上野 誠
-              代表取締役社長 上野 衆
-            </dd>
-          </div>
+      <!-- COMPANY Heading with Underline -->
+      <h2 class="text-5xl md:text-6xl lg:text-7xl font-black text-white tracking-widest mb-2"
+        style="font-family: 'Roboto', sans-serif; text-shadow: 0 4px 20px rgba(0,0,0,0.3);">
+        <span class="border-b-4 border-white pb-2">COMPANY</span>
+      </h2>
 
-          <div class="space-y-2 group">
-            <dt
-              class="text-xs font-black text-emerald-600 uppercase tracking-widest transition-colors group-hover:text-emerald-500">
-              所在地</dt>
-            <dd
-              class="text-lg font-bold border-l-4 border-slate-100 pl-4 group-hover:border-emerald-500 transition-all">
-              〒031-0833 青森県八戸市大字大久保字小久保平19-7
-            </dd>
-          </div>
-        </dl>
+      <!-- Japanese Subtitle -->
+      <p class="text-xl md:text-2xl text-white/90 font-bold tracking-[0.3em] mt-4"
+        style="font-family: 'Noto Serif JP', serif;">
+        会社概要
+      </p>
 
-        <!-- Decorative Image 1 -->
-        <div class="relative h-64 lg:h-full rounded-2xl overflow-hidden shadow-lg group">
-          <img [src]="workerLeft" alt="Workers"
-            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
-          <div class="absolute inset-0 bg-gradient-to-t from-emerald-900/50 to-transparent"></div>
-        </div>
-      </div>
-
-      <!-- Collapsible Details -->
-      @if (showDetails) {
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start mb-12 animate-fade-in-up">
-        <!-- Decorative Image 2 -->
-        <div class="relative h-64 lg:h-full rounded-2xl overflow-hidden shadow-lg group order-2 lg:order-1">
-          <img [src]="workerRight" alt="Construction Site"
-            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
-          <div class="absolute inset-0 bg-gradient-to-t from-emerald-900/50 to-transparent"></div>
-        </div>
-
-        <dl class="space-y-8 text-slate-700 order-1 lg:order-2">
-          <div class="space-y-2 group">
-            <dt
-              class="text-xs font-black text-emerald-600 uppercase tracking-widest transition-colors group-hover:text-emerald-500">
-              創業</dt>
-            <dd
-              class="text-lg font-bold border-l-4 border-slate-100 pl-4 group-hover:border-emerald-500 transition-all">
-              昭和62年（1987年）</dd>
-          </div>
-
-          <div class="space-y-2 group">
-            <dt
-              class="text-xs font-black text-emerald-600 uppercase tracking-widest transition-colors group-hover:text-emerald-500">
-              事業内容</dt>
-            <dd
-              class="text-base leading-relaxed border-l-4 border-slate-100 pl-4 group-hover:border-emerald-500 transition-all">
-              電気設備設計・施工・管理 / 各種機械自動制御装置設計・施工 / ビル保守・防災管理業務 / 物流システム全般
-            </dd>
-          </div>
-
-          <div class="space-y-2 group">
-            <dt
-              class="text-xs font-black text-emerald-600 uppercase tracking-widest transition-colors group-hover:text-emerald-500">
-              連絡先</dt>
-            <dd
-              class="text-lg font-bold border-l-4 border-slate-100 pl-4 group-hover:border-emerald-500 transition-all">
-              TEL: 0178-25-2172 / FAX: 0178-25-2171
-            </dd>
-          </div>
-        </dl>
-      </div>
-      }
-
-      <!-- Toggle Button -->
-      <div class="text-center mt-8">
-        <button (click)="toggleDetails()"
-          class="inline-flex items-center gap-2 px-10 py-4 bg-emerald-600 text-white rounded-full font-bold tracking-widest hover:bg-emerald-500 transition-all duration-300 shadow-lg hover:shadow-emerald-200">
-          <span>{{ showDetails ? 'CLOSE' : 'SEE MORE' }}</span>
+      <!-- SEE MORE Button -->
+      <div class="mt-10">
+        <a routerLink="/company"
+          class="inline-flex items-center gap-2 px-10 py-4 bg-emerald-600/90 text-white rounded-full font-bold tracking-widest hover:bg-emerald-500 transition-all duration-300 shadow-xl backdrop-blur-sm group">
+          <span>SEE MORE</span>
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"
-            class="w-4 h-4 transition-transform duration-300" [class.rotate-180]="showDetails">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+            class="w-5 h-5 group-hover:translate-x-1 transition-transform">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
           </svg>
-        </button>
+        </a>
       </div>
     </div>
   </div>

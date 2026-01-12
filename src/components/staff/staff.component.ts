@@ -23,14 +23,16 @@ import { HoverLiftDirective } from '../../directives/hover-effects.directive';
       </div>
 
       <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div class="text-center mb-20">
-          <h2 appGsapAnimate [animation]="'fadeUp'" class="text-4xl sm:text-5xl font-black text-slate-900 tracking-tight" style="font-family: 'Noto Serif JP', serif;">
-            社員紹介
-          </h2>
-          <div class="mt-4 flex justify-center items-center gap-4">
-            <div class="h-px w-12 bg-[#0ea5e9]"></div>
-            <span class="text-sm font-black tracking-widest text-[#0ea5e9] uppercase">OUR PROFESSIONALS</span>
-            <div class="h-px w-12 bg-[#0ea5e9]"></div>
+        <div class="text-center mb-20 relative z-20">
+          <div class="inline-block bg-white/90 backdrop-blur-sm px-10 py-6 rounded-3xl shadow-sm border border-slate-100">
+            <h2 appGsapAnimate [animation]="'fadeUp'" class="text-4xl sm:text-5xl font-black text-slate-900 tracking-tight" style="font-family: 'Noto Serif JP', serif;">
+              社員紹介
+            </h2>
+            <div class="mt-4 flex justify-center items-center gap-4">
+              <div class="h-px w-12 bg-[#0ea5e9]"></div>
+              <span class="text-sm font-black tracking-widest text-[#0ea5e9] uppercase">OUR PROFESSIONALS</span>
+              <div class="h-px w-12 bg-[#0ea5e9]"></div>
+            </div>
           </div>
         </div>
 
