@@ -1,30 +1,29 @@
 <section class="relative py-24 lg:py-48 bg-white selection:bg-emerald-500/30 overflow-hidden">
 
-  <!-- Technical "Road" Cable Trace Background -->
-  <div class="absolute inset-0 z-0 pointer-events-none overflow-hidden">
-    <div class="absolute inset-0 flex items-center justify-center opacity-80 mix-blend-multiply">
-      <img src="/images/soden_roadmap.png" alt="Soden Technical Roadmap"
-        class="w-full h-auto min-h-full object-cover lg:object-contain scale-125 lg:scale-110">
+  <!-- Technical "Road" Cable Trace Background (Hidden on mobile) -->
+  <div class="absolute inset-0 z-0 pointer-events-none overflow-hidden hidden md:block">
+    <div class="absolute top-0 left-0 right-0 h-full opacity-80">
+      <img src="/images/soden_roadmap.png" alt="Soden Technical Roadmap" class="w-full h-full object-cover object-top">
     </div>
   </div>
 
   <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
 
     <!-- Section Header -->
-    <div class="text-center mb-28 lg:mb-40">
+    <div class="text-center mb-16 md:mb-28 lg:mb-40">
       <div class="inline-flex items-center gap-3 mb-6" appGsapAnimate [animation]="'fadeUp'">
         <div class="w-8 h-[1px] bg-emerald-500"></div>
         <span class="text-xs font-bold text-emerald-600 tracking-[0.5em] uppercase">Core Expertise</span>
         <div class="w-8 h-[1px] bg-emerald-500"></div>
       </div>
-      <h2 class="text-5xl md:text-6xl lg:text-8xl font-black text-slate-900 tracking-tight leading-none"
+      <h2 class="text-3xl md:text-5xl lg:text-7xl font-black text-slate-900 tracking-tight leading-none"
         style="font-family: 'Noto Serif JP', serif;" appGsapAnimate [animation]="'fadeUp'" [duration]="1.2">
         私たちの仕事
       </h2>
     </div>
 
     <!-- Service Cards Container -->
-    <div class="space-y-32 lg:space-y-56">
+    <div class="space-y-16 md:space-y-32 lg:space-y-48">
 
       <!-- Service 1: 電気設備設計施工 -->
       <div
@@ -62,7 +61,7 @@
               電気設備設計施工
             </h3>
 
-            <h4 class="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-800 leading-[1.1] mb-8"
+            <h4 class="text-2xl md:text-4xl lg:text-5xl font-bold text-slate-800 leading-[1.15] mb-6 md:mb-8"
               style="font-family: 'Noto Serif JP', serif;">
               技術の粋を集め、<br>社会を動かす道を拓く
             </h4>
@@ -109,7 +108,7 @@
               太陽光発電設備設計施工
             </h3>
 
-            <h4 class="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-800 leading-[1.1] mb-8"
+            <h4 class="text-2xl md:text-4xl lg:text-5xl font-bold text-slate-800 leading-[1.15] mb-6 md:mb-8"
               style="font-family: 'Noto Serif JP', serif;">
               無限の自然エネルギーを、<br>確かな力に変えてゆく
             </h4>
@@ -153,7 +152,7 @@
               ビル保守管理
             </h3>
 
-            <h4 class="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-800 leading-[1.1] mb-8"
+            <h4 class="text-2xl md:text-4xl lg:text-5xl font-bold text-slate-800 leading-[1.15] mb-6 md:mb-8"
               style="font-family: 'Noto Serif JP', serif;">
               日常の当たり前を、<br>見えない場所で守り抜く
             </h4>
@@ -200,7 +199,7 @@
               物流システム・機械設備工事
             </h3>
 
-            <h4 class="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-800 leading-[1.1] mb-8"
+            <h4 class="text-2xl md:text-4xl lg:text-5xl font-bold text-slate-800 leading-[1.15] mb-6 md:mb-8"
               style="font-family: 'Noto Serif JP', serif;">
               モノの流れを止めることなく、<br>最適なスピードでつなぐ
             </h4>
