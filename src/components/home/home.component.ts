@@ -5,7 +5,6 @@ import { NewsComponent } from '../news/news.component';
 import { WhatWeDoComponent } from '../what-we-do/what-we-do.component';
 import { CasesComponent } from '../cases/cases.component';
 import { FeatureComponent } from '../feature/feature.component';
-import { MembersComponent } from '../members/members.component';
 import { CompanyComponent } from '../company/company.component';
 import { RecruitComponent } from '../recruit/recruit.component';
 import { ContactComponent } from '../contact/contact.component';
@@ -29,7 +28,6 @@ import { ContactComponent } from '../contact/contact.component';
     <app-news></app-news>
     <app-what-we-do></app-what-we-do>
     <app-cases></app-cases>
-    <app-feature></app-feature>
     <app-feature></app-feature>
     <app-company></app-company>
     <app-recruit></app-recruit>

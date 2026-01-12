@@ -53,7 +53,7 @@ export class FeatureComponent implements OnInit, OnDestroy {
     metric: 100,
     metricUnit: '%',
     metricLabel: '自社電力賄い率',
-    image: 'https://images.unsplash.com/photo-1509391111727-55eb04de00be?q=80&w=2000&auto=format&fit=crop',
+    image: '/images/solar_sdg.png',
     sdgs: [7, 12, 13]
   };
 
