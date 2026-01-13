@@ -18,7 +18,7 @@ import { HoverZoomDirective } from '../../directives/hover-effects.directive';
               <div class="h-px w-24 bg-[#0ea5e9]"></div>
             </div>
           </div>
-          <p class="text-slate-500 font-medium max-w-sm text-right">
+          <p class="text-slate-500 font-medium max-w-sm text-left md:text-right">
             公共施設から民間ビル、個人住宅まで、私たちの技術はあらゆる場所に息づいています。
           </p>
         </div>
@@ -60,15 +60,6 @@ import { HoverZoomDirective } from '../../directives/hover-effects.directive';
               </div>
             </div>
           }
-        </div>
-        
-        <div class="mt-20 text-center">
-          <a href="#" class="inline-flex items-center gap-4 text-slate-900 font-black tracking-widest hover:text-[#0ea5e9] transition-colors duration-300">
-            VIEW ALL PROJECTS
-            <div class="w-12 h-12 rounded-full border border-slate-200 flex items-center justify-center group">
-              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
-            </div>
-          </a>
         </div>
       </div>
     </section>
