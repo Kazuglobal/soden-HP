@@ -2,23 +2,24 @@
   <!-- Photo Collage Background -->
   <div class="absolute inset-0 z-0 pointer-events-none">
     <!-- Top-left angled photo -->
-    <div class="absolute top-0 left-0 w-1/3 h-2/3 -rotate-6 origin-top-left overflow-hidden opacity-80">
+    <div class="absolute top-0 left-0 w-1/2 sm:w-1/3 h-2/3 -rotate-3 sm:-rotate-6 origin-top-left overflow-hidden opacity-90 sm:opacity-80">
       <img src="/images/contact/contact1.png" alt="電気工事の設計" class="w-full h-full object-cover">
     </div>
     <!-- Bottom-left angled photo -->
-    <div class="absolute bottom-0 left-0 w-1/4 h-1/2 rotate-3 origin-bottom-left overflow-hidden opacity-80">
+    <div class="absolute bottom-0 left-0 w-1/3 sm:w-1/4 h-1/2 rotate-2 sm:rotate-3 origin-bottom-left overflow-hidden opacity-90 sm:opacity-80">
       <img src="/images/contact/contact2.png" alt="電気工事作業" class="w-full h-full object-cover">
     </div>
     <!-- Top-right angled photo -->
-    <div class="absolute top-0 right-0 w-1/4 h-1/2 rotate-6 origin-top-right overflow-hidden opacity-80">
+    <div class="absolute top-0 right-0 w-1/3 sm:w-1/4 h-1/2 rotate-3 sm:rotate-6 origin-top-right overflow-hidden opacity-90 sm:opacity-80">
       <img src="/images/contact/contact3.png" alt="電気設備点検" class="w-full h-full object-cover">
     </div>
     <!-- Bottom-right angled photo -->
-    <div class="absolute bottom-0 right-0 w-1/3 h-2/3 -rotate-3 origin-bottom-right overflow-hidden opacity-80">
+    <div class="absolute bottom-0 right-0 w-1/2 sm:w-1/3 h-2/3 -rotate-2 sm:-rotate-3 origin-bottom-right overflow-hidden opacity-90 sm:opacity-80">
       <img src="/images/contact/contact4.png" alt="インフラ整備" class="w-full h-full object-cover">
     </div>
-    <!-- Center gradient overlay for text legibility -->
-    <div class="absolute inset-0 bg-gradient-radial from-slate-100/95 via-slate-100/80 to-transparent"></div>
+    <!-- Center gradient overlay for text legibility - lighter on mobile -->
+    <div class="absolute inset-0 bg-gradient-to-b from-slate-100/70 via-slate-100/50 to-transparent sm:from-slate-100/95 sm:via-slate-100/80"></div>
+    <div class="absolute inset-0 bg-gradient-to-r from-slate-100/60 via-transparent to-slate-100/60 sm:from-slate-100/90 sm:via-transparent sm:to-slate-100/90"></div>
   </div>
 
   <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -26,7 +27,7 @@
     <div class="text-center mb-12 lg:mb-16">
       <!-- Handwritten Tag with underline -->
       <div appGsapAnimate [animation]="'fadeUp'" [delay]="0.1" class="mb-6">
-        <p class="text-[#2c5282] text-5xl md:text-6xl italic" style="font-family: 'Caveat', cursive;">
+        <p class="text-[#2c5282] text-4xl sm:text-5xl md:text-6xl italic" style="font-family: 'Caveat', cursive;">
           Contact
         </p>
         <div class="w-20 h-1 bg-gradient-to-r from-[#2c5282] to-blue-400 mt-2 mx-auto rounded-full"></div>
@@ -34,7 +35,7 @@
 
       <!-- Main Title -->
       <h2 appGsapAnimate [animation]="'fadeUp'" [delay]="0.2"
-        class="text-3xl md:text-4xl lg:text-5xl font-bold text-slate-800 tracking-tight mb-6"
+        class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-slate-800 tracking-tight mb-6"
         style="font-family: 'Noto Serif JP', serif;">
         お仕事のご依頼・相談
       </h2>
@@ -56,8 +57,8 @@
     <div appGsapAnimate [animation]="'fadeUp'" [delay]="0.5" class="text-center mb-10">
       <a href="tel:0178252172"
         class="inline-flex items-center gap-3 text-[#2c5282] hover:text-blue-700 transition-colors duration-300">
-        <span class="text-lg font-medium">TEL.</span>
-        <span class="text-4xl md:text-5xl lg:text-6xl font-bold tracking-wide"
+        <span class="text-base sm:text-lg font-medium">TEL.</span>
+        <span class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-wide"
           style="font-family: 'Roboto', sans-serif;">
           0178-25-2172
         </span>
