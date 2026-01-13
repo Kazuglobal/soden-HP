@@ -143,7 +143,7 @@
       @for (img of community.images; track img; let i = $index) {
       <div class="absolute inset-0 transition-opacity duration-[2000ms] ease-in-out"
         [class.opacity-100]="communitySlideIndex === i" [class.opacity-0]="communitySlideIndex !== i">
-        <img [src]="img" class="w-full h-full object-cover">
+        <img [src]="img" [attr.alt]="communityImageAlt(i)" class="w-full h-full object-cover">
         <div class="absolute inset-0 bg-orange-950/40 mix-blend-multiply"></div>
       </div>
       }

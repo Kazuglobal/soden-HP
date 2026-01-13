@@ -110,4 +110,8 @@ export class FeatureComponent implements OnInit, OnDestroy {
     }
     return `/images/SDGs-icon/sdg_icon_${paddedId}_ja_2.png`;
   }
+
+  communityImageAlt(index: number): string {
+    return `地域貢献活動の様子 ${index + 1}`;
+  }
 }
