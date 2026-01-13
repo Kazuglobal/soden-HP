@@ -101,4 +101,13 @@ export class FeatureComponent implements OnInit, OnDestroy {
   getSdgGoal(id: number): string {
     return SDG_DATA[id]?.goal ?? '';
   }
+
+  getSdgIconPath(id: number): string {
+    const paddedId = id.toString().padStart(2, '0');
+    // Handle special case for goal 10 which has different filename
+    if (id === 10) {
+      return `/images/SDGs-icon/sdg_icon_${paddedId}_ja_3.png`;
+    }
+    return `/images/SDGs-icon/sdg_icon_${paddedId}_ja_2.png`;
+  }
 }

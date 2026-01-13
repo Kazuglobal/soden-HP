@@ -34,11 +34,8 @@
           <p class="text-[10px] font-bold text-slate-400 tracking-widest uppercase mb-4">本プロジェクトのSDGs貢献</p>
           <div class="flex flex-wrap gap-2">
             @for (id of craftsmanship.sdgs; track id) {
-            <div
-              class="w-10 h-10 rounded shadow-sm flex items-center justify-center text-white text-xs font-black transition-transform hover:scale-110 cursor-help"
-              [style.background-color]="getSdgColor(id)" [title]="getSdgGoal(id)">
-              {{ id }}
-            </div>
+            <img [src]="getSdgIconPath(id)" [alt]="getSdgGoal(id)" [title]="getSdgGoal(id)"
+              class="w-12 h-12 rounded shadow-sm transition-transform hover:scale-110 cursor-help object-contain">
             }
           </div>
         </div>
@@ -116,11 +113,8 @@
           <div class="flex gap-4">
             @for (id of sdgCommitment.sdgs; track id) {
             <div class="flex flex-col items-center gap-2 group cursor-help">
-              <div
-                class="w-14 h-14 rounded-lg shadow-md flex items-center justify-center text-white text-xl font-black transition-all group-hover:-translate-y-1"
-                [style.background-color]="getSdgColor(id)">
-                {{ id }}
-              </div>
+              <img [src]="getSdgIconPath(id)" [alt]="getSdgGoal(id)" [title]="getSdgGoal(id)"
+                class="w-16 h-16 rounded-lg shadow-md transition-all group-hover:-translate-y-1 object-contain">
             </div>
             }
             <div class="flex-grow flex items-end ml-2">
@@ -196,10 +190,8 @@
         <div class="flex flex-col items-center gap-6" appGsapAnimate [animation]="'fadeUp'" [delay]="0.8">
           <div class="flex gap-4">
             @for (id of community.sdgs; track id) {
-            <div class="w-12 h-12 rounded shadow flex items-center justify-center text-white text-lg font-black"
-              [style.background-color]="getSdgColor(id)">
-              {{ id }}
-            </div>
+            <img [src]="getSdgIconPath(id)" [alt]="getSdgGoal(id)" [title]="getSdgGoal(id)"
+              class="w-14 h-14 rounded shadow transition-transform hover:scale-110 object-contain">
             }
           </div>
           <p class="text-[10px] text-slate-400 leading-relaxed max-w-sm">
