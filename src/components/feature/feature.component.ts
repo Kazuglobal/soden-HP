@@ -41,7 +41,7 @@ export class FeatureComponent implements OnInit, OnDestroy {
     title: '技術と温もりが、未来を育む場所。',
     subtitle: '施工事例',
     description: '保育園の新築工事に携わりました。屋根はすべて全面太陽光パネルを入れ、炊事ができる薪ストーブを設置しているエコな保育園です。シンボルであるキリンのオブジェも自社で設置しました。このほか、小中学校や消防、民間のビルやマンション、老人ホームなど、大きい工事から個人住宅まですべてやらせていただいています。',
-    image: 'https://images.unsplash.com/photo-1576495199011-eb94736d05d6?q=80&w=2000&auto=format&fit=crop',
+    image: '/images/nursery.jpg',
     sdgs: [4, 7, 8, 9, 11, 12],
     categories: ['小中学校', '消防署', '民間ビル・マンション', '老人ホーム', '個人住宅']
   };

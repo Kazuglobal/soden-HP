@@ -10,7 +10,7 @@ import { GsapScrollAnimateDirective } from '../../directives/gsap-scroll-animate
     imports: [CommonModule, GsapScrollAnimateDirective]
 })
 export class CompanyDetailsComponent {
-    ceoImage = 'https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=600&auto=format&fit=crop';
+    ceoImage = '/images/CEO.JPG';
 
     companyInfo = [
         { label: '会社名', value: '株式会社創電工業' },

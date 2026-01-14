@@ -80,7 +80,7 @@ export class CasesComponent {
     {
       title: '小中学校・公共施設の改修プロジェクト',
       category: 'Community Support',
-      image: 'https://images.unsplash.com/photo-1580582932707-520aed937b7b?q=80&w=1000&auto=format&fit=crop',
+      image: '/images/sportroom.png',
       description: '地域の未来を担う子供たちの学び舎を支える、確かな電気工事。照明LED化から変電設備の更新まで、幅広く対応しています。',
       tags: ['LED化', '変電設備', '公共工事', '安心安全']
     }

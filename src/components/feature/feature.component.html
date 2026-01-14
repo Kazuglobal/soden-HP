@@ -11,7 +11,7 @@
       <div class="absolute inset-0 bg-gradient-to-r from-black/20 to-transparent"></div>
       <div class="absolute bottom-8 left-8 text-white/80 text-xs font-medium tracking-widest uppercase" appGsapAnimate
         [animation]="'fadeRight'" [delay]="0.8">
-        Featured Project: みらいの森保育園
+        Featured Project: 小久保保育園
       </div>
     </div>
 
@@ -61,7 +61,8 @@
             style="font-family: 'Noto Serif JP', serif;" appGsapAnimate [animation]="'fadeUp'">
             {{ sdgCommitment.title }}
           </h2>
-          <p class="text-emerald-700 font-medium tracking-wide text-left" appGsapAnimate [animation]="'fadeUp'" [delay]="0.2">
+          <p class="text-emerald-700 font-medium tracking-wide text-left" appGsapAnimate [animation]="'fadeUp'"
+            [delay]="0.2">
             持続可能な未来へ。<br>まずは私たち自身が変わる挑戦。
           </p>
         </div>
@@ -92,7 +93,8 @@
               <div class="absolute inset-0 flex flex-col items-center justify-center">
                 <span class="text-3xl font-black text-emerald-900 leading-none" appCountUp
                   [countTo]="sdgCommitment.metric">0</span>
-                <span class="text-[10px] font-bold text-emerald-600 uppercase mt-0.5 tracking-wider">{{ sdgCommitment.metricUnit
+                <span class="text-[10px] font-bold text-emerald-600 uppercase mt-0.5 tracking-wider">{{
+                  sdgCommitment.metricUnit
                   }}</span>
               </div>
             </div>
