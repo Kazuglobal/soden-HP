@@ -6,8 +6,10 @@
     <div *ngFor="let image of heroImages; let i = index"
       class="absolute inset-0 transition-opacity duration-[2000ms] ease-in-out"
       [class.opacity-100]="currentIndex() === i" [class.opacity-0]="currentIndex() !== i">
-      <div class="absolute inset-0 scale-100 md:scale-105" [class.animate-subtle-zoom]="currentIndex() === i">
-        <img [src]="image" alt="創電工業 現場" class="w-full h-full object-cover object-[center_top] md:object-center">
+      <div class="absolute inset-0 scale-110 sm:scale-105 md:scale-105"
+        [class.animate-subtle-zoom]="currentIndex() === i">
+        <img [src]="image" alt="創電工業 現場"
+          class="w-full h-full object-cover object-[70%_top] sm:object-[center_top] md:object-center">
       </div>
     </div>
     <!-- Lighter Overlay for Brighter Feel -->

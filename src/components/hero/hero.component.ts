@@ -12,9 +12,9 @@ import { GsapScrollAnimateDirective } from '../../directives/gsap-scroll-animate
 export class HeroComponent implements OnInit, OnDestroy {
   // Industrial/Construction themed high-quality images
   heroImages = [
-    'https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&q=80&w=2000', // Worker
-    'https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&q=80&w=2000', // Helmet/Safety
-    'https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&q=80&w=2000'  // Electrical/Tech
+    '/images/firstview1.png',
+    '/images/firstview2.png',
+    '/images/firstview3.png'
   ];
 
   currentIndex = signal(0);
