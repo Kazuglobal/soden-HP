@@ -2,6 +2,8 @@ import { Component, ChangeDetectionStrategy, OnInit, OnDestroy, signal } from '@
 import { CommonModule } from '@angular/common';
 import { GsapScrollAnimateDirective } from '../../directives/gsap-scroll-animate.directive';
 
+const SLIDESHOW_INTERVAL_MS = 5000;
+
 @Component({
   selector: 'app-hero',
   templateUrl: './hero.component.html',
@@ -10,8 +12,7 @@ import { GsapScrollAnimateDirective } from '../../directives/gsap-scroll-animate
   imports: [CommonModule, GsapScrollAnimateDirective]
 })
 export class HeroComponent implements OnInit, OnDestroy {
-  // Industrial/Construction themed high-quality images
-  heroImages = [
+  readonly heroImages = [
     '/images/firstview1.png',
     '/images/firstview2.png',
     '/images/firstview3.png',
@@ -21,19 +22,15 @@ export class HeroComponent implements OnInit, OnDestroy {
   currentIndex = signal(0);
   private intervalId: ReturnType<typeof setInterval> | null = null;
 
-  ngOnInit() {
-    this.startSlideshow();
+  ngOnInit(): void {
+    this.intervalId = setInterval(() => {
+      this.currentIndex.update(index => (index + 1) % this.heroImages.length);
+    }, SLIDESHOW_INTERVAL_MS);
   }
 
-  ngOnDestroy() {
+  ngOnDestroy(): void {
     if (this.intervalId) {
       clearInterval(this.intervalId);
     }
-  }
-
-  private startSlideshow() {
-    this.intervalId = setInterval(() => {
-      this.currentIndex.update(index => (index + 1) % this.heroImages.length);
-    }, 5000); // Switch every 5 seconds
   }
 }
