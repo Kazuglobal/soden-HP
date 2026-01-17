@@ -1,5 +1,6 @@
 import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { RouterLink } from '@angular/router';
 import { GsapScrollAnimateDirective } from '../../directives/gsap-scroll-animate.directive';
 
 @Component({
@@ -7,7 +8,7 @@ import { GsapScrollAnimateDirective } from '../../directives/gsap-scroll-animate
     templateUrl: './company-details.component.html',
     changeDetection: ChangeDetectionStrategy.OnPush,
     standalone: true,
-    imports: [CommonModule, GsapScrollAnimateDirective]
+    imports: [CommonModule, RouterLink, GsapScrollAnimateDirective]
 })
 export class CompanyDetailsComponent {
     ceoImage = '/images/CEO.JPG';
