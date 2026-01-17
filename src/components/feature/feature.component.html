@@ -44,6 +44,49 @@
     </div>
   </div>
 
+  <!-- Section 1.5: 公共施設・小中学校改修 (Cinematic Split Screen - Reversed) -->
+  <div class="relative min-h-[80vh] flex flex-col lg:flex-row-reverse bg-[#F8FAFC]">
+    <!-- Visual Area (Right 60%) -->
+    <div class="w-full lg:w-[60%] relative overflow-hidden group">
+      <div appGsapAnimate [animation]="'fadeIn'" [duration]="1.5" class="h-full">
+        <img [src]="publicWorks.image" alt="公共施設改修"
+          class="w-full h-full object-cover grayscale-[30%] group-hover:grayscale-0 transition-all duration-1000 scale-[1.02] group-hover:scale-100">
+      </div>
+      <div class="absolute inset-0 bg-gradient-to-l from-black/20 to-transparent"></div>
+      <div class="absolute bottom-8 right-8 text-white/80 text-xs font-medium tracking-widest uppercase text-right"
+        appGsapAnimate [animation]="'fadeLeft'" [delay]="0.8">
+        Featured Project<br>市立小中学校改修
+      </div>
+    </div>
+
+    <!-- Content Area (Left 40%) -->
+    <div class="w-full lg:w-[40%] bg-[#F8FAFC] p-8 lg:p-16 flex flex-col justify-center">
+      <div class="max-w-md ml-auto">
+        <h4 class="text-emerald-600 font-bold tracking-widest text-sm mb-4 uppercase text-right" appGsapAnimate
+          [animation]="'fadeUp'" [delay]="0.2">{{ publicWorks.subtitle }}</h4>
+        <h2 class="text-3xl md:text-4xl font-black text-[#0C1C2D] leading-snug mb-8 text-right"
+          style="font-family: 'Noto Serif JP', serif;" appGsapAnimate [animation]="'fadeUp'" [delay]="0.4">
+          {{ publicWorks.title }}
+        </h2>
+        <p class="text-slate-600 leading-relaxed text-sm lg:text-base mb-12 text-right"
+          style="font-family: 'Noto Sans JP', sans-serif;" appGsapAnimate [animation]="'fadeUp'" [delay]="0.6">
+          {{ publicWorks.description }}
+        </p>
+
+        <!-- SDGs Integration -->
+        <div class="mb-12" appGsapAnimate [animation]="'fadeUp'" [delay]="0.8">
+          <p class="text-[10px] font-bold text-slate-400 tracking-widest uppercase mb-4 text-right">本プロジェクトのSDGs貢献</p>
+          <div class="flex flex-wrap justify-end gap-2">
+            @for (id of publicWorks.sdgs; track id) {
+            <img [src]="getSdgIconPath(id)" [alt]="getSdgGoal(id)" [title]="getSdgGoal(id)"
+              class="w-12 h-12 rounded shadow-sm transition-transform hover:scale-110 cursor-help object-contain">
+            }
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
 
   <!-- Section 2: SDGsに取り組んでいます (High Visibility Roadmap) -->
   <div class="py-24 lg:py-40 bg-white relative overflow-hidden">

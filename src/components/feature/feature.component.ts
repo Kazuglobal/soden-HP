@@ -41,9 +41,18 @@ export class FeatureComponent implements OnInit, OnDestroy {
     title: '技術と温もりが、未来を育む場所。',
     subtitle: '施工事例',
     description: '保育園の新築工事に携わりました。屋根はすべて全面太陽光パネルを入れ、炊事ができる薪ストーブを設置しているエコな保育園です。シンボルであるキリンのオブジェも自社で設置しました。このほか、小中学校や消防、民間のビルやマンション、老人ホームなど、大きい工事から個人住宅まですべてやらせていただいています。',
-    image: '/images/nursery.jpg',
+    image: '/images/kokubo_nursery.jpg',
     sdgs: [4, 7, 8, 9, 11, 12],
     categories: ['小中学校', '消防署', '民間ビル・マンション', '老人ホーム', '個人住宅']
+  };
+
+  publicWorks = {
+    title: '確かな技術で、地域の学び舎を支える。',
+    subtitle: '公共施設・小中学校改修',
+    description: '地域の未来を担う子供たちの学び舎を支える、確かな電気工事。照明LED化から変電設備の更新まで、市内の多くの小中学校や公共施設の改修に携わっています。安心・安全な環境づくりを通じて、地域社会の発展に貢献します。',
+    image: '/images/sportroom.png',
+    sdgs: [4, 7, 11, 12, 13],
+    categories: ['LED化工事', '受変電設備更新', '通信設備工事', '消防点検']
   };
 
   sdgCommitment = {
@@ -62,21 +71,16 @@ export class FeatureComponent implements OnInit, OnDestroy {
     subtitle: '未来を担う子供たちの、健やかな成長のために.',
     description: '地元の保育園サッカー大会の協賛やゴールの運搬なども行っています。また中学生の野球教室の指導やグラウンド整備、審判などにも協力。これからの未来を担う子供たちの為に活動を行っています。',
     images: [
-      'https://images.unsplash.com/photo-1526232761682-d26e03ac148e?q=80&w=2000&auto=format&fit=crop',
-      'https://images.unsplash.com/photo-1544449897-4203679be93e?q=80&w=2000&auto=format&fit=crop',
-      'https://images.unsplash.com/photo-1511632765486-a01980e01a18?q=80&w=2000&auto=format&fit=crop',
-      'https://images.unsplash.com/photo-1517173005809-fb47ccff164f?q=80&w=2000&auto=format&fit=crop',
-      'https://images.unsplash.com/photo-1508098682722-e99c43a406b2?q=80&w=2000&auto=format&fit=crop',
-      '/images/community_slide_1.png'
+      '/images/community_bg.jpg'
     ],
     activities: [
       {
         label: 'サッカー大会支援',
-        image: '/images/community_soccer.png'
+        image: '/images/community_soccer_new.jpg'
       },
       {
         label: '野球教室指導',
-        image: '/images/community_baseball.png'
+        image: '/images/community_baseball_new.jpg'
       }
     ],
     sdgs: [1, 2, 11]

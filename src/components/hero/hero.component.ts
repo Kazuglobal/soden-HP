@@ -14,7 +14,8 @@ export class HeroComponent implements OnInit, OnDestroy {
   heroImages = [
     '/images/firstview1.png',
     '/images/firstview2.png',
-    '/images/firstview3.png'
+    '/images/firstview3.png',
+    '/images/firstview_new.jpg'
   ];
 
   currentIndex = signal(0);

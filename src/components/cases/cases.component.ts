@@ -69,20 +69,5 @@ import { HoverZoomDirective } from '../../directives/hover-effects.directive';
   imports: [CommonModule, GsapScrollAnimateDirective, HoverZoomDirective]
 })
 export class CasesComponent {
-  cases = [
-    {
-      title: 'エコな保育園の新築電気設備工事',
-      category: 'Public Works',
-      image: 'https://images.unsplash.com/photo-1576495199011-eb94736d05d6?q=80&w=1000&auto=format&fit=crop',
-      description: '全面太陽光パネルによる発電設備と、薪焼ストーブを導入した環境配慮型保育園。シンボルのキリンオブジェの設置まで手がけました。',
-      tags: ['太陽光発電', '蓄電池システム', 'キリンオブジェ', '新築工事']
-    },
-    {
-      title: '小中学校・公共施設の改修プロジェクト',
-      category: 'Community Support',
-      image: '/images/sportroom.png',
-      description: '地域の未来を担う子供たちの学び舎を支える、確かな電気工事。照明LED化から変電設備の更新まで、幅広く対応しています。',
-      tags: ['LED化', '変電設備', '公共工事', '安心安全']
-    }
-  ];
+  cases = [];
 }
