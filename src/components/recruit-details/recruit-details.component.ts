@@ -1,6 +1,7 @@
-import { Component, ChangeDetectionStrategy, ChangeDetectorRef } from '@angular/core';
+import { Component, ChangeDetectionStrategy, ChangeDetectorRef, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule, FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { RouterLink } from '@angular/router';
 import { GsapScrollAnimateDirective } from '../../directives/gsap-scroll-animate.directive';
 
 const GAS_URL = 'https://script.google.com/macros/s/AKfycbw0w3YPyax4YpYvUs8uiDPLEoUb6hru7AunTOWaK4RfgEIhdfUFuWaJ7uH0lq6mdBtaPQ/exec';
@@ -25,39 +26,38 @@ interface Employee {
     templateUrl: './recruit-details.component.html',
     changeDetection: ChangeDetectionStrategy.OnPush,
     standalone: true,
-    imports: [CommonModule, ReactiveFormsModule, GsapScrollAnimateDirective]
+    imports: [CommonModule, ReactiveFormsModule, RouterLink, GsapScrollAnimateDirective]
 })
 export class RecruitDetailsComponent {
+    private readonly fb = inject(FormBuilder);
+    private readonly cdr = inject(ChangeDetectorRef);
+
     showEntryForm = false;
-    entryForm: FormGroup;
     entrySubmitted = false;
     entrySubmitStatus: 'idle' | 'sending' | 'success' | 'error' = 'idle';
     entryErrorMessage = '';
 
-    constructor(private fb: FormBuilder, private cdr: ChangeDetectorRef) {
-        this.entryForm = this.fb.group({
-            name: ['', [Validators.required]],
-            furigana: ['', [Validators.required]],
-            email: ['', [Validators.required, Validators.email]],
-            phone: ['', [Validators.required]],
-            age: ['', [Validators.required, Validators.min(18)]],
-            education: [''],
-            workHistory: [''],
-            qualifications: [''],
-            startDate: [''],
-            motivation: ['', [Validators.required]]
-        });
-    }
+    entryForm: FormGroup = this.fb.group({
+        name: ['', [Validators.required]],
+        furigana: ['', [Validators.required]],
+        email: ['', [Validators.required, Validators.email]],
+        phone: ['', [Validators.required]],
+        age: ['', [Validators.required, Validators.min(18)]],
+        education: [''],
+        workHistory: [''],
+        qualifications: [''],
+        startDate: [''],
+        motivation: ['', [Validators.required]]
+    });
 
-    toggleEntryForm() {
+    toggleEntryForm(): void {
         this.showEntryForm = !this.showEntryForm;
         if (this.showEntryForm) {
-            this.entrySubmitStatus = 'idle';
-            this.entryErrorMessage = '';
+            this.resetEntryStatus();
         }
     }
 
-    async onEntrySubmit() {
+    async onEntrySubmit(): Promise<void> {
         if (this.entryForm.invalid) {
             return;
         }
@@ -68,18 +68,11 @@ export class RecruitDetailsComponent {
         this.cdr.markForCheck();
 
         try {
-            const formData = {
-                type: 'entry',
-                ...this.entryForm.value
-            };
-
             await fetch(GAS_URL, {
                 method: 'POST',
                 mode: 'no-cors',
-                headers: {
-                    'Content-Type': 'text/plain',
-                },
-                body: JSON.stringify(formData)
+                headers: { 'Content-Type': 'text/plain' },
+                body: JSON.stringify({ type: 'entry', ...this.entryForm.value })
             });
 
             this.entrySubmitStatus = 'success';
@@ -94,7 +87,7 @@ export class RecruitDetailsComponent {
         }
     }
 
-    resetEntryStatus() {
+    resetEntryStatus(): void {
         this.entrySubmitStatus = 'idle';
         this.entryErrorMessage = '';
     }
