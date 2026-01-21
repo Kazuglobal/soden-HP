@@ -7,7 +7,7 @@
 ## プロンプト（日本語版）
 
 ```
-以下の内容で、八戸酒造の専務に提案するWebサイトリニューアルのスライド資料を作成してください。
+以下の内容で、八戸酒造の専務に提案するWebサイト構築のスライド資料を作成してください。
 
 【スライド構成】
 
@@ -26,25 +26,24 @@
 【訪日観光客の動向】
 - 2024年訪日外国人数: 3,600万人突破（過去最高）
 - 酒蔵ツーリズムへの関心が急増
-- 事前のWeb検索・予約が主流に
+- 事前のWeb検索が主流に
 
 【課題】
-- 多言語対応の必要性
 - スマートフォンでの体験最適化
-- 予約・問い合わせのデジタル化
 - ブランドストーリーの効果的な発信
+- 他酒蔵との差別化
 
 ---
 
 ## スライド3: ご提案するソリューション概要
 タイトル: 世界水準のWebサイトで酒蔵体験を革新
 
-【特徴】
+【搭載済み機能】
 1. Awwwards（世界的Webデザイン賞）受賞レベルの洗練されたUI/UX
 2. 最新技術Angular 21による高速・安定した動作
-3. 多言語対応（日本語・英語・中国語等）
-4. スマートフォン完全対応
-5. SEO最適化で検索上位表示
+3. スマートフォン完全対応（レスポンシブデザイン）
+4. 高度なアニメーション効果（GSAP採用）
+5. お問い合わせフォーム（Google連携）
 
 ---
 
@@ -54,10 +53,10 @@
 【機能説明】
 - 自動切り替えスライドショー（5秒間隔）
 - 酒蔵の四季、醸造風景、日本酒の美しさを大画面で表現
-- フルスクリーン動画対応可能
+- フルスクリーン対応
 
 【効果】
-- 訪問者の滞在時間向上（平均+40%）
+- 訪問者の滞在時間向上
 - ブランドイメージの即時伝達
 - SNSでのシェア率向上
 
@@ -75,6 +74,9 @@
   - スライドイン（左右から登場）
   - スケールイン（拡大しながら表示）
   - ローテーション（回転しながら表示）
+  - マスクリビール（幕が開くように表示）
+  - テキストリビール（文字が1文字ずつ現れる）
+  - パララックス（奥行きのある動き）
 
 【効果】
 - 酒蔵の歴史・理念を「体験」として伝える
@@ -103,103 +105,78 @@
 
 ---
 
-## スライド7: 機能④ 多言語対応
-タイトル: 世界中からの訪問者を歓迎
+## スライド7: 機能④ お問い合わせフォーム
+タイトル: Webからの問い合わせを簡単に受付
 
 【機能説明】
-- 日本語・英語・中国語（簡体/繁体）対応
-- 言語切り替えボタンを常時表示
-- 各言語でのSEO最適化
-
-【対応コンテンツ】
-- 酒蔵の歴史・理念
-- 商品紹介
-- 見学予約フォーム
-- アクセス情報（Googleマップ連携）
-- お問い合わせ
-
-【効果】
-- 訪日観光客へのリーチ拡大
-- 海外からの問い合わせ対応効率化
-- インバウンド売上の向上
-
----
-
-## スライド8: 機能⑤ オンライン予約・問い合わせフォーム
-タイトル: 24時間365日、世界中から予約受付
-
-【機能説明】
-- 酒蔵見学予約フォーム
-- 団体予約対応
-- 多言語での自動返信メール
-- Googleスプレッドシート連携で管理簡単
-
-【フォーム項目例】
-- 希望日時
-- 人数（大人/子供）
-- 言語（日本語/英語/中国語ガイド希望）
-- 特別なご要望
+- シンプルなお問い合わせフォーム
+  - お名前
+  - メールアドレス
+  - 件名
+  - メッセージ
+- Google スプレッドシート連携で管理簡単
+- サーバー不要で低コスト運用
 
 【効果】
 - 電話対応の削減（スタッフ負担軽減）
-- 予約の取りこぼし防止（営業時間外も対応）
+- 問い合わせの取りこぼし防止（営業時間外も対応）
 - データ蓄積によるマーケティング活用
 
 ---
 
-## スライド9: 機能⑥ SEO・SNS最適化
-タイトル: 「八戸 酒蔵」で検索上位表示
+## スライド8: 機能⑤ モダンなデザインシステム
+タイトル: 和の伝統と最新技術の融合
 
-【SEO対策】
-- 構造化データ（Schema.org）実装
-- LocalBusiness マークアップで地域検索強化
-- メタタグ・OGP完全対応
-- Core Web Vitals最適化
+【デザイン要素】
+- 和紙テクスチャ背景（用意済み）
+- グラスモーフィズム（すりガラス効果）
+- マグネティックボタン（吸い付くような動き）
+- カスタムカーソル
+- スムーススクロール
 
-【SNS対応】
-- Twitter/Facebookシェア時の美しいプレビュー
-- Instagram連携
-- ハッシュタグ戦略の提案
+【カラーパレット提案】
+- 藍色（伝統的な日本の色）
+- 墨色（上品な黒）
+- 金色アクセント（プレミアム感）
 
 【効果】
-- オーガニック検索流入の増加
-- SNSでの拡散力向上
-- 広告費用の削減
+- 高級感・プレミアム感の演出
+- 記憶に残るブランド体験
+- 他の酒蔵サイトとの明確な差別化
 
 ---
 
-## スライド10: 導入事例・実績
-タイトル: 技術の信頼性
+## スライド9: 技術の信頼性
+タイトル: 最新技術で安定・高速なサイトを実現
 
-【技術実績】
-- Angular 21（最新フレームワーク）
+【採用技術】
+- Angular 21（Google開発の最新フレームワーク）
 - GSAP（業界標準アニメーションライブラリ）
 - Tailwind CSS（効率的なスタイリング）
 - Google Apps Script連携（コスト効率の良い運用）
 
 【パフォーマンス】
-- ページ読み込み: 1.5秒以内
-- モバイルスコア: 90点以上（Google Lighthouse）
-- 99.9%のサーバー稼働率
+- 高速なページ読み込み
+- スマートフォンでも滑らかな動作
+- メンテナンスしやすい設計
 
 ---
 
-## スライド11: 訪問者体験の流れ（カスタマージャーニー）
-タイトル: 訪日観光客が八戸酒造を発見するまで
+## スライド10: 訪問者体験の流れ（カスタマージャーニー）
+タイトル: 訪問者が八戸酒造の魅力を体験するまで
 
 【ジャーニーマップ】
-1. 検索: 「Hachinohe sake brewery」で検索
-2. 発見: SEO最適化されたサイトが上位表示
-3. 感動: 美しいビジュアルとアニメーションで第一印象UP
-4. 理解: 多言語コンテンツで酒蔵の魅力を深く理解
-5. 予約: オンラインフォームで簡単に見学予約
+1. 発見: Webサイトにアクセス
+2. 感動: 美しいビジュアルとアニメーションで第一印象UP
+3. 理解: 酒蔵の歴史・理念・こだわりを深く理解
+4. 興味: 3Dカードで商品ラインナップを楽しく閲覧
+5. 行動: お問い合わせフォームから連絡
 6. 来訪: 期待を超える酒蔵体験
 7. 共有: SNSで感動をシェア
-8. 再訪・購入: ECサイト連携で継続的な関係構築
 
 ---
 
-## スライド12: 競合との差別化
+## スライド11: 競合との差別化
 タイトル: なぜこのソリューションなのか
 
 【比較表】
@@ -208,55 +185,65 @@
 | デザイン | テンプレート | オーダーメイド |
 | アニメーション | なし/簡易 | Awwwards水準 |
 | 3D効果 | なし | Apple/Stripe級 |
-| 多言語 | 自動翻訳 | ネイティブ対応可 |
-| 予約システム | 外部リンク | 統合型 |
-| SEO | 基本のみ | 完全最適化 |
-| 運用コスト | 高い | 低コスト |
+| スクロール体験 | 普通 | 映画的 |
+| 問い合わせ | メールのみ | フォーム統合 |
+| 運用コスト | サーバー必要 | サーバー不要 |
 
 ---
 
-## スライド13: 投資対効果（ROI）
-タイトル: 期待される効果
+## スライド12: 拡張オプション（将来の機能追加）
+タイトル: さらなる成長に向けて
 
-【定量効果】
-- Web経由の問い合わせ: 現状比 200%増（推定）
-- 酒蔵見学予約: 現状比 150%増（推定）
-- インバウンド訪問者: 現状比 300%増（推定）
-- SNSフォロワー: 現状比 180%増（推定）
+【追加可能な機能】
+1. **多言語対応**
+   - 日本語・英語・中国語（簡体/繁体）
+   - 訪日観光客へのリーチ拡大
 
-【定性効果】
-- ブランドイメージの向上
-- 若年層・海外層への認知拡大
-- デジタルマーケティング基盤の構築
-- スタッフの業務効率化
+2. **オンライン予約システム**
+   - 酒蔵見学の予約フォーム
+   - カレンダー連携
+   - 自動返信メール
+
+3. **SEO最適化**
+   - 構造化データ（Schema.org）
+   - 「八戸 酒蔵」で検索上位表示
+   - OGP/Twitter Card対応
+
+4. **EC連携**
+   - オンラインショップへの導線
+   - 在庫表示API連携
+
+※これらは基盤が整っているため、低コストで追加可能
 
 ---
 
-## スライド14: 導入ステップ
+## スライド13: 導入ステップ
 タイトル: スムーズな導入プロセス
 
 【ステップ】
 1. 要件ヒアリング・コンテンツ収集
+   - 使用したい写真・動画
+   - 伝えたいストーリー
+   - 商品情報
 2. デザイン提案・フィードバック
 3. 開発・コンテンツ入力
 4. テスト・修正
 5. 公開・運用開始
-6. 継続的な改善・サポート
 
 ---
 
-## スライド15: まとめ・次のステップ
+## スライド14: まとめ・次のステップ
 タイトル: 八戸酒造の魅力を世界へ
 
 【ご提案のポイント】
-- 世界水準のデザイン・技術で差別化
-- 訪日観光客への多言語対応
-- 予約システムで機会損失を防止
-- SEO/SNS最適化で認知度向上
-- 低コストでの運用が可能
+- 世界水準のデザイン・アニメーションで差別化
+- スマートフォン完全対応
+- お問い合わせフォームで機会損失を防止
+- サーバー不要で低コスト運用
+- 将来の拡張（多言語・予約・SEO）に対応可能
 
 【次のステップ】
-- デモサイトのご覧いただき
+- デモサイトをご覧いただく
 - 具体的なご要望のヒアリング
 - カスタマイズ提案の作成
 
@@ -274,34 +261,34 @@
 ## English Version Prompt
 
 ```
-Create a presentation for proposing a website renewal to Hachinohe Sake Brewery's executive director.
+Create a presentation for proposing a website to Hachinohe Sake Brewery's executive director.
 
 【Slide Structure】
 
 ## Slide 1: Cover
 Title: "Next-Generation Website Proposal for Hachinohe Sake Brewery"
-Subtitle: Creating Digital Experiences That Captivate International Tourists and Sake Enthusiasts
+Subtitle: Creating Digital Experiences That Captivate Visitors and Sake Enthusiasts
 
 ## Slide 2: Current Challenges and Opportunities
-- International tourist trends (3.6M+ visitors to Japan in 2024)
 - Growing interest in sake brewery tourism
-- Need for multilingual support and mobile optimization
+- Need for mobile-optimized experience
+- Brand differentiation in digital space
 
-## Slide 3: Solution Overview
+## Slide 3: Solution Overview (Built-in Features)
 - Award-winning UI/UX design (Awwwards level)
 - Angular 21 technology for speed and stability
-- Multilingual support (Japanese, English, Chinese)
 - Full mobile responsiveness
-- SEO optimization
+- Advanced animations (GSAP)
+- Contact form (Google integration)
 
 ## Slide 4: Feature 1 - Immersive Hero Section
 - Auto-rotating slideshow (5-second intervals)
-- Full-screen video capability
-- Effect: 40% increase in visitor dwell time
+- Full-screen visuals
+- Fade-in and scale-up animations for premium feel
 
 ## Slide 5: Feature 2 - Scroll-Triggered Animations
 - GSAP ScrollTrigger technology
-- 7 animation patterns (fade, slide, scale, rotate)
+- 7 animation patterns (fade, slide, scale, rotate, mask-reveal, text-reveal, parallax)
 - Storytelling through motion
 
 ## Slide 6: Feature 3 - 3D Interactive Cards
@@ -309,22 +296,33 @@ Subtitle: Creating Digital Experiences That Captivate International Tourists and
 - Premium glare effects
 - Perfect for sake product lineup showcase
 
-## Slide 7: Feature 4 - Multilingual Support
-- Japanese, English, Chinese (Simplified/Traditional)
-- SEO optimization for each language
-- Automatic response emails
+## Slide 7: Feature 4 - Contact Form
+- Simple inquiry form (name, email, subject, message)
+- Google Sheets integration
+- Serverless, low-cost operation
 
-## Slide 8: Feature 5 - Online Reservation System
-- 24/7 booking capability
-- Group reservation support
-- Google Sheets integration for easy management
+## Slide 8: Feature 5 - Modern Design System
+- Washi paper texture backgrounds (prepared)
+- Glass morphism effects
+- Magnetic buttons, custom cursor, smooth scroll
 
-## Slide 9: Feature 6 - SEO & Social Media Optimization
-- Schema.org structured data
-- LocalBusiness markup
-- OGP/Twitter Card implementation
+## Slide 9: Technical Credibility
+- Angular 21, GSAP, Tailwind CSS
+- Fast loading, smooth mobile experience
 
-## Slide 10-15: [Technical credibility, customer journey, ROI, implementation steps, summary]
+## Slide 10: Customer Journey
+Discovery → First impression → Understanding → Interest → Action → Visit → Share
+
+## Slide 11: Competitive Differentiation
+Comparison table: Template vs Custom, Basic vs Awwwards-level animations
+
+## Slide 12: Expansion Options (Future Additions)
+1. Multilingual support (EN/CN)
+2. Online reservation system
+3. SEO optimization
+4. E-commerce integration
+
+## Slide 13-14: Implementation steps and summary
 
 【Design Instructions】
 - Colors: Traditional Japanese palette (indigo, ink black, gold accents)
@@ -335,18 +333,29 @@ Subtitle: Creating Digital Experiences That Captivate International Tourists and
 
 ---
 
-## 補足情報
+## 現在のプロダクトの正確な機能リスト
 
-### このプロダクトの技術的特徴（資料作成時の参考）
+### ✅ 搭載済み機能
 
 | 機能 | 技術 | 効果 |
 |------|------|------|
-| スムーススクロール | GSAP ScrollTrigger | 高級感のあるスクロール体験 |
-| 3Dチルト効果 | 独自ディレクティブ | 商品カードの立体的表現 |
-| スライドショー | Angular Signals | シームレスな画像切り替え |
-| フォーム送信 | Google Apps Script | サーバーレスで低コスト運用 |
-| SEO | 構造化マークアップ | 検索上位表示 |
-| レスポンシブ | Tailwind CSS | 全デバイス対応 |
+| **没入型ヒーローセクション** | Angular Signals + 自動スライドショー | 第一印象でブランドを伝える |
+| **スクロール連動アニメーション** | GSAP ScrollTrigger | 物語のように読み進める体験 |
+| **3Dチルトカード** | 独自ディレクティブ | 商品を魅力的に紹介 |
+| **お問い合わせフォーム** | Google Apps Script連携 | 24時間問い合わせ受付 |
+| **レスポンシブデザイン** | Tailwind CSS | スマホ・タブレット対応 |
+| **カスタムカーソル** | 独自コンポーネント | 高級感のある操作体験 |
+| **スムーススクロール** | CSS smooth-behavior | 滑らかなスクロール |
+| **グラスモーフィズム** | CSS backdrop-filter | モダンな透明感 |
+
+### ⚙️ 拡張オプション（追加開発が必要）
+
+| 機能 | 説明 |
+|------|------|
+| **多言語対応** | 日本語・英語・中国語の切り替え |
+| **オンライン予約システム** | 酒蔵見学の予約フォーム |
+| **SEO最適化** | 構造化データ・OGP・検索上位表示 |
+| **EC連携** | オンラインショップとの連携 |
 
 ### 既存アセット（酒蔵向けに用意済み）
 
@@ -354,16 +363,18 @@ Subtitle: Creating Digital Experiences That Captivate International Tourists and
 - `/public/images/sake/logo_emblem.png` - ロゴエンブレム
 - `/public/images/sake/background.png` - 背景画像
 
-### 想定される質問への回答
+---
+
+## 想定される質問への回答
 
 **Q: 更新は自分たちでできるのか？**
-A: Google スプレッドシートとの連携により、お知らせやイベント情報は専門知識なしで更新可能です。
+A: お問い合わせフォームの内容はGoogleスプレッドシートに自動保存されるため、専門知識なしで確認可能です。コンテンツの更新については、簡単な管理画面の追加も可能です。
 
-**Q: 多言語対応のコストは？**
-A: 初期構築時に多言語対応の基盤を整備するため、後からの追加より大幅にコストを抑えられます。
+**Q: 多言語対応は後からできるのか？**
+A: はい。基盤となる技術が整っているため、後から多言語対応を追加することが可能です。
 
-**Q: 既存のECサイトとの連携は？**
-A: 商品ページから外部ECサイトへのリンク、またはAPI連携での在庫表示が可能です。
+**Q: 予約システムは追加できるのか？**
+A: はい。お問い合わせフォームと同じGoogle Apps Script連携を拡張することで、予約システムを低コストで追加できます。
 
 ---
 
