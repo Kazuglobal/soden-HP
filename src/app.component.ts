@@ -165,10 +165,10 @@ export class AppComponent {
           areaServed: '神奈川県',
           address: {
             '@type': 'PostalAddress',
-            postalCode: '031-0833',
-            addressRegion: '青森県',
-            addressLocality: '八戸市',
-            streetAddress: '大字大久保字小久保平19-7',
+            postalCode: '222-0023',
+            addressRegion: '神奈川県',
+            addressLocality: '横浜市港北区',
+            streetAddress: '仲手原2丁目42-23-5',
             addressCountry: 'JP'
           },
           openingHoursSpecification: [
