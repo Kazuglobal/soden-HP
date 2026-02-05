@@ -71,8 +71,8 @@
     <div class="flex-1 flex items-center">
       <div class="max-w-4xl lg:max-w-5xl">
 
-        <!-- Decorative Branding Text -->
-        <div class="mb-4 md:mb-10" appGsapAnimate [animation]="'fadeRight'" [duration]="1.2" [delay]="0.2">
+        <!-- Decorative Branding Text - Hidden on mobile for cleaner first view -->
+        <div class="hidden md:block mb-4 md:mb-10" appGsapAnimate [animation]="'fadeRight'" [duration]="1.2" [delay]="0.2">
           <h3 class="font-['Playball'] text-2xl sm:text-2xl md:text-5xl lg:text-6xl text-orange-100/90 leading-tight drop-shadow-[0_0_20px_rgba(251,146,60,0.3)]">
             Steel Craftsmen
           </h3>
@@ -87,7 +87,7 @@
         </div>
 
         <!-- High-Impact Motto -->
-        <h1 class="text-3xl sm:text-3xl md:text-6xl lg:text-7xl xl:text-8xl font-black leading-[1.1] tracking-tight"
+        <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-black leading-[1.1] tracking-tight"
           style="font-family: 'Noto Serif JP', serif;">
           <div class="overflow-hidden mb-2 md:mb-4">
             <span class="block bg-gradient-to-r from-white via-orange-100 to-amber-200 bg-clip-text text-transparent drop-shadow-[0_2px_10px_rgba(251,146,60,0.3)]" appGsapAnimate [animation]="'fadeUp'" [duration]="1.2" [delay]="0.5">
@@ -101,23 +101,27 @@
           </div>
         </h1>
 
-        <!-- Core Narrative -->
-        <div class="mt-6 md:mt-12 max-w-xl lg:max-w-2xl" appGsapAnimate [animation]="'fadeUp'" [duration]="1"
+        <!-- Mobile-only simple tagline -->
+        <p class="md:hidden mt-6 text-sm text-orange-200/80 max-w-xs" appGsapAnimate [animation]="'fadeUp'" [duration]="1" [delay]="0.9">
+          溶接工事のプロフェッショナル集団
+        </p>
+
+        <!-- Core Narrative - Hidden on mobile for cleaner first view -->
+        <div class="hidden md:block mt-6 md:mt-12 max-w-xl lg:max-w-2xl" appGsapAnimate [animation]="'fadeUp'" [duration]="1"
           [delay]="1">
-          <div class="flex items-start md:bg-zinc-900/70 md:backdrop-blur-sm md:rounded-lg md:p-6 lg:p-8 md:border md:border-orange-500/20 md:shadow-[0_0_30px_rgba(251,146,60,0.1)]">
+          <div class="flex items-start bg-zinc-900/70 backdrop-blur-sm rounded-lg p-6 lg:p-8 border border-orange-500/20 shadow-[0_0_30px_rgba(251,146,60,0.1)]">
             <div
-              class="w-1 md:w-1.5 lg:w-2 bg-gradient-to-b from-orange-500 via-amber-400 to-orange-600 h-12 md:h-20 mr-4 md:mr-8 shadow-[0_0_20px_rgba(251,146,60,0.6)] rounded-full flex-shrink-0">
+              class="w-1.5 lg:w-2 bg-gradient-to-b from-orange-500 via-amber-400 to-orange-600 h-20 mr-8 shadow-[0_0_20px_rgba(251,146,60,0.6)] rounded-full flex-shrink-0">
             </div>
             <div>
-              <h2 class="text-2xl sm:text-3xl md:text-4xl font-black text-white leading-snug mb-3 md:mb-8 relative"
+              <h2 class="text-4xl font-black text-white leading-snug mb-8 relative"
                 style="font-family: 'Noto Serif JP', serif;" appGsapAnimate [animation]="'fadeUp'" [delay]="0.4">
-                <span class="relative z-10 text-lg sm:text-2xl md:text-3xl text-orange-100">「鉄鋼のプロフェッショナル」</span>
+                <span class="relative z-10 text-3xl text-orange-100">「鉄鋼のプロフェッショナル」</span>
                 <!-- Title Decoration - Welding spark -->
                 <div class="absolute -left-4 top-1/2 -translate-y-1/2 w-1.5 h-8 bg-gradient-to-b from-orange-400 to-amber-500 rounded-full opacity-70 shadow-[0_0_10px_rgba(251,146,60,0.8)]">
                 </div>
               </h2>
-              <p
-                class="text-xs sm:text-sm md:text-base leading-relaxed md:leading-loose lg:leading-loose text-zinc-300">
+              <p class="text-base leading-loose text-zinc-300">
                 幅広い溶接工事に携わってきた実績を活かして日々新しい技術を取り入れております。お客様のご要望に応じて鉄やステンレスなど幅広い資材の加工を行っております。
               </p>
             </div>
