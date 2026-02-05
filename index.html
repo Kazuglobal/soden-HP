@@ -30,12 +30,12 @@
     rel="stylesheet">
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
-    /* ===== Award-Winning CSS Animations ===== */
+    /* ===== Welding-Inspired Industrial Design ===== */
 
-    /* Selection styling */
+    /* Selection styling - Welding orange glow */
     ::selection {
-      background: rgba(14, 165, 233, 0.3);
-      color: #0f172a;
+      background: rgba(251, 146, 60, 0.4);
+      color: #0c0a09;
     }
 
     /* Smooth scrolling */
@@ -43,22 +43,144 @@
       scroll-behavior: smooth;
     }
 
-    /* Custom scrollbar */
+    /* Custom scrollbar - Molten metal style */
     ::-webkit-scrollbar {
       width: 10px;
     }
 
     ::-webkit-scrollbar-track {
-      background: #f8fafc;
+      background: #1c1917;
     }
 
     ::-webkit-scrollbar-thumb {
-      background: linear-gradient(180deg, #0ea5e9, #06b6d4);
+      background: linear-gradient(180deg, #f97316, #ea580c, #dc2626);
       border-radius: 5px;
+      box-shadow: 0 0 10px rgba(249, 115, 22, 0.5);
     }
 
     ::-webkit-scrollbar-thumb:hover {
-      background: linear-gradient(180deg, #0284c7, #0891b2);
+      background: linear-gradient(180deg, #fb923c, #f97316, #ef4444);
+      box-shadow: 0 0 15px rgba(249, 115, 22, 0.7);
+    }
+
+    /* Welding spark particle */
+    @keyframes spark {
+      0% {
+        opacity: 1;
+        transform: translate(0, 0) scale(1);
+      }
+      100% {
+        opacity: 0;
+        transform: translate(var(--spark-x, 50px), var(--spark-y, -80px)) scale(0);
+      }
+    }
+
+    .spark {
+      position: absolute;
+      width: 4px;
+      height: 4px;
+      background: radial-gradient(circle, #fff 0%, #fbbf24 40%, #f97316 100%);
+      border-radius: 50%;
+      box-shadow: 0 0 6px 2px rgba(251, 191, 36, 0.8);
+      animation: spark 1s ease-out forwards;
+    }
+
+    /* Metal texture overlay */
+    .metal-texture {
+      background-image:
+        repeating-linear-gradient(
+          90deg,
+          transparent,
+          transparent 2px,
+          rgba(255,255,255,0.03) 2px,
+          rgba(255,255,255,0.03) 4px
+        ),
+        repeating-linear-gradient(
+          0deg,
+          transparent,
+          transparent 2px,
+          rgba(255,255,255,0.02) 2px,
+          rgba(255,255,255,0.02) 4px
+        );
+    }
+
+    /* Welding glow effect */
+    .welding-glow {
+      box-shadow:
+        0 0 20px rgba(251, 146, 60, 0.4),
+        0 0 40px rgba(251, 146, 60, 0.2),
+        0 0 60px rgba(251, 146, 60, 0.1);
+    }
+
+    /* Molten border animation */
+    @keyframes molten-border {
+      0%, 100% {
+        border-color: rgba(251, 146, 60, 0.6);
+        box-shadow: 0 0 10px rgba(251, 146, 60, 0.3);
+      }
+      50% {
+        border-color: rgba(234, 88, 12, 0.8);
+        box-shadow: 0 0 20px rgba(234, 88, 12, 0.5);
+      }
+    }
+
+    .molten-border {
+      animation: molten-border 2s ease-in-out infinite;
+    }
+
+    /* Heat shimmer effect */
+    @keyframes heat-shimmer {
+      0%, 100% {
+        transform: translateX(0) skewX(0deg);
+      }
+      25% {
+        transform: translateX(1px) skewX(0.5deg);
+      }
+      75% {
+        transform: translateX(-1px) skewX(-0.5deg);
+      }
+    }
+
+    .heat-shimmer {
+      animation: heat-shimmer 0.3s ease-in-out infinite;
+    }
+
+    /* Steel plate texture */
+    .steel-plate {
+      background:
+        linear-gradient(135deg, rgba(255,255,255,0.1) 0%, transparent 50%, rgba(0,0,0,0.1) 100%),
+        linear-gradient(to bottom, #27272a, #18181b);
+      border: 1px solid rgba(255,255,255,0.1);
+    }
+
+    /* Brushed metal effect */
+    .brushed-metal {
+      background: linear-gradient(
+        90deg,
+        #3f3f46 0%,
+        #52525b 25%,
+        #3f3f46 50%,
+        #52525b 75%,
+        #3f3f46 100%
+      );
+      background-size: 200% 100%;
+    }
+
+    /* Arc welding flash */
+    @keyframes arc-flash {
+      0%, 90%, 100% {
+        opacity: 0;
+      }
+      92%, 98% {
+        opacity: 1;
+      }
+      95% {
+        opacity: 0.5;
+      }
+    }
+
+    .arc-flash {
+      animation: arc-flash 3s ease-in-out infinite;
     }
 
     /* Custom CSS for continuous scroll animation */
@@ -159,21 +281,50 @@
       animation: shimmer 2s infinite;
     }
 
-    /* Pulse glow effect */
+    /* Pulse glow effect - Welding orange */
     @keyframes pulse-glow {
 
       0%,
       100% {
-        box-shadow: 0 0 0 0 rgba(212, 168, 118, 0.4);
+        box-shadow: 0 0 0 0 rgba(251, 146, 60, 0.6);
       }
 
       50% {
-        box-shadow: 0 0 20px 10px rgba(212, 168, 118, 0.2);
+        box-shadow: 0 0 30px 15px rgba(251, 146, 60, 0.3);
       }
     }
 
     .animate-pulse-glow {
       animation: pulse-glow 2s ease-in-out infinite;
+    }
+
+    /* Sparks container animation */
+    @keyframes sparks-burst {
+      0% { transform: scale(0); opacity: 1; }
+      100% { transform: scale(2); opacity: 0; }
+    }
+
+    .sparks-burst {
+      animation: sparks-burst 0.8s ease-out forwards;
+    }
+
+    /* Ember float animation */
+    @keyframes ember-float {
+      0% {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+      }
+      50% {
+        opacity: 0.8;
+      }
+      100% {
+        transform: translateY(-100px) scale(0.3);
+        opacity: 0;
+      }
+    }
+
+    .ember {
+      animation: ember-float 2s ease-out infinite;
     }
 
     /* Float animation */
@@ -290,7 +441,7 @@
       animation: morph 8s ease-in-out infinite;
     }
 
-    /* Underline animation */
+    /* Underline animation - Welding spark trail */
     .animated-underline {
       position: relative;
     }
@@ -302,8 +453,9 @@
       left: 0;
       width: 0;
       height: 2px;
-      background: linear-gradient(90deg, #d4a876, #ff8c42);
+      background: linear-gradient(90deg, #f97316, #fbbf24, #ef4444);
       transition: width 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+      box-shadow: 0 0 8px rgba(249, 115, 22, 0.6);
     }
 
     .animated-underline:hover::after {
@@ -458,10 +610,45 @@
       opacity: 0;
     }
 
-    /* Focus visible styles */
+    /* Focus visible styles - Welding orange */
     *:focus-visible {
-      outline: 2px solid #d4a876;
+      outline: 2px solid #f97316;
       outline-offset: 2px;
+      box-shadow: 0 0 10px rgba(249, 115, 22, 0.4);
+    }
+
+    /* Industrial rivet decoration */
+    .rivet {
+      width: 8px;
+      height: 8px;
+      background: radial-gradient(circle at 30% 30%, #71717a, #3f3f46);
+      border-radius: 50%;
+      box-shadow: inset 0 1px 2px rgba(255,255,255,0.3), 0 1px 2px rgba(0,0,0,0.5);
+    }
+
+    /* Welding seam line */
+    .weld-seam {
+      height: 4px;
+      background: linear-gradient(90deg,
+        transparent 0%,
+        #78350f 10%,
+        #f97316 30%,
+        #fbbf24 50%,
+        #f97316 70%,
+        #78350f 90%,
+        transparent 100%
+      );
+      border-radius: 2px;
+      box-shadow: 0 0 10px rgba(251, 146, 60, 0.5);
+    }
+
+    /* Steel beam pattern */
+    .steel-beam {
+      background:
+        linear-gradient(90deg, #27272a 0%, #3f3f46 2%, #3f3f46 98%, #27272a 100%);
+      box-shadow:
+        inset 0 2px 4px rgba(255,255,255,0.1),
+        inset 0 -2px 4px rgba(0,0,0,0.3);
     }
 
     /* Reduced motion */
@@ -495,7 +682,7 @@
 
 </head>
 
-<body class="bg-white">
+<body class="bg-zinc-900">
   <app-root></app-root>
 </body>
 
