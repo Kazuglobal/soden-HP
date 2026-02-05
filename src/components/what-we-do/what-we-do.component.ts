@@ -16,6 +16,6 @@ export class WhatWeDoComponent {
   work2 = '/images/solar_energy.png';
   // ビル保守管理 - オフィスビル/メンテナンス
   work3 = '/images/building.png';
-  // 物流システム・機械設備工事 - 倉庫/物流
-  work4 = 'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=2000&auto=format&fit=crop';
+  // 鍛冶工事・鉄骨工事
+  work4 = '/images/sportroom.png';
 }

@@ -1,336 +1,221 @@
-<section class="relative min-h-[80vh] lg:min-h-[90vh] overflow-hidden bg-zinc-950">
-    <!-- Full-width Background Image -->
-    <div class="absolute inset-0">
-        <!-- Desktop Image -->
-        <img src="/images/recruit_hero_bright.png" alt="SEIKENの仲間たち" class="hidden md:block w-full h-full object-cover">
-        <!-- Mobile Image -->
-        <img src="/images/recruit_mobile.jpg" alt="SEIKENの仲間たち"
-            class="block md:hidden w-full h-full object-cover object-[center_5%]">
-        <!-- Dark Industrial Gradient Overlay -->
-        <div class="absolute inset-0 bg-gradient-to-t md:bg-gradient-to-l from-zinc-950/95 via-zinc-900/70 to-zinc-900/30"></div>
-        <!-- Orange heat glow -->
-        <div class="absolute inset-0 bg-gradient-to-t from-orange-900/20 via-transparent to-transparent"></div>
+<section class="relative min-h-[80vh] lg:min-h-[85vh] overflow-hidden bg-zinc-950">
+  <!-- Background Image -->
+  <div class="absolute inset-0">
+    <img src="/images/recruit_hero_bright.png" alt="SEIKENの仲間たち" class="hidden md:block w-full h-full object-cover">
+    <img src="/images/recruit_mobile.jpg" alt="SEIKENの仲間たち"
+      class="block md:hidden w-full h-full object-cover object-[center_5%]">
+    <div class="absolute inset-0 bg-gradient-to-t md:bg-gradient-to-l from-zinc-950/95 via-zinc-950/60 to-zinc-950/20"></div>
+  </div>
+
+  <!-- Content -->
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 flex items-end md:items-center justify-end min-h-[80vh] lg:min-h-[85vh] pb-8 md:pb-0">
+    <div class="w-full md:w-3/5 lg:w-1/2 xl:w-2/5 text-white py-8 md:py-16">
+
+      <div class="flex items-center gap-3 mb-6" appGsapAnimate [animation]="'fadeUp'" [delay]="0.1">
+        <div class="w-8 h-[1px] bg-orange-500"></div>
+        <span class="text-[10px] font-bold tracking-[0.3em] uppercase text-orange-500">Recruit</span>
+      </div>
+
+      <h2 appGsapAnimate [animation]="'fadeUp'" [delay]="0.2"
+        class="text-3xl md:text-4xl lg:text-5xl font-black leading-[1.2] tracking-tight text-zinc-100"
+        style="font-family: 'Noto Serif JP', serif;">
+        この街の灯りを、<br>一生モノの技術に。
+      </h2>
+
+      <p appGsapAnimate [animation]="'fadeUp'" [delay]="0.4"
+        class="hidden md:block mt-6 text-sm md:text-base leading-relaxed text-zinc-400 max-w-lg">
+        SEIKENは、横浜を中心に溶接工事を行う鉄鋼のプロフェッショナル集団。技術の追求はもちろん、共に働く仲間を支え合う文化があります。
+      </p>
+
+      <p appGsapAnimate [animation]="'fadeUp'" [delay]="0.5"
+        class="mt-8 text-sm text-zinc-500 max-w-lg">
+        この街の未来を、あなたの手で灯しませんか？
+      </p>
+
+      <!-- CTA Buttons -->
+      <div appGsapAnimate [animation]="'fadeUp'" [delay]="0.6" class="mt-8 flex flex-wrap gap-3">
+        <a routerLink="/recruit"
+          class="inline-flex items-center gap-2 border border-zinc-600 hover:border-zinc-400 text-zinc-300 hover:text-white px-8 py-3.5 rounded-full text-sm font-bold tracking-wide transition-all duration-300">
+          <span>採用情報</span>
+          <svg class="h-4 w-4 transition-transform group-hover:translate-x-0.5" fill="none" viewBox="0 0 24 24"
+            stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+          </svg>
+        </a>
+
+        <button (click)="toggleEntryForm()"
+          class="btn-shine inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-400 text-white px-8 py-3.5 rounded-full text-sm font-bold tracking-wide transition-all duration-300 hover:shadow-[0_0_24px_rgba(251,146,60,0.4)] cursor-pointer">
+          <span>エントリー</span>
+          <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+          </svg>
+        </button>
+      </div>
     </div>
-
-    <!-- Decorative Corner Marks - Welding style -->
-    <div class="absolute top-8 left-8 w-16 h-16 border-t-2 border-l-2 border-orange-500/50 z-10 shadow-[0_0_10px_rgba(251,146,60,0.3)]"></div>
-    <div class="absolute bottom-8 right-8 w-16 h-16 border-b-2 border-r-2 border-orange-500/50 z-10 shadow-[0_0_10px_rgba(251,146,60,0.3)]"></div>
-
-    <!-- Corner Rivets -->
-    <div class="absolute top-4 left-4 rivet z-10"></div>
-    <div class="absolute top-4 right-4 rivet z-10"></div>
-
-    <!-- Content Overlay (Right Aligned) -->
-    <div
-        class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10 flex items-end md:items-center justify-end min-h-screen md:min-h-[80vh] lg:min-h-[90vh] pb-2 md:pb-0">
-        <div class="w-full md:w-3/5 lg:w-1/2 xl:w-2/5 text-white pb-2 md:py-16 lg:py-24">
-
-            <!-- Handwritten-style Tag with decorative underline -->
-            <div appGsapAnimate [animation]="'fadeUp'" [delay]="0.1" class="mb-8">
-                <p class="text-orange-500 text-5xl md:text-6xl italic" style="font-family: 'Caveat', cursive;">
-                    Recruit
-                </p>
-                <div class="w-24 h-1 bg-gradient-to-r from-orange-500 via-amber-400 to-orange-600 mt-3 rounded-full shadow-[0_0_10px_rgba(251,146,60,0.5)]"></div>
-            </div>
-
-            <!-- Authentic Soden Industry Headline -->
-            <h2 appGsapAnimate [animation]="'fadeUp'" [delay]="0.3"
-                class="text-4xl md:text-5xl lg:text-6xl font-black leading-[1.2] tracking-tight text-zinc-100"
-                style="font-family: 'Noto Serif JP', serif;">
-                この街の灯りを、<br>一生モノの技術に。
-            </h2>
-
-            <!-- Authentic Soden Industry Description -->
-            <p appGsapAnimate [animation]="'fadeUp'" [delay]="0.5"
-                class="hidden md:block mt-8 text-base md:text-lg leading-relaxed text-zinc-300 max-w-lg">
-                SEIKENは、横浜を中心に溶接工事を行う鉄鋼のプロフェッショナル集団。技術の追求はもちろん、共に働く仲間を支え合う文化があります。未経験の方でも、現場を支えるやりがいと、誇りを持てる環境を約束します。
-            </p>
-
-            <!-- Refined CTA Prompt -->
-            <p appGsapAnimate [animation]="'fadeUp'" [delay]="0.7"
-                class="mt-12 text-lg md:text-xl font-medium text-zinc-400">
-                この街の未来を、あなたの手で灯しませんか？<br>
-                私たちは、明日のインフラを創るプロフェッショナルを待っています。
-            </p>
-
-            <!-- Dual CTA Buttons -->
-            <div appGsapAnimate [animation]="'fadeUp'" [delay]="0.9" class="mt-10 flex flex-wrap gap-4 md:gap-6">
-                <!-- 採用情報 Button (Outlined with glass effect) -->
-                <a routerLink="/recruit"
-                    class="group flex items-center gap-3 border-2 border-zinc-400 text-zinc-200 px-10 py-4 rounded-full text-base font-bold tracking-wider hover:bg-zinc-200 hover:text-zinc-900 hover:border-zinc-200 transition-all duration-300 backdrop-blur-sm bg-zinc-800/30">
-                    <span>採用情報</span>
-                    <svg xmlns="http://www.w3.org/2000/svg"
-                        class="h-5 w-5 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24"
-                        stroke="currentColor" stroke-width="2">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
-                    </svg>
-                </a>
-
-                <!-- エントリー Button (Gradient Orange with enhanced shadow) -->
-                <button (click)="toggleEntryForm()"
-                    class="group relative flex items-center gap-3 bg-gradient-to-r from-orange-600 via-orange-500 to-amber-500 text-white px-10 py-4 rounded-full text-base font-bold tracking-wider hover:shadow-[0_0_30px_rgba(251,146,60,0.6)] transition-all duration-300 shadow-xl hover:-translate-y-0.5 cursor-pointer border border-orange-400/30">
-                    <span class="text-sm font-light italic absolute -top-4 right-6 text-orange-200"
-                        style="font-family: 'Caveat', cursive;">Entry</span>
-                    <span>エントリー</span>
-                    <svg xmlns="http://www.w3.org/2000/svg"
-                        class="h-5 w-5 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24"
-                        stroke="currentColor" stroke-width="2">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
-                    </svg>
-                </button>
-            </div>
-
-        </div>
-    </div>
+  </div>
 </section>
 
-<!-- Entry Form Section -->
+<!-- Entry Form -->
 <section *ngIf="showEntryForm"
-    class="py-16 sm:py-24 bg-gradient-to-b from-zinc-900 to-zinc-950 relative overflow-hidden animate-fade-in">
-    <!-- Industrial Background Pattern -->
-    <div class="absolute inset-0 metal-texture opacity-20 pointer-events-none"></div>
-
-    <!-- Heat glow effects -->
-    <div class="absolute top-1/4 left-0 w-64 h-64 bg-orange-600/5 rounded-full blur-3xl"></div>
-    <div class="absolute bottom-1/4 right-0 w-48 h-48 bg-amber-500/5 rounded-full blur-3xl"></div>
-
-    <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <!-- Header -->
-        <div class="text-center mb-12">
-            <div appGsapAnimate [animation]="'fadeUp'" [delay]="0.1" class="mb-6">
-                <p class="text-orange-500 text-5xl md:text-6xl italic" style="font-family: 'Caveat', cursive;">
-                    Entry Form
-                </p>
-                <div class="w-24 h-1 bg-gradient-to-r from-orange-500 via-amber-400 to-orange-600 mt-3 mx-auto rounded-full shadow-[0_0_10px_rgba(251,146,60,0.5)]"></div>
-            </div>
-            <h2 appGsapAnimate [animation]="'fadeUp'" [delay]="0.2"
-                class="text-3xl md:text-4xl lg:text-5xl font-bold text-zinc-100 tracking-tight mb-4"
-                style="font-family: 'Noto Serif JP', serif;">
-                採用エントリーフォーム
-            </h2>
-            <p appGsapAnimate [animation]="'fadeUp'" [delay]="0.3"
-                class="text-zinc-400 text-base md:text-lg leading-relaxed max-w-2xl mx-auto">
-                ご興味をお持ちいただきありがとうございます。<br class="hidden sm:inline">
-                以下のフォームに必要事項をご記入の上、送信してください。
-            </p>
-        </div>
-
-        <!-- Form Card -->
-        <div class="max-w-3xl mx-auto bg-zinc-800/90 backdrop-blur-md rounded-xl shadow-2xl overflow-hidden border border-zinc-700">
-            <!-- Card Header -->
-            <div class="bg-gradient-to-r from-zinc-900 via-zinc-800 to-zinc-900 py-6 px-6 sm:px-12 border-b border-orange-500/30">
-                <div class="flex justify-between items-center">
-                    <h3 class="text-xl sm:text-2xl font-bold text-zinc-100" style="font-family: 'Noto Serif JP', serif;">
-                        応募フォーム
-                    </h3>
-                    <button (click)="toggleEntryForm()" class="text-zinc-500 hover:text-orange-400 transition-colors">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
-                            stroke="currentColor" stroke-width="2">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
-                        </svg>
-                    </button>
-                </div>
-            </div>
-
-            <div class="p-8 sm:p-12">
-                <!-- Success Message -->
-                <div *ngIf="entrySubmitStatus === 'success'"
-                    class="mb-8 p-8 bg-green-900/30 border border-green-500/30 rounded-xl text-center">
-                    <div class="text-green-400 text-6xl mb-4">✓</div>
-                    <h3 class="text-2xl font-bold text-green-300 mb-3">エントリー完了</h3>
-                    <p class="text-green-400 leading-relaxed">
-                        エントリーありがとうございます。<br>
-                        担当者より折り返しご連絡いたします。
-                    </p>
-                    <button (click)="resetEntryStatus()"
-                        class="mt-6 text-green-400 underline hover:text-green-300 font-medium">
-                        新しいエントリーを送信する
-                    </button>
-                </div>
-
-                <!-- Error Message -->
-                <div *ngIf="entrySubmitStatus === 'error'" class="mb-8 p-6 bg-red-900/30 border border-red-500/30 rounded-xl">
-                    <div class="flex items-center mb-2">
-                        <span class="text-red-400 text-2xl mr-2">⚠</span>
-                        <h3 class="text-lg font-bold text-red-300">送信エラー</h3>
-                    </div>
-                    <p class="text-red-400">{{ entryErrorMessage }}</p>
-                    <button (click)="resetEntryStatus()" class="mt-4 text-red-400 underline hover:text-red-300">
-                        再度送信する
-                    </button>
-                </div>
-
-                <!-- Form -->
-                <form *ngIf="entrySubmitStatus !== 'success'" [formGroup]="entryForm" (ngSubmit)="onEntrySubmit()"
-                    class="space-y-8">
-
-                    <!-- Section: 基本情報 -->
-                    <div>
-                        <h4 class="text-lg font-bold text-zinc-100 mb-6 flex items-center">
-                            <span class="w-2 h-6 bg-gradient-to-b from-orange-500 to-amber-500 mr-3 rounded-full shadow-[0_0_8px_rgba(251,146,60,0.5)]"></span>
-                            基本情報
-                        </h4>
-
-                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                            <!-- Name -->
-                            <div>
-                                <label for="entry-name" class="block text-sm font-bold text-zinc-300 mb-2">
-                                    お名前 <span class="text-orange-500">*</span>
-                                </label>
-                                <input type="text" id="entry-name" formControlName="name"
-                                    class="w-full px-4 py-3 rounded-lg bg-zinc-700/50 border border-zinc-600 focus:border-orange-500 focus:bg-zinc-700 focus:ring-2 focus:ring-orange-500/20 transition duration-200 outline-none text-zinc-100 placeholder-zinc-500"
-                                    [ngClass]="{'border-red-500': entryForm.get('name')?.invalid && entryForm.get('name')?.touched}"
-                                    placeholder="山田 太郎">
-                                <p *ngIf="entryForm.get('name')?.invalid && entryForm.get('name')?.touched"
-                                    class="text-red-400 text-xs mt-1">お名前を入力してください。</p>
-                            </div>
-
-                            <!-- Furigana -->
-                            <div>
-                                <label for="entry-furigana" class="block text-sm font-bold text-zinc-300 mb-2">
-                                    フリガナ <span class="text-orange-500">*</span>
-                                </label>
-                                <input type="text" id="entry-furigana" formControlName="furigana"
-                                    class="w-full px-4 py-3 rounded-lg bg-zinc-700/50 border border-zinc-600 focus:border-orange-500 focus:bg-zinc-700 focus:ring-2 focus:ring-orange-500/20 transition duration-200 outline-none text-zinc-100 placeholder-zinc-500"
-                                    [ngClass]="{'border-red-500': entryForm.get('furigana')?.invalid && entryForm.get('furigana')?.touched}"
-                                    placeholder="ヤマダ タロウ">
-                                <p *ngIf="entryForm.get('furigana')?.invalid && entryForm.get('furigana')?.touched"
-                                    class="text-red-400 text-xs mt-1">フリガナを入力してください。</p>
-                            </div>
-
-                            <!-- Email -->
-                            <div>
-                                <label for="entry-email" class="block text-sm font-bold text-zinc-300 mb-2">
-                                    メールアドレス <span class="text-orange-500">*</span>
-                                </label>
-                                <input type="email" id="entry-email" formControlName="email"
-                                    class="w-full px-4 py-3 rounded-lg bg-zinc-700/50 border border-zinc-600 focus:border-orange-500 focus:bg-zinc-700 focus:ring-2 focus:ring-orange-500/20 transition duration-200 outline-none text-zinc-100 placeholder-zinc-500"
-                                    [ngClass]="{'border-red-500': entryForm.get('email')?.invalid && entryForm.get('email')?.touched}"
-                                    placeholder="example@email.com">
-                                <p *ngIf="entryForm.get('email')?.invalid && entryForm.get('email')?.touched"
-                                    class="text-red-400 text-xs mt-1">有効なメールアドレスを入力してください。</p>
-                            </div>
-
-                            <!-- Phone -->
-                            <div>
-                                <label for="entry-phone" class="block text-sm font-bold text-zinc-300 mb-2">
-                                    電話番号 <span class="text-orange-500">*</span>
-                                </label>
-                                <input type="tel" id="entry-phone" formControlName="phone"
-                                    class="w-full px-4 py-3 rounded-lg bg-zinc-700/50 border border-zinc-600 focus:border-orange-500 focus:bg-zinc-700 focus:ring-2 focus:ring-orange-500/20 transition duration-200 outline-none text-zinc-100 placeholder-zinc-500"
-                                    [ngClass]="{'border-red-500': entryForm.get('phone')?.invalid && entryForm.get('phone')?.touched}"
-                                    placeholder="090-1234-5678">
-                                <p *ngIf="entryForm.get('phone')?.invalid && entryForm.get('phone')?.touched"
-                                    class="text-red-400 text-xs mt-1">電話番号を入力してください。</p>
-                            </div>
-
-                            <!-- Age -->
-                            <div>
-                                <label for="entry-age" class="block text-sm font-bold text-zinc-300 mb-2">
-                                    年齢 <span class="text-orange-500">*</span>
-                                </label>
-                                <input type="number" id="entry-age" formControlName="age" min="18"
-                                    class="w-full px-4 py-3 rounded-lg bg-zinc-700/50 border border-zinc-600 focus:border-orange-500 focus:bg-zinc-700 focus:ring-2 focus:ring-orange-500/20 transition duration-200 outline-none text-zinc-100 placeholder-zinc-500"
-                                    [ngClass]="{'border-red-500': entryForm.get('age')?.invalid && entryForm.get('age')?.touched}"
-                                    placeholder="25">
-                                <p *ngIf="entryForm.get('age')?.invalid && entryForm.get('age')?.touched"
-                                    class="text-red-400 text-xs mt-1">18歳以上の年齢を入力してください。</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Section: 経歴情報 -->
-                    <div>
-                        <h4 class="text-lg font-bold text-zinc-100 mb-6 flex items-center">
-                            <span class="w-2 h-6 bg-gradient-to-b from-amber-500 to-orange-500 mr-3 rounded-full shadow-[0_0_8px_rgba(251,191,36,0.5)]"></span>
-                            経歴情報
-                        </h4>
-
-                        <div class="space-y-6">
-                            <!-- Education -->
-                            <div>
-                                <label for="entry-education" class="block text-sm font-bold text-zinc-300 mb-2">
-                                    最終学歴
-                                </label>
-                                <input type="text" id="entry-education" formControlName="education"
-                                    class="w-full px-4 py-3 rounded-lg bg-zinc-700/50 border border-zinc-600 focus:border-orange-500 focus:bg-zinc-700 focus:ring-2 focus:ring-orange-500/20 transition duration-200 outline-none text-zinc-100 placeholder-zinc-500"
-                                    placeholder="〇〇高等学校 卒業 / 〇〇大学 〇〇学部 卒業">
-                            </div>
-
-                            <!-- Work History -->
-                            <div>
-                                <label for="entry-workHistory" class="block text-sm font-bold text-zinc-300 mb-2">
-                                    職歴
-                                </label>
-                                <textarea id="entry-workHistory" formControlName="workHistory" rows="3"
-                                    class="w-full px-4 py-3 rounded-lg bg-zinc-700/50 border border-zinc-600 focus:border-orange-500 focus:bg-zinc-700 focus:ring-2 focus:ring-orange-500/20 transition duration-200 outline-none resize-none text-zinc-100 placeholder-zinc-500"
-                                    placeholder="これまでの職務経験をご記入ください（未経験の方は「なし」とご記入ください）"></textarea>
-                            </div>
-
-                            <!-- Qualifications -->
-                            <div>
-                                <label for="entry-qualifications" class="block text-sm font-bold text-zinc-300 mb-2">
-                                    保有資格
-                                </label>
-                                <input type="text" id="entry-qualifications" formControlName="qualifications"
-                                    class="w-full px-4 py-3 rounded-lg bg-zinc-700/50 border border-zinc-600 focus:border-orange-500 focus:bg-zinc-700 focus:ring-2 focus:ring-orange-500/20 transition duration-200 outline-none text-zinc-100 placeholder-zinc-500"
-                                    placeholder="溶接技能士、普通自動車免許など">
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Section: 応募情報 -->
-                    <div>
-                        <h4 class="text-lg font-bold text-zinc-100 mb-6 flex items-center">
-                            <span class="w-2 h-6 bg-gradient-to-b from-orange-500 to-amber-500 mr-3 rounded-full shadow-[0_0_8px_rgba(251,146,60,0.5)]"></span>
-                            応募情報
-                        </h4>
-
-                        <div class="space-y-6">
-                            <!-- Start Date -->
-                            <div>
-                                <label for="entry-startDate" class="block text-sm font-bold text-zinc-300 mb-2">
-                                    希望勤務開始日
-                                </label>
-                                <input type="date" id="entry-startDate" formControlName="startDate"
-                                    class="w-full px-4 py-3 rounded-lg bg-zinc-700/50 border border-zinc-600 focus:border-orange-500 focus:bg-zinc-700 focus:ring-2 focus:ring-orange-500/20 transition duration-200 outline-none text-zinc-100">
-                            </div>
-
-                            <!-- Motivation -->
-                            <div>
-                                <label for="entry-motivation" class="block text-sm font-bold text-zinc-300 mb-2">
-                                    志望動機・自己PR <span class="text-orange-500">*</span>
-                                </label>
-                                <textarea id="entry-motivation" formControlName="motivation" rows="5"
-                                    class="w-full px-4 py-3 rounded-lg bg-zinc-700/50 border border-zinc-600 focus:border-orange-500 focus:bg-zinc-700 focus:ring-2 focus:ring-orange-500/20 transition duration-200 outline-none resize-none text-zinc-100 placeholder-zinc-500"
-                                    [ngClass]="{'border-red-500': entryForm.get('motivation')?.invalid && entryForm.get('motivation')?.touched}"
-                                    placeholder="志望動機や自己PRをご自由にご記入ください"></textarea>
-                                <p *ngIf="entryForm.get('motivation')?.invalid && entryForm.get('motivation')?.touched"
-                                    class="text-red-400 text-xs mt-1">志望動機・自己PRを入力してください。</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Submit Button -->
-                    <div class="mt-10 text-center">
-                        <button type="submit" [disabled]="entryForm.invalid || entrySubmitted"
-                            class="inline-flex items-center justify-center w-full sm:w-auto min-w-[240px] bg-gradient-to-r from-orange-600 via-orange-500 to-amber-500 text-white px-12 py-4 rounded-full text-base font-bold tracking-wider hover:shadow-[0_0_30px_rgba(251,146,60,0.5)] disabled:from-zinc-600 disabled:to-zinc-700 disabled:text-zinc-400 disabled:cursor-not-allowed disabled:shadow-none transition-all duration-300 shadow-xl hover:-translate-y-0.5 disabled:hover:translate-y-0 border border-orange-400/30 disabled:border-zinc-600">
-                            <span *ngIf="entrySubmitStatus === 'sending'"
-                                class="inline-block w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin mr-2"></span>
-                            {{ entrySubmitStatus === 'sending' ? '送信中...' : 'エントリーする' }}
-                        </button>
-                    </div>
-
-                </form>
-            </div>
-        </div>
-
-        <!-- Close Button -->
-        <div class="mt-10 text-center">
-            <button (click)="toggleEntryForm()"
-                class="inline-block bg-zinc-700 text-zinc-300 px-10 py-3 rounded-full text-base font-bold uppercase tracking-wider hover:bg-zinc-600 transition duration-300 cursor-pointer border border-zinc-600">
-                CLOSE
-            </button>
-        </div>
+  class="py-16 sm:py-24 bg-zinc-950 relative overflow-hidden animate-fade-in">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+    <div class="text-center mb-12">
+      <div class="flex items-center justify-center gap-3 mb-4" appGsapAnimate [animation]="'fadeUp'">
+        <div class="w-8 h-[1px] bg-orange-500"></div>
+        <span class="text-[10px] font-bold tracking-[0.3em] uppercase text-orange-500">Entry Form</span>
+        <div class="w-8 h-[1px] bg-orange-500"></div>
+      </div>
+      <h2 appGsapAnimate [animation]="'fadeUp'" [delay]="0.1"
+        class="text-3xl md:text-4xl font-bold text-zinc-100 tracking-tight mb-4"
+        style="font-family: 'Noto Serif JP', serif;">
+        採用エントリーフォーム
+      </h2>
+      <p appGsapAnimate [animation]="'fadeUp'" [delay]="0.2"
+        class="text-zinc-500 text-sm leading-relaxed max-w-xl mx-auto">
+        ご興味をお持ちいただきありがとうございます。以下のフォームに必要事項をご記入の上、送信してください。
+      </p>
     </div>
+
+    <div class="max-w-3xl mx-auto bg-zinc-900 rounded-2xl overflow-hidden border border-zinc-800/50">
+      <div class="bg-zinc-900 py-5 px-6 sm:px-10 border-b border-zinc-800/50 flex justify-between items-center">
+        <h3 class="text-lg font-bold text-zinc-100" style="font-family: 'Noto Serif JP', serif;">応募フォーム</h3>
+        <button (click)="toggleEntryForm()" class="text-zinc-500 hover:text-zinc-300 transition-colors p-1">
+          <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+      </div>
+
+      <div class="p-6 sm:p-10">
+        <!-- Success -->
+        <div *ngIf="entrySubmitStatus === 'success'" class="p-8 text-center">
+          <div class="w-12 h-12 rounded-full bg-green-500/10 flex items-center justify-center mx-auto mb-4">
+            <svg class="w-6 h-6 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-zinc-100 mb-2">エントリー完了</h3>
+          <p class="text-zinc-400 text-sm mb-6">担当者より折り返しご連絡いたします。</p>
+          <button (click)="resetEntryStatus()" class="text-sm text-orange-500 hover:text-orange-400 font-medium">
+            新しいエントリーを送信する
+          </button>
+        </div>
+
+        <!-- Error -->
+        <div *ngIf="entrySubmitStatus === 'error'" class="mb-6 p-4 bg-red-500/5 border border-red-500/20 rounded-xl">
+          <p class="text-red-400 text-sm">{{ entryErrorMessage }}</p>
+          <button (click)="resetEntryStatus()" class="mt-2 text-sm text-red-400 underline">再度送信する</button>
+        </div>
+
+        <!-- Form -->
+        <form *ngIf="entrySubmitStatus !== 'success'" [formGroup]="entryForm" (ngSubmit)="onEntrySubmit()" class="space-y-8">
+          <div>
+            <h4 class="text-sm font-bold text-zinc-300 mb-5 flex items-center gap-2">
+              <span class="w-1 h-4 bg-orange-500 rounded-full"></span>基本情報
+            </h4>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+              <div>
+                <label for="entry-name" class="block text-xs font-medium text-zinc-500 mb-1.5">お名前 <span class="text-orange-500">*</span></label>
+                <input type="text" id="entry-name" formControlName="name"
+                  class="w-full px-4 py-3 rounded-xl bg-zinc-800/50 border border-zinc-700/50 focus:border-orange-500/50 focus:bg-zinc-800 focus:ring-1 focus:ring-orange-500/20 transition duration-200 outline-none text-zinc-100 text-sm placeholder-zinc-600"
+                  [ngClass]="{'border-red-500/50': entryForm.get('name')?.invalid && entryForm.get('name')?.touched}" placeholder="山田 太郎">
+                <p *ngIf="entryForm.get('name')?.invalid && entryForm.get('name')?.touched" class="text-red-400 text-xs mt-1">お名前を入力してください。</p>
+              </div>
+              <div>
+                <label for="entry-furigana" class="block text-xs font-medium text-zinc-500 mb-1.5">フリガナ <span class="text-orange-500">*</span></label>
+                <input type="text" id="entry-furigana" formControlName="furigana"
+                  class="w-full px-4 py-3 rounded-xl bg-zinc-800/50 border border-zinc-700/50 focus:border-orange-500/50 focus:bg-zinc-800 focus:ring-1 focus:ring-orange-500/20 transition duration-200 outline-none text-zinc-100 text-sm placeholder-zinc-600"
+                  [ngClass]="{'border-red-500/50': entryForm.get('furigana')?.invalid && entryForm.get('furigana')?.touched}" placeholder="ヤマダ タロウ">
+                <p *ngIf="entryForm.get('furigana')?.invalid && entryForm.get('furigana')?.touched" class="text-red-400 text-xs mt-1">フリガナを入力してください。</p>
+              </div>
+              <div>
+                <label for="entry-email" class="block text-xs font-medium text-zinc-500 mb-1.5">メールアドレス <span class="text-orange-500">*</span></label>
+                <input type="email" id="entry-email" formControlName="email"
+                  class="w-full px-4 py-3 rounded-xl bg-zinc-800/50 border border-zinc-700/50 focus:border-orange-500/50 focus:bg-zinc-800 focus:ring-1 focus:ring-orange-500/20 transition duration-200 outline-none text-zinc-100 text-sm placeholder-zinc-600"
+                  [ngClass]="{'border-red-500/50': entryForm.get('email')?.invalid && entryForm.get('email')?.touched}" placeholder="example@email.com">
+                <p *ngIf="entryForm.get('email')?.invalid && entryForm.get('email')?.touched" class="text-red-400 text-xs mt-1">有効なメールアドレスを入力してください。</p>
+              </div>
+              <div>
+                <label for="entry-phone" class="block text-xs font-medium text-zinc-500 mb-1.5">電話番号 <span class="text-orange-500">*</span></label>
+                <input type="tel" id="entry-phone" formControlName="phone"
+                  class="w-full px-4 py-3 rounded-xl bg-zinc-800/50 border border-zinc-700/50 focus:border-orange-500/50 focus:bg-zinc-800 focus:ring-1 focus:ring-orange-500/20 transition duration-200 outline-none text-zinc-100 text-sm placeholder-zinc-600"
+                  [ngClass]="{'border-red-500/50': entryForm.get('phone')?.invalid && entryForm.get('phone')?.touched}" placeholder="090-1234-5678">
+                <p *ngIf="entryForm.get('phone')?.invalid && entryForm.get('phone')?.touched" class="text-red-400 text-xs mt-1">電話番号を入力してください。</p>
+              </div>
+              <div>
+                <label for="entry-age" class="block text-xs font-medium text-zinc-500 mb-1.5">年齢 <span class="text-orange-500">*</span></label>
+                <input type="number" id="entry-age" formControlName="age" min="18"
+                  class="w-full px-4 py-3 rounded-xl bg-zinc-800/50 border border-zinc-700/50 focus:border-orange-500/50 focus:bg-zinc-800 focus:ring-1 focus:ring-orange-500/20 transition duration-200 outline-none text-zinc-100 text-sm placeholder-zinc-600"
+                  [ngClass]="{'border-red-500/50': entryForm.get('age')?.invalid && entryForm.get('age')?.touched}" placeholder="25">
+                <p *ngIf="entryForm.get('age')?.invalid && entryForm.get('age')?.touched" class="text-red-400 text-xs mt-1">18歳以上の年齢を入力してください。</p>
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <h4 class="text-sm font-bold text-zinc-300 mb-5 flex items-center gap-2">
+              <span class="w-1 h-4 bg-amber-500 rounded-full"></span>経歴情報
+            </h4>
+            <div class="space-y-5">
+              <div>
+                <label for="entry-education" class="block text-xs font-medium text-zinc-500 mb-1.5">最終学歴</label>
+                <input type="text" id="entry-education" formControlName="education"
+                  class="w-full px-4 py-3 rounded-xl bg-zinc-800/50 border border-zinc-700/50 focus:border-orange-500/50 focus:bg-zinc-800 focus:ring-1 focus:ring-orange-500/20 transition duration-200 outline-none text-zinc-100 text-sm placeholder-zinc-600"
+                  placeholder="〇〇高等学校 卒業">
+              </div>
+              <div>
+                <label for="entry-workHistory" class="block text-xs font-medium text-zinc-500 mb-1.5">職歴</label>
+                <textarea id="entry-workHistory" formControlName="workHistory" rows="3"
+                  class="w-full px-4 py-3 rounded-xl bg-zinc-800/50 border border-zinc-700/50 focus:border-orange-500/50 focus:bg-zinc-800 focus:ring-1 focus:ring-orange-500/20 transition duration-200 outline-none resize-none text-zinc-100 text-sm placeholder-zinc-600"
+                  placeholder="これまでの職務経験をご記入ください"></textarea>
+              </div>
+              <div>
+                <label for="entry-qualifications" class="block text-xs font-medium text-zinc-500 mb-1.5">保有資格</label>
+                <input type="text" id="entry-qualifications" formControlName="qualifications"
+                  class="w-full px-4 py-3 rounded-xl bg-zinc-800/50 border border-zinc-700/50 focus:border-orange-500/50 focus:bg-zinc-800 focus:ring-1 focus:ring-orange-500/20 transition duration-200 outline-none text-zinc-100 text-sm placeholder-zinc-600"
+                  placeholder="溶接技能士、普通自動車免許など">
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <h4 class="text-sm font-bold text-zinc-300 mb-5 flex items-center gap-2">
+              <span class="w-1 h-4 bg-orange-500 rounded-full"></span>応募情報
+            </h4>
+            <div class="space-y-5">
+              <div>
+                <label for="entry-startDate" class="block text-xs font-medium text-zinc-500 mb-1.5">希望勤務開始日</label>
+                <input type="date" id="entry-startDate" formControlName="startDate"
+                  class="w-full px-4 py-3 rounded-xl bg-zinc-800/50 border border-zinc-700/50 focus:border-orange-500/50 focus:bg-zinc-800 focus:ring-1 focus:ring-orange-500/20 transition duration-200 outline-none text-zinc-100 text-sm">
+              </div>
+              <div>
+                <label for="entry-motivation" class="block text-xs font-medium text-zinc-500 mb-1.5">志望動機・自己PR <span class="text-orange-500">*</span></label>
+                <textarea id="entry-motivation" formControlName="motivation" rows="5"
+                  class="w-full px-4 py-3 rounded-xl bg-zinc-800/50 border border-zinc-700/50 focus:border-orange-500/50 focus:bg-zinc-800 focus:ring-1 focus:ring-orange-500/20 transition duration-200 outline-none resize-none text-zinc-100 text-sm placeholder-zinc-600"
+                  [ngClass]="{'border-red-500/50': entryForm.get('motivation')?.invalid && entryForm.get('motivation')?.touched}"
+                  placeholder="志望動機や自己PRをご自由にご記入ください"></textarea>
+                <p *ngIf="entryForm.get('motivation')?.invalid && entryForm.get('motivation')?.touched" class="text-red-400 text-xs mt-1">志望動機・自己PRを入力してください。</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="pt-4 text-center">
+            <button type="submit" [disabled]="entryForm.invalid || entrySubmitted"
+              class="btn-shine inline-flex items-center justify-center min-w-[200px] bg-orange-500 hover:bg-orange-400 text-white px-10 py-3.5 rounded-full text-sm font-bold tracking-wide disabled:bg-zinc-700 disabled:text-zinc-500 disabled:cursor-not-allowed transition-all duration-300 hover:shadow-[0_0_24px_rgba(251,146,60,0.4)]">
+              <span *ngIf="entrySubmitStatus === 'sending'"
+                class="inline-block w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin mr-2"></span>
+              {{ entrySubmitStatus === 'sending' ? '送信中...' : 'エントリーする' }}
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <div class="mt-8 text-center">
+      <button (click)="toggleEntryForm()"
+        class="text-sm text-zinc-500 hover:text-zinc-300 font-medium transition-colors cursor-pointer">
+        閉じる
+      </button>
+    </div>
+  </div>
 </section>
