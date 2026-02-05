@@ -29,17 +29,6 @@
           {{ craftsmanship.description }}
         </p>
 
-        <!-- SDGs Integration -->
-        <div class="mb-12" appGsapAnimate [animation]="'fadeUp'" [delay]="0.8">
-          <p class="text-[10px] font-bold text-slate-400 tracking-widest uppercase mb-4">本プロジェクトのSDGs貢献</p>
-          <div class="flex flex-wrap gap-2">
-            @for (id of craftsmanship.sdgs; track id) {
-            <img [src]="getSdgIconPath(id)" [alt]="getSdgGoal(id)" [title]="getSdgGoal(id)"
-              class="w-12 h-12 rounded shadow-sm transition-transform hover:scale-110 cursor-help object-contain">
-            }
-          </div>
-        </div>
-
       </div>
     </div>
   </div>
@@ -73,102 +62,6 @@
           {{ publicWorks.description }}
         </p>
 
-        <!-- SDGs Integration -->
-        <div class="mb-12" appGsapAnimate [animation]="'fadeUp'" [delay]="0.8">
-          <p class="text-[10px] font-bold text-slate-400 tracking-widest uppercase mb-4 text-right">本プロジェクトのSDGs貢献</p>
-          <div class="flex flex-wrap justify-end gap-2">
-            @for (id of publicWorks.sdgs; track id) {
-            <img [src]="getSdgIconPath(id)" [alt]="getSdgGoal(id)" [title]="getSdgGoal(id)"
-              class="w-12 h-12 rounded shadow-sm transition-transform hover:scale-110 cursor-help object-contain">
-            }
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-
-  <!-- Section 2: SDGsに取り組んでいます (High Visibility Roadmap) -->
-  <div class="py-24 lg:py-40 bg-white relative overflow-hidden">
-    <!-- Technical "Road" Background (Hidden on mobile) -->
-    <div class="absolute inset-0 z-0 pointer-events-none overflow-hidden hidden md:block">
-      <div class="absolute inset-0 flex items-start justify-center opacity-50 pt-16">
-        <img src="/images/soden_roadmap.png" alt="Soden Technical Roadmap"
-          class="w-auto h-auto max-w-xl lg:max-w-2xl object-contain rotate-[-5deg]">
-      </div>
-    </div>
-    <div class="container mx-auto px-4 relative z-10">
-      <div class="text-center mb-16 lg:mb-24 relative z-10">
-        <div class="inline-block bg-white/90 backdrop-blur-sm px-8 py-6 rounded-3xl shadow-sm border border-slate-100">
-          <h2 class="text-2xl md:text-4xl font-black text-[#0C1C2D] mb-6 whitespace-nowrap"
-            style="font-family: 'Noto Serif JP', serif;" appGsapAnimate [animation]="'fadeUp'">
-            {{ sdgCommitment.title }}
-          </h2>
-          <p class="text-emerald-700 font-medium tracking-wide text-left" appGsapAnimate [animation]="'fadeUp'"
-            [delay]="0.2">
-            持続可能な未来へ。<br>まずは私たち自身が変わる挑戦。
-          </p>
-        </div>
-      </div>
-
-      <!-- Committed Card -->
-      <div
-        class="max-w-5xl mx-auto bg-white rounded-[2rem] shadow-2xl overflow-hidden flex flex-col md:flex-row min-h-[400px]"
-        appGsapAnimate [animation]="'scaleIn'" [duration]="1.2">
-        <!-- Photo Side -->
-        <div class="md:w-1/2 relative overflow-hidden group">
-          <img [src]="sdgCommitment.image"
-            class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" alt="太陽光パネル">
-          <div class="absolute inset-0 bg-emerald-900/10"></div>
-        </div>
-
-        <!-- Data Side -->
-        <div class="md:w-1/2 p-8 lg:p-14 flex flex-col justify-center">
-          <div class="flex items-center gap-8 mb-10">
-            <div class="relative w-28 h-28 flex items-center justify-center p-2 overflow-visible flex-shrink-0">
-              <svg viewBox="0 0 120 120" class="w-full h-full transform -rotate-90 overflow-visible">
-                <circle cx="60" cy="60" r="45" stroke="currentColor" stroke-width="6" fill="transparent"
-                  class="text-emerald-50" />
-                <circle cx="60" cy="60" r="45" stroke="currentColor" stroke-width="6" fill="transparent"
-                  class="text-emerald-500" [attr.stroke-dasharray]="282.74" stroke-dashoffset="0" appGsapAnimate
-                  [animation]="'fadeIn'" [duration]="2" />
-              </svg>
-              <div class="absolute inset-0 flex flex-col items-center justify-center">
-                <span class="text-3xl font-black text-emerald-900 leading-none" appCountUp
-                  [countTo]="sdgCommitment.metric">0</span>
-                <span class="text-[10px] font-bold text-emerald-600 uppercase mt-0.5 tracking-wider">{{
-                  sdgCommitment.metricUnit
-                  }}</span>
-              </div>
-            </div>
-            <div>
-              <p class="text-[10px] font-bold text-emerald-600 tracking-widest uppercase mb-2"
-                style="font-family: 'Montserrat', sans-serif;">{{
-                sdgCommitment.metricLabel }}</p>
-              <p class="text-2xl lg:text-3xl font-black text-slate-800 leading-tight"
-                style="font-family: 'Noto Serif JP', serif;">エネルギーの完全自給</p>
-            </div>
-          </div>
-
-          <p class="text-slate-600 text-sm lg:text-base leading-relaxed mb-10"
-            style="font-family: 'Noto Sans JP', sans-serif;">
-            {{ sdgCommitment.description }}
-          </p>
-
-          <div class="flex gap-4">
-            @for (id of sdgCommitment.sdgs; track id) {
-            <div class="flex flex-col items-center gap-2 group cursor-help">
-              <img [src]="getSdgIconPath(id)" [alt]="getSdgGoal(id)" [title]="getSdgGoal(id)"
-                class="w-16 h-16 rounded-lg shadow-md transition-all group-hover:-translate-y-1 object-contain">
-            </div>
-            }
-            <div class="flex-grow flex items-end ml-2">
-              <p class="text-[10px] font-bold text-slate-400 leading-tight italic">
-                エネルギー、責任、気候変動への具体的アクション
-              </p>
-            </div>
-          </div>
-        </div>
       </div>
     </div>
   </div>
@@ -226,18 +119,6 @@
           }
         </div>
 
-        <!-- SDGs Note -->
-        <div class="flex flex-col items-center gap-6" appGsapAnimate [animation]="'fadeUp'" [delay]="0.8">
-          <div class="flex gap-4">
-            @for (id of community.sdgs; track id) {
-            <img [src]="getSdgIconPath(id)" [alt]="getSdgGoal(id)" [title]="getSdgGoal(id)"
-              class="w-14 h-14 rounded shadow transition-transform hover:scale-110 object-contain">
-            }
-          </div>
-          <p class="text-[10px] text-slate-400 leading-relaxed max-w-sm text-left">
-            ※スポーツを通じた健全な育成環境の提供は、貧困や飢餓の根本的解決、そして持続可能なまちづくり（ゴール1,2,11）に繋がると信じています。
-          </p>
-        </div>
       </div>
     </div>
   </div>
