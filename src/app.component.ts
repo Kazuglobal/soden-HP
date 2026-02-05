@@ -57,23 +57,23 @@ export class AppComponent {
     imageAlt?: string;
   }) {
     const title = data.title
-      ?? '株式会社創電工業 | 電気設備工事・設計施工（青森県八戸市）';
+      ?? '株式会社SEIKEN | 溶接工事・鉄鋼加工（横浜）';
     const description = data.description
-      ?? '青森県八戸市の株式会社創電工業。電気設備工事・電気通信工事・消防設備・空調設備・物流システムの設計施工から保守管理まで対応。1987年創業の実績。';
+      ?? '横浜を中心に溶接工事を行う株式会社SEIKEN。アーク溶接・半自動溶接・Tig溶接、鍛冶工事・鉄骨工事など鉄鋼のプロフェッショナルとして確かな技術で対応。';
     const keywords = data.keywords
-      ?? '創電工業,電気工事,電気設備,電気通信工事,消防設備,空調設備,物流システム,設計施工,保守管理,八戸,青森';
+      ?? 'SEIKEN,溶接工事,アーク溶接,半自動溶接,Tig溶接,鍛冶工事,鉄骨工事,鉄鋼加工,横浜';
     const image = data.image ?? '/images/companyinfo.png';
-    const imageAlt = data.imageAlt ?? '株式会社創電工業のチーム';
+    const imageAlt = data.imageAlt ?? '株式会社SEIKENのチーム';
     const canonicalUrl = this.getCanonicalUrl();
     const resolvedImage = this.resolveUrl(image);
 
     this.title.setTitle(title);
     this.meta.updateTag({ name: 'description', content: description });
     this.meta.updateTag({ name: 'keywords', content: keywords });
-    this.meta.updateTag({ name: 'author', content: '株式会社創電工業' });
+    this.meta.updateTag({ name: 'author', content: '株式会社SEIKEN' });
     this.meta.updateTag({ property: 'og:locale', content: 'ja_JP' });
     this.meta.updateTag({ property: 'og:type', content: 'website' });
-    this.meta.updateTag({ property: 'og:site_name', content: '株式会社創電工業' });
+    this.meta.updateTag({ property: 'og:site_name', content: '株式会社SEIKEN' });
     this.meta.updateTag({ property: 'og:title', content: title });
     this.meta.updateTag({ property: 'og:description', content: description });
     this.meta.updateTag({ property: 'og:image', content: resolvedImage });
@@ -155,20 +155,20 @@ export class AppComponent {
         {
           '@type': 'LocalBusiness',
           '@id': organizationId,
-          name: '株式会社創電工業',
+          name: '株式会社SEIKEN',
           url: baseUrl,
           logo: `${baseUrl}/logo.png`,
           image: data.image,
-          description: '青森県八戸市の株式会社創電工業。電気設備工事・電気通信工事・消防設備・空調設備・物流システムの設計施工から保守管理まで対応。',
+          description: '横浜を中心に溶接工事を行う株式会社SEIKEN。アーク溶接・半自動溶接・Tig溶接、鍛冶工事・鉄骨工事など鉄鋼のプロフェッショナルとして確かな技術で対応。',
           telephone: '+81-178-25-2172',
           foundingDate: '1987',
-          areaServed: '青森県',
+          areaServed: '神奈川県',
           address: {
             '@type': 'PostalAddress',
-            postalCode: '031-0833',
-            addressRegion: '青森県',
-            addressLocality: '八戸市',
-            streetAddress: '大字大久保字小久保平19-7',
+            postalCode: '222-0023',
+            addressRegion: '神奈川県',
+            addressLocality: '横浜市港北区',
+            streetAddress: '仲手原2丁目42-23-5',
             addressCountry: 'JP'
           },
           openingHoursSpecification: [
@@ -193,7 +193,7 @@ export class AppComponent {
           '@type': 'WebSite',
           '@id': websiteId,
           url: baseUrl,
-          name: '株式会社創電工業',
+          name: '株式会社SEIKEN',
           publisher: { '@id': organizationId },
           inLanguage: 'ja-JP'
         },
