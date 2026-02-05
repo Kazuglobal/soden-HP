@@ -1,27 +1,19 @@
 <section id="company" class="relative overflow-hidden">
-  <!-- Turquoise Frame Border (Enhanced) -->
+  <!-- Industrial Steel Frame Border -->
   <div class="absolute inset-0 z-30 pointer-events-none">
-    <!-- Top Border -->
-    <div
-      class="absolute top-0 left-0 right-0 h-5 md:h-6 bg-gradient-to-r from-teal-200 via-cyan-300 to-teal-200 shadow-inner">
-    </div>
+    <!-- Top Border - Welding seam -->
+    <div class="absolute top-0 left-0 right-0 h-5 md:h-6 bg-gradient-to-r from-zinc-800 via-zinc-700 to-zinc-800 border-b border-orange-500/30 shadow-[0_2px_10px_rgba(251,146,60,0.2)]"></div>
     <!-- Bottom Border -->
-    <div
-      class="absolute bottom-0 left-0 right-0 h-5 md:h-6 bg-gradient-to-r from-teal-200 via-cyan-300 to-teal-200 shadow-inner">
-    </div>
+    <div class="absolute bottom-0 left-0 right-0 h-5 md:h-6 bg-gradient-to-r from-zinc-800 via-zinc-700 to-zinc-800 border-t border-orange-500/30 shadow-[0_-2px_10px_rgba(251,146,60,0.2)]"></div>
     <!-- Left Border -->
-    <div
-      class="absolute top-5 md:top-6 bottom-5 md:bottom-6 left-0 w-5 md:w-6 bg-gradient-to-b from-teal-200 via-cyan-300 to-teal-200 shadow-inner">
-    </div>
+    <div class="absolute top-5 md:top-6 bottom-5 md:bottom-6 left-0 w-5 md:w-6 bg-gradient-to-b from-zinc-800 via-zinc-700 to-zinc-800 border-r border-orange-500/30"></div>
     <!-- Right Border -->
-    <div
-      class="absolute top-5 md:top-6 bottom-5 md:bottom-6 right-0 w-5 md:w-6 bg-gradient-to-b from-teal-200 via-cyan-300 to-teal-200 shadow-inner">
-    </div>
-    <!-- Corner Blocks for cleaner joints -->
-    <div class="absolute top-0 left-0 w-5 md:w-6 h-5 md:h-6 bg-teal-200"></div>
-    <div class="absolute top-0 right-0 w-5 md:w-6 h-5 md:h-6 bg-teal-200"></div>
-    <div class="absolute bottom-0 left-0 w-5 md:w-6 h-5 md:h-6 bg-teal-200"></div>
-    <div class="absolute bottom-0 right-0 w-5 md:w-6 h-5 md:h-6 bg-teal-200"></div>
+    <div class="absolute top-5 md:top-6 bottom-5 md:bottom-6 right-0 w-5 md:w-6 bg-gradient-to-b from-zinc-800 via-zinc-700 to-zinc-800 border-l border-orange-500/30"></div>
+    <!-- Corner Rivets -->
+    <div class="absolute top-1 left-1 rivet"></div>
+    <div class="absolute top-1 right-1 rivet"></div>
+    <div class="absolute bottom-1 left-1 rivet"></div>
+    <div class="absolute bottom-1 right-1 rivet"></div>
   </div>
 
   <!-- Hero Photo Section -->
@@ -29,30 +21,32 @@
     <!-- Full-width Team Photo -->
     <div class="absolute inset-0 z-0">
       <img src="/images/companyinfo.png" alt="SEIKENチーム" class="w-full h-full object-cover">
-      <!-- Refined Gradient Overlay -->
-      <div class="absolute inset-0 bg-gradient-to-t from-slate-800/80 via-slate-700/40 to-slate-500/10"></div>
+      <!-- Dark industrial Gradient Overlay -->
+      <div class="absolute inset-0 bg-gradient-to-t from-zinc-950/90 via-zinc-900/50 to-zinc-800/20"></div>
+      <!-- Orange heat glow from bottom -->
+      <div class="absolute inset-0 bg-gradient-to-t from-orange-900/20 via-transparent to-transparent"></div>
     </div>
 
     <!-- Hero Text Content -->
     <div class="relative z-20 container mx-auto px-10 pb-16 md:pb-20">
-      <!-- Decorative Dotted Line -->
-      <div class="w-32 border-t-2 border-dotted border-white/60 mb-6"></div>
+      <!-- Decorative welding line -->
+      <div class="w-32 h-1 bg-gradient-to-r from-orange-500 via-amber-400 to-transparent mb-6 shadow-[0_0_10px_rgba(251,146,60,0.5)]"></div>
 
       <!-- COMPANY Heading with Underline -->
       <h2 class="text-5xl md:text-6xl lg:text-7xl font-black text-white tracking-widest mb-2"
-        style="font-family: 'Roboto', sans-serif; text-shadow: 0 4px 20px rgba(0,0,0,0.3);">
-        <span class="border-b-4 border-white pb-2">COMPANY</span>
+        style="font-family: 'Roboto', sans-serif; text-shadow: 0 4px 20px rgba(0,0,0,0.5);">
+        <span class="border-b-4 border-orange-500 pb-2">COMPANY</span>
       </h2>
 
       <!-- Japanese Subtitle -->
-      <p class="text-xl md:text-2xl text-white/90 font-bold tracking-[0.3em] mt-4"
+      <p class="text-xl md:text-2xl text-zinc-200 font-bold tracking-[0.3em] mt-4"
         style="font-family: 'Noto Serif JP', serif;">
         会社概要
       </p>
 
       <div class="mt-10 flex flex-wrap gap-4">
         <a routerLink="/company"
-          class="inline-flex items-center gap-2 px-10 py-4 bg-emerald-600/90 text-white rounded-full font-bold tracking-widest hover:bg-emerald-500 transition-all duration-300 shadow-xl backdrop-blur-sm group">
+          class="inline-flex items-center gap-2 px-10 py-4 bg-gradient-to-r from-orange-600 to-amber-500 text-white rounded-full font-bold tracking-widest hover:shadow-[0_0_20px_rgba(251,146,60,0.5)] transition-all duration-300 shadow-xl backdrop-blur-sm group border border-orange-400/30">
           <span>SEE MORE</span>
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"
             class="w-5 h-5 group-hover:translate-x-1 transition-transform">
