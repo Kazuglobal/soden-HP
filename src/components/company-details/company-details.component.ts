@@ -14,7 +14,7 @@ export class CompanyDetailsComponent {
     ceoImage = '/images/CEO.JPG';
 
     companyInfo = [
-        { label: '会社名', value: '株式会社創電工業' },
+        { label: '会社名', value: '株式会社SEIKEN' },
         { label: '創業', value: '昭和62年（1987年）' },
         { label: '資本金', value: '5,000万円' },
         { label: '代表者', value: '代表取締役会長 上野 誠\n代表取締役社長 上野 衆' },
