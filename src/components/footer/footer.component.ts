@@ -24,7 +24,7 @@ import { GsapScrollAnimateDirective } from '../../directives/gsap-scroll-animate
       left: -12px;
       width: 4px;
       height: 4px;
-      background: linear-gradient(135deg, #0ea5e9, #10b981);
+      background: #32373c;
       border-radius: 50%;
       opacity: 0;
       transform: scale(0);
@@ -39,7 +39,7 @@ import { GsapScrollAnimateDirective } from '../../directives/gsap-scroll-animate
     }
     .logo-container:hover .logo-img {
       transform: scale(1.05) translateY(-2px);
-      filter: brightness(1.1) drop-shadow(0 5px 10px rgba(56, 189, 248, 0.2));
+      filter: brightness(0.9) drop-shadow(0 5px 10px rgba(50, 55, 60, 0.1));
     }
     .logo-img {
       transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);

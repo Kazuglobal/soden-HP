@@ -1,19 +1,19 @@
-<section id="cases" class="py-24 lg:py-32 bg-zinc-900 overflow-hidden relative">
+<section id="cases" class="py-24 lg:py-32 bg-gray-50 overflow-hidden relative">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
     <!-- Header -->
     <div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-16 gap-6">
       <div>
         <div class="flex items-center gap-3 mb-4" appGsapAnimate [animation]="'fadeUp'">
-          <div class="w-8 h-[1px] bg-orange-500"></div>
-          <span class="text-[10px] font-bold tracking-[0.3em] uppercase text-orange-500">Works & Projects</span>
+          <div class="w-8 h-[1px] bg-[#32373c]"></div>
+          <span class="text-[10px] font-bold tracking-[0.3em] uppercase text-[#32373c]">Works & Projects</span>
         </div>
         <h2 appGsapAnimate [animation]="'fadeUp'" [delay]="0.1"
-          class="text-4xl md:text-5xl font-black text-zinc-100 tracking-tight"
+          class="text-4xl md:text-5xl font-black text-[#32373c] tracking-tight"
           style="font-family: 'Noto Serif JP', serif;">
           施工事例
         </h2>
       </div>
-      <p class="text-zinc-500 text-sm max-w-sm" appGsapAnimate [animation]="'fadeUp'" [delay]="0.2">
+      <p class="text-gray-600 text-sm max-w-sm" appGsapAnimate [animation]="'fadeUp'" [delay]="0.2">
         商業施設からマンションまで、私たちの溶接技術はあらゆる場所に息づいています。
       </p>
     </div>
@@ -25,10 +25,10 @@
         appGsapAnimate [animation]="'fadeUp'" [delay]="0.1 * i">
         <img [src]="item.image" [alt]="item.title"
           class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
-        <div class="absolute inset-0 bg-gradient-to-t from-zinc-900/90 via-zinc-900/20 to-transparent"></div>
+        <div class="absolute inset-0 bg-gradient-to-t from-white/90 via-white/20 to-transparent"></div>
         <div class="absolute bottom-0 left-0 right-0 p-5">
-          <span class="text-[10px] font-bold tracking-widest text-orange-400 uppercase mb-2 block">{{ item.category }}</span>
-          <h3 class="text-base font-bold text-zinc-100 leading-snug">{{ item.title }}</h3>
+          <span class="text-[10px] font-bold tracking-widest text-[#32373c] uppercase mb-2 block">{{ item.category }}</span>
+          <h3 class="text-base font-bold text-[#32373c] leading-snug">{{ item.title }}</h3>
         </div>
       </div>
       }

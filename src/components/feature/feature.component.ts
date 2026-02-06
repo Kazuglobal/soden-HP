@@ -33,7 +33,7 @@ export class FeatureComponent {
     title: '確かな技術で、現場を支える。',
     subtitle: '施工事例',
     description: '商業施設やマンションでアーク溶接の実績も多数ございます。これまできめ細かな丁寧な施工を行うことを心掛けており、そのような姿勢に共感していただきお客様にリピートしてご利用いただいております。',
-    image: '/images/kokubo_nursery.jpg',
+    image: 'https://images.unsplash.com/photo-1565193566173-7a0ee3dbe261?w=1200&q=80',
     sdgs: [8, 9, 11, 12]
   };
 
@@ -41,7 +41,7 @@ export class FeatureComponent {
     title: '横浜を中心に臨機応変に対応。',
     subtitle: '出張工事',
     description: '横浜を中心に臨機応変に工事現場へお伺いし作業に取り組んでおります。現場を支える鉄鋼のプロフェッショナルとして、資格や豊富な経験を持つスタッフに工事の依頼をしてみませんか。幅広いお問い合わせをお待ちしております。',
-    image: '/images/sportroom.png',
+    image: 'https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=1200&q=80',
     sdgs: [8, 9, 11, 12]
   };
 
@@ -51,7 +51,7 @@ export class FeatureComponent {
     metric: 100,
     metricUnit: '%',
     metricLabel: '顧客満足度',
-    image: '/images/solar_sdg.png',
+    image: 'https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=1200&q=80',
     sdgs: [8, 9, 12]
   };
 
@@ -59,10 +59,10 @@ export class FeatureComponent {
     title: '信頼関係の構築に努めています',
     subtitle: 'お客様との絆を大切に',
     description: '些細なお困り事も気軽にご相談いただけるよう、お客様との信頼関係の構築に日々努めております。専門性の高い鉄鋼に関する資格を持つプロに工事を任せてみませんか。',
-    backgroundImage: '/images/community_bg.jpg',
+    backgroundImage: 'https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?w=1600&q=80',
     activities: [
-      { label: '丁寧な施工', image: '/images/community_soccer_new.jpg' },
-      { label: 'アフターフォロー', image: '/images/community_baseball_new.jpg' }
+      { label: '丁寧な施工', image: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80' },
+      { label: 'アフターフォロー', image: 'https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=600&q=80' }
     ],
     sdgs: [8, 9, 12]
   };

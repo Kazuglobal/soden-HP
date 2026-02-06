@@ -1,40 +1,40 @@
-<section class="overflow-hidden bg-zinc-950">
+<section class="overflow-hidden bg-white">
 
   <!-- Marquee Banner -->
-  <div class="py-6 bg-zinc-900/50 border-y border-zinc-800/30 overflow-hidden">
+  <div class="py-6 bg-gray-50 border-y border-gray-200 overflow-hidden">
     <div class="flex animate-marquee whitespace-nowrap">
-      <span class="mx-8 text-[clamp(1rem,2vw,1.5rem)] font-black text-zinc-800 uppercase tracking-widest"
+      <span class="mx-8 text-[clamp(1rem,2vw,1.5rem)] font-black text-gray-200 uppercase tracking-widest"
         *ngFor="let item of ['ARC WELDING', 'TIG WELDING', 'SEMI-AUTO', 'STEEL WORK', 'CRAFTSMANSHIP', 'YOKOHAMA', 'ARC WELDING', 'TIG WELDING', 'SEMI-AUTO', 'STEEL WORK', 'CRAFTSMANSHIP', 'YOKOHAMA']">
         {{ item }}
-        <span class="inline-block mx-6 w-1.5 h-1.5 bg-orange-500/30 rounded-full align-middle"></span>
+        <span class="inline-block mx-6 w-1.5 h-1.5 bg-[#32373c]/20 rounded-full align-middle"></span>
       </span>
     </div>
   </div>
 
   <!-- Section 1: 施工事例 -->
-  <div class="relative min-h-[70vh] lg:min-h-[80vh] flex flex-col lg:flex-row bg-zinc-950">
+  <div class="relative min-h-[70vh] lg:min-h-[80vh] flex flex-col lg:flex-row bg-white">
     <!-- Visual Area -->
     <div class="w-full lg:w-[55%] relative overflow-hidden group">
       <div appGsapAnimate [animation]="'fadeIn'" [duration]="1.2" class="h-full min-h-[50vh] lg:min-h-full">
         <img [src]="craftsmanship.image" alt="施工実績"
           class="w-full h-full object-cover grayscale-[20%] group-hover:grayscale-0 transition-all duration-1000 scale-[1.02] group-hover:scale-100">
       </div>
-      <div class="absolute inset-0 bg-gradient-to-r from-transparent to-zinc-950/40 hidden lg:block"></div>
-      <div class="absolute inset-0 bg-gradient-to-t from-zinc-950 to-transparent lg:hidden"></div>
+      <div class="absolute inset-0 bg-gradient-to-r from-transparent to-white/60 hidden lg:block"></div>
+      <div class="absolute inset-0 bg-gradient-to-t from-white to-transparent lg:hidden"></div>
     </div>
 
     <!-- Content Area -->
     <div class="w-full lg:w-[45%] px-6 sm:px-8 lg:px-16 py-12 lg:py-0 flex flex-col justify-center">
       <div class="max-w-md">
         <div class="flex items-center gap-3 mb-4" appGsapAnimate [animation]="'fadeUp'" [delay]="0.2">
-          <div class="w-5 h-[1px] bg-orange-500"></div>
-          <span class="text-[10px] font-bold tracking-[0.3em] uppercase text-orange-500">{{ craftsmanship.subtitle }}</span>
+          <div class="w-5 h-[1px] bg-[#32373c]"></div>
+          <span class="text-[10px] font-bold tracking-[0.3em] uppercase text-[#32373c]">{{ craftsmanship.subtitle }}</span>
         </div>
-        <h2 class="text-3xl md:text-4xl font-black text-zinc-100 leading-snug mb-6"
+        <h2 class="text-3xl md:text-4xl font-black text-[#32373c] leading-snug mb-6"
           style="font-family: 'Noto Serif JP', serif;" appGsapAnimate [animation]="'fadeUp'" [delay]="0.3">
           {{ craftsmanship.title }}
         </h2>
-        <p class="text-sm lg:text-base text-zinc-400 leading-relaxed" appGsapAnimate [animation]="'fadeUp'" [delay]="0.4">
+        <p class="text-sm lg:text-base text-gray-600 leading-relaxed" appGsapAnimate [animation]="'fadeUp'" [delay]="0.4">
           {{ craftsmanship.description }}
         </p>
       </div>
@@ -42,29 +42,29 @@
   </div>
 
   <!-- Section 2: 出張工事 (Reversed) -->
-  <div class="relative min-h-[70vh] lg:min-h-[80vh] flex flex-col lg:flex-row-reverse bg-zinc-900">
+  <div class="relative min-h-[70vh] lg:min-h-[80vh] flex flex-col lg:flex-row-reverse bg-gray-50">
     <!-- Visual Area -->
     <div class="w-full lg:w-[55%] relative overflow-hidden group">
       <div appGsapAnimate [animation]="'fadeIn'" [duration]="1.2" class="h-full min-h-[50vh] lg:min-h-full">
         <img [src]="publicWorks.image" alt="公共施設改修"
           class="w-full h-full object-cover grayscale-[20%] group-hover:grayscale-0 transition-all duration-1000 scale-[1.02] group-hover:scale-100">
       </div>
-      <div class="absolute inset-0 bg-gradient-to-l from-transparent to-zinc-900/40 hidden lg:block"></div>
-      <div class="absolute inset-0 bg-gradient-to-t from-zinc-900 to-transparent lg:hidden"></div>
+      <div class="absolute inset-0 bg-gradient-to-l from-transparent to-gray-50/60 hidden lg:block"></div>
+      <div class="absolute inset-0 bg-gradient-to-t from-gray-50 to-transparent lg:hidden"></div>
     </div>
 
     <!-- Content Area -->
     <div class="w-full lg:w-[45%] px-6 sm:px-8 lg:px-16 py-12 lg:py-0 flex flex-col justify-center">
       <div class="max-w-md lg:ml-auto">
         <div class="flex items-center gap-3 mb-4" appGsapAnimate [animation]="'fadeUp'" [delay]="0.2">
-          <div class="w-5 h-[1px] bg-amber-500"></div>
-          <span class="text-[10px] font-bold tracking-[0.3em] uppercase text-amber-500">{{ publicWorks.subtitle }}</span>
+          <div class="w-5 h-[1px] bg-[#32373c]"></div>
+          <span class="text-[10px] font-bold tracking-[0.3em] uppercase text-[#32373c]">{{ publicWorks.subtitle }}</span>
         </div>
-        <h2 class="text-3xl md:text-4xl font-black text-zinc-100 leading-snug mb-6"
+        <h2 class="text-3xl md:text-4xl font-black text-[#32373c] leading-snug mb-6"
           style="font-family: 'Noto Serif JP', serif;" appGsapAnimate [animation]="'fadeUp'" [delay]="0.3">
           {{ publicWorks.title }}
         </h2>
-        <p class="text-sm lg:text-base text-zinc-400 leading-relaxed" appGsapAnimate [animation]="'fadeUp'" [delay]="0.4">
+        <p class="text-sm lg:text-base text-gray-600 leading-relaxed" appGsapAnimate [animation]="'fadeUp'" [delay]="0.4">
           {{ publicWorks.description }}
         </p>
       </div>
@@ -72,30 +72,30 @@
   </div>
 
   <!-- Section 3: 信頼関係 -->
-  <div class="relative py-24 lg:py-32 overflow-hidden bg-zinc-950">
+  <div class="relative py-24 lg:py-32 overflow-hidden bg-white">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
 
         <!-- Content -->
         <div>
           <div class="flex items-center gap-3 mb-4" appGsapAnimate [animation]="'fadeUp'">
-            <div class="w-5 h-[1px] bg-orange-500"></div>
-            <span class="text-[10px] font-bold tracking-[0.3em] uppercase text-orange-500">{{ community.subtitle }}</span>
+            <div class="w-5 h-[1px] bg-[#32373c]"></div>
+            <span class="text-[10px] font-bold tracking-[0.3em] uppercase text-[#32373c]">{{ community.subtitle }}</span>
           </div>
-          <h2 class="text-3xl md:text-4xl lg:text-5xl font-black text-zinc-100 leading-tight mb-8"
+          <h2 class="text-3xl md:text-4xl lg:text-5xl font-black text-[#32373c] leading-tight mb-8"
             style="font-family: 'Noto Serif JP', serif;" appGsapAnimate [animation]="'fadeUp'" [delay]="0.1">
             {{ community.title }}
           </h2>
-          <p class="text-base text-zinc-400 leading-relaxed mb-10" appGsapAnimate [animation]="'fadeUp'" [delay]="0.2">
+          <p class="text-base text-gray-600 leading-relaxed mb-10" appGsapAnimate [animation]="'fadeUp'" [delay]="0.2">
             {{ community.description }}
           </p>
 
           <!-- Stats -->
           <div class="flex items-end gap-2 mb-4" appGsapAnimate [animation]="'fadeUp'" [delay]="0.3">
-            <span class="text-5xl md:text-6xl font-black text-orange-500 number-display" appCountUp [countTo]="sdgCommitment.metric" [countDuration]="2">0</span>
-            <span class="text-2xl font-bold text-orange-400 mb-1">{{ sdgCommitment.metricUnit }}</span>
+            <span class="text-5xl md:text-6xl font-black text-[#32373c] number-display" appCountUp [countTo]="sdgCommitment.metric" [countDuration]="2">0</span>
+            <span class="text-2xl font-bold text-gray-700 mb-1">{{ sdgCommitment.metricUnit }}</span>
           </div>
-          <span class="text-sm font-medium text-zinc-500">{{ sdgCommitment.metricLabel }}</span>
+          <span class="text-sm font-medium text-gray-500">{{ sdgCommitment.metricLabel }}</span>
         </div>
 
         <!-- Activity Images -->
@@ -104,7 +104,7 @@
           <div class="group relative aspect-[4/3] rounded-xl overflow-hidden">
             <img [src]="act.image" [alt]="act.label"
               class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
-            <div class="absolute inset-0 bg-gradient-to-t from-zinc-900/80 via-transparent to-transparent"></div>
+            <div class="absolute inset-0 bg-gradient-to-t from-gray-900/80 via-transparent to-transparent"></div>
             <div class="absolute bottom-4 left-4">
               <span class="text-sm font-bold text-white">{{ act.label }}</span>
             </div>

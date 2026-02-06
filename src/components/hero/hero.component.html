@@ -1,4 +1,4 @@
-<section class="relative h-screen w-full overflow-hidden bg-zinc-950 text-white">
+<section class="relative h-screen w-full overflow-hidden bg-white text-gray-900">
   <!-- Dynamic Background -->
   <div class="absolute inset-0 z-0">
     <div *ngFor="let image of heroImages; let i = index"
@@ -10,19 +10,19 @@
           class="w-full h-full object-cover object-[70%_top] sm:object-center">
       </div>
     </div>
-    <div class="absolute inset-0 bg-gradient-to-r from-zinc-950/95 via-zinc-950/60 to-zinc-950/30"></div>
-    <div class="absolute inset-0 bg-gradient-to-b from-zinc-950/30 via-transparent to-zinc-950"></div>
+    <div class="absolute inset-0 bg-gradient-to-r from-white/95 via-white/70 to-white/40"></div>
+    <div class="absolute inset-0 bg-gradient-to-b from-white/40 via-transparent to-white/80"></div>
   </div>
 
   <!-- Main Content -->
-  <div class="relative z-10 flex flex-col justify-end h-full px-6 sm:px-8 md:px-16 lg:px-24 pb-24 md:pb-32">
+  <div class="relative z-10 flex flex-col justify-end h-full px-6 sm:px-8 md:px-16 lg:px-24 pb-32 md:pb-40">
     <div class="max-w-5xl">
 
       <!-- Accent label -->
       <div class="mb-6 md:mb-8" appGsapAnimate [animation]="'fadeUp'" [duration]="0.8" [delay]="0.3">
         <div class="inline-flex items-center gap-3">
-          <div class="w-8 h-[1px] bg-orange-500"></div>
-          <span class="text-[11px] font-bold tracking-[0.3em] uppercase text-orange-400">
+          <div class="w-8 h-[1px] bg-[#32373c]"></div>
+          <span class="text-[11px] font-bold tracking-[0.3em] uppercase text-[#32373c]">
             Welding Professionals
           </span>
         </div>
@@ -32,19 +32,19 @@
       <h1 class="text-[clamp(2.5rem,7vw,6rem)] font-black leading-[1.05] tracking-tight"
         style="font-family: 'Noto Serif JP', serif;">
         <div class="overflow-hidden mb-1 md:mb-2">
-          <span class="block text-white" appGsapAnimate [animation]="'fadeUp'" [duration]="1" [delay]="0.5">
+          <span class="block text-gray-900" appGsapAnimate [animation]="'fadeUp'" [duration]="1" [delay]="0.5">
             確かな技術で
           </span>
         </div>
         <div class="overflow-hidden">
-          <span class="block bg-gradient-to-r from-orange-300 via-amber-200 to-orange-400 bg-clip-text text-transparent" appGsapAnimate [animation]="'fadeUp'" [duration]="1" [delay]="0.7">
+          <span class="block text-[#32373c]" appGsapAnimate [animation]="'fadeUp'" [duration]="1" [delay]="0.7">
             鉄鋼の未来を創る
           </span>
         </div>
       </h1>
 
       <!-- Description -->
-      <p class="mt-6 md:mt-8 text-sm md:text-base text-zinc-400 max-w-lg leading-relaxed" appGsapAnimate [animation]="'fadeUp'" [duration]="0.8" [delay]="1">
+      <p class="mt-6 md:mt-8 text-sm md:text-base text-gray-700 max-w-lg leading-relaxed" appGsapAnimate [animation]="'fadeUp'" [duration]="0.8" [delay]="1">
         横浜を拠点に、アーク溶接・半自動溶接・Tig溶接など<br class="hidden sm:inline">
         幅広い鉄鋼加工を行うプロフェッショナル集団です。
       </p>
@@ -52,31 +52,51 @@
       <!-- CTA buttons -->
       <div class="mt-8 md:mt-10 flex flex-wrap gap-4" appGsapAnimate [animation]="'fadeUp'" [duration]="0.8" [delay]="1.2">
         <a href="#what-we-do"
-          class="btn-shine inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-400 text-white px-8 py-3.5 rounded-full text-sm font-bold tracking-wide transition-all duration-300 hover:shadow-[0_0_24px_rgba(251,146,60,0.4)]">
+          class="btn-shine inline-flex items-center gap-2 bg-[#32373c] hover:bg-[#3f4449] text-white px-8 py-3.5 rounded-full text-sm font-bold tracking-wide transition-all duration-300 hover:shadow-[0_0_24px_rgba(50,55,60,0.3)]">
           <span>事業内容を見る</span>
           <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
           </svg>
         </a>
         <a href="#contact"
-          class="inline-flex items-center gap-2 border border-zinc-600 hover:border-zinc-400 text-zinc-300 hover:text-white px-8 py-3.5 rounded-full text-sm font-bold tracking-wide transition-all duration-300">
+          class="inline-flex items-center gap-2 border-2 border-[#32373c] hover:border-[#3f4449] text-[#32373c] hover:text-gray-900 hover:bg-gray-50 px-8 py-3.5 rounded-full text-sm font-bold tracking-wide transition-all duration-300">
           <span>お問い合わせ</span>
         </a>
       </div>
     </div>
   </div>
 
-  <!-- Scroll Indicator -->
-  <div class="absolute bottom-8 left-1/2 -translate-x-1/2 z-20 flex flex-col items-center"
+  <!-- Carousel Dots Navigation -->
+  <div class="absolute bottom-12 left-1/2 -translate-x-1/2 z-20 flex items-center gap-3"
     appGsapAnimate [animation]="'fadeUp'" [delay]="1.8">
-    <div class="w-[1px] h-12 bg-gradient-to-b from-transparent via-orange-500/50 to-orange-500 animate-scroll-pulse"></div>
-    <span class="mt-2 text-[9px] font-bold tracking-[0.4em] uppercase text-zinc-500">Scroll</span>
+    <button
+      *ngFor="let image of heroImages; let i = index"
+      (click)="goToSlide(i)"
+      [attr.aria-label]="'スライド ' + (i + 1) + ' に移動'"
+      class="group relative w-10 h-10 flex items-center justify-center cursor-pointer transition-all duration-300"
+      [class.scale-110]="currentIndex() === i">
+      <div
+        class="w-2 h-2 rounded-full transition-all duration-300"
+        [class.bg-[#32373c]]="currentIndex() === i"
+        [class.scale-125]="currentIndex() === i"
+        [class.bg-gray-400]="currentIndex() !== i"
+        [class.group-hover:bg-[#32373c]]="currentIndex() !== i"
+        [class.group-hover:scale-110]="currentIndex() !== i">
+      </div>
+    </button>
+  </div>
+
+  <!-- Scroll Indicator -->
+  <div class="absolute bottom-28 right-8 md:right-12 z-20 flex flex-col items-center"
+    appGsapAnimate [animation]="'fadeUp'" [delay]="1.8">
+    <div class="w-[1px] h-12 bg-gradient-to-b from-transparent via-[#32373c]/40 to-[#32373c] animate-scroll-pulse"></div>
+    <span class="mt-2 text-[9px] font-bold tracking-[0.4em] uppercase text-gray-400">Scroll</span>
   </div>
 
   <!-- Side text -->
   <div class="absolute right-6 md:right-8 top-1/2 -translate-y-1/2 z-10 hidden lg:block transform rotate-180"
     style="writing-mode: vertical-rl;">
-    <span class="text-[10px] font-medium tracking-[0.5em] text-zinc-600 uppercase">
+    <span class="text-[10px] font-medium tracking-[0.5em] text-gray-400 uppercase">
       SEIKEN 2026
     </span>
   </div>

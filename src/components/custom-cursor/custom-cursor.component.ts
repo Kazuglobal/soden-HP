@@ -51,12 +51,11 @@ import { gsap } from 'gsap';
       left: 0;
       width: 8px;
       height: 8px;
-      background: linear-gradient(135deg, #d4a876 0%, #ff8c42 100%);
+      background: #32373c;
       border-radius: 50%;
       pointer-events: none;
       z-index: 100001;
       transform: translate(-50%, -50%);
-      mix-blend-mode: difference;
     }
 
     .cursor-outline {
@@ -65,7 +64,7 @@ import { gsap } from 'gsap';
       left: 0;
       width: 40px;
       height: 40px;
-      border: 2px solid rgba(212, 168, 118, 0.5);
+      border: 2px solid rgba(50, 55, 60, 0.5);
       border-radius: 50%;
       pointer-events: none;
       z-index: 100000;
@@ -77,7 +76,7 @@ import { gsap } from 'gsap';
       position: fixed;
       top: 0;
       left: 0;
-      color: #fff;
+      color: #32373c;
       font-size: 12px;
       font-weight: 600;
       letter-spacing: 1px;
@@ -92,8 +91,8 @@ import { gsap } from 'gsap';
     :host-context(body.cursor-hover) .cursor-outline {
       width: 60px;
       height: 60px;
-      border-color: rgba(212, 168, 118, 0.8);
-      background-color: rgba(212, 168, 118, 0.1);
+      border-color: rgba(50, 55, 60, 0.8);
+      background-color: rgba(50, 55, 60, 0.1);
     }
 
     :host-context(body.cursor-active) .cursor-dot {
@@ -108,6 +107,12 @@ import { gsap } from 'gsap';
     :host-context(body.cursor-hidden) .cursor-dot,
     :host-context(body.cursor-hidden) .cursor-outline {
       opacity: 0;
+    }
+
+    @media (max-width: 1081px) {
+      .cursor-wrapper {
+        display: none;
+      }
     }
   `]
 })
@@ -250,7 +255,7 @@ export class CustomCursorComponent implements OnInit, OnDestroy {
       gsap.to(this.cursorOutline, {
         width: 100,
         height: 100,
-        backgroundColor: 'rgba(212, 168, 118, 0.9)',
+        backgroundColor: 'rgba(50, 55, 60, 0.9)',
         duration: 0.3
       });
     }

@@ -17,9 +17,9 @@ interface CaseItem {
 })
 export class CasesComponent {
   cases: CaseItem[] = [
-    { title: '商業施設 溶接工事', category: 'アーク溶接', image: '/images/elct1.png' },
-    { title: '小久保保育園 改修工事', category: '施工事例', image: '/images/kokubo_nursery.jpg' },
-    { title: '市立小中学校 改修', category: '鉄骨工事', image: '/images/sportroom.png' },
-    { title: 'マンション 鉄鋼加工', category: '半自動溶接', image: '/images/building.png' },
+    { title: '商業施設 溶接工事', category: 'アーク溶接', image: 'https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?w=600&q=80' },
+    { title: '工場設備 改修工事', category: '施工事例', image: 'https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=600&q=80' },
+    { title: '建築鉄骨 溶接加工', category: '鉄骨工事', image: 'https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=600&q=80' },
+    { title: 'マンション 鉄鋼加工', category: '半自動溶接', image: 'https://images.unsplash.com/photo-1565193566173-7a0ee3dbe261?w=600&q=80' },
   ];
 }

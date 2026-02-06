@@ -1,16 +1,16 @@
-<section id="company-details" class="bg-zinc-950 overflow-hidden">
+<section id="company-details" class="bg-white overflow-hidden">
     <!-- Page Hero -->
     <div class="relative h-[40vh] md:h-[50vh] flex items-end overflow-hidden">
         <div class="absolute inset-0">
-            <img src="/images/companyinfo.png" alt="SEIKEN" class="w-full h-full object-cover">
-            <div class="absolute inset-0 bg-gradient-to-t from-zinc-950 via-zinc-950/50 to-zinc-950/20"></div>
+            <img src="https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?w=1600&q=80" alt="SEIKEN" class="w-full h-full object-cover">
+            <div class="absolute inset-0 bg-gradient-to-t from-white via-white/50 to-white/20"></div>
         </div>
         <div class="relative z-10 max-w-7xl mx-auto w-full px-6 sm:px-8 lg:px-8 pb-10">
             <div class="flex items-center gap-3 mb-3" appGsapAnimate [animation]="'fadeUp'">
-                <div class="w-8 h-[1px] bg-orange-500"></div>
-                <span class="text-[10px] font-bold tracking-[0.3em] uppercase text-orange-500">Company</span>
+                <div class="w-8 h-[1px] bg-[#32373c]"></div>
+                <span class="text-[10px] font-bold tracking-[0.3em] uppercase text-[#32373c]">Company</span>
             </div>
-            <h1 class="text-4xl md:text-5xl font-black text-white tracking-tight"
+            <h1 class="text-4xl md:text-5xl font-black text-[#32373c] tracking-tight"
                 style="font-family: 'Noto Serif JP', serif;" appGsapAnimate [animation]="'fadeUp'" [delay]="0.1">
                 会社概要
             </h1>
@@ -24,33 +24,33 @@
                 <!-- Philosophy Text -->
                 <div appGsapAnimate [animation]="'fadeUp'" [duration]="0.8" class="order-2 lg:order-1">
                     <div class="flex items-center gap-3 mb-8">
-                        <div class="w-8 h-[1px] bg-orange-500"></div>
-                        <span class="text-[10px] font-bold tracking-[0.3em] uppercase text-orange-500">Philosophy</span>
+                        <div class="w-8 h-[1px] bg-[#32373c]"></div>
+                        <span class="text-[10px] font-bold tracking-[0.3em] uppercase text-[#32373c]">Philosophy</span>
                     </div>
-                    <h2 class="text-3xl md:text-4xl font-black text-zinc-100 tracking-tight mb-8"
+                    <h2 class="text-3xl md:text-4xl font-black text-[#32373c] tracking-tight mb-8"
                         style="font-family: 'Noto Serif JP', serif;">
                         経営理念
                     </h2>
 
                     <!-- Main Philosophy -->
-                    <div class="relative mb-10 p-8 bg-zinc-900 rounded-2xl border border-zinc-800/50">
-                        <p class="text-zinc-500 text-base leading-relaxed mb-4">
+                    <div class="relative mb-10 p-8 bg-gray-50 rounded-2xl border border-gray-200">
+                        <p class="text-gray-600 text-base leading-relaxed mb-4">
                             私たちは、自らの経験と、確かな技術を持って
                         </p>
-                        <p class="text-2xl md:text-3xl font-black text-zinc-100 mb-4 leading-tight"
+                        <p class="text-2xl md:text-3xl font-black text-[#32373c] mb-4 leading-tight"
                             style="font-family: 'Noto Serif JP', serif;">
                             「現場を支える鉄鋼の<br>プロフェッショナル」
                         </p>
-                        <p class="text-zinc-500 text-base leading-relaxed">
+                        <p class="text-gray-600 text-base leading-relaxed">
                             として、お客様にご満足いただける丁寧な施工を心掛けております。
                         </p>
                     </div>
 
-                    <div class="space-y-5 text-zinc-400 text-sm leading-relaxed">
-                        <p class="border-l-2 border-orange-500/30 pl-5">
+                    <div class="space-y-5 text-gray-700 text-sm leading-relaxed">
+                        <p class="border-l-2 border-gray-300 pl-5">
                             幅広い溶接工事に携わってきた実績を活かして日々新しい技術を取り入れております。お客様のご要望に応じて鉄やステンレスなど幅広い資材の加工を行っております。
                         </p>
-                        <p class="border-l-2 border-orange-500/30 pl-5">
+                        <p class="border-l-2 border-gray-300 pl-5">
                             横浜を中心に臨機応変に工事現場へお伺いし作業に取り組んでおります。スピード感を持って臨機応変に工事を進めてまいります。
                         </p>
                     </div>
@@ -62,13 +62,13 @@
                     <div class="relative w-72 h-96 md:w-80 md:h-[480px] rounded-2xl overflow-hidden group">
                         <img [src]="ceoImage" alt="代表取締役社長"
                             class="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105">
-                        <div class="absolute inset-0 bg-gradient-to-t from-zinc-950/60 via-transparent to-transparent"></div>
+                        <div class="absolute inset-0 bg-gradient-to-t from-white/60 via-transparent to-transparent"></div>
                     </div>
                     <div class="mt-6 text-right">
-                        <p class="text-[10px] font-bold tracking-[0.3em] text-orange-500 uppercase mb-1">Representative Director</p>
-                        <h4 class="text-lg font-bold text-zinc-100 flex items-center gap-2 justify-end"
+                        <p class="text-[10px] font-bold tracking-[0.3em] text-[#32373c] uppercase mb-1">Representative Director</p>
+                        <h4 class="text-lg font-bold text-[#32373c] flex items-center gap-2 justify-end"
                             style="font-family: 'Noto Serif JP', serif;">
-                            <span class="text-sm text-zinc-500">代表取締役</span>
+                            <span class="text-sm text-gray-600">代表取締役</span>
                             <span>鈴木　健也</span>
                         </h4>
                     </div>
@@ -78,22 +78,22 @@
     </div>
 
     <!-- Company Info -->
-    <div class="py-20 md:py-28 bg-zinc-900">
+    <div class="py-20 md:py-28 bg-gray-50">
         <div class="max-w-7xl mx-auto px-6 sm:px-8 lg:px-8">
             <div class="flex items-center gap-3 mb-12" appGsapAnimate [animation]="'fadeUp'">
-                <div class="w-8 h-[1px] bg-orange-500"></div>
-                <span class="text-[10px] font-bold tracking-[0.3em] uppercase text-orange-500">Company Info</span>
+                <div class="w-8 h-[1px] bg-[#32373c]"></div>
+                <span class="text-[10px] font-bold tracking-[0.3em] uppercase text-[#32373c]">Company Info</span>
             </div>
 
             <div class="max-w-4xl">
                 @for (item of companyInfo; track item.label; let i = $index; let last = $last) {
                 <div appGsapAnimate [animation]="'fadeUp'" [delay]="i * 0.04"
                     class="grid grid-cols-1 md:grid-cols-[180px_1fr] py-5 md:py-6" [class.border-b]="!last"
-                    [class.border-zinc-800/50]="!last">
-                    <dt class="text-xs font-bold text-zinc-500 uppercase tracking-wider mb-1 md:mb-0">
+                    [class.border-gray-200]="!last">
+                    <dt class="text-xs font-bold text-gray-600 uppercase tracking-wider mb-1 md:mb-0">
                         {{ item.label }}
                     </dt>
-                    <dd class="text-sm text-zinc-300 whitespace-pre-line leading-relaxed">
+                    <dd class="text-sm text-[#32373c] whitespace-pre-line leading-relaxed">
                         {{ item.value }}
                     </dd>
                 </div>
@@ -102,7 +102,7 @@
 
             <div class="mt-16" appGsapAnimate [animation]="'fadeUp'">
                 <a routerLink="/recruit"
-                    class="inline-flex items-center gap-2 btn-shine bg-orange-500 hover:bg-orange-400 text-white px-8 py-3.5 rounded-full text-sm font-bold tracking-wide transition-all duration-300 hover:shadow-[0_0_24px_rgba(251,146,60,0.4)]">
+                    class="inline-flex items-center gap-2 btn-shine bg-[#32373c] hover:bg-[#4a5158] text-white px-8 py-3.5 rounded-full text-sm font-bold tracking-wide transition-all duration-300 hover:shadow-lg">
                     <span>採用情報を見る</span>
                     <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>

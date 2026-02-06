@@ -11,7 +11,8 @@ import { GsapScrollAnimateDirective } from '../../directives/gsap-scroll-animate
     imports: [CommonModule, RouterLink, GsapScrollAnimateDirective]
 })
 export class CompanyDetailsComponent {
-    ceoImage = '/images/CEO.JPG';
+    // Professional Asian businessman portrait
+    ceoImage = 'https://images.unsplash.com/photo-1560250097-0b93528c311a?w=800&q=80';
 
     companyInfo = [
         { label: '会社名', value: '株式会社SEIKEN' },

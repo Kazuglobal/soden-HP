@@ -1,4 +1,4 @@
-<footer class="bg-zinc-950 text-zinc-200 pt-16 pb-8 relative overflow-hidden">
+<footer class="bg-gray-100 text-[#32373c] pt-16 pb-8 relative overflow-hidden">
   <div class="section-divider absolute top-0 left-0 right-0"></div>
 
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -9,30 +9,30 @@
         <a routerLink="/" class="group inline-flex items-center space-x-3">
           <img src="/logo.png" alt="SEIKENロゴ" class="h-10 w-auto" />
           <div class="flex flex-col">
-            <span class="text-xl font-bold text-zinc-100" style="font-family: 'Noto Serif JP', serif;">SEIKEN</span>
-            <span class="text-[10px] text-zinc-500 tracking-[0.3em] uppercase font-medium">Welding Industry</span>
+            <span class="text-xl font-bold text-[#32373c]" style="font-family: 'Noto Serif JP', serif;">SEIKEN</span>
+            <span class="text-[10px] text-gray-600 tracking-[0.3em] uppercase font-medium">Welding Industry</span>
           </div>
         </a>
 
-        <div class="space-y-3 text-zinc-500 text-sm">
-          <p class="font-medium text-zinc-300" style="font-family: 'Noto Serif JP', serif;">株式会社SEIKEN</p>
+        <div class="space-y-3 text-gray-600 text-sm">
+          <p class="font-medium text-[#32373c]" style="font-family: 'Noto Serif JP', serif;">株式会社SEIKEN</p>
           <p>〒222-0023 横浜市港北区仲手原2丁目42-23-5</p>
           <div class="flex items-center gap-4">
-            <a href="tel:0178252172" class="text-zinc-300 hover:text-orange-400 transition-colors font-medium" style="font-family: 'Inter', sans-serif;">0178-25-2172</a>
-            <span class="text-zinc-700">|</span>
-            <span class="text-zinc-500" style="font-family: 'Inter', sans-serif;">FAX: 0178-25-2171</span>
+            <a href="tel:0178252172" class="text-[#32373c] hover:text-gray-900 transition-colors font-medium" style="font-family: 'Inter', sans-serif;">0178-25-2172</a>
+            <span class="text-gray-300">|</span>
+            <span class="text-gray-600" style="font-family: 'Inter', sans-serif;">FAX: 0178-25-2171</span>
           </div>
         </div>
       </div>
 
       <!-- Navigation -->
       <div class="lg:col-span-3" appGsapAnimate [animation]="'fadeUp'" [delay]="0.1">
-        <h4 class="text-[10px] font-bold uppercase tracking-[0.3em] text-zinc-600 mb-4">Navigation</h4>
+        <h4 class="text-[10px] font-bold uppercase tracking-[0.3em] text-gray-500 mb-4">Navigation</h4>
         <ul class="space-y-2.5">
           @for (link of navLinks1; track link.label) {
           <li>
             <a [routerLink]="link.routerLink" [fragment]="link.fragment"
-              class="text-sm text-zinc-500 hover:text-zinc-200 transition-colors duration-200">{{ link.label }}</a>
+              class="text-sm text-gray-600 hover:text-[#32373c] transition-colors duration-200">{{ link.label }}</a>
           </li>
           }
         </ul>
@@ -40,12 +40,12 @@
 
       <!-- Resources -->
       <div class="lg:col-span-4" appGsapAnimate [animation]="'fadeUp'" [delay]="0.2">
-        <h4 class="text-[10px] font-bold uppercase tracking-[0.3em] text-zinc-600 mb-4">Resources</h4>
+        <h4 class="text-[10px] font-bold uppercase tracking-[0.3em] text-gray-500 mb-4">Resources</h4>
         <ul class="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
           @for (link of navLinks2; track link.label) {
           <li>
             <a [routerLink]="link.routerLink" [fragment]="link.fragment"
-              class="text-sm text-zinc-500 hover:text-zinc-200 transition-colors duration-200">{{ link.label }}</a>
+              class="text-sm text-gray-600 hover:text-[#32373c] transition-colors duration-200">{{ link.label }}</a>
           </li>
           }
         </ul>
@@ -53,13 +53,13 @@
     </div>
 
     <!-- Bottom -->
-    <div class="mt-12 pt-6 border-t border-zinc-800/50 flex flex-col sm:flex-row justify-between items-center gap-4">
-      <p class="text-xs text-zinc-600">
+    <div class="mt-12 pt-6 border-t border-gray-200 flex flex-col sm:flex-row justify-between items-center gap-4">
+      <p class="text-xs text-gray-500">
         &copy; 2026 株式会社SEIKEN. All Rights Reserved.
       </p>
       <div class="flex items-center gap-4">
-        <a href="#" class="text-xs text-zinc-600 hover:text-zinc-400 transition-colors">Privacy Policy</a>
-        <a href="#" class="text-xs text-zinc-600 hover:text-zinc-400 transition-colors">Site Map</a>
+        <a href="#" class="text-xs text-gray-500 hover:text-[#32373c] transition-colors">Privacy Policy</a>
+        <a href="#" class="text-xs text-gray-500 hover:text-[#32373c] transition-colors">Site Map</a>
       </div>
     </div>
   </div>

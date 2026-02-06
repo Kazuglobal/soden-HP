@@ -1,32 +1,32 @@
-<section id="contact" class="relative py-24 sm:py-32 bg-zinc-950 overflow-hidden">
+<section id="contact" class="relative py-24 sm:py-32 bg-white overflow-hidden">
   <div class="section-divider absolute top-0 left-0 right-0"></div>
 
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
     <!-- Header -->
     <div class="text-center mb-16">
       <div class="flex items-center justify-center gap-3 mb-4" appGsapAnimate [animation]="'fadeUp'">
-        <div class="w-8 h-[1px] bg-orange-500"></div>
-        <span class="text-[10px] font-bold tracking-[0.3em] uppercase text-orange-500">Contact</span>
-        <div class="w-8 h-[1px] bg-orange-500"></div>
+        <div class="w-8 h-[1px] bg-[#32373c]"></div>
+        <span class="text-[10px] font-bold tracking-[0.3em] uppercase text-[#32373c]">Contact</span>
+        <div class="w-8 h-[1px] bg-[#32373c]"></div>
       </div>
       <h2 appGsapAnimate [animation]="'fadeUp'" [delay]="0.1"
-        class="text-3xl md:text-4xl lg:text-5xl font-bold text-zinc-100 tracking-tight mb-6"
+        class="text-3xl md:text-4xl lg:text-5xl font-bold text-[#32373c] tracking-tight mb-6"
         style="font-family: 'Noto Serif JP', serif;">
         お仕事のご依頼・相談
       </h2>
       <p appGsapAnimate [animation]="'fadeUp'" [delay]="0.2"
-        class="text-zinc-500 text-sm md:text-base leading-relaxed max-w-xl mx-auto">
+        class="text-gray-600 text-sm md:text-base leading-relaxed max-w-xl mx-auto">
         溶接工事のプロフェッショナルとして、お見積りからアフターサービスまで丁寧に対応します。
       </p>
     </div>
 
     <!-- Phone + CTA -->
     <div class="max-w-2xl mx-auto text-center mb-16" appGsapAnimate [animation]="'fadeUp'" [delay]="0.3">
-      <div class="bg-zinc-900 rounded-2xl p-8 md:p-10 border border-zinc-800/50">
+      <div class="bg-gray-50 rounded-2xl p-8 md:p-10 border border-gray-200">
         <div class="mb-6">
           <a href="tel:0178252172" class="inline-flex items-baseline gap-2 group">
-            <span class="text-xs font-medium text-zinc-500 uppercase tracking-wider">Tel.</span>
-            <span class="text-3xl sm:text-4xl md:text-5xl font-bold text-zinc-100 tracking-wide group-hover:text-orange-400 transition-colors"
+            <span class="text-xs font-medium text-gray-600 uppercase tracking-wider">Tel.</span>
+            <span class="text-3xl sm:text-4xl md:text-5xl font-bold text-[#32373c] tracking-wide group-hover:text-[#555] transition-colors"
               style="font-family: 'Inter', sans-serif;">
               0178-25-2172
             </span>
@@ -34,16 +34,16 @@
         </div>
         <div class="mb-4">
           <span class="inline-flex items-baseline gap-2">
-            <span class="text-xs font-medium text-zinc-500 uppercase tracking-wider">Fax.</span>
-            <span class="text-xl font-medium text-zinc-400 tracking-wide" style="font-family: 'Inter', sans-serif;">
+            <span class="text-xs font-medium text-gray-600 uppercase tracking-wider">Fax.</span>
+            <span class="text-xl font-medium text-gray-600 tracking-wide" style="font-family: 'Inter', sans-serif;">
               0178-25-2171
             </span>
           </span>
         </div>
-        <p class="text-zinc-600 text-xs mb-8">受付時間: 平日 8:00 - 18:00</p>
+        <p class="text-gray-500 text-xs mb-8">受付時間: 平日 8:00 - 18:00</p>
 
         <button (click)="showForm = true"
-          class="btn-shine inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-400 text-white px-10 py-3.5 rounded-full text-sm font-bold tracking-wide transition-all duration-300 hover:shadow-[0_0_24px_rgba(251,146,60,0.4)]">
+          class="btn-shine inline-flex items-center gap-2 bg-[#32373c] hover:bg-[#444] text-white px-10 py-3.5 rounded-full text-sm font-bold tracking-wide transition-all duration-300 hover:shadow-[0_0_24px_rgba(50,55,60,0.3)]">
           <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
             <path stroke-linecap="round" stroke-linejoin="round"
               d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
@@ -54,10 +54,10 @@
     </div>
 
     <!-- Form -->
-    <div *ngIf="showForm" class="max-w-2xl mx-auto bg-zinc-900 rounded-2xl overflow-hidden animate-fade-in border border-zinc-800/50">
-      <div class="flex justify-between items-center px-6 sm:px-10 py-5 border-b border-zinc-800/50">
-        <h3 class="text-lg font-bold text-zinc-100" style="font-family: 'Noto Serif JP', serif;">お問い合わせフォーム</h3>
-        <button (click)="showForm = false" class="text-zinc-500 hover:text-zinc-300 transition-colors p-1">
+    <div *ngIf="showForm" class="max-w-2xl mx-auto bg-white rounded-2xl overflow-hidden animate-fade-in border border-gray-200 shadow-lg">
+      <div class="flex justify-between items-center px-6 sm:px-10 py-5 border-b border-gray-200">
+        <h3 class="text-lg font-bold text-[#32373c]" style="font-family: 'Noto Serif JP', serif;">お問い合わせフォーム</h3>
+        <button (click)="showForm = false" class="text-gray-500 hover:text-[#32373c] transition-colors p-1">
           <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
             <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
           </svg>
@@ -68,64 +68,64 @@
         <!-- Success -->
         <div *ngIf="submitStatus === 'success'" class="p-8 text-center">
           <div class="w-12 h-12 rounded-full bg-green-500/10 flex items-center justify-center mx-auto mb-4">
-            <svg class="w-6 h-6 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg class="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
             </svg>
           </div>
-          <h3 class="text-xl font-bold text-zinc-100 mb-2">送信完了</h3>
-          <p class="text-zinc-400 text-sm mb-6">担当者より折り返しご連絡いたします。</p>
-          <button (click)="resetStatus()" class="text-sm text-orange-500 hover:text-orange-400 font-medium">
+          <h3 class="text-xl font-bold text-[#32373c] mb-2">送信完了</h3>
+          <p class="text-gray-600 text-sm mb-6">担当者より折り返しご連絡いたします。</p>
+          <button (click)="resetStatus()" class="text-sm text-[#32373c] hover:text-[#555] font-medium">
             新しいお問い合わせを送信する
           </button>
         </div>
 
         <!-- Error -->
-        <div *ngIf="submitStatus === 'error'" class="mb-6 p-4 bg-red-500/5 border border-red-500/20 rounded-xl">
-          <p class="text-red-400 text-sm">{{ errorMessage }}</p>
-          <button (click)="resetStatus()" class="mt-2 text-sm text-red-400 underline">再度送信する</button>
+        <div *ngIf="submitStatus === 'error'" class="mb-6 p-4 bg-red-50 border border-red-200 rounded-xl">
+          <p class="text-red-600 text-sm">{{ errorMessage }}</p>
+          <button (click)="resetStatus()" class="mt-2 text-sm text-red-600 underline">再度送信する</button>
         </div>
 
         <!-- Form -->
         <form *ngIf="submitStatus !== 'success'" [formGroup]="contactForm" (ngSubmit)="onSubmit()" class="space-y-5">
           <div>
-            <label for="name" class="block text-xs font-medium text-zinc-500 mb-1.5">お名前 <span class="text-orange-500">*</span></label>
+            <label for="name" class="block text-xs font-medium text-gray-600 mb-1.5">お名前 <span class="text-red-500">*</span></label>
             <input type="text" id="name" formControlName="name"
-              class="w-full px-4 py-3 rounded-xl bg-zinc-800/50 border border-zinc-700/50 focus:border-orange-500/50 focus:bg-zinc-800 focus:ring-1 focus:ring-orange-500/20 transition duration-200 outline-none text-zinc-100 text-sm placeholder-zinc-600"
-              [ngClass]="{'border-red-500/50': contactForm.get('name')?.invalid && contactForm.get('name')?.touched}"
+              class="w-full px-4 py-3 rounded-xl bg-white border border-gray-300 focus:border-[#32373c] focus:bg-white focus:ring-1 focus:ring-[#32373c]/20 transition duration-200 outline-none text-[#32373c] text-sm placeholder-gray-400"
+              [ngClass]="{'border-red-500': contactForm.get('name')?.invalid && contactForm.get('name')?.touched}"
               placeholder="山田 太郎">
-            <p *ngIf="contactForm.get('name')?.invalid && contactForm.get('name')?.touched" class="text-red-400 text-xs mt-1">お名前を入力してください。</p>
+            <p *ngIf="contactForm.get('name')?.invalid && contactForm.get('name')?.touched" class="text-red-600 text-xs mt-1">お名前を入力してください。</p>
           </div>
 
           <div>
-            <label for="email" class="block text-xs font-medium text-zinc-500 mb-1.5">メールアドレス <span class="text-orange-500">*</span></label>
+            <label for="email" class="block text-xs font-medium text-gray-600 mb-1.5">メールアドレス <span class="text-red-500">*</span></label>
             <input type="email" id="email" formControlName="email"
-              class="w-full px-4 py-3 rounded-xl bg-zinc-800/50 border border-zinc-700/50 focus:border-orange-500/50 focus:bg-zinc-800 focus:ring-1 focus:ring-orange-500/20 transition duration-200 outline-none text-zinc-100 text-sm placeholder-zinc-600"
-              [ngClass]="{'border-red-500/50': contactForm.get('email')?.invalid && contactForm.get('email')?.touched}"
+              class="w-full px-4 py-3 rounded-xl bg-white border border-gray-300 focus:border-[#32373c] focus:bg-white focus:ring-1 focus:ring-[#32373c]/20 transition duration-200 outline-none text-[#32373c] text-sm placeholder-gray-400"
+              [ngClass]="{'border-red-500': contactForm.get('email')?.invalid && contactForm.get('email')?.touched}"
               placeholder="example@email.com">
-            <p *ngIf="contactForm.get('email')?.invalid && contactForm.get('email')?.touched" class="text-red-400 text-xs mt-1">有効なメールアドレスを入力してください。</p>
+            <p *ngIf="contactForm.get('email')?.invalid && contactForm.get('email')?.touched" class="text-red-600 text-xs mt-1">有効なメールアドレスを入力してください。</p>
           </div>
 
           <div>
-            <label for="subject" class="block text-xs font-medium text-zinc-500 mb-1.5">件名 <span class="text-orange-500">*</span></label>
+            <label for="subject" class="block text-xs font-medium text-gray-600 mb-1.5">件名 <span class="text-red-500">*</span></label>
             <input type="text" id="subject" formControlName="subject"
-              class="w-full px-4 py-3 rounded-xl bg-zinc-800/50 border border-zinc-700/50 focus:border-orange-500/50 focus:bg-zinc-800 focus:ring-1 focus:ring-orange-500/20 transition duration-200 outline-none text-zinc-100 text-sm placeholder-zinc-600"
-              [ngClass]="{'border-red-500/50': contactForm.get('subject')?.invalid && contactForm.get('subject')?.touched}"
+              class="w-full px-4 py-3 rounded-xl bg-white border border-gray-300 focus:border-[#32373c] focus:bg-white focus:ring-1 focus:ring-[#32373c]/20 transition duration-200 outline-none text-[#32373c] text-sm placeholder-gray-400"
+              [ngClass]="{'border-red-500': contactForm.get('subject')?.invalid && contactForm.get('subject')?.touched}"
               placeholder="お見積りについて">
-            <p *ngIf="contactForm.get('subject')?.invalid && contactForm.get('subject')?.touched" class="text-red-400 text-xs mt-1">件名を入力してください。</p>
+            <p *ngIf="contactForm.get('subject')?.invalid && contactForm.get('subject')?.touched" class="text-red-600 text-xs mt-1">件名を入力してください。</p>
           </div>
 
           <div>
-            <label for="message" class="block text-xs font-medium text-zinc-500 mb-1.5">お問い合わせ内容 <span class="text-orange-500">*</span></label>
+            <label for="message" class="block text-xs font-medium text-gray-600 mb-1.5">お問い合わせ内容 <span class="text-red-500">*</span></label>
             <textarea id="message" formControlName="message" rows="5"
-              class="w-full px-4 py-3 rounded-xl bg-zinc-800/50 border border-zinc-700/50 focus:border-orange-500/50 focus:bg-zinc-800 focus:ring-1 focus:ring-orange-500/20 transition duration-200 outline-none resize-none text-zinc-100 text-sm placeholder-zinc-600"
-              [ngClass]="{'border-red-500/50': contactForm.get('message')?.invalid && contactForm.get('message')?.touched}"
+              class="w-full px-4 py-3 rounded-xl bg-white border border-gray-300 focus:border-[#32373c] focus:bg-white focus:ring-1 focus:ring-[#32373c]/20 transition duration-200 outline-none resize-none text-[#32373c] text-sm placeholder-gray-400"
+              [ngClass]="{'border-red-500': contactForm.get('message')?.invalid && contactForm.get('message')?.touched}"
               placeholder="ご自由にご記入ください"></textarea>
-            <p *ngIf="contactForm.get('message')?.invalid && contactForm.get('message')?.touched" class="text-red-400 text-xs mt-1">お問い合わせ内容を入力してください。</p>
+            <p *ngIf="contactForm.get('message')?.invalid && contactForm.get('message')?.touched" class="text-red-600 text-xs mt-1">お問い合わせ内容を入力してください。</p>
           </div>
 
           <div class="pt-4 text-center">
             <button type="submit" [disabled]="contactForm.invalid || submitted"
-              class="btn-shine inline-flex items-center justify-center min-w-[180px] bg-orange-500 hover:bg-orange-400 text-white px-10 py-3.5 rounded-full text-sm font-bold tracking-wide disabled:bg-zinc-700 disabled:text-zinc-500 disabled:cursor-not-allowed transition-all duration-300 hover:shadow-[0_0_24px_rgba(251,146,60,0.4)]">
+              class="btn-shine inline-flex items-center justify-center min-w-[180px] bg-[#32373c] hover:bg-[#444] text-white px-10 py-3.5 rounded-full text-sm font-bold tracking-wide disabled:bg-gray-300 disabled:text-gray-500 disabled:cursor-not-allowed transition-all duration-300 hover:shadow-[0_0_24px_rgba(50,55,60,0.3)]">
               <span *ngIf="submitStatus === 'sending'"
                 class="inline-block w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin mr-2"></span>
               {{ submitStatus === 'sending' ? '送信中...' : '送信する' }}
