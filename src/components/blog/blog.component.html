@@ -2,8 +2,9 @@
   <!-- Technical "Road" Cable Trace for Blog Section -->
   <div class="absolute inset-0 z-0 pointer-events-none overflow-hidden">
     <div class="absolute inset-0 flex items-center justify-center opacity-30 mix-blend-multiply">
-      <img src="/images/soden_roadmap.png" alt="Soden Technical Roadmap"
-        class="w-full h-auto min-h-full object-cover lg:object-contain rotate-6 scale-125 -translate-x-1/2 translate-y-1/4">
+      <img src="/images/soden_roadmap.png" alt="創電工業 技術ロードマップ"
+        class="w-full h-auto min-h-full object-cover lg:object-contain rotate-6 scale-125 -translate-x-1/2 translate-y-1/4"
+        loading="lazy" decoding="async" width="800" height="600">
     </div>
   </div>
 
@@ -28,7 +29,8 @@
         <a href="{{ service.href }}">
           <div appHoverZoom [zoomScale]="1.15" [zoomDuration]="0.8">
             <img appImageReveal [imageRevealDirection]="'horizontal'" [imageRevealDuration]="1.2" [src]="service.image"
-              [alt]="service.alt" class="w-full h-56 object-cover">
+              [alt]="service.alt" class="w-full h-56 object-cover"
+              loading="lazy" decoding="async" width="600" height="224">
           </div>
           <div
             class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent group-hover:from-black/80 transition-all duration-500">

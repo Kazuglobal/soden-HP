@@ -5,8 +5,9 @@
     <!-- Visual Area (Left 60%) -->
     <div class="w-full lg:col-span-6 lg:w-[60%] relative overflow-hidden group">
       <div appGsapAnimate [animation]="'fadeIn'" [duration]="1.5" class="h-full">
-        <img [src]="craftsmanship.image" alt="施工実績"
-          class="w-full h-full object-cover grayscale-[30%] group-hover:grayscale-0 transition-all duration-1000 scale-[1.02] group-hover:scale-100">
+        <img [src]="craftsmanship.image" [alt]="craftsmanship.alt || '施工実績'"
+          class="w-full h-full object-cover grayscale-[30%] group-hover:grayscale-0 transition-all duration-1000 scale-[1.02] group-hover:scale-100"
+          loading="lazy" decoding="async" width="1152" height="800">
       </div>
       <div class="absolute inset-0 bg-gradient-to-r from-black/20 to-transparent"></div>
       <div class="absolute bottom-8 left-8 text-white/80 text-xs font-medium tracking-widest uppercase" appGsapAnimate
@@ -35,7 +36,8 @@
           <div class="flex flex-wrap gap-2">
             @for (id of craftsmanship.sdgs; track id) {
             <img [src]="getSdgIconPath(id)" [alt]="getSdgGoal(id)" [title]="getSdgGoal(id)"
-              class="w-12 h-12 rounded shadow-sm transition-transform hover:scale-110 cursor-help object-contain">
+              class="w-12 h-12 rounded shadow-sm transition-transform hover:scale-110 cursor-help object-contain"
+              loading="lazy" decoding="async" width="48" height="48">
             }
           </div>
         </div>
@@ -49,8 +51,9 @@
     <!-- Visual Area (Right 60%) -->
     <div class="w-full lg:w-[60%] relative overflow-hidden group">
       <div appGsapAnimate [animation]="'fadeIn'" [duration]="1.5" class="h-full">
-        <img [src]="publicWorks.image" alt="公共施設改修"
-          class="w-full h-full object-cover grayscale-[30%] group-hover:grayscale-0 transition-all duration-1000 scale-[1.02] group-hover:scale-100">
+        <img [src]="publicWorks.image" alt="公共施設・小中学校の電気設備改修工事"
+          class="w-full h-full object-cover grayscale-[30%] group-hover:grayscale-0 transition-all duration-1000 scale-[1.02] group-hover:scale-100"
+          loading="lazy" decoding="async" width="1152" height="800">
       </div>
       <div class="absolute inset-0 bg-gradient-to-l from-black/20 to-transparent"></div>
       <div class="absolute bottom-8 right-8 text-white/80 text-xs font-medium tracking-widest uppercase text-right"
@@ -79,7 +82,8 @@
           <div class="flex flex-wrap justify-end gap-2">
             @for (id of publicWorks.sdgs; track id) {
             <img [src]="getSdgIconPath(id)" [alt]="getSdgGoal(id)" [title]="getSdgGoal(id)"
-              class="w-12 h-12 rounded shadow-sm transition-transform hover:scale-110 cursor-help object-contain">
+              class="w-12 h-12 rounded shadow-sm transition-transform hover:scale-110 cursor-help object-contain"
+              loading="lazy" decoding="async" width="48" height="48">
             }
           </div>
         </div>
@@ -93,8 +97,9 @@
     <!-- Technical "Road" Background (Hidden on mobile) -->
     <div class="absolute inset-0 z-0 pointer-events-none overflow-hidden hidden md:block">
       <div class="absolute inset-0 flex items-start justify-center opacity-50 pt-16">
-        <img src="/images/soden_roadmap.png" alt="Soden Technical Roadmap"
-          class="w-auto h-auto max-w-xl lg:max-w-2xl object-contain rotate-[-5deg]">
+        <img src="/images/soden_roadmap.png" alt="創電工業 技術ロードマップ"
+          class="w-auto h-auto max-w-xl lg:max-w-2xl object-contain rotate-[-5deg]"
+          loading="lazy" decoding="async" width="800" height="600">
       </div>
     </div>
     <div class="container mx-auto px-4 relative z-10">
@@ -118,7 +123,8 @@
         <!-- Photo Side -->
         <div class="md:w-1/2 relative overflow-hidden group">
           <img [src]="sdgCommitment.image"
-            class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" alt="太陽光パネル">
+            class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" alt="創電工業 太陽光パネル設備 SDGs取り組み"
+            loading="lazy" decoding="async" width="600" height="400">
           <div class="absolute inset-0 bg-emerald-900/10"></div>
         </div>
 
@@ -159,7 +165,8 @@
             @for (id of sdgCommitment.sdgs; track id) {
             <div class="flex flex-col items-center gap-2 group cursor-help">
               <img [src]="getSdgIconPath(id)" [alt]="getSdgGoal(id)" [title]="getSdgGoal(id)"
-                class="w-16 h-16 rounded-lg shadow-md transition-all group-hover:-translate-y-1 object-contain">
+                class="w-16 h-16 rounded-lg shadow-md transition-all group-hover:-translate-y-1 object-contain"
+                loading="lazy" decoding="async" width="64" height="64">
             </div>
             }
             <div class="flex-grow flex items-end ml-2">
@@ -178,14 +185,16 @@
     <!-- Technical "Road" Background (Hidden on mobile) -->
     <div class="absolute inset-0 z-0 pointer-events-none overflow-hidden hidden md:block">
       <div class="absolute inset-0 flex items-start justify-center opacity-50 pt-16">
-        <img src="/images/soden_roadmap.png" alt="Soden Technical Roadmap"
-          class="w-auto h-auto max-w-xl lg:max-w-2xl object-contain rotate-[10deg]">
+        <img src="/images/soden_roadmap.png" alt="創電工業 技術ロードマップ"
+          class="w-auto h-auto max-w-xl lg:max-w-2xl object-contain rotate-[10deg]"
+          loading="lazy" decoding="async" width="800" height="600">
       </div>
     </div>
 
     <!-- Background Image -->
     <div class="absolute inset-0 z-10 opacity-40">
-      <img [src]="community.backgroundImage" alt="地域貢献活動の様子" class="w-full h-full object-cover">
+      <img [src]="community.backgroundImage" alt="創電工業 地域貢献活動の様子" class="w-full h-full object-cover"
+        loading="lazy" decoding="async" width="1920" height="1080">
       <div class="absolute inset-0 bg-orange-950/40 mix-blend-multiply"></div>
     </div>
 
@@ -215,7 +224,8 @@
           <div class="group relative w-56 h-40 rounded-2xl overflow-hidden shadow-lg cursor-pointer bg-slate-100"
             appHoverLift>
             <img [src]="act.image" [alt]="act.label"
-              class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+              class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+              loading="lazy" decoding="async" width="224" height="160">
             <div
               class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent pt-10 pb-4 px-4 translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
               <span
@@ -231,7 +241,8 @@
           <div class="flex gap-4">
             @for (id of community.sdgs; track id) {
             <img [src]="getSdgIconPath(id)" [alt]="getSdgGoal(id)" [title]="getSdgGoal(id)"
-              class="w-14 h-14 rounded shadow transition-transform hover:scale-110 object-contain">
+              class="w-14 h-14 rounded shadow transition-transform hover:scale-110 object-contain"
+              loading="lazy" decoding="async" width="56" height="56">
             }
           </div>
           <p class="text-[10px] text-slate-400 leading-relaxed max-w-sm text-left">

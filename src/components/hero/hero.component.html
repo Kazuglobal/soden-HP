@@ -8,8 +8,10 @@
       [class.opacity-100]="currentIndex() === i" [class.opacity-0]="currentIndex() !== i">
       <div class="absolute inset-0 scale-110 sm:scale-105 md:scale-105"
         [class.animate-subtle-zoom]="currentIndex() === i">
-        <img [src]="image" alt="創電工業 現場"
-          class="w-full h-full object-cover object-[70%_top] sm:object-[center_top] md:object-center">
+        <img [src]="image" alt="創電工業 電気設備工事の現場写真"
+          class="w-full h-full object-cover object-[70%_top] sm:object-[center_top] md:object-center"
+          width="1920" height="1080" [attr.fetchpriority]="currentIndex() === i ? 'high' : 'low'"
+          [attr.loading]="currentIndex() === i ? 'eager' : 'lazy'" decoding="async">
       </div>
     </div>
     <!-- Lighter Overlay for Brighter Feel -->
