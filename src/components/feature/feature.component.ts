@@ -34,6 +34,7 @@ export class FeatureComponent {
     subtitle: '施工事例',
     description: '保育園の新築工事に携わりました。屋根はすべて全面太陽光パネルを入れ、炊事ができる薪ストーブを設置しているエコな保育園です。シンボルであるキリンのオブジェも自社で設置しました。このほか、小中学校や消防、民間のビルやマンション、老人ホームなど、大きい工事から個人住宅まですべてやらせていただいています。',
     image: '/images/kokubo_nursery.jpg',
+    alt: '小久保保育園 新築電気工事 施工事例',
     sdgs: [4, 7, 8, 9, 11, 12]
   };
 
@@ -41,7 +42,7 @@ export class FeatureComponent {
     title: '確かな技術で、地域の学び舎を支える。',
     subtitle: '公共施設・小中学校改修',
     description: '地域の未来を担う子供たちの学び舎を支える、確かな電気工事。照明LED化から変電設備の更新まで、市内の多くの小中学校や公共施設の改修に携わっています。安心・安全な環境づくりを通じて、地域社会の発展に貢献します。',
-    image: '/images/sportroom.png',
+    image: '/images/sportroom.jpg',
     sdgs: [4, 7, 11, 12, 13]
   };
 
@@ -51,7 +52,7 @@ export class FeatureComponent {
     metric: 100,
     metricUnit: '%',
     metricLabel: '自社電力賄い率',
-    image: '/images/solar_sdg.png',
+    image: '/images/solar_sdg.jpg',
     sdgs: [7, 12, 13]
   };
 

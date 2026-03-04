@@ -13,9 +13,9 @@ const SLIDESHOW_INTERVAL_MS = 5000;
 })
 export class HeroComponent implements OnInit, OnDestroy {
   readonly heroImages = [
-    '/images/firstview1.png',
-    '/images/firstview2.png',
-    '/images/firstview3.png',
+    '/images/firstview1.jpg',
+    '/images/firstview2.jpg',
+    '/images/firstview3.jpg',
     '/images/firstview_new.jpg'
   ];
 

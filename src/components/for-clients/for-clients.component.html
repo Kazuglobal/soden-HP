@@ -56,7 +56,8 @@
     <div class="absolute top-0 right-0 h-full w-1/2 lg:w-2/5 grid grid-cols-2 gap-4 p-4 opacity-30 md:opacity-100">
         @for(image of proposalImages; track $index) {
             <div class="relative aspect-square rounded-lg overflow-hidden group">
-                <img [src]="image" alt="施工実績写真" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500">
+                <img [src]="image" alt="創電工業 施工実績写真" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500"
+                  loading="lazy" decoding="async" width="300" height="300">
                 <div class="absolute inset-0 bg-[#0c1c2d] bg-opacity-40 flex items-center justify-center p-2">
                     <span class="text-white text-center text-xs font-bold opacity-0 group-hover:opacity-100 transition-opacity duration-300">Our Works</span>
                 </div>
