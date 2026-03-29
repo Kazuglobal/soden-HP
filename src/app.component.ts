@@ -57,23 +57,23 @@ export class AppComponent {
     imageAlt?: string;
   }) {
     const title = data.title
-      ?? '株式会社SEIKEN | 溶接工事・鉄鋼加工（横浜）';
+      ?? 'SEIKEN株式会社 | 溶接工事・鉄鋼加工（横浜）';
     const description = data.description
-      ?? '横浜を中心に溶接工事を行う株式会社SEIKEN。アーク溶接・半自動溶接・Tig溶接、鍛冶工事・鉄骨工事など鉄鋼のプロフェッショナルとして確かな技術で対応。';
+      ?? '横浜を中心に溶接工事を行うSEIKEN株式会社。アーク溶接・半自動溶接・Tig溶接、鍛冶工事・鉄骨工事など鉄鋼のプロフェッショナルとして確かな技術で対応。';
     const keywords = data.keywords
       ?? 'SEIKEN,溶接工事,アーク溶接,半自動溶接,Tig溶接,鍛冶工事,鉄骨工事,鉄鋼加工,横浜';
     const image = data.image ?? '/images/companyinfo.png';
-    const imageAlt = data.imageAlt ?? '株式会社SEIKENのチーム';
+    const imageAlt = data.imageAlt ?? 'SEIKEN株式会社のチーム';
     const canonicalUrl = this.getCanonicalUrl();
     const resolvedImage = this.resolveUrl(image);
 
     this.title.setTitle(title);
     this.meta.updateTag({ name: 'description', content: description });
     this.meta.updateTag({ name: 'keywords', content: keywords });
-    this.meta.updateTag({ name: 'author', content: '株式会社SEIKEN' });
+    this.meta.updateTag({ name: 'author', content: 'SEIKEN株式会社' });
     this.meta.updateTag({ property: 'og:locale', content: 'ja_JP' });
     this.meta.updateTag({ property: 'og:type', content: 'website' });
-    this.meta.updateTag({ property: 'og:site_name', content: '株式会社SEIKEN' });
+    this.meta.updateTag({ property: 'og:site_name', content: 'SEIKEN株式会社' });
     this.meta.updateTag({ property: 'og:title', content: title });
     this.meta.updateTag({ property: 'og:description', content: description });
     this.meta.updateTag({ property: 'og:image', content: resolvedImage });
@@ -155,11 +155,11 @@ export class AppComponent {
         {
           '@type': 'LocalBusiness',
           '@id': organizationId,
-          name: '株式会社SEIKEN',
+          name: 'SEIKEN株式会社',
           url: baseUrl,
           logo: `${baseUrl}/logo.png`,
           image: data.image,
-          description: '横浜を中心に溶接工事を行う株式会社SEIKEN。アーク溶接・半自動溶接・Tig溶接、鍛冶工事・鉄骨工事など鉄鋼のプロフェッショナルとして確かな技術で対応。',
+          description: '横浜を中心に溶接工事を行うSEIKEN株式会社。アーク溶接・半自動溶接・Tig溶接、鍛冶工事・鉄骨工事など鉄鋼のプロフェッショナルとして確かな技術で対応。',
           telephone: '+81-178-25-2172',
           foundingDate: '1987',
           areaServed: '神奈川県',
@@ -193,7 +193,7 @@ export class AppComponent {
           '@type': 'WebSite',
           '@id': websiteId,
           url: baseUrl,
-          name: '株式会社SEIKEN',
+          name: 'SEIKEN株式会社',
           publisher: { '@id': organizationId },
           inLanguage: 'ja-JP'
         },
