@@ -30,42 +30,41 @@ const SDG_GOALS: Record<number, string> = {
 })
 export class FeatureComponent {
   craftsmanship = {
-    title: '技術と温もりが、未来を育む場所。',
+    title: '確かな技術で、現場を支える。',
     subtitle: '施工事例',
-    description: '保育園の新築工事に携わりました。屋根はすべて全面太陽光パネルを入れ、炊事ができる薪ストーブを設置しているエコな保育園です。シンボルであるキリンのオブジェも自社で設置しました。このほか、小中学校や消防、民間のビルやマンション、老人ホームなど、大きい工事から個人住宅まですべてやらせていただいています。',
-    image: '/images/kokubo_nursery.jpg',
-    alt: '小久保保育園 新築電気工事 施工事例',
-    sdgs: [4, 7, 8, 9, 11, 12]
+    description: '商業施設やマンションでアーク溶接の実績も多数ございます。これまできめ細かな丁寧な施工を行うことを心掛けており、そのような姿勢に共感していただきお客様にリピートしてご利用いただいております。',
+    image: 'https://images.unsplash.com/photo-1565193566173-7a0ee3dbe261?w=1200&q=80',
+    sdgs: [8, 9, 11, 12]
   };
 
   publicWorks = {
-    title: '確かな技術で、地域の学び舎を支える。',
-    subtitle: '公共施設・小中学校改修',
-    description: '地域の未来を担う子供たちの学び舎を支える、確かな電気工事。照明LED化から変電設備の更新まで、市内の多くの小中学校や公共施設の改修に携わっています。安心・安全な環境づくりを通じて、地域社会の発展に貢献します。',
-    image: '/images/sportroom.jpg',
-    sdgs: [4, 7, 11, 12, 13]
+    title: '横浜を中心に臨機応変に対応。',
+    subtitle: '出張工事',
+    description: '横浜を中心に臨機応変に工事現場へお伺いし作業に取り組んでおります。現場を支える鉄鋼のプロフェッショナルとして、資格や豊富な経験を持つスタッフに工事の依頼をしてみませんか。幅広いお問い合わせをお待ちしております。',
+    image: 'https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=1200&q=80',
+    sdgs: [8, 9, 11, 12]
   };
 
   sdgCommitment = {
-    title: 'SDGsに取り組んでいます',
-    description: '市内数カ所に太陽光パネルを設置し、自社の電力はすべて自社で賄っています。温室効果ガス排出量の増加による地球温暖化への対策が深刻な問題とされており、脱炭素化に向け再生可能エネルギーの持続的な普及に貢献しています。',
+    title: 'お客様満足を追求しています',
+    description: '体力のある若いスタッフが多数在籍しており、お客様のご要望に応じてスピード感を持って臨機応変に工事を進めてまいります。仕上がりの美しい施工を行うことはもちろん、アフターフォローを徹底して行っております。',
     metric: 100,
     metricUnit: '%',
-    metricLabel: '自社電力賄い率',
-    image: '/images/solar_sdg.jpg',
-    sdgs: [7, 12, 13]
+    metricLabel: '顧客満足度',
+    image: 'https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=1200&q=80',
+    sdgs: [8, 9, 12]
   };
 
   community = {
-    title: '地域貢献に力を入れています',
-    subtitle: '未来を担う子供たちの、健やかな成長のために.',
-    description: '地元の保育園サッカー大会の協賛やゴールの運搬なども行っています。また中学生の野球教室の指導やグラウンド整備、審判などにも協力。これからの未来を担う子供たちの為に活動を行っています。',
-    backgroundImage: '/images/community_bg.jpg',
+    title: '信頼関係の構築に努めています',
+    subtitle: 'お客様との絆を大切に',
+    description: '些細なお困り事も気軽にご相談いただけるよう、お客様との信頼関係の構築に日々努めております。専門性の高い鉄鋼に関する資格を持つプロに工事を任せてみませんか。',
+    backgroundImage: 'https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?w=1600&q=80',
     activities: [
-      { label: 'サッカー大会支援', image: '/images/community_soccer_new.jpg' },
-      { label: '野球教室指導', image: '/images/community_baseball_new.jpg' }
+      { label: '丁寧な施工', image: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80' },
+      { label: 'アフターフォロー', image: 'https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=600&q=80' }
     ],
-    sdgs: [1, 2, 11]
+    sdgs: [8, 9, 12]
   };
 
   getSdgGoal(id: number): string {

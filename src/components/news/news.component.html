@@ -1,33 +1,29 @@
-<section class="bg-white py-16 sm:py-24 relative overflow-hidden">
-  <!-- Technical "Road" Cable Trace for News Section -->
-  <div class="absolute inset-0 z-0 pointer-events-none overflow-hidden">
-    <div class="absolute inset-0 flex items-center justify-center opacity-60 mix-blend-multiply">
-      <img src="/images/soden_roadmap.png" alt="Soden Technical Roadmap"
-        class="w-full h-auto min-h-full object-cover lg:object-contain scale-150 translate-y-2/3">
-    </div>
-  </div>
+<section id="news" class="py-16 sm:py-20 bg-gray-50 relative overflow-hidden">
+  <div class="section-divider absolute top-0 left-0 right-0"></div>
 
-  <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-    <div class="flex flex-col lg:flex-row lg:items-start lg:gap-12">
-      <!-- Title Section -->
-      <div class="flex-shrink-0 mb-8 lg:mb-0">
-        <h3 appGsapSplitText [splitType]="'chars'" [delay]="50" [duration]="0.5" [ease]="'power3.out'"
-          [from]="{ opacity: 0, y: 20 }" [to]="{ opacity: 1, y: 0 }" [threshold]="0.3"
-          class="text-3xl font-bold text-[#0c1c2d]" style="font-family: 'Noto Serif JP', serif;">お知らせ</h3>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex flex-col lg:flex-row lg:items-start lg:gap-16">
+      <!-- Title -->
+      <div class="flex-shrink-0 mb-8 lg:mb-0 lg:w-48">
+        <div class="flex items-center gap-3 mb-2" appGsapAnimate [animation]="'fadeUp'">
+          <div class="w-5 h-[1px] bg-[#32373c]"></div>
+          <span class="text-[10px] font-bold tracking-[0.3em] uppercase text-[#32373c] font-accent">News</span>
+        </div>
+        <h3 class="text-2xl font-bold text-[#32373c]" style="font-family: 'Noto Serif JP', serif;"
+          appGsapAnimate [animation]="'fadeUp'" [delay]="0.1">お知らせ</h3>
       </div>
 
       <!-- News List -->
-      <div class="flex-grow border-l-2 border-[#d4a876] pl-8">
-        <div class="space-y-6">
+      <div class="flex-grow">
+        <div class="space-y-4">
           @for (news of newsItems; track news.date; let i = $index) {
-            <article appGsapAnimate [animation]="'slideLeft'" [duration]="0.7" [delay]="0.1 * i" [distance]="40" [threshold]="0.3"
-              class="group">
-              <a [href]="news.href" class="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4 hover:bg-slate-50 -ml-4 px-4 py-3 rounded-lg transition-colors duration-300">
+            <article appGsapAnimate [animation]="'fadeUp'" [duration]="0.6" [delay]="0.1 * i" class="group">
+              <a [href]="news.href" class="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-6 px-4 py-4 -mx-4 rounded-xl hover:bg-white transition-colors duration-300">
                 <div class="flex items-center gap-3 flex-shrink-0">
-                  <time [attr.datetime]="news.date" class="text-sm text-gray-500 font-medium w-24">{{ news.dateFormatted }}</time>
-                  <span class="text-[10px] font-bold tracking-wide text-white bg-emerald-600 px-2 py-0.5 rounded">{{ news.category }}</span>
+                  <time [attr.datetime]="news.date" class="text-sm text-gray-600 font-medium font-accent tabular-nums w-24">{{ news.dateFormatted }}</time>
+                  <span class="text-[10px] font-bold tracking-wide text-[#32373c] bg-gray-100 px-2.5 py-1 rounded-full">{{ news.category }}</span>
                 </div>
-                <h4 class="text-base font-semibold text-[#0c1c2d] group-hover:text-emerald-600 transition-colors duration-300">
+                <h4 class="text-sm sm:text-base font-medium text-gray-700 group-hover:text-[#32373c] transition-colors duration-200">
                   {{ news.title }}
                 </h4>
               </a>
@@ -36,11 +32,11 @@
         </div>
       </div>
 
-      <!-- View All Link -->
-      <a appGsapAnimate [animation]="'fadeIn'" [duration]="0.5" [delay]="0.4" [threshold]="0.3" href="#"
-        class="mt-10 lg:mt-4 lg:ml-auto text-[#0c1c2d] font-bold hover:text-emerald-600 transition duration-300 flex-shrink-0 flex items-center gap-2 group">
-        <span>一覧を見る</span>
-        <svg class="w-4 h-4 transform group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <!-- View All -->
+      <a appGsapAnimate [animation]="'fadeIn'" [delay]="0.3" href="#"
+        class="mt-8 lg:mt-0 text-sm text-gray-600 hover:text-[#32373c] transition-colors duration-200 flex-shrink-0 flex items-center gap-2 group">
+        <span class="font-medium">一覧を見る</span>
+        <svg class="w-3.5 h-3.5 transform group-hover:translate-x-0.5 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
         </svg>
       </a>

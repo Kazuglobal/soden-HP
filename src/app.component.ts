@@ -57,30 +57,28 @@ export class AppComponent {
     imageAlt?: string;
   }) {
     const title = data.title
-      ?? '株式会社創電工業 | 電気設備工事・設計施工（青森県八戸市）';
+      ?? 'SEIKEN株式会社 | 溶接工事・鉄鋼加工（横浜）';
     const description = data.description
-      ?? '青森県八戸市の株式会社創電工業。電気設備工事・電気通信工事・消防設備・空調設備・物流システムの設計施工から保守管理まで対応。1987年創業の実績。';
+      ?? '横浜を中心に溶接工事を行うSEIKEN株式会社。アーク溶接・半自動溶接・Tig溶接、鍛冶工事・鉄骨工事など鉄鋼のプロフェッショナルとして確かな技術で対応。';
     const keywords = data.keywords
-      ?? '創電工業,電気工事,電気設備,電気通信工事,消防設備,空調設備,物流システム,設計施工,保守管理,八戸,青森';
-    const image = data.image ?? '/images/companyinfo.jpg';
-    const imageAlt = data.imageAlt ?? '株式会社創電工業のチーム';
+      ?? 'SEIKEN,溶接工事,アーク溶接,半自動溶接,Tig溶接,鍛冶工事,鉄骨工事,鉄鋼加工,横浜';
+    const image = data.image ?? '/images/companyinfo.png';
+    const imageAlt = data.imageAlt ?? 'SEIKEN株式会社のチーム';
     const canonicalUrl = this.getCanonicalUrl();
     const resolvedImage = this.resolveUrl(image);
 
     this.title.setTitle(title);
     this.meta.updateTag({ name: 'description', content: description });
     this.meta.updateTag({ name: 'keywords', content: keywords });
-    this.meta.updateTag({ name: 'author', content: '株式会社創電工業' });
+    this.meta.updateTag({ name: 'author', content: 'SEIKEN株式会社' });
     this.meta.updateTag({ property: 'og:locale', content: 'ja_JP' });
     this.meta.updateTag({ property: 'og:type', content: 'website' });
-    this.meta.updateTag({ property: 'og:site_name', content: '株式会社創電工業' });
+    this.meta.updateTag({ property: 'og:site_name', content: 'SEIKEN株式会社' });
     this.meta.updateTag({ property: 'og:title', content: title });
     this.meta.updateTag({ property: 'og:description', content: description });
     this.meta.updateTag({ property: 'og:image', content: resolvedImage });
     this.meta.updateTag({ property: 'og:image:alt', content: imageAlt });
-    this.meta.updateTag({ property: 'og:image:width', content: '1200' });
-    this.meta.updateTag({ property: 'og:image:height', content: '630' });
-    this.meta.updateTag({ name: 'twitter:card', content: 'summary_large_image' });
+    this.meta.updateTag({ name: 'twitter:card', content: 'summary' });
     this.meta.updateTag({ name: 'twitter:title', content: title });
     this.meta.updateTag({ name: 'twitter:description', content: description });
     this.meta.updateTag({ name: 'twitter:image', content: resolvedImage });
@@ -155,61 +153,23 @@ export class AppComponent {
       '@context': 'https://schema.org',
       '@graph': [
         {
-          '@type': ['LocalBusiness', 'ElectricalContractor'],
+          '@type': 'LocalBusiness',
           '@id': organizationId,
-          name: '株式会社創電工業',
-          alternateName: 'Soden Industry Co., Ltd.',
+          name: 'SEIKEN株式会社',
           url: baseUrl,
-          logo: {
-            '@type': 'ImageObject',
-            url: `${baseUrl}/logo.png`,
-            width: 512,
-            height: 512
-          },
+          logo: `${baseUrl}/logo.png`,
           image: data.image,
-          description: '青森県八戸市の株式会社創電工業。電気設備工事・電気通信工事・消防設備・空調設備・太陽光発電・物流システムの設計施工から保守管理まで対応。1987年創業、地域密着38年の実績と信頼。',
+          description: '横浜を中心に溶接工事を行うSEIKEN株式会社。アーク溶接・半自動溶接・Tig溶接、鍛冶工事・鉄骨工事など鉄鋼のプロフェッショナルとして確かな技術で対応。',
           telephone: '+81-178-25-2172',
-          faxNumber: '+81-178-25-2171',
           foundingDate: '1987',
-          areaServed: {
-            '@type': 'AdministrativeArea',
-            name: '青森県'
-          },
+          areaServed: '神奈川県',
           address: {
             '@type': 'PostalAddress',
-            postalCode: '031-0833',
-            addressRegion: '青森県',
-            addressLocality: '八戸市',
-            streetAddress: '大字大久保字小久保平19-7',
+            postalCode: '222-0023',
+            addressRegion: '神奈川県',
+            addressLocality: '横浜市港北区',
+            streetAddress: '仲手原2丁目42-23-5',
             addressCountry: 'JP'
-          },
-          geo: {
-            '@type': 'GeoCoordinates',
-            latitude: 40.5122,
-            longitude: 141.4883
-          },
-          priceRange: '$$',
-          currenciesAccepted: 'JPY',
-          paymentAccepted: '銀行振込',
-          numberOfEmployees: {
-            '@type': 'QuantitativeValue',
-            minValue: 10,
-            maxValue: 50
-          },
-          knowsAbout: [
-            '電気設備工事', '電気通信工事', '消防設備工事',
-            '空調設備工事', '太陽光発電設備', '物流システム',
-            'ビル保守管理', '公共工事'
-          ],
-          hasOfferCatalog: {
-            '@type': 'OfferCatalog',
-            name: '事業内容',
-            itemListElement: [
-              { '@type': 'Offer', itemOffered: { '@type': 'Service', name: '電気設備設計施工' } },
-              { '@type': 'Offer', itemOffered: { '@type': 'Service', name: '太陽光発電設備設計施工' } },
-              { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'ビル保守管理' } },
-              { '@type': 'Offer', itemOffered: { '@type': 'Service', name: '物流システム・機械設備工事' } }
-            ]
           },
           openingHoursSpecification: [
             {
@@ -227,14 +187,13 @@ export class AppComponent {
               areaServed: 'JP',
               availableLanguage: ['Japanese']
             }
-          ],
-          sameAs: []
+          ]
         },
         {
           '@type': 'WebSite',
           '@id': websiteId,
           url: baseUrl,
-          name: '株式会社創電工業',
+          name: 'SEIKEN株式会社',
           publisher: { '@id': organizationId },
           inLanguage: 'ja-JP'
         },
@@ -247,48 +206,15 @@ export class AppComponent {
           isPartOf: { '@id': websiteId },
           about: { '@id': organizationId },
           inLanguage: 'ja-JP',
-          dateModified: new Date().toISOString().split('T')[0],
           primaryImageOfPage: {
             '@type': 'ImageObject',
             url: data.image
-          },
-          breadcrumb: {
-            '@type': 'BreadcrumbList',
-            itemListElement: this.buildBreadcrumbs(data.url, data.title)
           }
         }
       ]
     };
 
     this.upsertJsonLd('structured-data', structuredData);
-  }
-
-  private buildBreadcrumbs(url: string, title: string): unknown[] {
-    const baseUrl = new URL('/', url).toString().replace(/\/$/, '');
-    const items: unknown[] = [
-      {
-        '@type': 'ListItem',
-        position: 1,
-        name: 'ホーム',
-        item: baseUrl
-      }
-    ];
-
-    const pathname = new URL(url).pathname;
-    if (pathname !== '/' && pathname !== '') {
-      const pathNames: Record<string, string> = {
-        '/company': '会社概要',
-        '/recruit': '採用情報'
-      };
-      items.push({
-        '@type': 'ListItem',
-        position: 2,
-        name: pathNames[pathname] ?? title,
-        item: url
-      });
-    }
-
-    return items;
   }
 
   private upsertJsonLd(id: string, data: unknown) {

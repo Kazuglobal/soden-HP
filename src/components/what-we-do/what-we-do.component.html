@@ -1,219 +1,117 @@
-<section id="what-we-do" class="relative py-24 lg:py-48 bg-white selection:bg-emerald-500/30 overflow-hidden">
+<section id="what-we-do" class="relative py-24 lg:py-32 bg-gray-50 overflow-hidden">
+  <!-- Subtle background -->
+  <div class="absolute inset-0 metal-texture opacity-10 pointer-events-none"></div>
 
-  <!-- Technical "Road" Cable Trace Background (Hidden on mobile) -->
-  <div class="absolute inset-0 z-0 pointer-events-none overflow-hidden hidden md:block">
-    <div class="absolute top-0 right-0 w-1/2 h-full flex items-start justify-end opacity-60 pt-16 pr-8">
-      <img src="/images/soden_roadmap.png" alt="創電工業 技術ロードマップ"
-        class="w-auto h-auto max-w-md lg:max-w-lg object-contain"
-        loading="lazy" decoding="async" width="800" height="600">
-    </div>
-  </div>
-
-  <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
 
     <!-- Section Header -->
-    <div class="text-center mb-16 md:mb-28 lg:mb-40">
-      <div class="inline-flex items-center gap-3 mb-6" appGsapAnimate [animation]="'fadeUp'">
-        <div class="w-8 h-[1px] bg-emerald-500"></div>
-        <span class="text-xs font-bold text-emerald-600 tracking-[0.5em] uppercase">Core Expertise</span>
-        <div class="w-8 h-[1px] bg-emerald-500"></div>
+    <div class="mb-16 md:mb-24">
+      <div class="flex items-center gap-3 mb-4" appGsapAnimate [animation]="'fadeUp'">
+        <div class="w-8 h-[1px] bg-[#32373c]"></div>
+        <span class="text-[10px] font-bold tracking-[0.3em] uppercase text-[#32373c]">Core Expertise</span>
       </div>
-      <h2 class="text-3xl md:text-5xl lg:text-7xl font-black text-slate-900 tracking-tight leading-none"
-        style="font-family: 'Noto Serif JP', serif;" appGsapAnimate [animation]="'fadeUp'" [duration]="1.2">
+      <h2 class="text-4xl md:text-5xl lg:text-6xl font-black text-[#32373c] tracking-tight"
+        style="font-family: 'Noto Serif JP', serif;" appGsapAnimate [animation]="'fadeUp'" [delay]="0.1">
         私たちの仕事
       </h2>
     </div>
 
-    <!-- Service Cards Container -->
-    <div class="space-y-16 md:space-y-32 lg:space-y-48">
+    <!-- Service Cards -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
 
-      <!-- Service 1: 電気設備設計施工 -->
-      <div
-        class="flex flex-col lg:flex-row items-center rounded-3xl overflow-hidden shadow-2xl bg-white/95 backdrop-blur-md border border-white/20"
+      <!-- Service 1: アーク溶接 -->
+      <div class="group relative rounded-2xl overflow-hidden bg-white border border-gray-200 hover:border-[#32373c]/20 transition-all duration-500 card-hover"
+        appGsapAnimate [animation]="'fadeUp'" [delay]="0.1">
+        <div class="relative h-64 lg:h-72 overflow-hidden">
+          <img [src]="work1" alt="アーク溶接"
+            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+          <div class="absolute inset-0 bg-gradient-to-t from-white via-white/30 to-transparent"></div>
+          <div class="absolute top-4 left-4">
+            <span class="text-[11px] font-bold tracking-[0.2em] text-[#32373c] bg-white/80 backdrop-blur-sm px-3 py-1.5 rounded-full">01</span>
+          </div>
+        </div>
+        <div class="p-6 lg:p-8">
+          <div class="flex items-center gap-2 mb-3">
+            <span class="text-[10px] font-bold tracking-widest text-gray-500 uppercase">ARC WELDING</span>
+          </div>
+          <h3 class="text-xl lg:text-2xl font-bold text-[#32373c] mb-3" style="font-family: 'Noto Serif JP', serif;">
+            アーク溶接
+          </h3>
+          <p class="text-sm text-gray-600 leading-relaxed">
+            商業施設やマンションを中心にアーク溶接の実績も多数ございます。専門的知識を必要とする工事にも柔軟に対応しております。
+          </p>
+        </div>
+      </div>
+
+      <!-- Service 2: 半自動溶接 -->
+      <div class="group relative rounded-2xl overflow-hidden bg-white border border-gray-200 hover:border-[#32373c]/20 transition-all duration-500 card-hover"
         appGsapAnimate [animation]="'fadeUp'" [delay]="0.2">
-        <!-- Image Left -->
-        <div class="w-full lg:w-[45%] relative group overflow-hidden h-[300px] lg:h-[400px]">
-          <img [src]="work1" alt="電気設備設計施工"
-            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-            loading="lazy" decoding="async" width="864" height="400">
-          <div class="absolute inset-0 bg-gradient-to-t from-emerald-900/40 to-transparent"></div>
-          <!-- Corner Marks -->
-          <div
-            class="absolute top-4 left-4 w-6 h-6 border-t-2 border-l-2 border-emerald-400 opacity-0 group-hover:opacity-100 transition-opacity">
-          </div>
-          <div
-            class="absolute bottom-4 right-4 w-6 h-6 border-b-2 border-r-2 border-emerald-400 opacity-0 group-hover:opacity-100 transition-opacity">
+        <div class="relative h-64 lg:h-72 overflow-hidden">
+          <img [src]="work2" alt="半自動溶接"
+            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+          <div class="absolute inset-0 bg-gradient-to-t from-white via-white/30 to-transparent"></div>
+          <div class="absolute top-4 left-4">
+            <span class="text-[11px] font-bold tracking-[0.2em] text-[#32373c] bg-white/80 backdrop-blur-sm px-3 py-1.5 rounded-full">02</span>
           </div>
         </div>
-
-        <!-- Content Right -->
-        <div class="w-full lg:w-[55%] p-8 lg:p-12 xl:p-16 flex flex-col justify-center relative">
-          <!-- Number Label -->
-          <div class="flex items-center gap-6 mb-12">
-            <div class="relative w-16 h-16 bg-slate-900 flex items-center justify-center shrink-0">
-              <span class="text-white text-3xl font-black italic -skew-x-6">01</span>
-              <div class="absolute bottom-0 right-0 w-2 h-2 bg-emerald-500"></div>
-            </div>
-            <div class="h-[1px] grow bg-slate-200"></div>
-            <span class="text-[10px] font-mono text-emerald-600/50">EST. 1987</span>
+        <div class="p-6 lg:p-8">
+          <div class="flex items-center gap-2 mb-3">
+            <span class="text-[10px] font-bold tracking-widest text-gray-500 uppercase">SEMI-AUTO</span>
           </div>
-
-          <div class="space-y-6">
-            <h3 class="text-lg lg:text-xl font-black text-emerald-600 tracking-wider flex items-center gap-4">
-              <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
-              電気設備設計施工
-            </h3>
-
-            <h4 class="text-2xl md:text-4xl lg:text-5xl font-bold text-slate-800 leading-[1.15] mb-6 md:mb-8"
-              style="font-family: 'Noto Serif JP', serif;">
-              技術の粋を集め、<br>社会を動かす道を拓く
-            </h4>
-
-            <p class="text-slate-500 leading-relaxed text-base lg:text-lg max-w-xl">
-              高圧受変電設備から、ビルや工場の隅々に届く低圧配線まで。昭和62年の創業以来蓄積されたノウハウで、安全かつ効率的な電力インフラをご提供します。
-            </p>
-          </div>
+          <h3 class="text-xl lg:text-2xl font-bold text-[#32373c] mb-3" style="font-family: 'Noto Serif JP', serif;">
+            半自動溶接
+          </h3>
+          <p class="text-sm text-gray-600 leading-relaxed">
+            お客様のご要望に応じて鉄やステンレスなど幅広い資材の加工を行っております。スピード感を持って臨機応変に対応します。
+          </p>
         </div>
       </div>
 
-      <!-- Service 2: 太陽光発電設備設計施工 -->
-      <div
-        class="flex flex-col lg:flex-row-reverse items-center rounded-3xl overflow-hidden shadow-2xl bg-white/95 backdrop-blur-md border border-white/20"
+      <!-- Service 3: Tig溶接 -->
+      <div class="group relative rounded-2xl overflow-hidden bg-white border border-gray-200 hover:border-[#32373c]/20 transition-all duration-500 card-hover"
+        appGsapAnimate [animation]="'fadeUp'" [delay]="0.3">
+        <div class="relative h-64 lg:h-72 overflow-hidden">
+          <img [src]="work3" alt="Tig溶接"
+            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+          <div class="absolute inset-0 bg-gradient-to-t from-white via-white/30 to-transparent"></div>
+          <div class="absolute top-4 left-4">
+            <span class="text-[11px] font-bold tracking-[0.2em] text-[#32373c] bg-white/80 backdrop-blur-sm px-3 py-1.5 rounded-full">03</span>
+          </div>
+        </div>
+        <div class="p-6 lg:p-8">
+          <div class="flex items-center gap-2 mb-3">
+            <span class="text-[10px] font-bold tracking-widest text-gray-500 uppercase">TIG WELDING</span>
+          </div>
+          <h3 class="text-xl lg:text-2xl font-bold text-[#32373c] mb-3" style="font-family: 'Noto Serif JP', serif;">
+            Tig溶接
+          </h3>
+          <p class="text-sm text-gray-600 leading-relaxed">
+            仕上がりの美しい施工を行うことはもちろん、アフターフォローを徹底して行っております。
+          </p>
+        </div>
+      </div>
+
+      <!-- Service 4: 鍛冶工事・鉄骨工事 -->
+      <div class="group relative rounded-2xl overflow-hidden bg-white border border-gray-200 hover:border-[#32373c]/20 transition-all duration-500 card-hover"
         appGsapAnimate [animation]="'fadeUp'" [delay]="0.4">
-        <!-- Image Right -->
-        <div class="w-full lg:w-[45%] relative group overflow-hidden h-[300px] lg:h-[400px]">
-          <img [src]="work2" alt="太陽光発電設備設計施工"
-            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-            loading="lazy" decoding="async" width="864" height="400">
-          <div class="absolute inset-0 bg-gradient-to-t from-emerald-900/40 to-transparent"></div>
-          <div
-            class="absolute top-4 right-4 w-6 h-6 border-t-2 border-r-2 border-emerald-400 opacity-0 group-hover:opacity-100 transition-opacity">
-          </div>
-          <div
-            class="absolute bottom-4 left-4 w-6 h-6 border-b-2 border-l-2 border-emerald-400 opacity-0 group-hover:opacity-100 transition-opacity">
+        <div class="relative h-64 lg:h-72 overflow-hidden">
+          <img [src]="work4" alt="鍛冶工事・鉄骨工事"
+            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+          <div class="absolute inset-0 bg-gradient-to-t from-white via-white/30 to-transparent"></div>
+          <div class="absolute top-4 left-4">
+            <span class="text-[11px] font-bold tracking-[0.2em] text-[#32373c] bg-white/80 backdrop-blur-sm px-3 py-1.5 rounded-full">04</span>
           </div>
         </div>
-
-        <!-- Content Left -->
-        <div class="w-full lg:w-[55%] p-8 lg:p-12 xl:p-16 flex flex-col justify-center relative">
-          <div class="flex flex-row-reverse items-center gap-6 mb-12">
-            <div class="relative w-16 h-16 bg-slate-900 flex items-center justify-center shrink-0">
-              <span class="text-white text-3xl font-black italic skew-x-6">02</span>
-              <div class="absolute bottom-0 left-0 w-2 h-2 bg-emerald-500"></div>
-            </div>
-            <div class="h-[1px] grow bg-slate-200"></div>
-            <span class="text-[10px] font-mono text-emerald-600/50">PHOTOVOLTAIC</span>
+        <div class="p-6 lg:p-8">
+          <div class="flex items-center gap-2 mb-3">
+            <span class="text-[10px] font-bold tracking-widest text-gray-500 uppercase">STEEL WORK</span>
           </div>
-
-          <div class="space-y-6">
-            <h3
-              class="text-lg lg:text-xl font-black text-emerald-600 tracking-wider flex flex-row-reverse items-center gap-4">
-              <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
-              太陽光発電設備設計施工
-            </h3>
-
-            <h4 class="text-2xl md:text-4xl lg:text-5xl font-bold text-slate-800 leading-[1.15] mb-6 md:mb-8"
-              style="font-family: 'Noto Serif JP', serif;">
-              無限の自然エネルギーを、<br>確かな力に変えてゆく
-            </h4>
-
-            <p class="text-slate-500 leading-relaxed text-base lg:text-lg max-w-xl ml-auto">
-              環境負荷低減とコスト削減を両立する太陽光発電システム。設置環境に最適化した設計と、長期間の安定稼働を支える maintenance 体制で地球に優しい未来に貢献します。
-            </p>
-          </div>
-        </div>
-      </div>
-
-      <!-- Service 3: ビル保守管理 -->
-      <div
-        class="flex flex-col lg:flex-row items-center rounded-3xl overflow-hidden shadow-2xl bg-white/95 backdrop-blur-md border border-white/20"
-        appGsapAnimate [animation]="'fadeUp'" [delay]="0.2">
-        <div class="w-full lg:w-[45%] relative group overflow-hidden h-[300px] lg:h-[400px]">
-          <img [src]="work3" alt="ビル保守管理"
-            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-            loading="lazy" decoding="async" width="864" height="400">
-          <div class="absolute inset-0 bg-gradient-to-t from-emerald-900/40 to-transparent"></div>
-          <div
-            class="absolute top-4 left-4 w-6 h-6 border-t-2 border-l-2 border-emerald-400 opacity-0 group-hover:opacity-100 transition-opacity">
-          </div>
-          <div
-            class="absolute bottom-4 right-4 w-6 h-6 border-b-2 border-r-2 border-emerald-400 opacity-0 group-hover:opacity-100 transition-opacity">
-          </div>
-        </div>
-
-        <div class="w-full lg:w-[55%] p-8 lg:p-12 xl:p-16 flex flex-col justify-center relative">
-          <div class="flex items-center gap-6 mb-12">
-            <div class="relative w-16 h-16 bg-slate-900 flex items-center justify-center shrink-0">
-              <span class="text-white text-3xl font-black italic -skew-x-6">03</span>
-              <div class="absolute bottom-0 right-0 w-2 h-2 bg-emerald-500"></div>
-            </div>
-            <div class="h-[1px] grow bg-slate-200"></div>
-            <span class="text-[10px] font-mono text-emerald-600/50">MAINTENANCE</span>
-          </div>
-
-          <div class="space-y-6">
-            <h3 class="text-lg lg:text-xl font-black text-emerald-600 tracking-wider flex items-center gap-4">
-              <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
-              ビル保守管理
-            </h3>
-
-            <h4 class="text-2xl md:text-4xl lg:text-5xl font-bold text-slate-800 leading-[1.15] mb-6 md:mb-8"
-              style="font-family: 'Noto Serif JP', serif;">
-              日常の当たり前を、<br>見えない場所で守り抜く
-            </h4>
-
-            <p class="text-slate-500 leading-relaxed text-base lg:text-lg max-w-xl">
-              消防設備、空調、電気などの総合点検業務。管理技術者が定期的に巡回し、トラブルを未然に防ぐことで、ビル利用者の「安全・安心・快適」な時間を創造します。
-            </p>
-          </div>
-        </div>
-      </div>
-
-      <!-- Service 4: 物流システム全般・機械器具設備工事 -->
-      <div
-        class="flex flex-col lg:flex-row-reverse items-center rounded-3xl overflow-hidden shadow-2xl bg-white/95 backdrop-blur-md border border-white/20"
-        appGsapAnimate [animation]="'fadeUp'" [delay]="0.4">
-        <!-- Image Right -->
-        <div class="w-full lg:w-[45%] relative group overflow-hidden h-[300px] lg:h-[400px]">
-          <img [src]="work4" alt="物流システム全般・機械器具設備工事"
-            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-            loading="lazy" decoding="async" width="864" height="400">
-          <div class="absolute inset-0 bg-gradient-to-t from-emerald-900/40 to-transparent"></div>
-          <div
-            class="absolute top-4 right-4 w-6 h-6 border-t-2 border-r-2 border-emerald-400 opacity-0 group-hover:opacity-100 transition-opacity">
-          </div>
-          <div
-            class="absolute bottom-4 left-4 w-6 h-6 border-b-2 border-l-2 border-emerald-400 opacity-0 group-hover:opacity-100 transition-opacity">
-          </div>
-        </div>
-
-        <!-- Content Left -->
-        <div class="w-full lg:w-[55%] p-8 lg:p-12 xl:p-16 flex flex-col justify-center relative">
-          <div class="flex flex-row-reverse items-center gap-6 mb-12">
-            <div class="relative w-16 h-16 bg-slate-900 flex items-center justify-center shrink-0">
-              <span class="text-white text-3xl font-black italic skew-x-6">04</span>
-              <div class="absolute bottom-0 left-0 w-2 h-2 bg-emerald-500"></div>
-            </div>
-            <div class="h-[1px] grow bg-slate-200"></div>
-            <span class="text-[10px] font-mono text-emerald-600/50">MECHANICAL</span>
-          </div>
-
-          <div class="space-y-6">
-            <h3
-              class="text-lg lg:text-xl font-black text-emerald-600 tracking-wider flex flex-row-reverse items-center gap-4">
-              <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
-              物流システム・機械設備工事
-            </h3>
-
-            <h4 class="text-2xl md:text-4xl lg:text-5xl font-bold text-slate-800 leading-[1.15] mb-6 md:mb-8"
-              style="font-family: 'Noto Serif JP', serif;">
-              モノの流れを止めることなく、<br>最適なスピードでつなぐ
-            </h4>
-
-            <p class="text-slate-500 leading-relaxed text-base lg:text-lg max-w-xl ml-auto">
-              コンベアシステム、自動倉庫、搬送機械の据付および電気制御。メカと電気の両面から、物流・製造現場のオートメーションと効率化を強力にバックアップします。
-            </p>
-          </div>
+          <h3 class="text-xl lg:text-2xl font-bold text-[#32373c] mb-3" style="font-family: 'Noto Serif JP', serif;">
+            鍛冶工事・鉄骨工事
+          </h3>
+          <p class="text-sm text-gray-600 leading-relaxed">
+            鉄鋼に関するプロ集団として、幅広いご依頼を承っております。丁寧な施工を心掛けております。
+          </p>
         </div>
       </div>
 

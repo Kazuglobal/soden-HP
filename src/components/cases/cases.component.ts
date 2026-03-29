@@ -1,31 +1,25 @@
 import { Component, ChangeDetectionStrategy } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { GsapScrollAnimateDirective } from '../../directives/gsap-scroll-animate.directive';
+
+interface CaseItem {
+  title: string;
+  category: string;
+  image: string;
+}
 
 @Component({
   selector: 'app-cases',
-  template: `
-    <section id="cases" class="py-24 bg-slate-50 overflow-hidden">
-      <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-8">
-          <div class="max-w-2xl">
-            <h2 appGsapAnimate [animation]="'fadeUp'" class="text-4xl sm:text-5xl font-black text-slate-900 tracking-tight" style="font-family: 'Noto Serif JP', serif;">
-              施工事例
-            </h2>
-            <div class="mt-4 flex items-center gap-4">
-              <span class="text-sm font-black tracking-widest text-[#0ea5e9] uppercase">WORKS & PROJECTS</span>
-              <div class="h-px w-24 bg-[#0ea5e9]"></div>
-            </div>
-          </div>
-          <p class="text-slate-500 font-medium max-w-sm text-left md:text-right">
-            公共施設から民間ビル、個人住宅まで、私たちの技術はあらゆる場所に息づいています。
-          </p>
-        </div>
-        <!-- Cases grid placeholder - add cases data to populate -->
-      </div>
-    </section>
-  `,
+  templateUrl: './cases.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
   standalone: true,
-  imports: [GsapScrollAnimateDirective]
+  imports: [CommonModule, GsapScrollAnimateDirective]
 })
-export class CasesComponent {}
+export class CasesComponent {
+  cases: CaseItem[] = [
+    { title: '商業施設 溶接工事', category: 'アーク溶接', image: 'https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?w=600&q=80' },
+    { title: '工場設備 改修工事', category: '施工事例', image: 'https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=600&q=80' },
+    { title: '建築鉄骨 溶接加工', category: '鉄骨工事', image: 'https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=600&q=80' },
+    { title: 'マンション 鉄鋼加工', category: '半自動溶接', image: 'https://images.unsplash.com/photo-1565193566173-7a0ee3dbe261?w=600&q=80' },
+  ];
+}
