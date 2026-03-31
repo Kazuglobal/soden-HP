@@ -62,7 +62,7 @@ export class AppComponent {
       ?? '横浜を中心に溶接工事を行うSEIKEN株式会社。アーク溶接・半自動溶接・Tig溶接、鍛冶工事・鉄骨工事など鉄鋼のプロフェッショナルとして確かな技術で対応。';
     const keywords = data.keywords
       ?? 'SEIKEN,溶接工事,アーク溶接,半自動溶接,Tig溶接,鍛冶工事,鉄骨工事,鉄鋼加工,横浜';
-    const image = data.image ?? '/images/companyinfo.png';
+    const image = data.image ?? '/logo.png';
     const imageAlt = data.imageAlt ?? 'SEIKEN株式会社のチーム';
     const canonicalUrl = this.getCanonicalUrl();
     const resolvedImage = this.resolveUrl(image);
