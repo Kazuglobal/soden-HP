@@ -17,9 +17,24 @@ interface NavLink {
   standalone: true,
   imports: [CommonModule, RouterModule],
   styles: [`
-    :host { display: block; }
+    :host { display: contents; }
     .logo-container:hover .logo-img { transform: scale(1.05); }
     .logo-img { transition: transform 0.3s ease; }
+    .header-cta {
+      position: relative;
+      overflow: hidden;
+    }
+    .header-cta::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+      transition: left 0.5s ease;
+    }
+    .header-cta:hover::before { left: 100%; }
   `]
 })
 export class HeaderComponent implements AfterViewInit {
@@ -56,13 +71,18 @@ export class HeaderComponent implements AfterViewInit {
 
   private initAnimations(): void {
     gsap.fromTo('.header-logo',
-      { opacity: 0, x: -15 },
-      { opacity: 1, x: 0, duration: 0.5, ease: 'power2.out' }
+      { opacity: 0, x: -20 },
+      { opacity: 1, x: 0, duration: 0.6, ease: 'power2.out' }
     );
 
     gsap.fromTo('.nav-item',
-      { opacity: 0, y: -10 },
-      { opacity: 1, y: 0, duration: 0.3, stagger: 0.06, ease: 'power2.out', delay: 0.15 }
+      { opacity: 0, y: -15 },
+      { opacity: 1, y: 0, duration: 0.4, stagger: 0.08, ease: 'power2.out', delay: 0.2 }
+    );
+
+    gsap.fromTo('.header-cta',
+      { opacity: 0, scale: 0.95 },
+      { opacity: 1, scale: 1, duration: 0.5, ease: 'back.out(1.5)', delay: 0.5 }
     );
   }
 }

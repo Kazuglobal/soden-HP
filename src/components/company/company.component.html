@@ -1,30 +1,66 @@
 <section id="company" class="relative overflow-hidden">
+  <!-- Turquoise Frame Border (Enhanced) -->
+  <div class="absolute inset-0 z-30 pointer-events-none">
+    <!-- Top Border -->
+    <div
+      class="absolute top-0 left-0 right-0 h-5 md:h-6 bg-gradient-to-r from-teal-200 via-cyan-300 to-teal-200 shadow-inner">
+    </div>
+    <!-- Bottom Border -->
+    <div
+      class="absolute bottom-0 left-0 right-0 h-5 md:h-6 bg-gradient-to-r from-teal-200 via-cyan-300 to-teal-200 shadow-inner">
+    </div>
+    <!-- Left Border -->
+    <div
+      class="absolute top-5 md:top-6 bottom-5 md:bottom-6 left-0 w-5 md:w-6 bg-gradient-to-b from-teal-200 via-cyan-300 to-teal-200 shadow-inner">
+    </div>
+    <!-- Right Border -->
+    <div
+      class="absolute top-5 md:top-6 bottom-5 md:bottom-6 right-0 w-5 md:w-6 bg-gradient-to-b from-teal-200 via-cyan-300 to-teal-200 shadow-inner">
+    </div>
+    <!-- Corner Blocks for cleaner joints -->
+    <div class="absolute top-0 left-0 w-5 md:w-6 h-5 md:h-6 bg-teal-200"></div>
+    <div class="absolute top-0 right-0 w-5 md:w-6 h-5 md:h-6 bg-teal-200"></div>
+    <div class="absolute bottom-0 left-0 w-5 md:w-6 h-5 md:h-6 bg-teal-200"></div>
+    <div class="absolute bottom-0 right-0 w-5 md:w-6 h-5 md:h-6 bg-teal-200"></div>
+  </div>
+
   <!-- Hero Photo Section -->
-  <div class="relative min-h-[50vh] md:min-h-[60vh] flex items-end">
+  <div class="relative min-h-[60vh] md:min-h-[70vh] flex items-end">
+    <!-- Full-width Team Photo -->
     <div class="absolute inset-0 z-0">
-      <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=1600&q=80" alt="SEIKENチーム" class="w-full h-full object-cover">
-      <div class="absolute inset-0 bg-gradient-to-t from-white via-white/60 to-white/20"></div>
+      <img src="/images/companyinfo.jpg" alt="株式会社創電工業 チーム集合写真" class="w-full h-full object-cover"
+        loading="lazy" decoding="async" width="1920" height="1080">
+      <!-- Refined Gradient Overlay -->
+      <div class="absolute inset-0 bg-gradient-to-t from-slate-800/80 via-slate-700/40 to-slate-500/10"></div>
     </div>
 
-    <div class="relative z-10 max-w-7xl mx-auto w-full px-6 sm:px-8 lg:px-8 pb-12 md:pb-16">
-      <div class="flex items-center gap-3 mb-4" appGsapAnimate [animation]="'fadeUp'">
-        <div class="w-8 h-[1px] bg-[#32373c]"></div>
-        <span class="text-[10px] font-bold tracking-[0.3em] uppercase text-[#32373c]">Company</span>
-      </div>
-      <h2 class="text-4xl md:text-5xl lg:text-6xl font-black text-[#32373c] tracking-tight mb-4"
-        style="font-family: 'Noto Serif JP', serif;" appGsapAnimate [animation]="'fadeUp'" [delay]="0.1">
-        会社概要
+    <!-- Hero Text Content -->
+    <div class="relative z-20 container mx-auto px-10 pb-16 md:pb-20">
+      <!-- Decorative Dotted Line -->
+      <div class="w-32 border-t-2 border-dotted border-white/60 mb-6"></div>
+
+      <!-- COMPANY Heading with Underline -->
+      <h2 class="text-5xl md:text-6xl lg:text-7xl font-black text-white tracking-widest mb-2"
+        style="font-family: 'Roboto', sans-serif; text-shadow: 0 4px 20px rgba(0,0,0,0.3);">
+        <span class="border-b-4 border-white pb-2">COMPANY</span>
       </h2>
-      <p class="text-gray-600 text-sm md:text-base max-w-md mb-8" appGsapAnimate [animation]="'fadeUp'" [delay]="0.2">
-        横浜を拠点に、確かな技術と信頼で鉄鋼加工を行っています。
+
+      <!-- Japanese Subtitle -->
+      <p class="text-xl md:text-2xl text-white/90 font-bold tracking-[0.3em] mt-4"
+        style="font-family: 'Noto Serif JP', serif;">
+        会社概要
       </p>
-      <a routerLink="/company" appGsapAnimate [animation]="'fadeUp'" [delay]="0.3"
-        class="inline-flex items-center gap-2 btn-shine bg-[#32373c] hover:bg-[#32373c]/90 text-white px-8 py-3.5 rounded-full text-sm font-bold tracking-wide transition-all duration-300 hover:shadow-[0_0_24px_rgba(50,55,60,0.4)]">
-        <span>詳しく見る</span>
-        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
-        </svg>
-      </a>
+
+      <div class="mt-10 flex flex-wrap gap-4">
+        <a routerLink="/company"
+          class="inline-flex items-center gap-2 px-10 py-4 bg-emerald-600/90 text-white rounded-full font-bold tracking-widest hover:bg-emerald-500 transition-all duration-300 shadow-xl backdrop-blur-sm group">
+          <span>SEE MORE</span>
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"
+            class="w-5 h-5 group-hover:translate-x-1 transition-transform">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+          </svg>
+        </a>
+      </div>
     </div>
   </div>
 </section>

@@ -1,103 +1,134 @@
-<section class="relative h-screen w-full overflow-hidden bg-white text-gray-900">
-  <!-- Dynamic Background -->
+<section class="relative min-h-screen w-full overflow-hidden bg-slate-950 text-white selection:bg-emerald-500/30">
+  <!-- Dynamic Background Layer -->
+  <!-- Dynamic Background Layer -->
   <div class="absolute inset-0 z-0">
+    <!-- Slideshow Images -->
     <div *ngFor="let image of heroImages; let i = index"
-      class="absolute inset-0 transition-opacity duration-[1500ms] ease-in-out"
+      class="absolute inset-0 transition-opacity duration-[2000ms] ease-in-out"
       [class.opacity-100]="currentIndex() === i" [class.opacity-0]="currentIndex() !== i">
-      <div class="absolute inset-0 scale-105"
+      <div class="absolute inset-0 scale-110 sm:scale-105 md:scale-105"
         [class.animate-subtle-zoom]="currentIndex() === i">
-        <img [src]="image" alt="SEIKEN 現場"
-          class="w-full h-full object-cover object-[70%_top] sm:object-center">
+        <img [src]="image" alt="創電工業 電気設備工事の現場写真"
+          class="w-full h-full object-cover object-[70%_top] sm:object-[center_top] md:object-center"
+          width="1920" height="1080" [attr.fetchpriority]="currentIndex() === i ? 'high' : 'low'"
+          [attr.loading]="currentIndex() === i ? 'eager' : 'lazy'" decoding="async">
       </div>
     </div>
-    <div class="absolute inset-0 bg-gradient-to-r from-white/95 via-white/70 to-white/40"></div>
-    <div class="absolute inset-0 bg-gradient-to-b from-white/40 via-transparent to-white/80"></div>
-  </div>
+    <!-- Lighter Overlay for Brighter Feel -->
+    <div class="absolute inset-0 bg-gradient-to-r from-slate-950/80 via-slate-950/40 to-transparent"></div>
+    <div class="absolute inset-0 bg-gradient-to-b from-slate-950/30 via-transparent to-slate-950/60"></div>
 
-  <!-- Main Content -->
-  <div class="relative z-10 flex flex-col justify-end h-full px-6 sm:px-8 md:px-16 lg:px-24 pb-32 md:pb-40">
-    <div class="max-w-5xl">
-
-      <!-- Accent label -->
-      <div class="mb-6 md:mb-8" appGsapAnimate [animation]="'fadeUp'" [duration]="0.8" [delay]="0.3">
-        <div class="inline-flex items-center gap-3">
-          <div class="w-8 h-[1px] bg-[#32373c]"></div>
-          <span class="text-[11px] font-bold tracking-[0.3em] uppercase text-[#32373c]">
-            Welding Professionals
-          </span>
-        </div>
-      </div>
-
-      <!-- Main heading -->
-      <h1 class="text-[clamp(2.5rem,7vw,6rem)] font-black leading-[1.05] tracking-tight"
-        style="font-family: 'Noto Serif JP', serif;">
-        <div class="overflow-hidden mb-1 md:mb-2">
-          <span class="block text-gray-900" appGsapAnimate [animation]="'fadeUp'" [duration]="1" [delay]="0.5">
-            確かな技術で
-          </span>
-        </div>
-        <div class="overflow-hidden">
-          <span class="block text-[#32373c]" appGsapAnimate [animation]="'fadeUp'" [duration]="1" [delay]="0.7">
-            鉄鋼の未来を創る
-          </span>
-        </div>
-      </h1>
-
-      <!-- Description -->
-      <p class="mt-6 md:mt-8 text-sm md:text-base text-gray-700 max-w-lg leading-relaxed" appGsapAnimate [animation]="'fadeUp'" [duration]="0.8" [delay]="1">
-        横浜を拠点に、アーク溶接・半自動溶接・Tig溶接など<br class="hidden sm:inline">
-        幅広い鉄鋼加工を行うプロフェッショナル集団です。
-      </p>
-
-      <!-- CTA buttons -->
-      <div class="mt-8 md:mt-10 flex flex-wrap gap-4" appGsapAnimate [animation]="'fadeUp'" [duration]="0.8" [delay]="1.2">
-        <a href="#what-we-do"
-          class="btn-shine inline-flex items-center gap-2 bg-[#32373c] hover:bg-[#3f4449] text-white px-8 py-3.5 rounded-full text-sm font-bold tracking-wide transition-all duration-300 hover:shadow-[0_0_24px_rgba(50,55,60,0.3)]">
-          <span>事業内容を見る</span>
-          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
-          </svg>
-        </a>
-        <a href="#contact"
-          class="inline-flex items-center gap-2 border-2 border-[#32373c] hover:border-[#3f4449] text-[#32373c] hover:text-gray-900 hover:bg-gray-50 px-8 py-3.5 rounded-full text-sm font-bold tracking-wide transition-all duration-300">
-          <span>お問い合わせ</span>
-        </a>
-      </div>
+    <!-- Technical Overlay (Subtle Circuit Lines) -->
+    <div class="absolute inset-0 opacity-20 pointer-events-none">
+      <svg class="w-full h-full" overflow="visible">
+        <pattern id="hero-grid" x="0" y="0" width="100" height="100" patternUnits="userSpaceOnUse">
+          <circle cx="2" cy="2" r="1" fill="#10b981" fill-opacity="0.3" />
+        </pattern>
+        <rect width="100%" height="100%" fill="url(#hero-grid)" />
+        <path d="M 0 200 L 100 200 L 150 250" stroke="#10b981" stroke-width="0.5" fill="none" opacity="0.3" />
+        <path d="M 1400 400 L 1260 400 L 1190 450" stroke="#10b981" stroke-width="0.5" fill="none" opacity="0.3" />
+      </svg>
     </div>
   </div>
 
-  <!-- Carousel Dots Navigation -->
-  <div class="absolute bottom-12 left-1/2 -translate-x-1/2 z-20 flex items-center gap-3"
-    appGsapAnimate [animation]="'fadeUp'" [delay]="1.8">
-    <button
-      *ngFor="let image of heroImages; let i = index"
-      (click)="goToSlide(i)"
-      [attr.aria-label]="'スライド ' + (i + 1) + ' に移動'"
-      class="group relative w-10 h-10 flex items-center justify-center cursor-pointer transition-all duration-300"
-      [class.scale-110]="currentIndex() === i">
-      <div
-        class="w-2 h-2 rounded-full transition-all duration-300"
-        [class.bg-[#32373c]]="currentIndex() === i"
-        [class.scale-125]="currentIndex() === i"
-        [class.bg-gray-400]="currentIndex() !== i"
-        [class.group-hover:bg-[#32373c]]="currentIndex() !== i"
-        [class.group-hover:scale-110]="currentIndex() !== i">
+  <!-- Top Ribbon Accent -->
+  <div class="absolute top-0 left-0 z-30 h-10 md:h-12 flex items-center px-6 md:px-16 lg:px-24">
+    <div
+      class="absolute inset-0 bg-gradient-to-r from-emerald-600 via-emerald-500 to-transparent opacity-90 -skew-x-[15deg] origin-left scale-x-125">
+    </div>
+    <div class="relative z-10 flex items-center space-x-4">
+      <h4 class="font-['Dancing_Script'] text-xl md:text-3xl lg:text-4xl text-white tracking-wider" appGsapAnimate
+        [animation]="'fadeRight'" [duration]="1.2">
+        Safety Professionals
+      </h4>
+    </div>
+  </div>
+
+  <!-- Main Content (Clean, No Overlap) -->
+  <div
+    class="relative z-10 flex flex-col h-full px-4 sm:px-6 md:px-16 lg:px-24 pt-32 sm:pt-24 md:pt-20 lg:pt-24 pb-16 md:pb-20 lg:pb-24">
+    <div class="flex-1 flex items-center">
+      <div class="max-w-4xl lg:max-w-5xl">
+
+        <!-- Decorative Branding Text -->
+        <div class="mb-4 md:mb-10" appGsapAnimate [animation]="'fadeRight'" [duration]="1.2" [delay]="0.2">
+          <h3 class="font-['Playball'] text-2xl sm:text-2xl md:text-5xl lg:text-6xl text-white/80 leading-tight">
+            Creative Engineers
+          </h3>
+          <div
+            class="mt-3 md:mt-4 inline-flex items-center bg-white/10 backdrop-blur-md border border-white/20 px-4 md:px-6 py-2 rounded-sm">
+            <div class="w-6 md:w-8 h-px bg-emerald-400 mr-3"></div>
+            <span
+              class="text-[9px] md:text-[11px] font-black tracking-[0.3em] md:tracking-[0.4em] uppercase text-emerald-200">
+              電気工事のプロフェッショナル集団
+            </span>
+          </div>
+        </div>
+
+        <!-- High-Impact Motto -->
+        <h1 class="text-3xl sm:text-3xl md:text-6xl lg:text-7xl xl:text-8xl font-black leading-[1.1] tracking-tight"
+          style="font-family: 'Noto Serif JP', serif;">
+          <div class="overflow-hidden mb-2 md:mb-4">
+            <span class="block" appGsapAnimate [animation]="'fadeUp'" [duration]="1.2" [delay]="0.5">
+              失敗をおそれず、
+            </span>
+          </div>
+          <div class="overflow-hidden">
+            <span class="block" appGsapAnimate [animation]="'fadeUp'" [duration]="1.2" [delay]="0.7">
+              挑戦し続ける。
+            </span>
+          </div>
+        </h1>
+
+        <!-- Core Narrative -->
+        <div class="mt-6 md:mt-12 max-w-xl lg:max-w-2xl" appGsapAnimate [animation]="'fadeUp'" [duration]="1"
+          [delay]="1">
+          <div class="flex items-start md:bg-slate-950/60 md:backdrop-blur-sm md:rounded-lg md:p-6 lg:p-8">
+            <div
+              class="w-1 md:w-1.5 lg:w-2 bg-emerald-500 h-12 md:h-20 mr-4 md:mr-8 shadow-[0_0_15px_rgba(16,185,129,0.5)] rounded-full flex-shrink-0">
+            </div>
+            <div>
+              <h2 class="text-2xl sm:text-3xl md:text-4xl font-black text-white leading-snug mb-3 md:mb-8 relative"
+                style="font-family: 'Noto Serif JP', serif;" appGsapAnimate [animation]="'fadeUp'" [delay]="0.4">
+                <span class="relative z-10 text-lg sm:text-2xl md:text-3xl">「創造をもって、技術を売る」</span>
+                <!-- Title Decoration -->
+                <div class="absolute -left-4 top-1/2 -translate-y-1/2 w-1 h-8 bg-emerald-500 rounded-full opacity-50">
+                </div>
+              </h2>
+              <p
+                class="text-xs sm:text-sm md:text-base leading-relaxed md:leading-loose lg:leading-loose text-slate-300">
+                1987年の創業以来、コンセント一つから大規模な公共工事まで、電気の力で街の安全と未来をデザインしてきました。
+                一人一人が主体性を持ち、失敗を恐れずに挑戦する技術者集団として邁進します。
+              </p>
+            </div>
+          </div>
+        </div>
       </div>
-    </button>
+    </div>
+
+    <!-- Philosophy Marker - Pushed to bottom -->
+    <div class="flex items-center space-x-3 md:space-x-6 opacity-40 hover:opacity-100 transition-opacity duration-500"
+      appGsapAnimate [animation]="'fadeUp'" [delay]="1.3">
+      <span class="text-xs md:text-sm font-black tracking-widest">EST. 1987</span>
+      <div class="w-6 md:w-12 h-px bg-white"></div>
+      <span class="text-xs md:text-sm font-bold uppercase tracking-[0.2em] md:tracking-[0.5em]">Soden Industry</span>
+    </div>
   </div>
 
   <!-- Scroll Indicator -->
-  <div class="absolute bottom-28 right-8 md:right-12 z-20 flex flex-col items-center"
-    appGsapAnimate [animation]="'fadeUp'" [delay]="1.8">
-    <div class="w-[1px] h-12 bg-gradient-to-b from-transparent via-[#32373c]/40 to-[#32373c] animate-scroll-pulse"></div>
-    <span class="mt-2 text-[9px] font-bold tracking-[0.4em] uppercase text-gray-400">Scroll</span>
+  <div class="absolute bottom-8 md:bottom-12 left-6 md:left-16 lg:left-24 z-20 flex flex-col items-center select-none"
+    appGsapAnimate [animation]="'fadeUp'" [delay]="1.5">
+    <div class="relative w-6 h-10 border-2 border-white/30 rounded-full flex justify-center pt-2 overflow-hidden">
+      <div class="w-1 h-2 bg-emerald-500 rounded-full animate-bounce"></div>
+    </div>
+    <span class="mt-3 text-[8px] md:text-[9px] font-black tracking-[0.3em] uppercase opacity-50">Scroll</span>
   </div>
 
-  <!-- Side text -->
-  <div class="absolute right-6 md:right-8 top-1/2 -translate-y-1/2 z-10 hidden lg:block transform rotate-180"
+  <!-- Right Edge Vertical Text (Subtle Branding) -->
+  <div class="absolute right-4 md:right-8 top-1/2 -translate-y-1/2 z-20 hidden md:block transform rotate-180"
     style="writing-mode: vertical-rl;">
-    <span class="text-[10px] font-medium tracking-[0.5em] text-gray-400 uppercase">
-      SEIKEN 2026
+    <span class="text-[10px] font-black tracking-[0.5em] text-slate-500 uppercase opacity-30">
+      © 2026 SODEN INDUSTRY
     </span>
   </div>
 </section>
