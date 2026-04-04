@@ -87,7 +87,7 @@ export class StaffComponent {
     {
       name: '佐野 英司',
       role: 'Eiji Sano / 施工管理士',
-      image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=800&q=80',
+      image: '/images/employee1.JPG',
       joinYear: '2004年',
       bloodType: 'O',
       hobby: 'マウンテンバイク',
@@ -98,7 +98,7 @@ export class StaffComponent {
     {
       name: '林 隆博',
       role: 'Takahiro Hayashi / 電気工事士',
-      image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&q=80',
+      image: '/images/employee2.JPG',
       joinYear: '2014年',
       bloodType: 'AB',
       hobby: '三社大祭、八戸えんぶり',
@@ -109,7 +109,7 @@ export class StaffComponent {
     {
       name: '榊田 了',
       role: 'Ryoichi Sakakida / 電気工事士',
-      image: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=800&q=80',
+      image: '/images/employee3.JPG',
       joinYear: '2013年',
       bloodType: 'A',
       hobby: 'ゲーム、スポーツ、カラオケ',

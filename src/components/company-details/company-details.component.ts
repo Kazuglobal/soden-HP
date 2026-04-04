@@ -11,15 +11,18 @@ import { GsapScrollAnimateDirective } from '../../directives/gsap-scroll-animate
     imports: [CommonModule, RouterLink, GsapScrollAnimateDirective]
 })
 export class CompanyDetailsComponent {
-    // Professional Asian businessman portrait
-    ceoImage = 'https://images.unsplash.com/photo-1560250097-0b93528c311a?w=800&q=80';
+    ceoImage = '/images/CEO.JPG';
 
     companyInfo = [
-        { label: '会社名', value: 'SEIKEN株式会社' },
-        { label: '代表者', value: '代表取締役 鈴木 健也' },
-        { label: '事業内容', value: '鍛冶工事・鉄骨工事\nアーク溶接・半自動溶接・Tig溶接\n鉄・ステンレス等の資材加工\n商業施設・マンション向け溶接工事' },
-        { label: '従業員資格', value: '溶接技能者資格\nアーク溶接特別教育修了\nガス溶接技能講習修了' },
-        { label: '対応エリア', value: '横浜を中心に関東エリア' },
-        { label: '所在地', value: '〒222-0023\n横浜市港北区仲手原2丁目42-23-5' }
+        { label: '会社名', value: '株式会社創電工業' },
+        { label: '創業', value: '昭和62年（1987年）' },
+        { label: '資本金', value: '5,000万円' },
+        { label: '代表者', value: '代表取締役会長 上野 誠\n代表取締役社長 上野 衆' },
+        { label: '事業内容', value: '電気設備設計・施工・管理\n各種機械自動制御装置設計・施工\nビル保守・防災管理業務・空調設備\n物流システム全般・機械器具設置工事業' },
+        { label: '従業員資格', value: '一級、二級電気施工管理士\n第一種、第二種電気工事士\n消防設備士' },
+        { label: '特定建設業許可', value: '電気工事業\n青森県知事許可（62）第11684号' },
+        { label: '一般建設業許可', value: '電気通信工事業 青森県知事許可（62）第11684号\n消防施設工事業 青森県知事許可（62）第11684号' },
+        { label: '所在地', value: '〒031-0833\n青森県八戸市大字大久保字小久保平19-7' },
+        { label: '連絡先', value: 'TEL: 0178-25-2172\nFAX: 0178-25-2171\n（受付時間 8:00-18:00 [ 日・祝日除く ]）' }
     ];
 }
