@@ -21,8 +21,8 @@ interface NewsItem {
 export class NewsComponent {
   newsItems: NewsItem[] = [
     {
-      date: '2026-01-20',
-      dateFormatted: '2026.01.20',
+      date: '2026-04-06',
+      dateFormatted: '2026.04.6',
       category: 'お知らせ',
       title: 'ホームページをリニューアルしました。',
       href: '#'
