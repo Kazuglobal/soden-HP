@@ -1,6 +1,18 @@
 User-agent: *
 Allow: /
+Disallow: /api/
 
+# Crawl-delay for general bots
+Crawl-delay: 1
+
+# Allow Googlebot full access
+User-agent: Googlebot
+Allow: /
+Disallow: /api/
+
+# Allow Bingbot full access
+User-agent: Bingbot
+Allow: /
 Disallow: /api/
 
 Sitemap: https://www.soden-kogyo.co.jp/sitemap.xml
