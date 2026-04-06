@@ -171,9 +171,22 @@ export class AppComponent {
           telephone: '+81-178-25-2172',
           faxNumber: '+81-178-25-2171',
           foundingDate: '1987',
-          areaServed: {
-            '@type': 'AdministrativeArea',
-            name: '青森県'
+          areaServed: [
+            { '@type': 'AdministrativeArea', name: '青森県' },
+            { '@type': 'City', name: '八戸市' },
+            { '@type': 'City', name: '三沢市' },
+            { '@type': 'City', name: 'おいらせ町' },
+            { '@type': 'City', name: '南部町' },
+            { '@type': 'City', name: '五戸町' }
+          ],
+          serviceArea: {
+            '@type': 'GeoCircle',
+            geoMidpoint: {
+              '@type': 'GeoCoordinates',
+              latitude: 40.5122,
+              longitude: 141.4883
+            },
+            geoRadius: '50000'
           },
           address: {
             '@type': 'PostalAddress',
@@ -205,10 +218,70 @@ export class AppComponent {
             '@type': 'OfferCatalog',
             name: '事業内容',
             itemListElement: [
-              { '@type': 'Offer', itemOffered: { '@type': 'Service', name: '電気設備設計施工' } },
-              { '@type': 'Offer', itemOffered: { '@type': 'Service', name: '太陽光発電設備設計施工' } },
-              { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'ビル保守管理' } },
-              { '@type': 'Offer', itemOffered: { '@type': 'Service', name: '物流システム・機械設備工事' } }
+              {
+                '@type': 'Offer',
+                itemOffered: {
+                  '@type': 'Service',
+                  name: '電気設備工事',
+                  description: '受変電設備・動力設備・照明設備・弱電設備など電気設備の設計から施工まで一貫対応'
+                }
+              },
+              {
+                '@type': 'Offer',
+                itemOffered: {
+                  '@type': 'Service',
+                  name: '電気通信工事',
+                  description: '通信ケーブル・LAN配線・電話設備・放送設備などの設計施工'
+                }
+              },
+              {
+                '@type': 'Offer',
+                itemOffered: {
+                  '@type': 'Service',
+                  name: '消防設備工事',
+                  description: '自動火災報知設備・スプリンクラー・避難設備などの設計施工・保守点検'
+                }
+              },
+              {
+                '@type': 'Offer',
+                itemOffered: {
+                  '@type': 'Service',
+                  name: '空調設備工事',
+                  description: '業務用エアコン・換気設備・空調ダクト工事の設計施工'
+                }
+              },
+              {
+                '@type': 'Offer',
+                itemOffered: {
+                  '@type': 'Service',
+                  name: '太陽光発電設備設計施工',
+                  description: '産業用・住宅用太陽光発電システムの設計・施工・保守管理'
+                }
+              },
+              {
+                '@type': 'Offer',
+                itemOffered: {
+                  '@type': 'Service',
+                  name: '物流システム・機械設備工事',
+                  description: 'コンベヤ・仕分け機・自動倉庫など物流設備の設計施工・保守管理'
+                }
+              },
+              {
+                '@type': 'Offer',
+                itemOffered: {
+                  '@type': 'Service',
+                  name: '設計施工',
+                  description: '電気・機械設備の総合設計施工。プロジェクト管理から竣工まで一括対応'
+                }
+              },
+              {
+                '@type': 'Offer',
+                itemOffered: {
+                  '@type': 'Service',
+                  name: 'ビル保守管理',
+                  description: '電気設備・空調設備・消防設備の定期点検・保守・24時間対応'
+                }
+              }
             ]
           },
           openingHoursSpecification: [
@@ -228,7 +301,10 @@ export class AppComponent {
               availableLanguage: ['Japanese']
             }
           ],
-          sameAs: []
+          sameAs: [
+            'https://maps.google.com/?q=株式会社創電工業+青森県八戸市大字大久保字小久保平19-7',
+            'https://www.google.com/maps/place/株式会社創電工業'
+          ]
         },
         {
           '@type': 'WebSite',
