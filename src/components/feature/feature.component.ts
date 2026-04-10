@@ -59,7 +59,7 @@ export class FeatureComponent {
   community = {
     title: '地域貢献に力を入れています',
     subtitle: '未来を担う子供たちの、健やかな成長のために.',
-    description: '地元の保育園サッカー大会の協賛やゴールの運搬なども\n行っています。また中学生の野球教室の指導や\nグラウンド整備、審判などにも協力。\nこれからの未来を担う子供たちの為に活動を行っています。',
+    description: '地元の保育園サッカー大会の協賛や\nゴールの運搬なども行っています。\nまた中学生の野球教室の指導や\nグラウンド整備、審判などにも協力。\nこれからの未来を担う子供たちの\n為に活動を行っています。',
     backgroundImage: '/images/community_bg.jpg',
     activities: [
       { label: 'サッカー大会支援', image: '/images/community_soccer_new.jpg' },
