@@ -41,7 +41,7 @@ export class FeatureComponent {
   publicWorks = {
     title: '確かな技術で、地域の学び舎を支える。',
     subtitle: '公共施設・小中学校改修',
-    description: '地域の未来を担う子供たちの学び舎を支える、確かな電気工事。照明LED化から変電設備の更新まで、市内の多くの小中学校や公共施設の改修に携わっています。安心・安全な環境づくりを通じて、地域社会の発展に貢献します。',
+    description: '地域の未来を担う子供たちの学び舎を支える、\n確かな電気工事。照明LED化から変電設備の更新まで、\n市内の多くの小中学校や公共施設の改修に携わっています。\n安心・安全な環境づくりを通じて、\n地域社会の発展に貢献します。',
     image: '/images/sportroom.jpg',
     sdgs: [4, 7, 11, 12, 13]
   };
@@ -59,7 +59,7 @@ export class FeatureComponent {
   community = {
     title: '地域貢献に力を入れています',
     subtitle: '未来を担う子供たちの、健やかな成長のために.',
-    description: '地元の保育園サッカー大会の協賛やゴールの運搬なども行っています。また中学生の野球教室の指導やグラウンド整備、審判などにも協力。これからの未来を担う子供たちの為に活動を行っています。',
+    description: '地元の保育園サッカー大会の協賛や\nゴールの運搬なども行っています。\nまた中学生の野球教室の指導や\nグラウンド整備、審判などにも協力。\nこれからの未来を担う子供たちの\n為に活動を行っています。',
     backgroundImage: '/images/community_bg.jpg',
     activities: [
       { label: 'サッカー大会支援', image: '/images/community_soccer_new.jpg' },
