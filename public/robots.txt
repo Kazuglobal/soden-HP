@@ -15,4 +15,4 @@ User-agent: Bingbot
 Allow: /
 Disallow: /api/
 
-Sitemap: https://www.soden-kogyo.co.jp/sitemap.xml
+Sitemap: https://soudenkougyou.com/sitemap.xml

@@ -2,32 +2,32 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
-    <loc>https://www.soden-kogyo.co.jp/</loc>
+    <loc>https://soudenkougyou.com/</loc>
     <lastmod>2026-04-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <image:image>
-      <image:loc>https://www.soden-kogyo.co.jp/images/companyinfo.jpg</image:loc>
+      <image:loc>https://soudenkougyou.com/images/companyinfo.jpg</image:loc>
       <image:title>株式会社創電工業 チーム集合写真</image:title>
     </image:image>
   </url>
   <url>
-    <loc>https://www.soden-kogyo.co.jp/company</loc>
+    <loc>https://soudenkougyou.com/company</loc>
     <lastmod>2026-04-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
-      <image:loc>https://www.soden-kogyo.co.jp/images/CEO.JPG</image:loc>
+      <image:loc>https://soudenkougyou.com/images/CEO.JPG</image:loc>
       <image:title>代表取締役社長 上野 衆</image:title>
     </image:image>
   </url>
   <url>
-    <loc>https://www.soden-kogyo.co.jp/recruit</loc>
+    <loc>https://soudenkougyou.com/recruit</loc>
     <lastmod>2026-04-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
-      <image:loc>https://www.soden-kogyo.co.jp/images/recruit_hero_bright.jpg</image:loc>
+      <image:loc>https://soudenkougyou.com/images/recruit_hero_bright.jpg</image:loc>
       <image:title>株式会社創電工業 採用情報</image:title>
     </image:image>
   </url>
