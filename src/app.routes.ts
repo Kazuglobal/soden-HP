@@ -2,6 +2,7 @@ import { Routes } from '@angular/router';
 import { HomeComponent } from './components/home/home.component';
 import { CompanyDetailsComponent } from './components/company-details/company-details.component';
 import { RecruitDetailsComponent } from './components/recruit-details/recruit-details.component';
+import { ServicesDetailsComponent } from './components/services-details/services-details.component';
 
 export const routes: Routes = [
   {
@@ -13,6 +14,17 @@ export const routes: Routes = [
       keywords: '創電工業,電気工事,電気設備工事,電気通信工事,消防設備,空調設備,太陽光発電,物流システム,設計施工,保守管理,八戸市,青森県,電気工事会社,八戸電気工事,青森電気工事,ビル管理,施工管理',
       image: '/images/companyinfo.jpg',
       imageAlt: '株式会社創電工業 チーム集合写真'
+    }
+  },
+  {
+    path: 'services',
+    component: ServicesDetailsComponent,
+    data: {
+      title: '事業内容 | 株式会社創電工業（青森県八戸市）',
+      description: '株式会社創電工業の事業内容。電気設備工事・電気通信工事・消防設備・空調設備・太陽光発電・物流システムの設計施工から保守管理まで、青森県八戸市を拠点に一貫対応します。',
+      keywords: '事業内容,サービス,電気設備工事,電気通信工事,消防設備,空調設備,太陽光発電,物流システム,保守管理,八戸市,青森県,創電工業',
+      image: '/images/elct1.jpg',
+      imageAlt: '株式会社創電工業の事業内容'
     }
   },
   {

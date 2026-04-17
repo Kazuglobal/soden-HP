@@ -5,10 +5,10 @@
   "type": "module",
   "scripts": {
     "dev": "ng serve",
-    "build": "ng build",
+    "build": "ng build && node scripts/generate-static-routes.mjs",
     "preview": "ng serve --configuration=production",
     "optimize-images": "node scripts/optimize-images.mjs",
-    "test:seo": "node --test tests/deployment-config.test.mjs tests/seo-domain-config.test.mjs"
+    "test:seo": "node --test tests/deployment-config.test.mjs tests/seo-domain-config.test.mjs tests/seo-route-config.test.mjs"
   },
   "dependencies": {
     "@angular/build": "21.0.5",

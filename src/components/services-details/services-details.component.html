@@ -1,0 +1,52 @@
+<main class="bg-white">
+  <section class="relative overflow-hidden bg-slate-950 text-white">
+    <div class="absolute inset-0 bg-[radial-gradient(circle_at_top_right,_rgba(16,185,129,0.18),_transparent_45%),radial-gradient(circle_at_left,_rgba(14,165,233,0.18),_transparent_40%)]"></div>
+    <div class="relative container mx-auto px-4 sm:px-6 lg:px-8 py-24 lg:py-32">
+      <p class="mb-4 text-sm font-bold tracking-[0.35em] text-emerald-300 uppercase">Services</p>
+      <h1 class="max-w-4xl text-4xl md:text-6xl font-black leading-tight" style="font-family: 'Noto Serif JP', serif;">
+        創電工業の事業内容
+      </h1>
+      <p class="mt-8 max-w-3xl text-base md:text-xl leading-8 text-slate-200">
+        電気設備工事、電気通信工事、消防設備、空調設備、太陽光発電、物流システムまで。
+        設計施工から保守管理まで一貫して対応し、青森県八戸市を拠点に現場の安全と稼働を支えています。
+      </p>
+      <div class="mt-10 flex flex-wrap gap-4">
+        <a
+          routerLink="/"
+          fragment="contact"
+          class="inline-flex items-center rounded-full bg-emerald-400 px-6 py-3 text-sm font-bold text-slate-950 transition hover:bg-emerald-300"
+        >
+          お問い合わせ
+        </a>
+        <a
+          routerLink="/company"
+          class="inline-flex items-center rounded-full border border-white/20 px-6 py-3 text-sm font-bold text-white transition hover:border-white/40 hover:bg-white/5"
+        >
+          会社概要を見る
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="border-y border-slate-200 bg-slate-50">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-10">
+      <div class="grid gap-4 md:grid-cols-3">
+        <div class="rounded-2xl bg-white p-6 shadow-sm ring-1 ring-slate-200">
+          <p class="text-sm font-bold tracking-[0.2em] text-emerald-600 uppercase">Electrical</p>
+          <p class="mt-3 text-lg font-bold text-slate-900">受変電設備から弱電設備まで設計施工</p>
+        </div>
+        <div class="rounded-2xl bg-white p-6 shadow-sm ring-1 ring-slate-200">
+          <p class="text-sm font-bold tracking-[0.2em] text-emerald-600 uppercase">Maintenance</p>
+          <p class="mt-3 text-lg font-bold text-slate-900">保守点検とトラブル予防で稼働を維持</p>
+        </div>
+        <div class="rounded-2xl bg-white p-6 shadow-sm ring-1 ring-slate-200">
+          <p class="text-sm font-bold tracking-[0.2em] text-emerald-600 uppercase">Automation</p>
+          <p class="mt-3 text-lg font-bold text-slate-900">物流・機械設備の電気制御まで一括対応</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <app-what-we-do />
+  <app-contact />
+</main>
