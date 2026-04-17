@@ -353,6 +353,7 @@ export class AppComponent {
     const pathname = new URL(url).pathname;
     if (pathname !== '/' && pathname !== '') {
       const pathNames: Record<string, string> = {
+        '/services': '事業内容',
         '/company': '会社概要',
         '/recruit': '採用情報'
       };
