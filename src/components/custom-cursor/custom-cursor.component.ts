@@ -124,7 +124,8 @@ export class CustomCursorComponent implements OnInit, OnDestroy {
   private outlineX = 0;
   private outlineY = 0;
   private animationId: number | null = null;
-  private mutationObserver: MutationObserver | null = null;
+  private delegatedCleanup: (() => void) | null = null;
+  private readonly interactiveSelector = 'a, button, [data-cursor], input[type="submit"], .cursor-hover';
 
   constructor(@Inject(PLATFORM_ID) private platformId: object) {
     this.isBrowser = isPlatformBrowser(this.platformId);
@@ -211,29 +212,35 @@ export class CustomCursorComponent implements OnInit, OnDestroy {
   }
 
   private initHoverListeners() {
-    // インタラクティブ要素にホバーリスナーを追加
-    const setupHoverListeners = () => {
-      const interactiveElements = document.querySelectorAll(
-        'a, button, [data-cursor], input[type="submit"], .cursor-hover'
-      );
+    // イベント委譲で document に 1 組だけリスナーを登録する。
+    // 以前は MutationObserver が DOM 変更のたびに全要素へ addEventListener し、
+    // 重複登録とリスナーリークを起こしていた。委譲なら動的に追加された要素も
+    // 追加コストなしでカバーできる。
+    const selector = this.interactiveSelector;
 
-      interactiveElements.forEach(el => {
-        el.addEventListener('mouseenter', () => this.handleHoverEnter(el as HTMLElement));
-        el.addEventListener('mouseleave', () => this.handleHoverLeave());
-      });
+    const over = (e: Event) => {
+      const target = (e.target as HTMLElement)?.closest?.(selector);
+      if (target) {
+        this.handleHoverEnter(target as HTMLElement);
+      }
     };
 
-    setupHoverListeners();
+    const out = (e: Event) => {
+      const target = (e.target as HTMLElement)?.closest?.(selector);
+      if (!target) return;
+      // 同じインタラクティブ要素の内部へ移動しただけなら leave 扱いにしない
+      const related = (e as MouseEvent).relatedTarget as HTMLElement | null;
+      if (related && related.closest?.(selector) === target) return;
+      this.handleHoverLeave();
+    };
 
-    // DOM変更を監視して新しい要素にもリスナーを追加
-    this.mutationObserver = new MutationObserver(() => {
-      setupHoverListeners();
-    });
+    document.addEventListener('mouseover', over);
+    document.addEventListener('mouseout', out);
 
-    this.mutationObserver.observe(document.body, {
-      childList: true,
-      subtree: true
-    });
+    this.delegatedCleanup = () => {
+      document.removeEventListener('mouseover', over);
+      document.removeEventListener('mouseout', out);
+    };
   }
 
   private handleHoverEnter(element: HTMLElement) {
@@ -279,8 +286,9 @@ export class CustomCursorComponent implements OnInit, OnDestroy {
     if (this.animationId) {
       cancelAnimationFrame(this.animationId);
     }
-    if (this.mutationObserver) {
-      this.mutationObserver.disconnect();
+    if (this.delegatedCleanup) {
+      this.delegatedCleanup();
+      this.delegatedCleanup = null;
     }
     if (this.isBrowser) {
       document.body.style.cursor = '';

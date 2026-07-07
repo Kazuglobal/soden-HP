@@ -35,6 +35,7 @@ export class MaskRevealDirective implements AfterViewInit, OnDestroy {
   @Input() revealScale = true; // 画像のスケールアニメーション
 
   private overlay: HTMLElement | null = null;
+  private wrapper: HTMLElement | null = null;
   private scrollTrigger: ScrollTrigger | null = null;
 
   constructor(
@@ -54,6 +55,7 @@ export class MaskRevealDirective implements AfterViewInit, OnDestroy {
 
     // 要素をラップ
     const wrapper = this.renderer.createElement('div');
+    this.wrapper = wrapper;
     this.renderer.setStyle(wrapper, 'position', 'relative');
     this.renderer.setStyle(wrapper, 'overflow', 'hidden');
     this.renderer.setStyle(wrapper, 'display', 'inline-block');
@@ -128,6 +130,17 @@ export class MaskRevealDirective implements AfterViewInit, OnDestroy {
 
   ngOnDestroy() {
     this.scrollTrigger?.kill();
+
+    // Angular 管理外で挿入した wrapper / overlay を取り除き、
+    // 元の要素を元の位置に戻す（DOM 残留を防ぐ）
+    const element = this.el.nativeElement;
+    const wrapper = this.wrapper;
+    if (wrapper && wrapper.parentElement) {
+      this.renderer.insertBefore(wrapper.parentElement, element, wrapper);
+      this.renderer.removeChild(wrapper.parentElement, wrapper);
+    }
+    this.overlay = null;
+    this.wrapper = null;
   }
 }
 

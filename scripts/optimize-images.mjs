@@ -1,5 +1,5 @@
 import sharp from 'sharp';
-import { readdir, stat, mkdir } from 'fs/promises';
+import { readdir, stat, mkdir, writeFile } from 'fs/promises';
 import { join, extname, basename } from 'path';
 
 const INPUT_DIR = 'public/images';
@@ -58,8 +58,11 @@ async function optimizeImage(filePath, fileName) {
     const buffer = await pipeline.toBuffer();
     const newSizeMB = (buffer.length / 1024 / 1024).toFixed(2);
 
-    // Write optimized file
-    await sharp(buffer).toFile(outputPath);
+    // Write the already-encoded bytes directly. Passing the buffer back
+    // through sharp().toFile() would decode and re-encode the JPEG a second
+    // time (extra quality loss). writeFile also lets us safely overwrite the
+    // source path since the input has already been fully read into `buffer`.
+    await writeFile(outputPath, buffer);
 
     // Also generate WebP version
     const webpName = basename(outputPath, extname(outputPath)) + '.webp';

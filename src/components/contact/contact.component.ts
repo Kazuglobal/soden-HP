@@ -1,9 +1,8 @@
-import { Component, ChangeDetectionStrategy, ChangeDetectorRef } from '@angular/core';
+import { Component, ChangeDetectionStrategy, ChangeDetectorRef, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { GsapScrollAnimateDirective } from '../../directives/gsap-scroll-animate.directive';
-
-const GAS_URL = 'https://script.google.com/macros/s/AKfycbw0w3YPyax4YpYvUs8uiDPLEoUb6hru7AunTOWaK4RfgEIhdfUFuWaJ7uH0lq6mdBtaPQ/exec';
+import { FormSubmitService } from '../../services/form-submit.service';
 
 @Component({
   selector: 'app-contact',
@@ -13,23 +12,29 @@ const GAS_URL = 'https://script.google.com/macros/s/AKfycbw0w3YPyax4YpYvUs8uiDPL
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ContactComponent {
+  private readonly fb = inject(FormBuilder);
+  private readonly cdr = inject(ChangeDetectorRef);
+  private readonly formSubmit = inject(FormSubmitService);
+
   contactForm: FormGroup;
   submitted = false;
   submitStatus: 'idle' | 'sending' | 'success' | 'error' = 'idle';
   errorMessage = '';
   showForm = false;
 
-  constructor(private fb: FormBuilder, private cdr: ChangeDetectorRef) {
+  constructor() {
     this.contactForm = this.fb.group({
       name: ['', [Validators.required]],
       email: ['', [Validators.required, Validators.email]],
       subject: ['', [Validators.required]],
-      message: ['', [Validators.required]]
+      message: ['', [Validators.required]],
+      // Honeypot: 通常のユーザーには見えず、ボットだけが入力する隠しフィールド
+      company_website: ['']
     });
   }
 
   async onSubmit() {
-    if (this.contactForm.invalid) {
+    if (this.contactForm.invalid || this.submitStatus === 'sending') {
       return;
     }
 
@@ -39,16 +44,15 @@ export class ContactComponent {
     this.cdr.markForCheck();
 
     try {
-      await fetch(GAS_URL, {
-        method: 'POST',
-        mode: 'no-cors',
-        headers: {
-          'Content-Type': 'text/plain',
-        },
-        body: JSON.stringify(this.contactForm.value)
-      });
-      this.submitStatus = 'success';
-      this.contactForm.reset();
+      const result = await this.formSubmit.submit(this.contactForm.value);
+      if (result.success) {
+        this.submitStatus = 'success';
+        this.contactForm.reset();
+      } else {
+        this.submitStatus = 'error';
+        this.errorMessage = result.message
+          || '送信に失敗しました。お手数ですがお電話でもお問い合わせいただけます。';
+      }
     } catch (error) {
       this.submitStatus = 'error';
       this.errorMessage = 'ネットワークエラーが発生しました。しばらく経ってから再度お試しください。';

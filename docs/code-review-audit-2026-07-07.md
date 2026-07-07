@@ -3,7 +3,36 @@
 対象: `kazuglobal/soden-hp` main (389c187) 全ファイル精査。
 構成: Angular 21 (zoneless / standalone / OnPush) + GSAP + Tailwind Play CDN。SPA + Vercel 配信、問い合わせ/採用フォームは Google Apps Script (GAS) へ POST。SSR なし（`/services` のみビルド後スクリプトで静的 meta 差し替え）。
 
-## 発見事項（重要度順）
+## 対応状況（本ブランチ `claude/code-review-audit-a6k3vk` で修正済み）
+
+下表の #1〜#20 を全て修正済み。`ng build` / `test:seo`（8件）成功、ヘッドレスブラウザで全5ルート描画・Tailwind適用・フォーム表示を確認。
+
+| # | 対応内容 |
+|---|----------|
+| 1 | `gas/contact-form.gs` に `type==='entry'` 分岐（`sendEntryEmail`）を追加。全項目を整形送信 |
+| 2 | `FormSubmitService` を新設し3フォームを集約。`no-cors` 廃止→GAS応答の `success` を検証。connect-src も GAS 限定に |
+| 3 | GAS に入力検証・honeypot(`company_website`)・ScriptProperties によるレート制限を追加。フォームにも隠しhoneypot入力を設置 |
+| 4 | custom-cursor を MutationObserver 廃止→`document` へのイベント委譲1組に。ngOnDestroyで解除 |
+| 5 | `generate-static-routes.mjs` に company/recruit を追加、`vercel.json` に rewrite 追加 |
+| 6 | Tailwind Play CDN → build-time Tailwind v3（CDNと同セマンティクス）。CSPから `unsafe-eval`・CDN・esm.sh 削除、未使用 importmap も除去 |
+| 7 | Google Fonts に Caveat / Roboto / Noto Sans JP / Montserrat を追加。未提供の Futura は Montserrat に置換 |
+| 8 | header の `href="#contact"` を `[routerLink]="'/'" fragment="contact"` に |
+| 9 | `/privacy` ページ・ルート・sitemap 追加。footer のダミーリンクを実リンクに修正 |
+| 10 | 画像の immutable キャッシュを `max-age=86400, stale-while-revalidate` に緩和 |
+| 11 | 未使用の `smooth-scroll.service.ts` を削除 |
+| 12 | `fadeRight/fadeLeft` を `slideRight/slideLeft` に修正。`strictTemplates` を有効化 |
+| 13 | gsap-split-text に `destroyed` ガードを追加 |
+| 14 | optimize-images の二重エンコードを解消（`writeFile` で直接書き出し） |
+| 15 | 未使用 component（staff/members/blog/for-clients）を削除 |
+| 16 | `build_error.txt`/`detailed_build_error.txt`・`images/sake/`・`firsuview.JPG` を削除、`.gitignore` に追加 |
+| 17 | `@gsap/react`・`vite` を削除、ビルドツールを devDependencies へ移動 |
+| 18 | GAS の例外応答を固定文言化（内部情報を返さない） |
+| 19 | 各 onSubmit 冒頭に送信中ガードを追加 |
+| 20 | mask-reveal の ngOnDestroy で wrapper を unwrap |
+
+> 補足: `what-we-do` の work4 は差し替え用の自社画像が無いため Unsplash のまま残置（要画像手配）。Tailwind は CDN の v3 とクラス名互換を保つため v4 ではなく v3 を採用。
+
+## 発見事項（重要度順・当初レポート）
 
 | # | 重要度 | ファイル:行 | 種別 | 症状・何が起きるか | 原因 | 修正方針 |
 |---|--------|------------|------|-------------------|------|----------|
