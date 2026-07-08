@@ -3,6 +3,7 @@ import { HomeComponent } from './components/home/home.component';
 import { CompanyDetailsComponent } from './components/company-details/company-details.component';
 import { RecruitDetailsComponent } from './components/recruit-details/recruit-details.component';
 import { ServicesDetailsComponent } from './components/services-details/services-details.component';
+import { PrivacyComponent } from './components/privacy/privacy.component';
 
 export const routes: Routes = [
   {
@@ -47,6 +48,17 @@ export const routes: Routes = [
       keywords: '採用情報,求人,電気工事士,施工管理技士,電気工事会社求人,未経験歓迎,八戸市求人,青森県求人,創電工業採用,転職,新卒,第二種電気工事士,第一種電気工事士',
       image: '/images/recruit_hero_bright.jpg',
       imageAlt: '株式会社創電工業 採用情報'
+    }
+  },
+  {
+    path: 'privacy',
+    component: PrivacyComponent,
+    data: {
+      title: 'プライバシーポリシー | 株式会社創電工業（青森県八戸市）',
+      description: '株式会社創電工業のプライバシーポリシー。お問い合わせフォーム・採用エントリーフォームで取得する個人情報の取り扱い方針についてご説明します。',
+      keywords: 'プライバシーポリシー,個人情報保護方針,創電工業,八戸市,青森県',
+      image: '/images/companyinfo.jpg',
+      imageAlt: '株式会社創電工業'
     }
   },
   { path: '**', redirectTo: '' }

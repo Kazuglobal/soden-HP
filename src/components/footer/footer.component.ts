@@ -57,7 +57,6 @@ export class FooterComponent {
   navLinks2 = [
     { label: '施工実績', routerLink: '/', fragment: 'cases' },
     { label: 'お知らせ', routerLink: '/', fragment: 'news' },
-    { label: 'サイトマップ', routerLink: '/' },
-    { label: 'プライバシーポリシー', routerLink: '/' },
+    { label: 'プライバシーポリシー', routerLink: '/privacy' },
   ];
 }

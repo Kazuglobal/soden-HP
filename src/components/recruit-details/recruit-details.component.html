@@ -9,7 +9,7 @@
         <div
             class="absolute bottom-0 left-0 w-full md:w-2/3 h-48 md:h-64 bg-white rounded-tr-[100px] md:rounded-tr-[150px] z-10 flex flex-col justify-center pl-8 md:pl-20 pr-10">
             <h1 class="text-5xl md:text-7xl font-bold text-[#008ba8] tracking-widest mb-2"
-                style="font-family: 'Futura', sans-serif;">RECRUIT</h1>
+                style="font-family: 'Montserrat', sans-serif;">RECRUIT</h1>
             <p class="text-xl md:text-2xl font-bold text-gray-800 tracking-wider">採用情報</p>
         </div>
 
@@ -44,7 +44,7 @@
                     先 輩 社 員 イ ン タ ビ ュ ー
                 </span>
                 <span class="text-6xl md:text-8xl font-black text-[#e0e7ec] leading-none select-none relative z-0"
-                    style="font-family: 'Futura', sans-serif;">
+                    style="font-family: 'Montserrat', sans-serif;">
                     0{{ employee.id }}
                 </span>
             </div>
@@ -246,6 +246,11 @@
                     <!-- Form -->
                     <form *ngIf="entrySubmitStatus !== 'success'" [formGroup]="entryForm" (ngSubmit)="onEntrySubmit()"
                         class="space-y-8">
+
+                        <!-- Honeypot (spam対策: 通常のユーザーには非表示) -->
+                        <div aria-hidden="true" style="position:absolute; left:-9999px; width:1px; height:1px; overflow:hidden;">
+                            <label>Webサイト<input type="text" formControlName="company_website" tabindex="-1" autocomplete="off"></label>
+                        </div>
 
                         <!-- Section: 基本情報 -->
                         <div>

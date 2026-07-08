@@ -1,5 +1,5 @@
 import sharp from 'sharp';
-import { readdir, stat, mkdir } from 'fs/promises';
+import { readdir, stat, mkdir, writeFile } from 'fs/promises';
 import { join, extname, basename } from 'path';
 
 const INPUT_DIR = 'public/images';
@@ -22,11 +22,10 @@ const USED_IMAGES = new Set([
 // Small icons that should keep PNG format
 const KEEP_PNG = new Set(['soden_roadmap.png']);
 
-async function optimizeImage(filePath, fileName) {
+async function optimizeImage(filePath, fileName, stats) {
   const ext = extname(fileName).toLowerCase();
   if (!['.png', '.jpg', '.jpeg'].includes(ext)) return;
 
-  const stats = await stat(filePath);
   const sizeMB = (stats.size / 1024 / 1024).toFixed(2);
 
   try {
@@ -37,6 +36,11 @@ async function optimizeImage(filePath, fileName) {
     if (metadata.width > MAX_WIDTH) {
       pipeline = pipeline.resize(MAX_WIDTH, null, { withoutEnlargement: true });
     }
+
+    // Branch the WebP encode off the already-decoded/resized pipeline
+    // (clone() shares the queued decode+resize but encodes independently)
+    // instead of re-reading and re-decoding the source file from disk.
+    const webpPipeline = pipeline.clone().webp({ quality: WEBP_QUALITY });
 
     let outputPath = filePath;
     let format = ext;
@@ -58,19 +62,18 @@ async function optimizeImage(filePath, fileName) {
     const buffer = await pipeline.toBuffer();
     const newSizeMB = (buffer.length / 1024 / 1024).toFixed(2);
 
-    // Write optimized file
-    await sharp(buffer).toFile(outputPath);
+    // Write the already-encoded bytes directly. Passing the buffer back
+    // through sharp().toFile() would decode and re-encode the JPEG a second
+    // time (extra quality loss). writeFile also lets us safely overwrite the
+    // source path since the input has already been fully read into `buffer`.
+    await writeFile(outputPath, buffer);
 
-    // Also generate WebP version
+    // Also generate WebP version, reusing the cloned pipeline above
     const webpName = basename(outputPath, extname(outputPath)) + '.webp';
     const webpPath = join(INPUT_DIR, webpName);
-    let webpPipeline = sharp(filePath);
-    if (metadata.width > MAX_WIDTH) {
-      webpPipeline = webpPipeline.resize(MAX_WIDTH, null, { withoutEnlargement: true });
-    }
-    await webpPipeline.webp({ quality: WEBP_QUALITY }).toFile(webpPath);
-    const webpStats = await stat(webpPath);
-    const webpSizeMB = (webpStats.size / 1024 / 1024).toFixed(2);
+    const webpBuffer = await webpPipeline.toBuffer();
+    await writeFile(webpPath, webpBuffer);
+    const webpSizeMB = (webpBuffer.length / 1024 / 1024).toFixed(2);
 
     console.log(`${fileName}: ${sizeMB}MB -> ${newSizeMB}MB (${format}) / ${webpSizeMB}MB (webp)`);
   } catch (err) {
@@ -121,7 +124,7 @@ async function main() {
     const filePath = join(INPUT_DIR, file);
     const s = await stat(filePath);
     if (s.isDirectory()) continue;
-    await optimizeImage(filePath, file);
+    await optimizeImage(filePath, file, s);
   }
 
   // Process SDG icons

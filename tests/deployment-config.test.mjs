@@ -65,13 +65,13 @@ test('CSP allows the external resources referenced by index.html', () => {
   const html = readText('index.html');
   const csp = getCspValue();
 
+  // Tailwind is now compiled at build time (no runtime CDN), so the only
+  // external resources index.html loads are Google Fonts.
   const requiredPolicies = [
-    ['script-src', 'https://cdn.tailwindcss.com'],
     ['style-src', 'https://fonts.googleapis.com'],
     ['font-src', 'https://fonts.gstatic.com']
   ];
 
-  assert.match(html, /https:\/\/cdn\.tailwindcss\.com/);
   assert.match(html, /https:\/\/fonts\.googleapis\.com/);
   assert.match(html, /https:\/\/fonts\.gstatic\.com/);
 
@@ -82,6 +82,15 @@ test('CSP allows the external resources referenced by index.html', () => {
       `${directiveName} must allow ${expectedValue}, but was ${directiveValues.join(' ')}`
     );
   }
+});
+
+test('CSP no longer permits the runtime Tailwind CDN or unsafe-eval', () => {
+  const html = readText('index.html');
+  const csp = getCspValue();
+
+  assert.doesNotMatch(html, /cdn\.tailwindcss\.com/);
+  assert.doesNotMatch(csp, /unsafe-eval/);
+  assert.doesNotMatch(csp, /cdn\.tailwindcss\.com/);
 });
 
 test('route metadata images point to files that are shipped from public/', () => {

@@ -136,6 +136,11 @@
       <!-- Form -->
       <form *ngIf="submitStatus !== 'success'" [formGroup]="contactForm" (ngSubmit)="onSubmit()" class="space-y-6">
 
+        <!-- Honeypot (spam対策: 通常のユーザーには非表示) -->
+        <div aria-hidden="true" style="position:absolute; left:-9999px; width:1px; height:1px; overflow:hidden;">
+          <label>Webサイト<input type="text" formControlName="company_website" tabindex="-1" autocomplete="off"></label>
+        </div>
+
         <!-- Name -->
         <div>
           <label for="name" class="block text-sm font-bold text-gray-700 mb-2">お名前 <span

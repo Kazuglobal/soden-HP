@@ -36,6 +36,7 @@ export class GsapSplitTextDirective implements AfterViewInit, OnDestroy {
   private scrollTrigger: ScrollTrigger | null = null;
   private tween: gsap.core.Tween | null = null;
   private animationCompleted = false;
+  private destroyed = false;
 
   constructor(
     private el: ElementRef<HTMLElement>,
@@ -51,11 +52,14 @@ export class GsapSplitTextDirective implements AfterViewInit, OnDestroy {
     if (document.fonts.status === 'loaded') {
       this.initAnimation();
     } else {
+      // フォント読込前に破棄された場合、detached 要素へ ScrollTrigger を
+      // 生成してリークしないよう destroyed フラグでガードする
       document.fonts.ready.then(() => this.initAnimation());
     }
   }
 
   private initAnimation() {
+    if (this.destroyed) return;
     const text = this.el.nativeElement.textContent?.trim();
     if (!text) return;
 
@@ -147,6 +151,7 @@ export class GsapSplitTextDirective implements AfterViewInit, OnDestroy {
   }
 
   ngOnDestroy() {
+    this.destroyed = true;
     this.scrollTrigger?.kill();
     this.tween?.kill();
     this.splitElements = [];

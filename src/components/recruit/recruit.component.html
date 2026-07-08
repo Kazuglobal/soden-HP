@@ -164,6 +164,11 @@
                 <form *ngIf="entrySubmitStatus !== 'success'" [formGroup]="entryForm" (ngSubmit)="onEntrySubmit()"
                     class="space-y-8">
 
+                    <!-- Honeypot (spam対策: 通常のユーザーには非表示) -->
+                    <div aria-hidden="true" style="position:absolute; left:-9999px; width:1px; height:1px; overflow:hidden;">
+                        <label>Webサイト<input type="text" formControlName="company_website" tabindex="-1" autocomplete="off"></label>
+                    </div>
+
                     <!-- Section: 基本情報 -->
                     <div>
                         <h4 class="text-lg font-bold text-[#0c1c2d] mb-6 flex items-center">

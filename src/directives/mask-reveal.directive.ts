@@ -35,7 +35,9 @@ export class MaskRevealDirective implements AfterViewInit, OnDestroy {
   @Input() revealScale = true; // 画像のスケールアニメーション
 
   private overlay: HTMLElement | null = null;
+  private wrapper: HTMLElement | null = null;
   private scrollTrigger: ScrollTrigger | null = null;
+  private destroyed = false;
 
   constructor(
     private el: ElementRef<HTMLElement>,
@@ -50,10 +52,16 @@ export class MaskRevealDirective implements AfterViewInit, OnDestroy {
   }
 
   private init() {
+    // init() は requestAnimationFrame で遅延実行されるため、その間に
+    // ホストが破棄されると detached 要素へ DOM 操作・ScrollTrigger を
+    // 生成してリークする。gsap-split-text.directive.ts と同じガードで防ぐ
+    if (this.destroyed) return;
+
     const element = this.el.nativeElement;
 
     // 要素をラップ
     const wrapper = this.renderer.createElement('div');
+    this.wrapper = wrapper;
     this.renderer.setStyle(wrapper, 'position', 'relative');
     this.renderer.setStyle(wrapper, 'overflow', 'hidden');
     this.renderer.setStyle(wrapper, 'display', 'inline-block');
@@ -127,7 +135,22 @@ export class MaskRevealDirective implements AfterViewInit, OnDestroy {
   }
 
   ngOnDestroy() {
+    this.destroyed = true;
     this.scrollTrigger?.kill();
+
+    // Angular 管理外で挿入した wrapper / overlay を取り除き、
+    // 元の要素を元の位置に戻す（DOM 残留を防ぐ）。
+    // wrapper.parentElement が既に null な場合（祖先ごと先に破棄された等）は
+    // 差し戻す先が無いため no-op — その場合 element は detached wrapper の
+    // 中に留まるが、Angular はホスト要素の参照を再利用しないため実害はない。
+    const element = this.el.nativeElement;
+    const wrapper = this.wrapper;
+    if (wrapper && wrapper.parentElement) {
+      this.renderer.insertBefore(wrapper.parentElement, element, wrapper);
+      this.renderer.removeChild(wrapper.parentElement, wrapper);
+    }
+    this.overlay = null;
+    this.wrapper = null;
   }
 }
 
