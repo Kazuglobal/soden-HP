@@ -51,7 +51,7 @@ export class ContactComponent {
       } else {
         this.submitStatus = 'error';
         this.errorMessage = result.message
-          || '送信に失敗しました。お手数ですがお電話でもお問い合わせいただけます。';
+          || '送信に失敗しました。お手数ですがお電話でもお問い合わせください。';
       }
     } catch (error) {
       this.submitStatus = 'error';

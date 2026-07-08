@@ -4,6 +4,11 @@ import path from 'node:path';
 const distDir = path.resolve('dist');
 const sourcePath = path.join(distDir, 'index.html');
 
+// NOTE: keep every entry's `route` in sync with the `data`-bearing routes in
+// src/app.routes.ts (any route besides '' that has SEO `data`). This list
+// must contain one entry per such route or crawlers/link-preview bots that
+// don't execute JS will see the generic homepage title/OGP for that route.
+// tests/seo-route-config.test.mjs cross-checks the two files stay in sync.
 const routePages = [
   {
     route: 'services',
@@ -28,6 +33,14 @@ const routePages = [
     keywords: '採用情報,求人,電気工事士,施工管理技士,電気工事会社求人,未経験歓迎,八戸市求人,青森県求人,創電工業採用,転職,新卒,第二種電気工事士,第一種電気工事士',
     image: 'https://soudenkougyou.com/images/recruit_hero_bright.jpg',
     imageAlt: '株式会社創電工業 採用情報'
+  },
+  {
+    route: 'privacy',
+    title: 'プライバシーポリシー | 株式会社創電工業（青森県八戸市）',
+    description: '株式会社創電工業のプライバシーポリシー。お問い合わせフォーム・採用エントリーフォームで取得する個人情報の取り扱い方針についてご説明します。',
+    keywords: 'プライバシーポリシー,個人情報保護方針,創電工業,八戸市,青森県',
+    image: 'https://soudenkougyou.com/images/companyinfo.jpg',
+    imageAlt: '株式会社創電工業'
   }
 ];
 

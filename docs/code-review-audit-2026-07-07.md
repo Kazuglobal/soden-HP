@@ -32,6 +32,30 @@
 
 > 補足: `what-we-do` の work4 は差し替え用の自社画像が無いため Unsplash のまま残置（要画像手配）。Tailwind は CDN の v3 とクラス名互換を保つため v4 ではなく v3 を採用。
 
+## 追加レビュー（2026-07-08・`code-review`スキルで対応済み修正差分を8観点で再監査）
+
+前回の修正コミット自体を diff としてレビューし、line-by-line / removed-behavior / cross-file / reuse / simplification / efficiency / altitude / CLAUDE.md の8観点で並列精査。検出された問題を全て修正。
+
+| # | 重要度 | 対応内容 |
+|---|--------|----------|
+| 21 | High | `mask-reveal.directive.ts` に `gsap-split-text.directive.ts` と同じ `destroyed` ガードを追加。rAF 遅延 `init()` が破棄後に発火し detached 要素へ DOM 操作・ScrollTrigger を生成するリークを解消 |
+| 22 | High | `/privacy` が `scripts/generate-static-routes.mjs` と `vercel.json` rewrite から漏れていたため追加。加えて `tests/seo-route-config.test.mjs` に `app.routes.ts` の SEO ルートと両ファイルの整合性を自動検証するテストを新設し、将来のドリフトを検知できるように |
+| 23 | High | GAS `isRateLimited()` を送信者（メールアドレス）ごとのバケットキーに変更し、無関係な訪問者同士が誤ってブロックし合う問題を解消。時刻の記録もバリデーション成功後（実際に送信できた場合）のみに変更し、不正な入力による再送ブロックを解消 |
+| 24 | High | `FormSubmitService.submit()` に `AbortController` ベースの15秒タイムアウトを追加。GAS の応答が無い場合に「送信中」のまま固まる問題を解消。非JSON応答も個別に catch し分かりやすいメッセージを返すように |
+| 25 | Medium | GAS `validateEntry` に `age`（18歳以上の整数）検証を追加。`${age || '未記入'}` の falsy-zero バグ（`age: 0` を未入力表示）も修正 |
+| 26 | Medium | custom-cursor のイベント委譲に直前ホバー対象との重複排除を追加。子要素間を跨ぐ `mouseover` 再発火のたびに `handleHoverEnter` の tween が再スタートし点滅する問題を解消 |
+| 27 | Low | custom-cursor `ngOnDestroy` の `if (this.animationId)` を `!== null` 判定に変更（`requestAnimationFrame` が `0` を返すケースの falsy-zero バグ） |
+| 28 | Low | contact/recruit/recruit-details 間でエラーメッセージの文言が不統一だったのを統一（「お問い合わせいただけます」→「お問い合わせください」） |
+| 29 | Low | パンくずリスト `pathNames` に `/privacy` エントリを追加（構造化データの breadcrumb 名がタイトル全文にフォールバックしていた） |
+| 30 | Low | `optimize-images.mjs` の WebP 生成が JPEG/PNG 生成と別にファイルを再デコードしていたのを `pipeline.clone()` で分岐し1回のデコードを共有するよう変更。ファイルの二重 `stat()` も解消 |
+
+検証: `ng build` 成功 / `test:seo` 10/10 成功（新設2件含む）/ `tsc --noEmit` エラーなし / ヘッドレスブラウザで `/privacy` の描画・フォーム送信中状態・custom-cursorのホバー重複抑制（子要素4回のmouseoverに対しcursor-hoverクラス追加は1回のみ）・sharpの `clone()` 分岐処理を実機確認。
+
+見送った指摘（cleanup範疇、リスク対効果を鑑み今回は据え置き）:
+- recruit / recruit-details の `entryForm` FormGroup・送信ライフサイクルが丸ごと重複（コンポーネント分割が必要な大きめのリファクタ）
+- honeypot の隠しマークアップが3テンプレートに複製
+- GAS `validateContact`/`validateEntry` のルールテーブル化、`generate-static-routes.mjs` の `buildPageHtml` 簡略化（動作に問題はなく、可読性目的の変更でリグレッションリスクが上回ると判断）
+
 ## 発見事項（重要度順・当初レポート）
 
 | # | 重要度 | ファイル:行 | 種別 | 症状・何が起きるか | 原因 | 修正方針 |

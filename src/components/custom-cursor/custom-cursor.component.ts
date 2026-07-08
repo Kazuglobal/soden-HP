@@ -125,6 +125,7 @@ export class CustomCursorComponent implements OnInit, OnDestroy {
   private outlineY = 0;
   private animationId: number | null = null;
   private delegatedCleanup: (() => void) | null = null;
+  private currentHoverTarget: HTMLElement | null = null;
   private readonly interactiveSelector = 'a, button, [data-cursor], input[type="submit"], .cursor-hover';
 
   constructor(@Inject(PLATFORM_ID) private platformId: object) {
@@ -220,9 +221,13 @@ export class CustomCursorComponent implements OnInit, OnDestroy {
 
     const over = (e: Event) => {
       const target = (e.target as HTMLElement)?.closest?.(selector);
-      if (target) {
-        this.handleHoverEnter(target as HTMLElement);
-      }
+      if (!target) return;
+      // 同じ要素の子孫間を移動しただけで mouseover が再発火するケースを
+      // 弾く。委譲元がドキュメント全体のため、対象を跨がない再発火は
+      // handleHoverEnter の tween を毎回リスタートさせ点滅の原因になる
+      if (target === this.currentHoverTarget) return;
+      this.currentHoverTarget = target as HTMLElement;
+      this.handleHoverEnter(target as HTMLElement);
     };
 
     const out = (e: Event) => {
@@ -231,6 +236,9 @@ export class CustomCursorComponent implements OnInit, OnDestroy {
       // 同じインタラクティブ要素の内部へ移動しただけなら leave 扱いにしない
       const related = (e as MouseEvent).relatedTarget as HTMLElement | null;
       if (related && related.closest?.(selector) === target) return;
+      if (this.currentHoverTarget === target) {
+        this.currentHoverTarget = null;
+      }
       this.handleHoverLeave();
     };
 
@@ -240,6 +248,7 @@ export class CustomCursorComponent implements OnInit, OnDestroy {
     this.delegatedCleanup = () => {
       document.removeEventListener('mouseover', over);
       document.removeEventListener('mouseout', out);
+      this.currentHoverTarget = null;
     };
   }
 
@@ -283,7 +292,9 @@ export class CustomCursorComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy() {
-    if (this.animationId) {
+    // requestAnimationFrame は 0 を有効なハンドルとして返しうるため、
+    // falsy チェックではなく null/undefined 判定にする
+    if (this.animationId !== null) {
       cancelAnimationFrame(this.animationId);
     }
     if (this.delegatedCleanup) {

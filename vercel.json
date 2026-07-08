@@ -53,6 +53,7 @@
     { "source": "/services", "destination": "/services/index.html" },
     { "source": "/company", "destination": "/company/index.html" },
     { "source": "/recruit", "destination": "/recruit/index.html" },
+    { "source": "/privacy", "destination": "/privacy/index.html" },
     { "source": "/(.*)", "destination": "/index.html" }
   ]
 }

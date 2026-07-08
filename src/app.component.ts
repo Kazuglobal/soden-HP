@@ -355,7 +355,8 @@ export class AppComponent {
       const pathNames: Record<string, string> = {
         '/services': '事業内容',
         '/company': '会社概要',
-        '/recruit': '採用情報'
+        '/recruit': '採用情報',
+        '/privacy': 'プライバシーポリシー'
       };
       items.push({
         '@type': 'ListItem',

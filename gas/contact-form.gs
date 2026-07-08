@@ -50,8 +50,15 @@ function doPost(e) {
       return createResponse({ success: true, message: '受け付けました。' });
     }
 
-    // 簡易レート制限
-    if (isRateLimited()) {
+    // 送信者ごとのレート制限キー（メールアドレス基準）。
+    // グローバル単一キーだと無関係な訪問者同士が誤ってブロックし合うため、
+    // 送信者を識別できる値でバケットを分ける
+    const rateLimitKey = normalizeRateLimitKey(data.email);
+
+    // 簡易レート制限（バリデーション前にチェックするが、時刻の記録は
+    // 実際に送信できた場合のみ行う。バリデーション失敗で時刻を記録すると
+    // 直後の正しい再送まで誤ってブロックしてしまうため）
+    if (isRateLimited(rateLimitKey)) {
       return createResponse({
         success: false,
         message: '送信間隔が短すぎます。しばらく経ってから再度お試しください。'
@@ -72,6 +79,7 @@ function doPost(e) {
       sendEmail(data);
     }
 
+    markSubmitted(rateLimitKey);
     return createResponse({ success: true, message: 'メールを送信しました' });
 
   } catch (error) {
@@ -123,8 +131,18 @@ function validateEntry(data) {
   if (!isFilled(data.furigana)) errors.push('ふりがなが未入力です。');
   if (!isValidEmail(data.email)) errors.push('メールアドレスが不正です。');
   if (!isFilled(data.phone)) errors.push('電話番号が未入力です。');
+  if (!isValidAge(data.age)) errors.push('年齢が不正です。');
   if (!isFilled(data.motivation)) errors.push('志望動機が未入力です。');
   return errors;
+}
+
+/**
+ * 年齢が18以上の整数（文字列可）かどうか
+ */
+function isValidAge(age) {
+  if (age === undefined || age === null || age === '') return false;
+  const n = Number(age);
+  return Number.isFinite(n) && n >= 18 && Number.isInteger(n);
 }
 
 /**
@@ -181,7 +199,7 @@ function sendEntryEmail(data) {
     `■ お名前: ${name}（${furigana}）`,
     `■ メールアドレス: ${email}`,
     `■ 電話番号: ${phone}`,
-    `■ 年齢: ${age || '未記入'}`,
+    `■ 年齢: ${age === undefined || age === null || age === '' ? '未記入' : age}`,
     `■ 学歴: ${education || '未記入'}`,
     `■ 職歴: ${workHistory || '未記入'}`,
     `■ 保有資格: ${qualifications || '未記入'}`,
@@ -230,25 +248,46 @@ ${name} 様
 }
 
 /**
+ * レート制限のバケットキーを作る。
+ * GAS は送信元IPを取得できないため、送信者が入力したメールアドレスを
+ * 識別子として使う（大文字小文字・前後空白を正規化）。メール未入力/不正な
+ * 場合は共有の 'anonymous' バケットにまとめる（バリデーションで別途弾かれる）。
+ */
+function normalizeRateLimitKey(email) {
+  if (typeof email === 'string' && email.trim()) {
+    return 'rl_' + email.trim().toLowerCase();
+  }
+  return 'rl_anonymous';
+}
+
+/**
  * 簡易レート制限。
- * GAS は送信元IPを取得できないため、スクリプト全体で最短送信間隔を設ける。
- * ScriptProperties に最終送信時刻を記録し、RATE_LIMIT_MS 未満なら拒否する。
+ * ScriptProperties にキーごとの最終送信時刻を記録し、RATE_LIMIT_MS 未満なら
+ * 拒否する。時刻の記録自体は行わない（呼び出し側が実際に送信できた場合のみ
+ * markSubmitted() で記録する）。
  * @returns {boolean} 制限に掛かっていれば true
  */
-function isRateLimited() {
+function isRateLimited(key) {
   try {
     const props = PropertiesService.getScriptProperties();
     const now = Date.now();
-    const last = Number(props.getProperty('lastSubmitAt') || 0);
-    if (last && now - last < RATE_LIMIT_MS) {
-      return true;
-    }
-    props.setProperty('lastSubmitAt', String(now));
-    return false;
+    const last = Number(props.getProperty(key) || 0);
+    return !!(last && now - last < RATE_LIMIT_MS);
   } catch (err) {
     // レート制限の失敗で送信自体を止めない
     console.error('rate limit error:', err);
     return false;
+  }
+}
+
+/**
+ * 送信成功後にレート制限の時刻を記録する
+ */
+function markSubmitted(key) {
+  try {
+    PropertiesService.getScriptProperties().setProperty(key, String(Date.now()));
+  } catch (err) {
+    console.error('rate limit mark error:', err);
   }
 }
 
