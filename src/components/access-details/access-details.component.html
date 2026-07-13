@@ -1,0 +1,73 @@
+<main class="bg-white">
+  <section class="relative overflow-hidden bg-slate-950 text-white">
+    <div class="absolute inset-0 bg-[radial-gradient(circle_at_top_right,_rgba(16,185,129,0.18),_transparent_45%),radial-gradient(circle_at_left,_rgba(14,165,233,0.18),_transparent_40%)]"></div>
+    <div class="relative container mx-auto px-4 sm:px-6 lg:px-8 py-24 lg:py-32">
+      <p class="mb-4 text-sm font-bold tracking-[0.35em] text-emerald-300 uppercase">Access</p>
+      <h1 class="max-w-4xl text-4xl md:text-6xl font-black leading-tight" style="font-family: 'Noto Serif JP', serif;">
+        アクセス｜株式会社創電工業（青森県八戸市）
+      </h1>
+      <p class="mt-8 max-w-3xl text-base md:text-xl leading-8 text-slate-200">
+        青森県八戸市の株式会社創電工業の所在地・地図・お問い合わせ先です。八戸市を拠点に、三沢市・おいらせ町・南部町・五戸町など県南地域の電気工事に対応しています。
+      </p>
+      <div class="mt-10 flex flex-wrap gap-4">
+        <a
+          routerLink="/services"
+          class="inline-flex items-center rounded-full bg-emerald-400 px-6 py-3 text-sm font-bold text-slate-950 transition hover:bg-emerald-300"
+        >
+          対応エリアの事業内容を見る
+        </a>
+        <a
+          routerLink="/cases"
+          class="inline-flex items-center rounded-full border border-white/20 px-6 py-3 text-sm font-bold text-white transition hover:border-white/40 hover:bg-white/5"
+        >
+          施工事例を見る
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-20 lg:py-28 bg-slate-50">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8 grid gap-12 lg:grid-cols-2">
+      <div class="space-y-10">
+        <div>
+          <h2 class="text-sm font-bold tracking-[0.2em] text-emerald-600 uppercase mb-3">Location</h2>
+          <p class="text-lg font-bold text-slate-900 mb-1">〒031-0833</p>
+          <p class="text-lg text-slate-700 leading-relaxed">青森県八戸市大字大久保字小久保平19-7</p>
+          <a
+            href="https://maps.google.com/?q=株式会社創電工業+青森県八戸市大字大久保字小久保平19-7"
+            target="_blank"
+            rel="noopener"
+            class="mt-4 inline-flex items-center gap-2 text-emerald-600 font-bold hover:text-emerald-700 transition-colors"
+          >
+            Googleマップで経路を確認する
+          </a>
+        </div>
+
+        <div>
+          <h2 class="text-sm font-bold tracking-[0.2em] text-emerald-600 uppercase mb-3">Tel / Fax</h2>
+          <a href="tel:0178252172" class="block text-2xl font-bold text-slate-900 hover:text-emerald-600 transition-colors">
+            TEL 0178-25-2172
+          </a>
+          <p class="text-slate-600 mt-1">FAX 0178-25-2171</p>
+          <p class="text-slate-500 mt-2 text-sm">受付時間：平日8:00-18:00</p>
+        </div>
+      </div>
+
+      <div>
+        <h2 class="text-sm font-bold tracking-[0.2em] text-emerald-600 uppercase mb-3">Service Area</h2>
+        <p class="text-slate-600 leading-relaxed mb-6">
+          八戸市を中心に、青森県南地域で電気設備工事・電気通信工事・太陽光発電設備工事に対応しています。
+        </p>
+        <ul class="grid grid-cols-2 gap-3">
+          @for (area of serviceAreas; track area) {
+          <li class="rounded-xl bg-white px-4 py-3 text-center font-bold text-slate-800 shadow-sm ring-1 ring-slate-200">
+            {{ area }}
+          </li>
+          }
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <app-contact />
+</main>

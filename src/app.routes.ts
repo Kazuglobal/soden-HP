@@ -3,6 +3,9 @@ import { HomeComponent } from './components/home/home.component';
 import { CompanyDetailsComponent } from './components/company-details/company-details.component';
 import { RecruitDetailsComponent } from './components/recruit-details/recruit-details.component';
 import { ServicesDetailsComponent } from './components/services-details/services-details.component';
+import { CasesDetailsComponent } from './components/cases-details/cases-details.component';
+import { ContactDetailsComponent } from './components/contact-details/contact-details.component';
+import { AccessDetailsComponent } from './components/access-details/access-details.component';
 import { PrivacyComponent } from './components/privacy/privacy.component';
 
 export const routes: Routes = [
@@ -48,6 +51,39 @@ export const routes: Routes = [
       keywords: '採用情報,求人,電気工事士,施工管理技士,電気工事会社求人,未経験歓迎,八戸市求人,青森県求人,創電工業採用,転職,新卒,第二種電気工事士,第一種電気工事士',
       image: '/images/recruit_hero_bright.jpg',
       imageAlt: '株式会社創電工業 採用情報'
+    }
+  },
+  {
+    path: 'cases',
+    component: CasesDetailsComponent,
+    data: {
+      title: '施工事例｜株式会社創電工業（青森県八戸市の電気設備工事）',
+      description: '青森県八戸市の株式会社創電工業による電気設備工事・電気通信工事・太陽光発電設備の施工事例をご紹介。公共施設から民間ビル、個人住宅まで、八戸市・三沢市など県南地域での実績と技術力をご覧いただけます。',
+      keywords: '施工事例,施工実績,電気工事,電気設備工事,太陽光発電,八戸市,青森県,創電工業,公共工事,ビル電気工事,八戸 電気工事',
+      image: '/images/building.jpg',
+      imageAlt: '株式会社創電工業の施工事例'
+    }
+  },
+  {
+    path: 'contact',
+    component: ContactDetailsComponent,
+    data: {
+      title: 'お問い合わせ｜株式会社創電工業（青森県八戸市の電気設備工事）',
+      description: '電気設備工事・電気通信工事・太陽光発電設備のご相談やお見積りは、青森県八戸市の株式会社創電工業までお気軽にお問い合わせください。電話番号0178-25-2172、平日8:00-18:00受付。',
+      keywords: 'お問い合わせ,電気工事 見積もり,八戸 電気工事,電気工事 相談,創電工業,八戸市,青森県',
+      image: '/images/companyinfo.jpg',
+      imageAlt: '株式会社創電工業へのお問い合わせ'
+    }
+  },
+  {
+    path: 'access',
+    component: AccessDetailsComponent,
+    data: {
+      title: 'アクセス｜株式会社創電工業（青森県八戸市の電気設備工事会社）',
+      description: '株式会社創電工業の所在地・地図・アクセス情報。青森県八戸市大字大久保字小久保平19-7、TEL 0178-25-2172。八戸市・三沢市・おいらせ町など県南地域の電気工事に対応しています。',
+      keywords: 'アクセス,所在地,地図,創電工業,八戸市,青森県,電気工事会社',
+      image: '/images/companyinfo.jpg',
+      imageAlt: '株式会社創電工業の所在地'
     }
   },
   {

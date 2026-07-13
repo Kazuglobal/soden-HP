@@ -3,7 +3,7 @@
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://soudenkougyou.com/</loc>
-    <lastmod>2026-04-06</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <image:image>
@@ -13,12 +13,22 @@
   </url>
   <url>
     <loc>https://soudenkougyou.com/services</loc>
-    <lastmod>2026-04-17</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
     <image:image>
       <image:loc>https://soudenkougyou.com/images/elct1.jpg</image:loc>
       <image:title>株式会社創電工業 事業内容</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://soudenkougyou.com/cases</loc>
+    <lastmod>2026-07-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://soudenkougyou.com/images/building.jpg</image:loc>
+      <image:title>株式会社創電工業 施工事例</image:title>
     </image:image>
   </url>
   <url>
@@ -40,6 +50,22 @@
       <image:loc>https://soudenkougyou.com/images/recruit_hero_bright.jpg</image:loc>
       <image:title>株式会社創電工業 採用情報</image:title>
     </image:image>
+  </url>
+  <url>
+    <loc>https://soudenkougyou.com/contact</loc>
+    <lastmod>2026-07-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://soudenkougyou.com/images/companyinfo.jpg</image:loc>
+      <image:title>株式会社創電工業 お問い合わせ</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://soudenkougyou.com/access</loc>
+    <lastmod>2026-07-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
   </url>
   <url>
     <loc>https://soudenkougyou.com/privacy</loc>
