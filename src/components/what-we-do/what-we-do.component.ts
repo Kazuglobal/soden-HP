@@ -1,11 +1,12 @@
 import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { RouterLink } from '@angular/router';
 import { GsapScrollAnimateDirective } from '../../directives/gsap-scroll-animate.directive';
 
 @Component({
   selector: 'app-what-we-do',
   standalone: true,
-  imports: [CommonModule, GsapScrollAnimateDirective],
+  imports: [CommonModule, RouterLink, GsapScrollAnimateDirective],
   templateUrl: './what-we-do.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush
 })

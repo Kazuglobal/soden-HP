@@ -12,8 +12,7 @@
       </p>
       <div class="mt-10 flex flex-wrap gap-4">
         <a
-          routerLink="/"
-          fragment="contact"
+          routerLink="/contact"
           class="inline-flex items-center rounded-full bg-emerald-400 px-6 py-3 text-sm font-bold text-slate-950 transition hover:bg-emerald-300"
         >
           お問い合わせ
@@ -43,6 +42,60 @@
           <p class="text-sm font-bold tracking-[0.2em] text-emerald-600 uppercase">Automation</p>
           <p class="mt-3 text-lg font-bold text-slate-900">物流・機械設備の電気制御まで一括対応</p>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-white">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-28">
+      <div class="max-w-3xl mb-14">
+        <p class="text-sm font-bold tracking-[0.3em] text-emerald-600 uppercase mb-4">Service Area</p>
+        <h2 class="text-3xl md:text-4xl font-black text-slate-900" style="font-family: 'Noto Serif JP', serif;">
+          八戸市を中心とした対応エリアの電気工事
+        </h2>
+        <p class="mt-6 text-slate-600 leading-8">
+          創電工業は青森県八戸市に本社を置き、八戸市・三沢市・おいらせ町・南部町・五戸町など県南地域を中心に電気工事・電気設備工事のご依頼に対応しています。
+          公共施設・工場・商業ビル・個人住宅まで、現場規模を問わず迅速に対応します。「八戸 電気工事」でお困りの際は、お気軽にご相談ください。
+        </p>
+      </div>
+
+      <ul class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3 mb-16">
+        @for (area of serviceAreas; track area) {
+        <li class="rounded-xl bg-slate-50 px-4 py-3 text-center font-bold text-slate-800 ring-1 ring-slate-200">
+          {{ area }}
+        </li>
+        }
+      </ul>
+
+      <div class="max-w-3xl mb-10">
+        <p class="text-sm font-bold tracking-[0.3em] text-emerald-600 uppercase mb-4">Our Work</p>
+        <h2 class="text-3xl md:text-4xl font-black text-slate-900" style="font-family: 'Noto Serif JP', serif;">
+          電気設備工事の主な工事内容
+        </h2>
+      </div>
+
+      <div class="grid gap-6 md:grid-cols-2">
+        @for (item of workItems; track item.name) {
+        <div class="rounded-2xl bg-slate-50 p-6 ring-1 ring-slate-200">
+          <h3 class="text-lg font-bold text-slate-900 mb-2">{{ item.name }}</h3>
+          <p class="text-slate-600 leading-relaxed">{{ item.detail }}</p>
+        </div>
+        }
+      </div>
+
+      <div class="mt-14 flex flex-wrap gap-4">
+        <a
+          routerLink="/cases"
+          class="inline-flex items-center rounded-full bg-slate-900 px-6 py-3 text-sm font-bold text-white transition hover:bg-emerald-600"
+        >
+          八戸市の施工事例を見る
+        </a>
+        <a
+          routerLink="/access"
+          class="inline-flex items-center rounded-full border border-slate-300 px-6 py-3 text-sm font-bold text-slate-700 transition hover:border-emerald-400 hover:text-emerald-600"
+        >
+          対応エリア・アクセスを見る
+        </a>
       </div>
     </div>
   </section>

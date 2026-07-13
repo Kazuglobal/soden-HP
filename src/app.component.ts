@@ -355,6 +355,9 @@ export class AppComponent {
       const pathNames: Record<string, string> = {
         '/services': '事業内容',
         '/company': '会社概要',
+        '/cases': '施工事例',
+        '/contact': 'お問い合わせ',
+        '/access': 'アクセス',
         '/recruit': '採用情報',
         '/privacy': 'プライバシーポリシー'
       };
